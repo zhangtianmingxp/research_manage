@@ -7,7 +7,7 @@ import hashlib
 from pathlib import Path
 
 from src.literature_catalog.catalog import classify_accession, load_schema, validate_catalog
-from src.literature_catalog.pilot import build_pilot_catalog, parse_ena_runs, parse_geo_miniml, parse_ncbi_sra
+from src.literature_catalog.pilot import build_pilot_catalog, parse_ena_runs, parse_geo_miniml, parse_ncbi_sra, parse_pmc_evidence
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,9 +54,12 @@ class SchemaTests(unittest.TestCase):
             "accession_relations",
             "files",
             "source_queries",
+            "semantic_review",
             "evidence",
             "unresolved_issues",
             "literature_experiment_catalog",
+            "literature_experiment_catalog_files",
+            "literature_experiment_catalog_runs",
         }
         self.assertEqual(set(schema["tables"]), expected)
 
@@ -83,6 +86,15 @@ class OfflineParserTests(unittest.TestCase):
         rows = parse_ena_runs(ROOT / "tests" / "fixtures" / "ena_runs_small.tsv")
         self.assertEqual(rows[0]["run_accession"], "SRR1")
         self.assertEqual(len(rows[0]["fastq_ftp"].split(";")), 2)
+
+    def test_pmc_parser_reports_only_explicit_statements(self) -> None:
+        facts = parse_pmc_evidence(ROOT / "tests" / "fixtures" / "pmc_evidence_small.xml")
+        self.assertTrue(facts["time_courses_in_duplicate"])
+        self.assertTrue(facts["nocodazole_before_release"])
+        self.assertTrue(facts["hela_reported_earlier"])
+        self.assertTrue(facts["deeper_sequencing"])
+        empty = parse_pmc_evidence(ROOT / "tests" / "fixtures" / "empty_miniml.xml")
+        self.assertFalse(any(empty.values()))
 
 
 class RepositoryIntegrationTests(unittest.TestCase):
@@ -121,6 +133,8 @@ class RepositoryIntegrationTests(unittest.TestCase):
         relations = read("accession_relations.tsv")
         files = read("files.tsv")
         wide = read("literature_experiment_catalog.tsv")
+        file_view = read("literature_experiment_catalog_files.tsv")
+        run_view = read("literature_experiment_catalog_runs.tsv")
         runs = {
             row["run_accession"] for row in accessions
             if row["entity_type"] == "sra_run" and row["run_accession"] not in {"NR", "NA", "NOT_FOUND", "UNRESOLVED", "RESTRICTED"}
@@ -132,14 +146,38 @@ class RepositoryIntegrationTests(unittest.TestCase):
         self.assertEqual(len(wide), len(files))
         self.assertEqual(len({row["catalog_row_id"] for row in wide}), len(wide))
         self.assertEqual(len({row["file_id"] for row in wide}), len(files))
+        self.assertEqual(file_view, wide)
+        self.assertEqual(len(run_view), 1290)
+        self.assertEqual({row["run_accession"] for row in run_view}, runs)
+        self.assertTrue(all(row["file_count"] == "2" for row in run_view))
+        self.assertTrue(all(row["read1_url"] not in {"", "NA"} and row["read2_url"] not in {"", "NA"} for row in run_view))
 
     def test_query_manifest_records_complete_pagination(self) -> None:
         with (ROOT / "data" / "interim" / "pilot" / "source_queries.tsv").open(encoding="utf-8", newline="") as handle:
             rows = list(csv.DictReader(handle, delimiter="\t"))
-        self.assertEqual(len(rows), 4)
-        self.assertTrue(all(row["http_status"] == "200" for row in rows))
-        self.assertTrue(all(row["pagination_complete"] == "yes" for row in rows))
-        self.assertTrue(all(int(row["retry_count"]) <= 2 for row in rows))
+        self.assertEqual(len(rows), 8)
+        by_id = {row["query_id"]: row for row in rows}
+        self.assertEqual({by_id[f"Q000{i}"]["query_outcome"] for i in range(1, 6)}, {"success"})
+        self.assertEqual(by_id["Q0006"]["query_outcome"], "query_failed")
+        self.assertEqual(by_id["Q0007"]["query_outcome"], "size_limit_not_downloaded")
+        self.assertEqual(by_id["Q0008"]["legacy_record_id"], "AC-P0008-004")
+        self.assertTrue(all(int(row["retry_count"]) <= 2 for row in rows if row["retry_count"].isdigit()))
+
+    def test_layered_provenance_and_semantic_review_coverage(self) -> None:
+        def read(name: str) -> list[dict[str, str]]:
+            with (ROOT / "data" / "interim" / "pilot" / name).open(encoding="utf-8", newline="") as handle:
+                return list(csv.DictReader(handle, delimiter="\t"))
+        samples = read("archive_samples.tsv")
+        reviews = read("semantic_review.tsv")
+        accessions = read("accessions.tsv")
+        hela = [row for row in samples if row["species_scientific"] == "Homo sapiens"]
+        self.assertEqual(len(hela), 2)
+        self.assertEqual({row["biological_sample_origin_status"] for row in hela}, {"reused_from_prior_study"})
+        self.assertEqual({row["analysis_usage_status"] for row in hela}, {"reanalyzed_prior_data"})
+        self.assertEqual(sum(row["record_type"] == "replicate" for row in reviews), 60)
+        self.assertEqual(sum(row["record_type"] == "batch" for row in reviews), 60)
+        self.assertEqual(sum(row["record_type"] == "sra_run" for row in reviews), 76)
+        self.assertNotIn("AC-P0008-004", {row["accession_record_id"] for row in accessions})
 
     def test_migration_preserves_v1_ids_and_build_is_deterministic(self) -> None:
         expected = {f"ST-P0008-{index:03d}" for index in range(1, 11)}
@@ -147,11 +185,23 @@ class RepositoryIntegrationTests(unittest.TestCase):
         with path.open(encoding="utf-8", newline="") as handle:
             before_rows = list(csv.DictReader(handle, delimiter="\t"))
         self.assertTrue(expected.issubset({row["sample_timepoint_id"] for row in before_rows}))
-        wide = ROOT / "data" / "interim" / "pilot" / "literature_experiment_catalog.tsv"
-        before = hashlib.sha256(wide.read_bytes()).hexdigest()
+        views = [
+            ROOT / "data" / "interim" / "pilot" / "literature_experiment_catalog.tsv",
+            ROOT / "data" / "interim" / "pilot" / "literature_experiment_catalog_files.tsv",
+            ROOT / "data" / "interim" / "pilot" / "literature_experiment_catalog_runs.tsv",
+        ]
+        before = [hashlib.sha256(path.read_bytes()).hexdigest() for path in views]
         build_pilot_catalog(ROOT)
-        after = hashlib.sha256(wide.read_bytes()).hexdigest()
+        after = [hashlib.sha256(path.read_bytes()).hexdigest() for path in views]
         self.assertEqual(before, after)
+
+    def test_batch_readiness_is_machine_readable(self) -> None:
+        path = ROOT / "reports" / "schema_v2_batch_readiness.json"
+        readiness = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(readiness["status"], "ready_with_documented_gaps")
+        self.assertEqual(readiness["run_view_rows"], 1290)
+        self.assertEqual(readiness["file_view_rows"], 2580)
+        self.assertFalse(readiness["legacy_placeholder_active"])
 
 
 if __name__ == "__main__":

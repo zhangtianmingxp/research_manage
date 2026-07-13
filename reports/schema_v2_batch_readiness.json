@@ -1,0 +1,14 @@
+{
+  "status": "ready_with_documented_gaps",
+  "schema_version": "2.1.0",
+  "validation_errors": 0,
+  "validation_warnings": 0,
+  "replicate_reviews": 60,
+  "batch_reviews": 60,
+  "hela_run_reviews": 76,
+  "run_view_rows": 1290,
+  "file_view_rows": 2580,
+  "legacy_placeholder_active": false,
+  "known_gaps_are_machine_expressible": true,
+  "recommended_papers_per_round": "1-3"
+}

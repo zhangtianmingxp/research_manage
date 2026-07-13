@@ -8,8 +8,10 @@ ena_unique_run	all	1290	pass	Q0004
 ncbi_ena_run_intersection	all	1290	pass	集合对账
 ncbi_only_run	all	0	pass	差集为空
 ena_only_run	all	0	pass	差集为空
-catalog_unique_run	all	1291	pass	accessions
+catalog_unique_run	all	1290	pass	accessions
 wide_unique_run	all	1290	pass	literature_experiment_catalog
+file_view_rows	all	2580	pass	literature_experiment_catalog_files
+run_view_rows	all	1290	pass	literature_experiment_catalog_runs
 gsm_without_run	all	0	pass	逐GSM统计
 gsm_with_multiple_runs	all	31	info	多Run为合法一对多
 run_without_unique_gsm	all	0	pass	逐Run统计

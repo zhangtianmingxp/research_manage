@@ -7,6 +7,7 @@
 - NCBI Run / ENA Run：1290 / 1290；集合差集均为0
 - GSM无Run：0；GSM多Run：31
 - ENA FASTQ文件记录：2580；URL、大小、MD5覆盖率均为100%
-- 宽表：2580行；SHA-256 `5f708d55c99c9b84006e9335cbf30eb95925b578850c5c8c73ed562e3b56d819`
+- 文件粒度视图：2580行；SHA-256 `72fcdb880f6ed41199a6c29c328bfbd69423e26db2906e13537c4853e8bf2eb7`
+- Run粒度视图：1290行；SHA-256 `217fd65db041203c295961fd3c61a0f5ce3b0b0b20cef9b68412d3f3bf81458a`
 
-逐指标及分层计数见 `reports/P0008_accession_reconciliation.tsv`。文件URL仅保存ENA API返回值，未下载文件正文，未执行全量可达性请求。
+逐指标及分层计数见 `reports/P0008_accession_reconciliation.tsv`。兼容宽表仍指向文件粒度。文件URL仅保存ENA API返回值，未下载文件正文。

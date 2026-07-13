@@ -232,3 +232,29 @@ v2新增 `condition_id`、`replicate_id`、`batch_id`、`gsm_accession` 和 `arc
 | 证据与备注 | `evidence_ids`、`notes`。 |
 
 `perturbation_id` 和 `accession_record_id` 在确实不适用时可为 `NA`；其余外键必须有效。示意 accession（如 `SRR123456`）只出现在文档或测试中，不得进入真实结果表。
+
+## 13. 分层数据归属
+
+`own_data_status`仅作为向后兼容摘要，不再承担全部“自产”语义。`archive_samples`、`accessions`和用户视图新增：
+
+| 字段 | 语义 |
+|---|---|
+| `biological_sample_origin_status` | 生物样本是否由本研究产生。 |
+| `library_origin_status` | 测序文库是否由本研究构建。 |
+| `sequencing_generation_status` | 测序是否由本研究新增；无法把具体Run分配到既有/追加测序时为`UNRESOLVED`或`mixed_or_additional_unassigned`。 |
+| `analysis_usage_status` | `primary_analysis`、`reanalyzed_prior_data`、`comparison_only`、`UNRESOLVED`或`NA`。 |
+| `origin_evidence_ids` | 支持分层判断的证据ID。 |
+
+来源字段受控值为`study_generated`、`reused_from_prior_study`、`mixed_or_additional_unassigned`、`UNRESOLVED`、`NA`。不得仅因记录属于同一GEO Series就推断所有来源层级。
+
+## 14. `semantic_review`
+
+一行对应一个“记录 × 高风险字段”审计单元。`decision_status`仅允许`verified`、`partially_verified`、`unresolved`、`not_applicable`；`reviewer_status=machine_extracted_pending_human_review`表示机器已按规则处置但尚待人工签核。原始alias必须保留，候选解释不能代替最终裁决。
+
+## 15. Run/File双粒度视图
+
+- `literature_experiment_catalog_runs.tsv`：一行一个唯一Run，paired-end文件使用明确的`read1_*`/`read2_*`列。
+- `literature_experiment_catalog_files.tsv`：一行一个FASTQ文件。
+- `literature_experiment_catalog.tsv`：为兼容旧路径保留，内容与File粒度视图一致。
+
+三张视图均由规范表确定性生成，禁止手工编辑。

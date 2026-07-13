@@ -321,6 +321,9 @@ def validate_catalog(root: Path) -> ValidationReport:
         "accession_relations",
         "files",
         "literature_experiment_catalog",
+        "literature_experiment_catalog_files",
+        "literature_experiment_catalog_runs",
+        "semantic_review",
     ):
         for row_number, row in enumerate(all_rows.get(table_name, []), start=2):
             references = [item for item in row.get("evidence_ids", "").split("|") if item]
@@ -335,10 +338,25 @@ def validate_catalog(root: Path) -> ValidationReport:
         "archive_samples": {
             "own_data_status": "own_data_status",
             "disposition_status": "disposition_status",
+            "biological_sample_origin_status": "origin_status",
+            "library_origin_status": "origin_status",
+            "sequencing_generation_status": "origin_status",
+            "analysis_usage_status": "analysis_usage_status",
         },
         "replicates": {"replicate_type": "replicate_type"},
         "accession_relations": {"relation_type": "relation_type"},
         "files": {"reachability_status": "reachability_status"},
+        "accessions": {
+            "biological_sample_origin_status": "origin_status",
+            "library_origin_status": "origin_status",
+            "sequencing_generation_status": "origin_status",
+            "analysis_usage_status": "analysis_usage_status",
+        },
+        "source_queries": {"query_outcome": "query_outcome"},
+        "semantic_review": {
+            "decision_status": "semantic_decision_status",
+            "reviewer_status": "reviewer_status",
+        },
     }
     for table_name, fields in controlled_fields.items():
         for row_number, row in enumerate(all_rows.get(table_name, []), start=2):

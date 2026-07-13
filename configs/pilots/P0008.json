@@ -11,6 +11,11 @@
   "ncbi_esearch_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
   "ncbi_efetch_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
   "ena_filereport_endpoint": "https://www.ebi.ac.uk/ena/portal/api/filereport",
+  "pmc_id": "PMC5924687",
+  "pmc_efetch_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+  "science_supplement_url": "https://www.science.org/doi/suppl/10.1126/science.aao6135/suppl_file/aao6135_gibcus_sm.pdf",
+  "supplement_pdf_reported_size": "107.5 MB",
+  "supplement_download_limit_bytes": 20971520,
   "ena_fields": [
     "study_accession",
     "sample_accession",

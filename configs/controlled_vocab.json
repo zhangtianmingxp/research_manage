@@ -15,4 +15,9 @@
   "relation_type": ["series_has_sample", "project_has_study", "sample_has_experiment", "experiment_has_run", "mirrors", "run_has_file"],
   "query_status": ["success", "query_failed"],
   "reachability_status": ["reachable", "unreachable", "not_checked"]
+  ,"origin_status": ["study_generated", "reused_from_prior_study", "mixed_or_additional_unassigned", "UNRESOLVED", "NA"]
+  ,"analysis_usage_status": ["primary_analysis", "reanalyzed_prior_data", "comparison_only", "UNRESOLVED", "NA"]
+  ,"semantic_decision_status": ["verified", "partially_verified", "unresolved", "not_applicable"]
+  ,"reviewer_status": ["machine_extracted_pending_human_review", "human_verified", "human_rejected"]
+  ,"query_outcome": ["success", "query_failed", "size_limit_not_downloaded", "historical_migrated"]
 }

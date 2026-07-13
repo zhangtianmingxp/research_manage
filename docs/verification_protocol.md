@@ -77,3 +77,15 @@ python -m src.literature_catalog.cli --root . build
 `fetch`仅访问配置中的官方endpoint，每个请求最多3次，并保存轻量快照与`source_queries.tsv`。`build`不访问网络，必须从保存的快照生成规范表、关系表、文件表、对账报告和宽表。测试只能使用保存的快照或`tests/fixtures/`，不得依赖实时网络。
 
 对P0008，构建前必须同时满足：GEO唯一GSM数为60；NCBI实验数为60；NCBI与ENA Run集合完全一致；所有Run能通过官方alias唯一映射到GSM。任何失败都必须中止并保留差集，不得进行模糊匹配。
+
+## 10. 高风险语义与补充材料
+
+- R1/R2、日期、`G2p/G2n`、`30m`等alias只能作为原值和候选解释；升级必须有作者方法、表格或图注明确支持。
+- 正式入口失败最多3次；失败记为`query_failed`，不等于不存在。
+- 单文件超过20 MB、需登录或需绕过限制时停止下载，记录URL、状态、已知大小和原因。
+- “样本来源、文库来源、测序生成、分析使用”必须分别核验。对具体Run无法分配新旧测序时保持`UNRESOLVED`。
+- `semantic_review`中的机器处置必须保留人工复核状态。
+
+## 11. 双视图与历史迁移检查
+
+P0008离线构建后必须验证Run视图1,290行、File视图2,580行、每Run恰好两个文件、两者Run集合一致且连续构建哈希稳定。失败查询历史必须留在`source_queries`，不能伪装成accession；旧ID通过`legacy_record_id`追溯。

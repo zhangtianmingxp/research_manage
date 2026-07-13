@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 from .catalog import CatalogError, build_inventory, summarize_catalog, validate_catalog
-from .metadata import fetch_pilot_metadata
+from .metadata import fetch_pilot_metadata, fetch_pmc_evidence
 from .pilot import build_pilot_catalog
 
 
@@ -25,6 +25,8 @@ def build_parser() -> argparse.ArgumentParser:
     fetch.add_argument("--config", type=Path, default=None, help="试点配置路径")
     build = subparsers.add_parser("build", help="仅从保存的快照离线生成规范表和宽表")
     build.add_argument("--config", type=Path, default=None, help="试点配置路径")
+    evidence = subparsers.add_parser("fetch-evidence", help="获取轻量正式全文证据并记录补充材料访问状态")
+    evidence.add_argument("--config", type=Path, default=None, help="试点配置路径")
     return parser
 
 
@@ -55,6 +57,10 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "build":
             print(json.dumps(build_pilot_catalog(root, args.config), ensure_ascii=False, indent=2))
+            return 0
+        if args.command == "fetch-evidence":
+            records = fetch_pmc_evidence(root, args.config)
+            print(json.dumps({"queries": [row.query_id for row in records], "outcomes": [row.query_outcome for row in records]}, ensure_ascii=False, indent=2))
             return 0
         print(json.dumps(summarize_catalog(root), ensure_ascii=False, indent=2))
         return 0

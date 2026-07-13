@@ -30,7 +30,9 @@
 - 完成1篇试点论文：Gibcus et al., 2018, *Science*，DOI `10.1126/science.aao6135`。
 - P0008试点逐项保留60个GSM，并通过官方字段映射到60个BioSample/SRA Experiment和1,290个Run。
 - NCBI与ENA Run集合完全一致；ENA API提供2,580条FASTQ文件记录及URL、大小和MD5。
-- 宽表由规范表离线生成，共2,580行；旧版10个样本/时间点ID均保留。
+- 完成P0008的223条高风险语义审计；R1/R2、日期alias和具体HeLa Run来源在证据不足处保留未决。
+- 同一规范事实离线生成1,290行Run视图和2,580行File视图；旧版10个样本/时间点ID均保留。
+- schema v2.1准入结论为`ready_with_documented_gaps`，建议后续每轮处理1–3篇。
 
 第一轮完整执行记录见 [ans_qes/result1.md](ans_qes/result1.md)，试点说明见 [reports/per_paper/P0008_pilot.md](reports/per_paper/P0008_pilot.md)。
 
@@ -41,7 +43,7 @@
 - P0008之外的公共项目尚未展开 GSM/SRS/SRX/SRR/ERR/DRR 关系。
 - P0008之外尚未逐Run核验 ENA/EMBL-EBI 文件链接、文件大小和MD5。
 - 当前宽表仅覆盖P0008，不是28篇规范论文的最终汇总表。
-- P0008的R1/R2重复类型、日期型alias批次含义及两个人源样本的数据归属仍需人工裁决。
+- P0008的R1/R2重复类型、日期型alias批次含义、HeLa文库及逐Run测序来源仍无充分证据，已显式审计并待人工复核。
 
 ## 数据与 GitHub 策略
 
@@ -135,10 +137,13 @@ python -m unittest discover -s tests -v
 | `data/interim/pilot/perturbations.tsv` | 扰动技术、靶标和效果 | 仅SMC2代表性扰动 |
 | `data/interim/pilot/accessions.tsv` | GEO/BioProject/SRA/ENA层级 | P0008含1,290个真实Run |
 | `data/interim/pilot/files.tsv` | ENA API返回的FASTQ文件字段 | 2,580条，不含文件正文 |
-| `data/interim/pilot/source_queries.tsv` | endpoint、参数、状态、哈希和重试 | 4条官方查询 |
-| `data/interim/pilot/evidence.tsv` | 字段级论文与数据库证据 | 11条试点证据 |
-| `data/interim/pilot/unresolved_issues.tsv` | 缺失、冲突和待裁决问题 | 6个问题 |
-| `data/interim/pilot/literature_experiment_catalog.tsv` | 用户宽表预览 | 2,580行P0008试点，非最终表 |
+| `data/interim/pilot/source_queries.tsv` | endpoint、参数、状态、哈希和重试 | 8条查询/历史记录 |
+| `data/interim/pilot/semantic_review.tsv` | 逐记录高风险语义审计 | 223条，待人工签核 |
+| `data/interim/pilot/evidence.tsv` | 字段级论文与数据库证据 | 14条试点证据 |
+| `data/interim/pilot/unresolved_issues.tsv` | 缺失、冲突和待裁决问题 | 7个问题 |
+| `data/interim/pilot/literature_experiment_catalog_runs.tsv` | 一行一个Run | 1,290行P0008试点 |
+| `data/interim/pilot/literature_experiment_catalog_files.tsv` | 一行一个FASTQ文件 | 2,580行P0008试点 |
+| `data/interim/pilot/literature_experiment_catalog.tsv` | 兼容宽表 | 与File视图一致，非最终表 |
 
 字段定义和关系以 [docs/data_dictionary.md](docs/data_dictionary.md) 与 `configs/catalog_schema.json` 为准。
 
@@ -170,7 +175,7 @@ project_plan.md
   → 停止
 ```
 
-不会自动执行新生成的 prompt、自动进入下一轮、自动 commit 或自动 push。当前第2轮已执行并停在等待结果审查状态；未生成 `prompt3.md`。
+不会自动执行新生成的 prompt、自动进入下一轮、自动 commit 或自动 push。当前第3轮执行完成后停在等待结果审查状态；不会自动生成 `prompt4.md`。
 
 ## 下一阶段建议
 

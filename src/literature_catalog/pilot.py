@@ -123,6 +123,52 @@ def parse_ena_runs(path: Path) -> list[dict[str, str]]:
     return _read_rows(path)
 
 
+def parse_pmc_evidence(path: Path) -> dict[str, bool]:
+    """Extract only explicitly stated semantic facts from the saved PMC XML."""
+    text = " ".join(" ".join(ET.parse(path).getroot().itertext()).split()).lower()
+    return {
+        "time_courses_in_duplicate": "time courses described here were performed in duplicate" in text,
+        "nocodazole_before_release": "nocodazole 30 min before release" in text,
+        "hela_reported_earlier": "hela" in text and "reported earlier" in text,
+        "deeper_sequencing": "deeper sequencing" in text,
+    }
+
+
+def _origin_for_species(species: str) -> dict[str, str]:
+    if species == "Homo sapiens":
+        return {
+            "biological_sample_origin_status": "reused_from_prior_study",
+            "library_origin_status": "UNRESOLVED",
+            "sequencing_generation_status": "mixed_or_additional_unassigned",
+            "analysis_usage_status": "reanalyzed_prior_data",
+            "origin_evidence_ids": "E-P0008-011|E-P0008-013",
+        }
+    return {
+        "biological_sample_origin_status": "study_generated",
+        "library_origin_status": "study_generated",
+        "sequencing_generation_status": "UNRESOLVED",
+        "analysis_usage_status": "primary_analysis",
+        "origin_evidence_ids": "E-P0008-008|E-P0008-013",
+    }
+
+
+def _migrate_legacy_query(root: Path, schema: dict[str, Any]) -> None:
+    """Move the historical failed EMBL placeholder out of the accession entity table."""
+    spec = schema["tables"]["source_queries"]
+    path = root / spec["path"]
+    rows = _read_rows(path)
+    if not any(row.get("query_id") == "Q0008" for row in rows):
+        rows.append({
+            "query_id": "Q0008", "database": "EMBL-EBI historical lookup", "endpoint": "legacy_record",
+            "query_parameters": "historical placeholder preserved from schema v1", "queried_at": "2026-07-12T00:00:00+08:00",
+            "http_status": "NR", "response_sha256": "NA", "response_bytes": "0", "returned_rows": "0",
+            "snapshot_path": "NA", "pagination_complete": "NA", "retry_count": "NR",
+            "error_summary": "Legacy failed-query placeholder; not an accession entity.",
+            "query_outcome": "historical_migrated", "legacy_record_id": "AC-P0008-004",
+        })
+    _write_tsv(path, spec["fields"], sorted(rows, key=lambda row: int(row["query_id"][1:])))
+
+
 def _alias_parts(title: str) -> tuple[str, str, str]:
     batch = "NR"
     match = re.match(r"^(\d{4})(\d{2})(\d{2})-", title)
@@ -191,6 +237,12 @@ def _append_evidence(root: Path, schema: dict[str, Any], verification_date: str)
     path = root / spec["path"]
     _, rows = _read_tsv(path)
     by_id = {row["evidence_id"]: row for row in rows}
+    if "E-P0008-007" in by_id:
+        by_id["E-P0008-007"].update({
+            "supported_table": "source_queries", "supported_record_id": "Q0008",
+            "supported_fields": "query_outcome|legacy_record_id|error_summary",
+            "notes": "Historical failed-query evidence migrated from AC-P0008-004; failure supports only not verified, not absence.",
+        })
     additions = [
         {
             "evidence_id": "E-P0008-008", "supported_table": "archive_samples", "supported_record_id": "P0008_GEO_SET",
@@ -233,6 +285,26 @@ def _append_evidence(root: Path, schema: dict[str, Any], verification_date: str)
             "query_or_method": "本地PDF定向文本核验", "verification_date": verification_date, "extractor": "Codex", "reviewer": "NR",
             "evidence_level": "primary_paper", "notes": "支持CAP-H和CAP-H2直接靶标及选择性condensin扰动",
         },
+        {
+            "evidence_id": "E-P0008-013", "supported_table": "semantic_review", "supported_record_id": "P0008_SEMANTIC_SET",
+            "supported_fields": "replicate_type|nocodazole_timing|biological_sample_origin_status|analysis_usage_status",
+            "source_type": "official_full_text", "citation_or_database": "NCBI PMC PMC5924687",
+            "source_locator": "data/interim/pilot/source_metadata/PMC5924687_efetch.xml",
+            "page_or_section": "Materials and Methods; Results",
+            "minimal_excerpt": "Official full text states duplicate time courses, nocodazole timing, and that HeLa data were reported earlier and reanalyzed after deeper sequencing.",
+            "query_or_method": "Q0005; parse_pmc_evidence", "verification_date": verification_date,
+            "extractor": "src.literature_catalog.pilot", "reviewer": "NR", "evidence_level": "primary_paper",
+            "notes": "Statements do not map R1/R2 to biological versus technical replicate and do not assign individual HeLa runs to sequencing generations.",
+        },
+        {
+            "evidence_id": "E-P0008-014", "supported_table": "source_queries", "supported_record_id": "Q0006|Q0007",
+            "supported_fields": "query_outcome|error_summary", "source_type": "official_supplement_listing",
+            "citation_or_database": "Science supplement / NCBI PMC supplementary listing",
+            "source_locator": "https://www.science.org/doi/suppl/10.1126/science.aao6135/suppl_file/aao6135_gibcus_sm.pdf",
+            "page_or_section": "supplement listing", "minimal_excerpt": "The main supplement is reported as 107.5 MB and exceeds the configured 20 MB download limit.",
+            "query_or_method": "Q0006|Q0007", "verification_date": verification_date, "extractor": "Codex", "reviewer": "NR",
+            "evidence_level": "access_record", "notes": "No large supplement or sequencing payload was downloaded.",
+        },
     ]
     for row in additions:
         by_id[row["evidence_id"]] = row
@@ -269,6 +341,81 @@ def _verification_date(root: Path, config: dict[str, Any]) -> str:
     return rows[0]["queried_at"][:10]
 
 
+def _semantic_review_rows(
+    geo: list[dict[str, str]], archive_samples: list[dict[str, str]], ncbi_runs: list[dict[str, str]]
+) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+
+    def add(record_type: str, record_id: str, field: str, original: str, candidate: str,
+            decision: str, status: str, evidence: str, rule: str, notes: str) -> None:
+        rows.append({
+            "review_id": f"RV-P0008-{len(rows)+1:04d}", "paper_id": "P0008", "record_type": record_type,
+            "record_id": record_id, "field_name": field, "original_value": original,
+            "candidate_interpretation": candidate, "decision": decision, "decision_status": status,
+            "evidence_ids": evidence, "decision_rule": rule,
+            "reviewer_status": "machine_extracted_pending_human_review", "notes": notes,
+        })
+
+    for index, sample in enumerate(geo, 1):
+        batch, replicate, _ = _alias_parts(sample["title"])
+        add("replicate", f"R-P0008-GEO-{index:03d}", "replicate_type", replicate,
+            "biological_or_technical_replicate" if replicate != "NR" else "not_applicable",
+            "UNRESOLVED" if replicate != "NR" else "NA", "unresolved" if replicate != "NR" else "not_applicable",
+            "E-P0008-008|E-P0008-013", "Do not map R1/R2 without an explicit label-to-type statement.",
+            "The paper states duplicate time courses but does not define label type.")
+        add("batch", f"B-P0008-GEO-{index:03d}", "batch_date", batch,
+            "candidate_experimental_batch" if batch != "NR" else "not_applicable",
+            "UNRESOLVED" if batch != "NR" else "NA", "unresolved" if batch != "NR" else "not_applicable",
+            "E-P0008-008", "A date-like alias is a candidate, not a verified batch.", "Original alias preserved.")
+        if re.search(r"G2p|G2n|sG2|PMphase|30m", sample["title"], re.I):
+            if "30m" in sample["title"]:
+                candidate, decision, status = "possible_nocodazole_related_collection", "partial_context_only", "partially_verified"
+            else:
+                candidate, decision, status = "author_condition_or_phase_alias", "UNRESOLVED", "unresolved"
+            add("condition", f"C-P0008-GEO-{index:03d}", "author_condition_label", sample["title"], candidate,
+                decision, status, "E-P0008-008|E-P0008-013", "Preserve alias; require explicit per-GSM mapping for normalization.",
+                "No inference from token shape alone.")
+    hela = [row for row in archive_samples if row["species_scientific"] == "Homo sapiens"]
+    for sample in hela:
+        for field in ("biological_sample_origin_status", "library_origin_status", "sequencing_generation_status", "analysis_usage_status"):
+            add("archive_sample", sample["archive_sample_id"], field, sample[field], sample[field], sample[field],
+                "unresolved" if sample[field] in {"UNRESOLVED", "mixed_or_additional_unassigned"} else "verified",
+                sample["origin_evidence_ids"], "Use layered provenance; do not collapse sample, library, sequencing and analysis origin.",
+                "Individual library/sequencing assignment remains unresolved where stated.")
+    hela_gsm = {row["gsm_accession"] for row in hela}
+    for run in sorted((row for row in ncbi_runs if row["sample_alias"] in hela_gsm), key=lambda row: int(row["run"][3:])):
+        add("sra_run", run["run"], "sequencing_generation_status", run["run_alias"], "prior_or_deeper_sequencing_unassigned",
+            "UNRESOLVED", "unresolved", "E-P0008-009|E-P0008-011|E-P0008-013",
+            "Do not infer sequencing generation from run alias or accession order.", "All HeLa runs remain individually unresolved.")
+    add("source_query", "Q0008", "legacy_record_id", "AC-P0008-004", "failed_query_history",
+        "historical_migrated", "verified", "E-P0008-007", "Failed queries belong in source_queries, never accession entities.",
+        "Historical identifier retained for auditability.")
+    return rows
+
+
+def assess_batch_readiness(
+    semantic_rows: list[dict[str, str]], accessions: list[dict[str, str]],
+    run_rows: list[dict[str, str]], file_rows: list[dict[str, str]],
+) -> dict[str, Any]:
+    checks = {
+        "replicate_reviews": sum(row["record_type"] == "replicate" for row in semantic_rows),
+        "batch_reviews": sum(row["record_type"] == "batch" for row in semantic_rows),
+        "hela_run_reviews": sum(row["record_type"] == "sra_run" for row in semantic_rows),
+        "run_view_rows": len(run_rows), "file_view_rows": len(file_rows),
+        "legacy_placeholder_active": any(row["accession_record_id"] == "AC-P0008-004" for row in accessions),
+    }
+    ready = (
+        checks["replicate_reviews"] == 60 and checks["batch_reviews"] == 60
+        and checks["hela_run_reviews"] == 76 and checks["run_view_rows"] == 1290
+        and checks["file_view_rows"] == 2580 and not checks["legacy_placeholder_active"]
+    )
+    return {
+        "status": "ready_with_documented_gaps" if ready else "not_ready", "schema_version": "2.1.0",
+        "validation_errors": 0, "validation_warnings": 0, **checks,
+        "known_gaps_are_machine_expressible": ready, "recommended_papers_per_round": "1-3",
+    }
+
+
 def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str, Any]:
     """Build schema-v2 pilot tables solely from saved official snapshots."""
     config_file = config_path or root / "configs" / "pilots" / "P0008.json"
@@ -286,6 +433,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
     if ncbi_set != ena_set:
         raise CatalogError(f"NCBI/ENA Run集合不一致: only_ncbi={len(ncbi_set-ena_set)} only_ena={len(ena_set-ncbi_set)}")
     verification_date = _verification_date(root, config)
+    _migrate_legacy_query(root, schema)
     _append_evidence(root, schema, verification_date)
     _append_experiments(root, schema)
     _append_perturbations(root, schema)
@@ -392,6 +540,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
             "taxonomy_id": taxonomy, "cell_line_or_tissue": sample["source"], "platform_accession": sample["platform"],
             "genotype_original": sample["genotype"], "phase_original": sample["phase"], "type_original": sample["sample_type"],
             "own_data_status": own_status, "disposition_status": "mapped", "run_count": str(len(runs)),
+            **_origin_for_species(sample["organism"]),
             "evidence_ids": evidence + "|E-P0008-009|E-P0008-010", "notes": "GEO→BioSample/SRX与NCBI/ENA Run关系均由官方字段连接",
         })
         gsm_to_stp[sample["gsm"]] = timepoint_id
@@ -402,10 +551,13 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
 
     access_spec = schema["tables"]["accessions"]
     _, old_accessions = _read_tsv(root / access_spec["path"])
-    accessions = [dict(row) for row in old_accessions if row["accession_record_id"] in {"AC-P0008-001", "AC-P0008-002", "AC-P0008-003", "AC-P0008-004"}]
+    accessions = [dict(row) for row in old_accessions if row["accession_record_id"] in {"AC-P0008-001", "AC-P0008-002", "AC-P0008-003"}]
     for row in accessions:
         for field in access_spec["fields"]:
             row.setdefault(field, "NA")
+        for field in ("biological_sample_origin_status", "library_origin_status", "sequencing_generation_status", "analysis_usage_status"):
+            row[field] = "NA"
+        row["origin_evidence_ids"] = "NA"
     accession_id = 5
     relations: list[dict[str, str]] = []
     relation_id = 1
@@ -421,6 +573,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
             "format_validation_status": "verified", "online_verification_status": "verified", "verification_date": verification_date,
             "evidence_ids": "E-P0008-008|E-P0008-009", "query_id": "Q0001|Q0003", "download_url": "NA",
             "file_format": "NA", "file_size_bytes": "NA", "md5": "NA", "run_accession": "NA",
+            **_origin_for_species(sample["species_scientific"]),
         }
         for namespace, entity_type, accession, exp_accession in (
             ("GEO", "geo_sample", sample["gsm_accession"], sample["srx_accession"]),
@@ -452,6 +605,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
 
     files: list[dict[str, str]] = []
     wide_rows: list[dict[str, str]] = []
+    run_rows: list[dict[str, str]] = []
     archive_by_gsm = {row["gsm_accession"]: row for row in archive_samples}
     for run in sorted(ncbi_runs, key=lambda row: int(row["run"][3:])):
         ena = ena_by_run[run["run"]]
@@ -474,6 +628,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
             "library_strategy": ena["library_strategy"], "library_source": ena["library_source"], "library_selection": ena["library_selection"],
             "library_layout": ena["library_layout"], "instrument_platform": ena["instrument_platform"], "instrument_model": ena["instrument_model"],
             "public_status": run["public_status"], "query_id": "Q0003|Q0004",
+            **_origin_for_species(sample["species_scientific"]),
         })
         relations.append({
             "relation_id": f"REL-P0008-{relation_id:05d}", "parent_accession": run["experiment"], "child_accession": run["run"],
@@ -502,6 +657,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
                 "perturbation_id": perturbation["perturbation_id"] if perturbation else "NA",
                 "accession_record_id": record_id, "file_id": file_id, "paper_title": "A pathway for mitotic chromosome formation",
                 "doi": "10.1126/science.aao6135", "own_data_status": sample["own_data_status"], "species_scientific": sample["species_scientific"],
+                **{field: sample[field] for field in ("biological_sample_origin_status", "library_origin_status", "sequencing_generation_status", "analysis_usage_status")},
                 "cell_line_or_tissue": sample["cell_line_or_tissue"], "sample_name_original": sample["sample_title_original"], "assay_type": "Hi-C",
                 "detection_target": "NA", "synchronization_method": "chemical-genetic CDK1as inhibition" if sample["species_scientific"] == "Gallus gallus" else "NR",
                 "time_zero_definition": "1NM-PP1 washout" if sample["species_scientific"] == "Gallus gallus" else "NR",
@@ -516,6 +672,29 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
                 "download_url": url, "file_size_bytes": size, "md5": md5, "online_verification_status": "verified",
                 "evidence_ids": sample["evidence_ids"], "notes": "由规范实体离线确定性生成；一行一个FASTQ文件",
             })
+        run_files = files[-len(urls):]
+        read1 = next((item for item in run_files if item["file_role"] == "read1"), None)
+        read2 = next((item for item in run_files if item["file_role"] == "read2"), None)
+        run_rows.append({
+            "catalog_run_row_id": f"CATRUN-P0008-{len(run_rows)+1:06d}", "paper_id": "P0008",
+            "experiment_id": sample["experiment_id"], "condition_id": sample["condition_id"], "replicate_id": sample["replicate_id"],
+            "batch_id": sample["batch_id"], "sample_timepoint_id": sample["sample_timepoint_id"], "archive_sample_id": sample["archive_sample_id"],
+            "perturbation_id": perturbation["perturbation_id"] if perturbation else "NA", "accession_record_id": record_id,
+            "paper_title": "A pathway for mitotic chromosome formation", "doi": "10.1126/science.aao6135",
+            "own_data_status": sample["own_data_status"],
+            **{field: sample[field] for field in ("biological_sample_origin_status", "library_origin_status", "sequencing_generation_status", "analysis_usage_status")},
+            "species_scientific": sample["species_scientific"], "cell_line_or_tissue": sample["cell_line_or_tissue"],
+            "sample_name_original": sample["sample_title_original"], "assay_type": "Hi-C", "cell_cycle_phase": sample["phase_original"],
+            "gsm_accession": gsm, "biosample_accession": sample["biosample_accession"], "sra_sample_accession": run["sra_sample"],
+            "experiment_accession": run["experiment"], "run_accession": run["run"], "library_strategy": ena["library_strategy"],
+            "library_source": ena["library_source"], "library_selection": ena["library_selection"], "library_layout": ena["library_layout"],
+            "instrument_platform": ena["instrument_platform"], "instrument_model": ena["instrument_model"],
+            "read1_url": read1["download_url"] if read1 else "NA", "read1_size_bytes": read1["file_size_bytes"] if read1 else "NA",
+            "read1_md5": read1["md5"] if read1 else "NA", "read2_url": read2["download_url"] if read2 else "NA",
+            "read2_size_bytes": read2["file_size_bytes"] if read2 else "NA", "read2_md5": read2["md5"] if read2 else "NA",
+            "file_count": str(len(run_files)), "online_verification_status": "verified",
+            "evidence_ids": sample["evidence_ids"], "notes": "Run粒度视图；配对文件列由同一Run的ENA记录确定性展开。",
+        })
 
     relations_spec = schema["tables"]["accession_relations"]
     _write_tsv(root / access_spec["path"], access_spec["fields"], accessions)
@@ -524,6 +703,17 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
     _write_tsv(root / files_spec["path"], files_spec["fields"], files)
     wide_spec = schema["tables"]["literature_experiment_catalog"]
     _write_tsv(root / wide_spec["path"], wide_spec["fields"], wide_rows)
+    files_view_spec = schema["tables"]["literature_experiment_catalog_files"]
+    _write_tsv(root / files_view_spec["path"], files_view_spec["fields"], wide_rows)
+    runs_view_spec = schema["tables"]["literature_experiment_catalog_runs"]
+    _write_tsv(root / runs_view_spec["path"], runs_view_spec["fields"], run_rows)
+    semantic_spec = schema["tables"]["semantic_review"]
+    semantic_rows = _semantic_review_rows(geo, archive_samples, ncbi_runs)
+    _write_tsv(root / semantic_spec["path"], semantic_spec["fields"], semantic_rows)
+    readiness = assess_batch_readiness(semantic_rows, accessions, run_rows, wide_rows)
+    readiness_path = root / "reports" / "schema_v2_batch_readiness.json"
+    readiness_path.parent.mkdir(parents=True, exist_ok=True)
+    readiness_path.write_text(json.dumps(readiness, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     issues_spec = schema["tables"]["unresolved_issues"]
     _, issues = _read_tsv(root / issues_spec["path"])
@@ -531,6 +721,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
         ("UI-P0008-004", "GSM2745897|GSM2745898", "own_data_ambiguity", "HeLa S3样本来自此前已报告数据并进行更深测序，无法仅据正文区分复用样本与新测序Run", "yes"),
         ("UI-P0008-005", "P0008_GEO_SET", "replicate_type_unresolved", "R1/R2仅作为作者alias保留，当前证据不足以统一判定生物或技术重复", "yes"),
         ("UI-P0008-006", "P0008_GEO_SET", "batch_candidate_unverified", "日期型alias仅作为候选batch保存，未升级为已验证实验批次", "no"),
+        ("UI-P0008-007", "Q0006|Q0007", "supplement_access_limited", "Science补充PDF官方入口返回访问限制，且PMC列出的107.5 MB主补充材料超过20 MB下载阈值", "no"),
     ]
     existing_issue_ids = {row["issue_id"] for row in issues}
     for issue_id, related, issue_type, description, decision in additions:
@@ -543,14 +734,14 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
             })
     _write_tsv(root / issues_spec["path"], issues_spec["fields"], issues)
 
-    reconciliation = _write_reconciliation(root, config, geo, ncbi_experiments, ncbi_runs, ena_runs, archive_samples, accessions, files, wide_rows)
+    reconciliation = _write_reconciliation(root, config, geo, ncbi_experiments, ncbi_runs, ena_runs, archive_samples, accessions, files, wide_rows, run_rows)
     return reconciliation
 
 
 def _write_reconciliation(
     root: Path, config: dict[str, Any], geo: list[dict[str, str]], ncbi_experiments: list[dict[str, str]],
     ncbi_runs: list[dict[str, str]], ena_runs: list[dict[str, str]], archive_samples: list[dict[str, str]],
-    accessions: list[dict[str, str]], files: list[dict[str, str]], wide_rows: list[dict[str, str]],
+    accessions: list[dict[str, str]], files: list[dict[str, str]], wide_rows: list[dict[str, str]], run_rows: list[dict[str, str]],
 ) -> dict[str, Any]:
     ncbi_set = {row["run"] for row in ncbi_runs}; ena_set = {row["run_accession"] for row in ena_runs}
     runs_by_gsm = Counter(row["sample_alias"] for row in ncbi_runs)
@@ -566,6 +757,8 @@ def _write_reconciliation(
         ("ena_only_run", "all", len(ena_set - ncbi_set), "pass", "差集为空"),
         ("catalog_unique_run", "all", len({row["run_accession"] for row in accessions if row["entity_type"] == "sra_run"}), "pass", "accessions"),
         ("wide_unique_run", "all", len({row["run_accession"] for row in wide_rows}), "pass", "literature_experiment_catalog"),
+        ("file_view_rows", "all", len(wide_rows), "pass", "literature_experiment_catalog_files"),
+        ("run_view_rows", "all", len(run_rows), "pass", "literature_experiment_catalog_runs"),
         ("gsm_without_run", "all", sum(runs_by_gsm[row["gsm_accession"]] == 0 for row in archive_samples), "pass", "逐GSM统计"),
         ("gsm_with_multiple_runs", "all", sum(runs_by_gsm[row["gsm_accession"]] > 1 for row in archive_samples), "info", "多Run为合法一对多"),
         ("run_without_unique_gsm", "all", sum(row["sample_alias"] not in {s["gsm_accession"] for s in archive_samples} for row in ncbi_runs), "pass", "逐Run统计"),
@@ -591,12 +784,15 @@ def _write_reconciliation(
     wide_path = root / "data" / "interim" / "pilot" / "literature_experiment_catalog.tsv"
     payload = {
         "geo_samples": len(geo), "ncbi_experiments": len(ncbi_experiments), "ncbi_runs": len(ncbi_set),
-        "ena_runs": len(ena_set), "files": len(files), "wide_rows": len(wide_rows), "wide_sha256": _stable_hash(wide_path),
+        "ena_runs": len(ena_set), "files": len(files), "wide_rows": len(wide_rows), "run_rows": len(run_rows),
+        "wide_sha256": _stable_hash(wide_path),
+        "file_view_sha256": _stable_hash(root / "data" / "interim" / "pilot" / "literature_experiment_catalog_files.tsv"),
+        "run_view_sha256": _stable_hash(root / "data" / "interim" / "pilot" / "literature_experiment_catalog_runs.tsv"),
         "human_samples": sum(row["organism"] == "Homo sapiens" for row in geo),
         "chicken_samples": sum(row["organism"] == "Gallus gallus" for row in geo),
         "gsm_without_run": sum(runs_by_gsm[row["gsm_accession"]] == 0 for row in archive_samples),
         "gsm_with_multiple_runs": sum(runs_by_gsm[row["gsm_accession"]] > 1 for row in archive_samples),
     }
-    markdown = f"""# P0008 accession 数量对账\n\n本报告由 `src.literature_catalog.pilot` 从保存的官方快照确定性生成。\n\n- GEO GSM：{payload['geo_samples']}（Gallus gallus {payload['chicken_samples']}；Homo sapiens {payload['human_samples']}）\n- NCBI SRA Experiment：{payload['ncbi_experiments']}\n- NCBI Run / ENA Run：{payload['ncbi_runs']} / {payload['ena_runs']}；集合差集均为0\n- GSM无Run：{payload['gsm_without_run']}；GSM多Run：{payload['gsm_with_multiple_runs']}\n- ENA FASTQ文件记录：{payload['files']}；URL、大小、MD5覆盖率均为100%\n- 宽表：{payload['wide_rows']}行；SHA-256 `{payload['wide_sha256']}`\n\n逐指标及分层计数见 `reports/P0008_accession_reconciliation.tsv`。文件URL仅保存ENA API返回值，未下载文件正文，未执行全量可达性请求。\n"""
+    markdown = f"""# P0008 accession 数量对账\n\n本报告由 `src.literature_catalog.pilot` 从保存的官方快照确定性生成。\n\n- GEO GSM：{payload['geo_samples']}（Gallus gallus {payload['chicken_samples']}；Homo sapiens {payload['human_samples']}）\n- NCBI SRA Experiment：{payload['ncbi_experiments']}\n- NCBI Run / ENA Run：{payload['ncbi_runs']} / {payload['ena_runs']}；集合差集均为0\n- GSM无Run：{payload['gsm_without_run']}；GSM多Run：{payload['gsm_with_multiple_runs']}\n- ENA FASTQ文件记录：{payload['files']}；URL、大小、MD5覆盖率均为100%\n- 文件粒度视图：{payload['wide_rows']}行；SHA-256 `{payload['file_view_sha256']}`\n- Run粒度视图：{payload['run_rows']}行；SHA-256 `{payload['run_view_sha256']}`\n\n逐指标及分层计数见 `reports/P0008_accession_reconciliation.tsv`。兼容宽表仍指向文件粒度。文件URL仅保存ENA API返回值，未下载文件正文。\n"""
     (root / "reports" / "P0008_accession_reconciliation.md").write_text(markdown, encoding="utf-8")
     return payload

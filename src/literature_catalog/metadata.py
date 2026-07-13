@@ -34,6 +34,8 @@ QUERY_FIELDS = [
     "pagination_complete",
     "retry_count",
     "error_summary",
+    "query_outcome",
+    "legacy_record_id",
 ]
 
 
@@ -52,6 +54,8 @@ class QueryRecord:
     pagination_complete: str
     retry_count: int
     error_summary: str
+    query_outcome: str = "success"
+    legacy_record_id: str = "NA"
 
 
 def _sha256_bytes(payload: bytes) -> str:
@@ -75,6 +79,29 @@ def _request_bytes(url: str, *, attempts: int = 3, timeout: int = 180) -> tuple[
             if attempt + 1 < attempts:
                 time.sleep(2**attempt)
     raise CatalogError(f"官方元数据查询在 {attempts} 次内失败: {url}: {error}")
+
+
+def _probe_head(url: str, *, attempts: int = 3, timeout: int = 60) -> tuple[str, int, str]:
+    """Probe an official URL without downloading its response body."""
+    last_status = "query_failed"
+    last_error = ""
+    for attempt in range(attempts):
+        try:
+            request = urllib.request.Request(
+                url,
+                method="HEAD",
+                headers={"User-Agent": "literature-catalog/2.1 (research metadata audit)"},
+            )
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                return str(response.status), attempt, "NA"
+        except urllib.error.HTTPError as exc:
+            last_status = str(exc.code)
+            last_error = f"HTTPError: {exc.code} {exc.reason}"
+        except (urllib.error.URLError, TimeoutError, OSError) as exc:
+            last_error = f"{type(exc).__name__}: {exc}"
+        if attempt + 1 < attempts:
+            time.sleep(2**attempt)
+    return last_status, attempts - 1, last_error
 
 
 def _write_bytes(path: Path, payload: bytes) -> None:
@@ -196,3 +223,66 @@ def fetch_pilot_metadata(root: Path, config_path: Path | None = None) -> list[Qu
 
     _write_queries(root / str(config["source_queries_path"]), records)
     return records
+
+
+def fetch_pmc_evidence(root: Path, config_path: Path | None = None) -> list[QueryRecord]:
+    """Fetch lightweight PMC article XML and record bounded supplement access outcomes."""
+    config = _config(root, config_path)
+    source_dir = root / str(config["source_metadata_dir"])
+    source_dir.mkdir(parents=True, exist_ok=True)
+    query_path = root / str(config["source_queries_path"])
+    existing: list[QueryRecord] = []
+    if query_path.exists():
+        with query_path.open("r", encoding="utf-8-sig", newline="") as handle:
+            for row in csv.DictReader(handle, delimiter="\t"):
+                existing.append(
+                    QueryRecord(
+                        query_id=row["query_id"], database=row["database"], endpoint=row["endpoint"],
+                        query_parameters=row["query_parameters"], queried_at=row["queried_at"],
+                        http_status=row["http_status"], response_sha256=row["response_sha256"],
+                        response_bytes=row["response_bytes"], returned_rows=row["returned_rows"],
+                        snapshot_path=row["snapshot_path"], pagination_complete=row["pagination_complete"],
+                        retry_count=int(row["retry_count"]), error_summary=row["error_summary"],
+                        query_outcome=row.get("query_outcome") or "success",
+                        legacy_record_id=row.get("legacy_record_id") or "NA",
+                    )
+                )
+    queried_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    pmc_endpoint = str(config["pmc_efetch_endpoint"])
+    pmc_params = {"db": "pmc", "id": str(config["pmc_id"]), "retmode": "xml"}
+    pmc_url = f"{pmc_endpoint}?{urllib.parse.urlencode(pmc_params)}"
+    LOGGER.info("fetch PMC article XML: %s", config["pmc_id"])
+    payload, status, retries = _request_bytes(pmc_url)
+    snapshot = source_dir / "PMC5924687_efetch.xml"
+    _write_bytes(snapshot, payload)
+    root_node = ET.fromstring(payload)
+    supplement_nodes = root_node.findall(".//supplementary-material")
+    q5 = QueryRecord(
+        "Q0005", "NCBI_PMC", pmc_endpoint, json.dumps(pmc_params, ensure_ascii=False, sort_keys=True),
+        queried_at, str(status), _sha256_bytes(payload), len(payload), len(supplement_nodes),
+        snapshot.relative_to(root).as_posix(), "yes", retries, "NA", "success", "NA",
+    )
+    science_url = str(config["science_supplement_url"])
+    head_status, head_retries, head_error = _probe_head(science_url)
+    q6 = QueryRecord(
+        "Q0006", "Science", science_url, json.dumps({"method": "HEAD"}, sort_keys=True),
+        queried_at, head_status, "NA", "NR", "NR", "NA", "yes", head_retries,
+        head_error, "query_failed" if head_status != "200" else "success", "NA",
+    )
+    q7 = QueryRecord(
+        "Q0007", "NCBI_PMC", "PMC supplementary material listing",
+        json.dumps({
+            "pmc_id": config["pmc_id"],
+            "main_pdf_reported_size": config["supplement_pdf_reported_size"],
+            "download_limit_bytes": config["supplement_download_limit_bytes"],
+        }, ensure_ascii=False, sort_keys=True),
+        queried_at, "NA", "NA", "NR", len(supplement_nodes), snapshot.relative_to(root).as_posix(),
+        "yes", 0, "主补充PDF超过20 MB阈值；附件入口需要官方浏览器验证，未绕过、未下载",
+        "size_limit_not_downloaded", "NA",
+    )
+    by_id = {row.query_id: row for row in existing}
+    for row in (q5, q6, q7):
+        by_id[row.query_id] = row
+    ordered = sorted(by_id.values(), key=lambda row: int(row.query_id[1:]) if row.query_id[1:].isdigit() else 9999)
+    _write_queries(query_path, ordered)
+    return [q5, q6, q7]

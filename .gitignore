@@ -10,7 +10,9 @@
 /data/raw/
 /data/external/
 /data/downloads/
-/data/interim/
+/data/interim/*
+!/data/interim/pilot/
+!/data/interim/pilot/**
 /data/processed/
 /downloads/
 /tmp/

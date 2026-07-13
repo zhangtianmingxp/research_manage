@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "delimiter": "\\t",
+  "encoding": "utf-8",
+  "expected_counts": {"research_pdf": 29, "review_pdf": 7},
+  "tables": {
+    "paper_files": {
+      "path": "data/curated/paper_files.tsv",
+      "primary_key": ["file_id"],
+      "required": ["file_id", "paper_id", "relative_path", "filename", "file_size_bytes", "sha256", "document_role", "version_relation", "is_canonical_file", "extraction_status"],
+      "fields": ["file_id", "paper_id", "relative_path", "filename", "file_size_bytes", "sha256", "pdf_metadata_title", "year_hint", "journal_hint", "title_hint", "document_role", "version_relation", "duplicate_group_id", "is_canonical_file", "metadata_evidence", "extraction_status", "notes"],
+      "foreign_keys": [{"fields": ["paper_id"], "table": "papers", "references": ["paper_id"]}]
+    },
+    "papers": {
+      "path": "data/curated/papers.tsv",
+      "primary_key": ["paper_id"],
+      "required": ["paper_id", "canonical_file_id", "canonical_title", "publication_year", "doi", "document_type", "bibliographic_status"],
+      "fields": ["paper_id", "canonical_file_id", "canonical_title", "authors", "journal", "publication_year", "doi", "pmid", "document_type", "duplicate_group_id", "bibliographic_status", "data_availability_locator", "notes"],
+      "foreign_keys": [{"fields": ["canonical_file_id"], "table": "paper_files", "references": ["file_id"]}]
+    },
+    "experiments": {
+      "path": "data/interim/pilot/experiments.tsv",
+      "primary_key": ["experiment_id"],
+      "required": ["experiment_id", "paper_id", "own_data_status", "assay_type", "biological_question", "evidence_ids"],
+      "fields": ["experiment_id", "paper_id", "experiment_label_original", "biological_question", "own_data_status", "own_data_evidence", "assay_type", "assay_detail", "measurement_object", "detection_target", "experimental_group", "control_group", "biological_replicates", "technical_replicates", "reference_genome", "evidence_ids", "notes"],
+      "foreign_keys": [{"fields": ["paper_id"], "table": "papers", "references": ["paper_id"]}]
+    },
+    "samples_timepoints": {
+      "path": "data/interim/pilot/samples_timepoints.tsv",
+      "primary_key": ["sample_timepoint_id"],
+      "required": ["sample_timepoint_id", "experiment_id", "species_scientific", "sample_name_original", "synchronization_method", "sampling_time", "phase_evidence_type", "evidence_ids"],
+      "fields": ["sample_timepoint_id", "experiment_id", "species_scientific", "species_common", "taxonomy_id", "cell_line_or_tissue", "sample_name_original", "sample_name_standardized", "genotype_or_construct", "synchronization_method", "synchronization_reagent", "synchronization_dose", "synchronization_duration", "arrest_point", "time_zero_definition", "sampling_time", "sampling_time_unit", "cell_cycle_phase", "phase_evidence_type", "phase_evidence_rule", "pooled_status", "evidence_ids", "notes"],
+      "foreign_keys": [{"fields": ["experiment_id"], "table": "experiments", "references": ["experiment_id"]}]
+    },
+    "perturbations": {
+      "path": "data/interim/pilot/perturbations.tsv",
+      "primary_key": ["perturbation_id"],
+      "required": ["perturbation_id", "experiment_id", "perturbation_type", "direct_target", "expected_effect", "evidence_ids"],
+      "fields": ["perturbation_id", "experiment_id", "combination_id", "perturbed_object", "perturbation_type", "technology", "direct_target", "construct_or_reagent", "dose", "duration", "timing_relative_to_synchronization", "control", "expected_effect", "expected_effect_basis", "observed_validation", "evidence_ids", "notes"],
+      "foreign_keys": [{"fields": ["experiment_id"], "table": "experiments", "references": ["experiment_id"]}]
+    },
+    "accessions": {
+      "path": "data/interim/pilot/accessions.tsv",
+      "primary_key": ["accession_record_id"],
+      "required": ["accession_record_id", "experiment_id", "namespace", "entity_type", "accession", "format_validation_status", "online_verification_status", "evidence_ids"],
+      "fields": ["accession_record_id", "experiment_id", "sample_timepoint_id", "namespace", "entity_type", "accession", "project_accession", "study_accession", "sample_accession", "experiment_accession", "run_accession", "official_page_url", "download_url", "file_format", "file_size_bytes", "md5", "format_validation_status", "online_verification_status", "verification_date", "evidence_ids", "notes"],
+      "foreign_keys": [
+        {"fields": ["experiment_id"], "table": "experiments", "references": ["experiment_id"]},
+        {"fields": ["sample_timepoint_id"], "table": "samples_timepoints", "references": ["sample_timepoint_id"], "allow_missing": true}
+      ]
+    },
+    "evidence": {
+      "path": "data/interim/pilot/evidence.tsv",
+      "primary_key": ["evidence_id"],
+      "required": ["evidence_id", "supported_table", "supported_record_id", "supported_fields", "source_type", "source_locator", "evidence_level", "verification_date"],
+      "fields": ["evidence_id", "supported_table", "supported_record_id", "supported_fields", "source_type", "citation_or_database", "source_locator", "page_or_section", "minimal_excerpt", "query_or_method", "verification_date", "extractor", "reviewer", "evidence_level", "notes"]
+    },
+    "unresolved_issues": {
+      "path": "data/interim/pilot/unresolved_issues.tsv",
+      "primary_key": ["issue_id"],
+      "required": ["issue_id", "paper_id", "issue_type", "description", "checked_sources", "status"],
+      "fields": ["issue_id", "paper_id", "related_record_id", "issue_type", "description", "checked_sources", "current_assessment", "requires_user_decision", "status", "resolution", "notes"],
+      "foreign_keys": [{"fields": ["paper_id"], "table": "papers", "references": ["paper_id"]}]
+    },
+    "literature_experiment_catalog": {
+      "path": "data/interim/pilot/literature_experiment_catalog.tsv",
+      "primary_key": ["catalog_row_id"],
+      "required": ["catalog_row_id", "paper_id", "experiment_id", "sample_timepoint_id", "paper_title", "assay_type", "evidence_ids"],
+      "fields": ["catalog_row_id", "paper_id", "experiment_id", "sample_timepoint_id", "perturbation_id", "accession_record_id", "paper_title", "doi", "own_data_status", "species_scientific", "cell_line_or_tissue", "sample_name_original", "assay_type", "detection_target", "synchronization_method", "time_zero_definition", "sampling_time", "sampling_time_unit", "cell_cycle_phase", "phase_evidence_type", "perturbation_type", "direct_target", "expected_effect", "observed_validation", "namespace", "entity_type", "accession", "project_accession", "study_accession", "run_accession", "official_page_url", "download_url", "online_verification_status", "evidence_ids", "notes"],
+      "foreign_keys": [
+        {"fields": ["paper_id"], "table": "papers", "references": ["paper_id"]},
+        {"fields": ["experiment_id"], "table": "experiments", "references": ["experiment_id"]},
+        {"fields": ["sample_timepoint_id"], "table": "samples_timepoints", "references": ["sample_timepoint_id"]},
+        {"fields": ["perturbation_id"], "table": "perturbations", "references": ["perturbation_id"], "allow_missing": true},
+        {"fields": ["accession_record_id"], "table": "accessions", "references": ["accession_record_id"], "allow_missing": true}
+      ]
+    }
+  }
+}

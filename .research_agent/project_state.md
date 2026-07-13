@@ -3,17 +3,18 @@
 ## Current Status
 
 - current_round: 1
-- phase: prompt_drafted
+- phase: executed
 - last_prompt: ans_qes/prompt1.md
-- last_result: None
+- last_result: ans_qes/result1.md
 - last_commit: None
 - auto_next: false
 
 ## Open Issues
 
-- prompt 已生成，等待用户审查；不得自动执行。
+- result 已生成，等待用户审查。
+- commit 前必须等待用户明确确认。
 
 ## Notes
 
-- 用户确认执行后，才允许读取该 prompt 并生成对应 result。
-- 本轮结束后必须停止，等待用户下一条明确指令。
+- 不得自动生成下一轮 prompt。
+- 用户明确要求生成下一轮 prompt 后，才允许继续。

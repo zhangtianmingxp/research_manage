@@ -1,0 +1,12 @@
+{
+  "missing_values": ["NR", "NA", "NOT_FOUND", "UNRESOLVED", "RESTRICTED"],
+  "document_role": ["research_article", "review", "supplement", "unknown"],
+  "version_relation": ["unique", "exact_duplicate", "suspected_duplicate", "preprint_of", "version_of", "unknown"],
+  "bibliographic_status": ["verified", "pilot_verified", "unverified", "conflicted"],
+  "own_data_status": ["yes", "no_reused", "derived_from_own", "unclear"],
+  "phase_evidence_type": ["author_stated", "marker_supported", "explicitly_inferred", "unknown"],
+  "evidence_level": ["primary_paper", "supplement", "archive_record", "secondary_locator"],
+  "verification_status": ["verified", "format_only", "not_checked", "failed", "unresolved"],
+  "issue_status": ["open", "resolved", "deferred"],
+  "boolean": ["yes", "no"]
+}

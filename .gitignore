@@ -1,0 +1,149 @@
+# -----------------------------------------------------------------------------
+# Local literature and source documents
+# -----------------------------------------------------------------------------
+# The PDFs in this directory are local research inputs and are too large for Git.
+/文献/
+
+# -----------------------------------------------------------------------------
+# Raw, downloaded, intermediate, and temporary research data
+# -----------------------------------------------------------------------------
+/data/raw/
+/data/external/
+/data/downloads/
+/data/interim/
+/data/processed/
+/downloads/
+/tmp/
+/temp/
+/cache/
+/artifacts/
+/checkpoints/
+
+# Keep small curated metadata, evidence tables, and reports trackable.
+# Large sequencing and scientific binary formats are ignored wherever created.
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.sra
+*.sam
+*.bam
+*.bai
+*.cram
+*.crai
+*.bigWig
+*.bigwig
+*.bw
+*.bedGraph
+*.bedgraph
+*.hic
+*.cool
+*.mcool
+*.h5
+*.hdf5
+*.h5ad
+*.loom
+*.rds
+*.rdata
+*.RData
+*.fcs
+
+# Download bundles and archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+
+# -----------------------------------------------------------------------------
+# Generated logs and runtime files
+# -----------------------------------------------------------------------------
+/logs/
+/.research_agent/logs/
+*.log
+*.pid
+*.seed
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+dist/
+build/
+site/
+*.egg-info/
+*.egg
+
+# Virtual environments and local environment variables
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+!.env.example
+pip-wheel-metadata/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+.ipython/
+
+# -----------------------------------------------------------------------------
+# R
+# -----------------------------------------------------------------------------
+.Rhistory
+.Rapp.history
+.Rproj.user/
+renv/library/
+renv/staging/
+
+# -----------------------------------------------------------------------------
+# IDE, assistant runtime, and operating-system metadata
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+.vs/
+.agents/
+.codex/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Office lock files
+~$*
+
+# -----------------------------------------------------------------------------
+# Test and tool caches
+# -----------------------------------------------------------------------------
+.cache/
+.benchmarks/
+.prof/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

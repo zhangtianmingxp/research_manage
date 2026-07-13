@@ -1,0 +1,2 @@
+study_accession	sample_accession	secondary_sample_accession	experiment_accession	run_accession	tax_id	scientific_name	sample_alias	experiment_alias	run_alias	library_name	library_strategy	library_source	library_selection	library_layout	instrument_platform	instrument_model	fastq_ftp	fastq_bytes	fastq_md5
+SRP1	SAMN1	SRS1	SRX1	SRR1	9031	Gallus gallus	GSM1	GSM1	GSM1_r1	L1	Hi-C	GENOMIC	other	PAIRED	ILLUMINA	Illumina HiSeq 2000	ftp.example/1_1.fastq.gz;ftp.example/1_2.fastq.gz	10;11	a;b

@@ -2,3 +2,6 @@ issue_id	paper_id	related_record_id	issue_type	description	checked_sources	curre
 ISS-P0008-001	P0008	AC-P0008-004	official_api_unavailable	ENA Portal API在当前环境无法连接，不能核验ENA项目页及FASTQ下载字段	论文Data Availability | NCBI GEO GSE102740 | ENA Portal API	GSE、BioProject和SRA Study已确认；ENA Run/File层级待重试	no	open	NA	不得把连接失败解释为数据不存在
 ISS-P0008-002	P0008	AC-P0008-004	run_mapping_not_expanded	本轮未获得SRP115572的SRR/ERR/DRR逐Run清单及GSM映射	NCBI GEO Series与Relations | ENA Portal API	Run级编号和下载链接均记为NOT_FOUND，不做猜测	no	open	NA	后续在官方API恢复后展开并与60个GEO样本对账
 ISS-P0008-003	P0008	EX-P0008-001	pilot_not_exhaustive	试点只验证代表性时间序列和SMC2扰动，未穷举GSE102740的60个样本、全部condensin扰动和所有数据模态	本地论文目标页 | NCBI GEO Series	数据模型可容纳目标字段，但需下一轮修订后再批量使用	yes	deferred	NA	用户应先审查字段粒度与试点表达
+UI-P0008-004	P0008	GSM2745897|GSM2745898	own_data_ambiguity	HeLa S3样本来自此前已报告数据并进行更深测序，无法仅据正文区分复用样本与新测序Run	local PDF|GEO MINiML|NCBI SRA|ENA Portal	UNRESOLVED	yes	open	NA	保守保留，不用alias猜测生物学语义
+UI-P0008-005	P0008	P0008_GEO_SET	replicate_type_unresolved	R1/R2仅作为作者alias保留，当前证据不足以统一判定生物或技术重复	local PDF|GEO MINiML|NCBI SRA|ENA Portal	UNRESOLVED	yes	open	NA	保守保留，不用alias猜测生物学语义
+UI-P0008-006	P0008	P0008_GEO_SET	batch_candidate_unverified	日期型alias仅作为候选batch保存，未升级为已验证实验批次	local PDF|GEO MINiML|NCBI SRA|ENA Portal	UNRESOLVED	no	open	NA	保守保留，不用alias猜测生物学语义

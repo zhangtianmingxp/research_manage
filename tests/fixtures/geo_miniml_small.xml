@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MINiML xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML">
+  <Sample iid="GSM1">
+    <Title>20200101-5m-R1</Title><Accession database="GEO">GSM1</Accession>
+    <Channel position="1"><Source>DT40</Source><Organism>Gallus gallus</Organism><Characteristics tag="genotype">WT</Characteristics><Characteristics tag="phase">Prophase</Characteristics></Channel>
+    <Platform-Ref ref="GPL1"/>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN1"/>
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX1"/>
+  </Sample>
+</MINiML>

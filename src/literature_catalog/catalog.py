@@ -309,7 +309,19 @@ def validate_catalog(root: Path) -> ValidationReport:
             errors.append(f"accessions:{row_number}: 未识别编号不能标为格式已验证")
 
     evidence_ids = {row["evidence_id"] for row in all_rows.get("evidence", [])}
-    for table_name in ("experiments", "samples_timepoints", "perturbations", "accessions", "literature_experiment_catalog"):
+    for table_name in (
+        "experiments",
+        "conditions",
+        "replicates",
+        "batches",
+        "samples_timepoints",
+        "archive_samples",
+        "perturbations",
+        "accessions",
+        "accession_relations",
+        "files",
+        "literature_experiment_catalog",
+    ):
         for row_number, row in enumerate(all_rows.get(table_name, []), start=2):
             references = [item for item in row.get("evidence_ids", "").split("|") if item]
             if not references:
@@ -317,6 +329,35 @@ def validate_catalog(root: Path) -> ValidationReport:
             for evidence_id in references:
                 if evidence_id not in evidence_ids:
                     errors.append(f"{table_name}:{row_number}: 证据 {evidence_id} 不存在")
+
+    controlled_fields = {
+        "experiments": {"own_data_status": "own_data_status"},
+        "archive_samples": {
+            "own_data_status": "own_data_status",
+            "disposition_status": "disposition_status",
+        },
+        "replicates": {"replicate_type": "replicate_type"},
+        "accession_relations": {"relation_type": "relation_type"},
+        "files": {"reachability_status": "reachability_status"},
+    }
+    for table_name, fields in controlled_fields.items():
+        for row_number, row in enumerate(all_rows.get(table_name, []), start=2):
+            for field, vocab_name in fields.items():
+                if row.get(field) not in set(vocab[vocab_name]):
+                    errors.append(f"{table_name}:{row_number}: {field} 不在受控词表 {vocab_name} 中")
+
+    run_accessions = {
+        row["run_accession"]
+        for row in all_rows.get("accessions", [])
+        if row.get("entity_type") == "sra_run" and row.get("run_accession") not in allowed_missing
+    }
+    for row_number, row in enumerate(all_rows.get("files", []), start=2):
+        if row.get("run_accession") not in run_accessions:
+            errors.append(f"files:{row_number}: Run {row.get('run_accession')} 未在 accessions 中找到")
+
+    archive_gsm = {row.get("gsm_accession") for row in all_rows.get("archive_samples", [])}
+    if len(archive_gsm) != len(all_rows.get("archive_samples", [])):
+        errors.append("archive_samples: gsm_accession 为空或重复")
 
     if not all_rows.get("literature_experiment_catalog"):
         warnings.append("试点宽表没有数据行")

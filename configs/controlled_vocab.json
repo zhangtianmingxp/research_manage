@@ -8,5 +8,11 @@
   "evidence_level": ["primary_paper", "supplement", "archive_record", "secondary_locator"],
   "verification_status": ["verified", "format_only", "not_checked", "failed", "unresolved"],
   "issue_status": ["open", "resolved", "deferred"],
-  "boolean": ["yes", "no"]
+  "boolean": ["yes", "no"],
+  "disposition_status": ["mapped", "no_sra_relation", "metadata_incomplete", "conflicted", "query_failed"],
+  "replicate_type": ["biological", "technical", "pooled", "UNRESOLVED", "NR"],
+  "batch_verification_status": ["verified", "candidate", "unresolved"],
+  "relation_type": ["series_has_sample", "project_has_study", "sample_has_experiment", "experiment_has_run", "mirrors", "run_has_file"],
+  "query_status": ["success", "query_failed"],
+  "reachability_status": ["reachable", "unreachable", "not_checked"]
 }

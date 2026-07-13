@@ -2,7 +2,7 @@
 
 > **项目状态：进行中，尚未完成。**
 >
-> 当前只完成了29个研究论文 PDF 的文件清单、统一数据标准和1篇论文的试点整理。除试点外，其余论文尚未逐篇完成实验设计、SRR/ERR/DRR、ENA下载链接及样本映射核验。本仓库当前结果不能作为最终完整数据集使用。
+> 当前已完成29个研究论文 PDF 的文件清单、schema v2 和1篇论文（P0008）的全量公共元数据试点。除试点外，其余27篇规范论文尚未逐篇完成实验设计、SRR/ERR/DRR、ENA下载链接及样本映射核验。本仓库当前结果不能作为最终完整数据集使用。
 
 ## 项目目标
 
@@ -25,11 +25,12 @@
 - 盘点 `文献/研究/` 下29个研究论文 PDF。
 - 排除 `文献/综述/` 下7篇综述，不将其作为最终实验事实证据。
 - 通过 SHA-256 发现1组完全相同的重复 PDF，因此29个文件对应28篇规范论文。
-- 定义9张规范化数据表、缺失值、受控词表、主外键及证据规则。
-- 实现可重复运行的清单、验证和摘要 CLI。
+- 定义schema v2的条件、重复、批次、归档样本、accession关系、文件和查询溯源实体。
+- 实现可重复运行的清单、官方轻量元数据抓取、离线构建、验证和摘要 CLI。
 - 完成1篇试点论文：Gibcus et al., 2018, *Science*，DOI `10.1126/science.aao6135`。
-- 试点包含2个实验、10个样本/时间点、1个扰动、4个归档层级记录和7条证据。
-- 自动化测试6项全部通过，目录校验为0错误、0警告。
+- P0008试点逐项保留60个GSM，并通过官方字段映射到60个BioSample/SRA Experiment和1,290个Run。
+- NCBI与ENA Run集合完全一致；ENA API提供2,580条FASTQ文件记录及URL、大小和MD5。
+- 宽表由规范表离线生成，共2,580行；旧版10个样本/时间点ID均保留。
 
 第一轮完整执行记录见 [ans_qes/result1.md](ans_qes/result1.md)，试点说明见 [reports/per_paper/P0008_pilot.md](reports/per_paper/P0008_pilot.md)。
 
@@ -37,11 +38,10 @@
 
 - 其余27篇规范论文的正式题名、DOI、物种和实验设计尚未逐篇核验。
 - 尚未系统下载和检查所有论文的补充材料。
-- 尚未展开全部公共项目的 GSM/SRS/SRX/SRR/ERR/DRR 关系。
-- 尚未为每个运行号核验 ENA/EMBL-EBI 文件链接、文件大小和 MD5。
-- 试点 GEO Series `GSE102740` 的60个样本尚未逐项映射到实验和时间点。
-- 当前宽表只是10行试点，不是29篇论文的最终汇总表。
-- 数据模型仍可能增加 `condition_id`、`replicate_id` 和 `batch_id` 等字段。
+- P0008之外的公共项目尚未展开 GSM/SRS/SRX/SRR/ERR/DRR 关系。
+- P0008之外尚未逐Run核验 ENA/EMBL-EBI 文件链接、文件大小和MD5。
+- 当前宽表仅覆盖P0008，不是28篇规范论文的最终汇总表。
+- P0008的R1/R2重复类型、日期型alias批次含义及两个人源样本的数据归属仍需人工裁决。
 
 ## 数据与 GitHub 策略
 
@@ -73,7 +73,8 @@ Git 仓库保留的是：
 ├── ans_qes/                        # 每轮 prompt/result 记录
 ├── configs/
 │   ├── catalog_schema.json         # 机器可读表结构和关系
-│   └── controlled_vocab.json       # 缺失码与受控词表
+│   ├── controlled_vocab.json       # 缺失码与受控词表
+│   └── pilots/P0008.json           # 试点官方端点与期望计数
 ├── data/
 │   ├── curated/                    # 论文/文件规范清单
 │   └── interim/pilot/              # 当前单篇试点表
@@ -110,6 +111,12 @@ python -m src.literature_catalog.cli --root . validate
 # 查看各表行数和缺失码统计
 python -m src.literature_catalog.cli --root . summary
 
+# 在线抓取官方轻量元数据（不下载reads）
+python -m src.literature_catalog.cli --root . fetch
+
+# 仅使用保存的快照离线重建规范表和宽表
+python -m src.literature_catalog.cli --root . build
+
 # 运行自动化测试
 python -m unittest discover -s tests -v
 ```
@@ -123,12 +130,15 @@ python -m unittest discover -s tests -v
 | `data/curated/paper_files.tsv` | 29个本地PDF的路径、大小和SHA-256 | 已完成文件级盘点 |
 | `data/curated/papers.tsv` | 28篇规范论文记录 | 仅1篇完成书目核验 |
 | `data/interim/pilot/experiments.tsv` | 试点实验设计 | 仅P0008 |
-| `data/interim/pilot/samples_timepoints.tsv` | 同步化、采样点与周期阶段 | 仅P0008代表性记录 |
+| `data/interim/pilot/archive_samples.tsv` | 60个GSM及BioSample/SRX处置 | P0008全量公共元数据试点 |
+| `data/interim/pilot/samples_timepoints.tsv` | 同步化、采样点与周期阶段 | 10条v1记录加60条GSM记录 |
 | `data/interim/pilot/perturbations.tsv` | 扰动技术、靶标和效果 | 仅SMC2代表性扰动 |
-| `data/interim/pilot/accessions.tsv` | GEO/BioProject/SRA/ENA层级 | Run级尚未展开 |
-| `data/interim/pilot/evidence.tsv` | 字段级论文与数据库证据 | 7条试点证据 |
-| `data/interim/pilot/unresolved_issues.tsv` | 缺失、冲突和失败查询 | 3个未解决问题 |
-| `data/interim/pilot/literature_experiment_catalog.tsv` | 用户宽表预览 | 10行试点，非最终表 |
+| `data/interim/pilot/accessions.tsv` | GEO/BioProject/SRA/ENA层级 | P0008含1,290个真实Run |
+| `data/interim/pilot/files.tsv` | ENA API返回的FASTQ文件字段 | 2,580条，不含文件正文 |
+| `data/interim/pilot/source_queries.tsv` | endpoint、参数、状态、哈希和重试 | 4条官方查询 |
+| `data/interim/pilot/evidence.tsv` | 字段级论文与数据库证据 | 11条试点证据 |
+| `data/interim/pilot/unresolved_issues.tsv` | 缺失、冲突和待裁决问题 | 6个问题 |
+| `data/interim/pilot/literature_experiment_catalog.tsv` | 用户宽表预览 | 2,580行P0008试点，非最终表 |
 
 字段定义和关系以 [docs/data_dictionary.md](docs/data_dictionary.md) 与 `configs/catalog_schema.json` 为准。
 
@@ -160,16 +170,16 @@ project_plan.md
   → 停止
 ```
 
-不会自动执行新生成的 prompt、自动进入下一轮、自动 commit 或自动 push。当前第1轮已执行并停在等待审查状态；仓库中没有 `prompt2.md`。
+不会自动执行新生成的 prompt、自动进入下一轮、自动 commit 或自动 push。当前第2轮已执行并停在等待结果审查状态；未生成 `prompt3.md`。
 
 ## 下一阶段建议
 
 在批量整理剩余论文前，应先人工审查试点宽表和以下设计问题：
 
-1. 一行是否应严格表示“论文 × 实验 × 条件 × 重复 × 时间点 × Run”。
-2. 是否增加显式的 `condition_id`、`replicate_id`、`batch_id`。
-3. Series级 accession 与逐样本/逐Run映射如何同时保持用户友好。
-4. 官方数据库暂时不可用时，重试与人工复核如何记录。
+1. 审查当前“一行一个FASTQ文件”的宽表粒度是否满足最终使用习惯。
+2. 裁决R1/R2是生物重复还是技术重复，以及日期alias能否升级为正式batch。
+3. 裁决两个人源HeLa样本应标为复用数据、重测数据还是其他类别。
+4. 确认schema v2后，再分批处理剩余27篇规范论文。
 
 确认数据模型后，再分批处理剩余论文，避免在错误字段设计上扩大工作量。
 

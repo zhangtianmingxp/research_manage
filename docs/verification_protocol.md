@@ -66,3 +66,14 @@ python -m unittest discover -s tests -v
 ```
 
 检查覆盖表头、必填值、主外键、唯一键、论文文件覆盖、综述排除、accession 类型和证据引用。自动检查不能替代人工阅读原始证据。
+
+## 9. 在线抓取与离线构建
+
+```powershell
+python -m src.literature_catalog.cli --root . fetch
+python -m src.literature_catalog.cli --root . build
+```
+
+`fetch`仅访问配置中的官方endpoint，每个请求最多3次，并保存轻量快照与`source_queries.tsv`。`build`不访问网络，必须从保存的快照生成规范表、关系表、文件表、对账报告和宽表。测试只能使用保存的快照或`tests/fixtures/`，不得依赖实时网络。
+
+对P0008，构建前必须同时满足：GEO唯一GSM数为60；NCBI实验数为60；NCBI与ENA Run集合完全一致；所有Run能通过官方alias唯一映射到GSM。任何失败都必须中止并保留差集，不得进行模糊匹配。

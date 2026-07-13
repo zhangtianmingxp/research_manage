@@ -77,7 +77,13 @@
 | `evidence_ids` | 支撑本记录的 `evidence_id` 列表。 |
 | `notes` | 设计限制和未建模信息。 |
 
-## 4. `samples_timepoints`
+## 4. `conditions`、`replicates` 与 `batches`
+
+- `conditions`显式保存作者原始条件标签、基因型/构建、同步化、处理和周期阶段。证据不足时，每个GSM保持独立condition，禁止按名称相似度合并。
+- `replicates`保存作者原始重复标签、重复类型和编号。P0008中的R1/R2尚未裁决，`replicate_type=UNRESOLVED`。
+- `batches`保存作者批次标签、日期候选、建库批次与测序平台。日期型alias目前只标为`candidate`。
+
+## 5. `samples_timepoints`
 
 每行表示实验中的一个样本/时间点组合，保留原始名称和标准化解释。
 
@@ -107,7 +113,13 @@
 | `evidence_ids` | 字段级证据引用。 |
 | `notes` | 晚期样本药物、配对关系等备注。 |
 
-## 5. `perturbations`
+v2新增 `condition_id`、`replicate_id`、`batch_id`、`gsm_accession` 和 `archive_sample_id` 外键。GEO标题中的分钟数可以机械保存，但不得据此推断周期阶段。
+
+## 6. `archive_samples`
+
+每个GSM一行，保存GEO原始标题、物种、source、platform、官方Characteristics、BioSample/SRS/SRX关系、Run数、自产状态及处置状态。`mapped`表示官方关系已完整连接，不表示所有生物学语义均已人工裁决。
+
+## 7. `perturbations`
 
 一个组合扰动可共享 `combination_id`，但每个直接靶标单独一行。
 
@@ -131,7 +143,7 @@
 | `evidence_ids` | 证据引用。 |
 | `notes` | 扰动限制或组合关系。 |
 
-## 6. `accessions`
+## 8. `accessions`、`accession_relations` 与 `files`
 
 每行一个归档实体。格式验证和在线存在性验证必须分开。
 
@@ -159,7 +171,13 @@
 | `evidence_ids` | 论文声明与归档证据。 |
 | `notes` | 镜像、受控、失败或数量对账信息。 |
 
-## 7. `evidence`
+`accession_relations`以父、子accession和关系类型表示Series→Sample、Sample→Experiment、Experiment→Run等关系。`files`一行表示一个Run的一个FASTQ文件；`download_url`保留ENA API `fastq_ftp`字段原值，`reachability_status`与API是否返回分开。
+
+## 9. `source_queries`
+
+每次官方查询记录endpoint、完整参数、UTC时间、HTTP状态、响应SHA-256、响应字节数、返回行数、快照路径、分页是否完整、重试数和错误摘要。接口失败使用`query_failed`语义，不能写成`NOT_FOUND`。
+
+## 10. `evidence`
 
 证据记录同时保存支持对象、定位和最短必要上下文。
 
@@ -181,7 +199,7 @@
 | `evidence_level` | `primary_paper`、`supplement`、`archive_record` 或 `secondary_locator`。 |
 | `notes` | 证据质量或冲突说明。 |
 
-## 8. `unresolved_issues`
+## 11. `unresolved_issues`
 
 | 字段 | 含义与约束 |
 |---|---|
@@ -197,9 +215,9 @@
 | `resolution` | 解决方式；未解决为 `NA`。 |
 | `notes` | 后续检查建议。 |
 
-## 9. `literature_experiment_catalog`
+## 12. `literature_experiment_catalog`
 
-用户宽表按“论文 × 实验 × 样本/时间点 × 扰动 × 归档对象”展开。字段来自规范表，不在宽表中创造新事实。
+用户宽表按“论文 × 实验 × 条件 × 重复 × 批次 × 样本/时间点 × 归档样本 × Run × 文件”展开。P0008采用一行一个FASTQ文件的固定粒度；字段来自规范表，不在宽表中创造新事实。
 
 | 字段组 | 字段与含义 |
 |---|---|

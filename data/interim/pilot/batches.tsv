@@ -1,0 +1,71 @@
+batch_id	paper_id	author_batch_label	batch_date	library_batch	sequencing_platform	evidence_ids	verification_status	notes
+B-LEGACY-001	P0008	NR	NR	NR	NR	E-P0008-002	unresolved	v1未显式建模批次
+B-LEGACY-002	P0008	NR	NR	NR	NR	E-P0008-002|E-P0008-003	unresolved	v1未显式建模批次
+B-LEGACY-003	P0008	NR	NR	NR	NR	E-P0008-002|E-P0008-003	unresolved	v1未显式建模批次
+B-LEGACY-004	P0008	NR	NR	NR	NR	E-P0008-002|E-P0008-003	unresolved	v1未显式建模批次
+B-LEGACY-005	P0008	NR	NR	NR	NR	E-P0008-002|E-P0008-003	unresolved	v1未显式建模批次
+B-LEGACY-006	P0008	NR	NR	NR	NR	E-P0008-002|E-P0008-003	unresolved	v1未显式建模批次
+B-LEGACY-007	P0008	NR	NR	NR	NR	E-P0008-002|E-P0008-003	unresolved	v1未显式建模批次
+B-LEGACY-008	P0008	NR	NR	NR	NR	E-P0008-002|E-P0008-003	unresolved	v1未显式建模批次
+B-LEGACY-009	P0008	NR	NR	NR	NR	E-P0008-004	unresolved	v1未显式建模批次
+B-LEGACY-010	P0008	NR	NR	NR	NR	E-P0008-004	unresolved	v1未显式建模批次
+B-P0008-GEO-001	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-002	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-003	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-004	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-005	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-006	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-007	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-008	P0008	2015-06-09	2015-06-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-009	P0008	2015-06-09	2015-06-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-010	P0008	2015-06-09	2015-06-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-011	P0008	2015-06-09	2015-06-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-012	P0008	2015-06-09	2015-06-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-013	P0008	2015-10-09	2015-10-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-014	P0008	2015-10-09	2015-10-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-015	P0008	2015-10-09	2015-10-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-016	P0008	2015-10-09	2015-10-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-017	P0008	2015-10-09	2015-10-09	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-018	P0008	2015-06-03	2015-06-03	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-019	P0008	2015-06-03	2015-06-03	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-020	P0008	2015-06-03	2015-06-03	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-021	P0008	2015-06-03	2015-06-03	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-022	P0008	2015-06-10	2015-06-10	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-023	P0008	2015-06-10	2015-06-10	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-024	P0008	2015-06-10	2015-06-10	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-025	P0008	2015-06-10	2015-06-10	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-026	P0008	2015-08-12	2015-08-12	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-027	P0008	2015-08-14	2015-08-14	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-028	P0008	2015-08-14	2015-08-14	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-029	P0008	2015-08-14	2015-08-14	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-030	P0008	2015-08-14	2015-08-14	NR	Illumina HiSeq 2000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-031	P0008	2016-07-26	2016-07-26	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-032	P0008	2016-07-26	2016-07-26	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-033	P0008	2016-07-26	2016-07-26	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-034	P0008	2016-07-26	2016-07-26	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-035	P0008	2016-07-26	2016-07-26	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-036	P0008	2016-07-26	2016-07-26	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-037	P0008	2016-07-26	2016-07-26	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-038	P0008	2016-07-14	2016-07-14	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-039	P0008	2016-07-14	2016-07-14	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-040	P0008	2016-07-14	2016-07-14	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-041	P0008	2016-07-14	2016-07-14	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-042	P0008	2016-07-14	2016-07-14	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-043	P0008	2016-07-14	2016-07-14	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-044	P0008	2016-07-14	2016-07-14	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-045	P0008	2016-09-19	2016-09-19	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-046	P0008	2016-09-19	2016-09-19	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-047	P0008	2016-09-19	2016-09-19	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-048	P0008	2016-09-19	2016-09-19	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-049	P0008	2016-09-19	2016-09-19	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-050	P0008	2016-09-19	2016-09-19	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-051	P0008	2016-09-19	2016-09-19	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-052	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-053	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-054	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-055	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-056	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-057	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-058	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-059	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008|E-P0008-011	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0008-GEO-060	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008|E-P0008-011	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次

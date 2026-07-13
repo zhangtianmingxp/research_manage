@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE eSearchResult PUBLIC "-//NLM//DTD esearch 20060628//EN" "https://eutils.ncbi.nlm.nih.gov/eutils/dtd/20060628/esearch.dtd">
+<eSearchResult>
+<Count>60</Count><RetMax>60</RetMax><RetStart>0</RetStart>
+<IdList>
+	<Id>4388210</Id>
+	<Id>4388209</Id>
+	<Id>4388208</Id>
+	<Id>4388207</Id>
+	<Id>4388206</Id>
+	<Id>4388205</Id>
+	<Id>4388204</Id>
+	<Id>4388203</Id>
+	<Id>4388202</Id>
+	<Id>4388201</Id>
+	<Id>4388200</Id>
+	<Id>4388199</Id>
+	<Id>4388198</Id>
+	<Id>4388197</Id>
+	<Id>4388196</Id>
+	<Id>4388195</Id>
+	<Id>4388194</Id>
+	<Id>4388193</Id>
+	<Id>4388192</Id>
+	<Id>4388191</Id>
+	<Id>4388190</Id>
+	<Id>4388189</Id>
+	<Id>4388188</Id>
+	<Id>4388187</Id>
+	<Id>4388186</Id>
+	<Id>4388185</Id>
+	<Id>4388184</Id>
+	<Id>4388183</Id>
+	<Id>4388182</Id>
+	<Id>4388181</Id>
+	<Id>4388180</Id>
+	<Id>4388179</Id>
+	<Id>4388178</Id>
+	<Id>4388177</Id>
+	<Id>4388176</Id>
+	<Id>4388175</Id>
+	<Id>4388174</Id>
+	<Id>4388173</Id>
+	<Id>4388172</Id>
+	<Id>4388171</Id>
+	<Id>4388170</Id>
+	<Id>4388169</Id>
+	<Id>4388168</Id>
+	<Id>4388167</Id>
+	<Id>4388166</Id>
+	<Id>4388165</Id>
+	<Id>4388164</Id>
+	<Id>4388163</Id>
+	<Id>4388162</Id>
+	<Id>4388161</Id>
+	<Id>4388160</Id>
+	<Id>4388159</Id>
+	<Id>4388158</Id>
+	<Id>4388157</Id>
+	<Id>4388156</Id>
+	<Id>4388155</Id>
+	<Id>4388154</Id>
+	<Id>4388153</Id>
+	<Id>4388152</Id>
+	<Id>4388151</Id>
+</IdList>
+<TranslationSet/><TranslationStack>   <TermSet>    <Term>SRP115572[All Fields]</Term>    <Field>All Fields</Field>    <Count>60</Count>    <Explode>N</Explode>   </TermSet>   <OP>GROUP</OP>  </TranslationStack><QueryTranslation>SRP115572[All Fields]</QueryTranslation>
+
+</eSearchResult>

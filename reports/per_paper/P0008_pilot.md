@@ -23,13 +23,17 @@
 
 SMC2 融合 minimal auxin-inducible degron，并在表达 OsTIR1 的细胞中用 auxin 处理。auxin 在 `1NM-PP1` G2 阻断期间处理 3 h，使 SMC2 降至 5% 以下，从设计上同时破坏 condensin I 和 II。论文观察到染色单体不能正常解析，且细胞不能正常完成有丝分裂退出。
 
-## 归档核验
+## 归档核验（schema v2更新）
 
 - 论文 Data and materials availability 声明 Hi-C 数据为 `GSE102740`。
 - NCBI GEO 官方 Series 页在 2026-07-13 显示该记录公开，包含 60 个样本。
 - GEO Relations 字段关联 `PRJNA398543` 和 `SRP115572`。
 - GEO 页面说明 raw data available in SRA，并提供约 192.7 GB 的处理数据归档；本轮未下载。
-- 当前环境无法连接 ENA Portal API，故未获得逐 Run 的 `SRR/ERR/DRR`、ENA 文件字段或 FASTQ 链接。所有这些字段保持 `NOT_FOUND`/`failed`，没有按编号模式猜测。
+- 2026-07-13重新查询GEO MINiML、NCBI SRA ESearch/EFetch和ENA Portal API，4次官方请求均成功且无需重试。
+- GEO返回60个唯一GSM：58个*Gallus gallus*、2个*Homo sapiens*；每个GSM均带BioSample与SRX官方关系。
+- NCBI和ENA均返回1,290个唯一Run，集合交集为1,290，仅NCBI和仅ENA均为0。
+- ENA API返回2,580个paired-end FASTQ文件字段，URL、字节数和MD5覆盖率均为100%；未下载文件正文，也未把手工拼接链接标为已验证。
+- 两个HeLa S3样本在正文中被描述为此前已报告数据的更深测序后重新分析，因此`own_data_status`保守记为`unclear`。
 
 ## 试点暴露的数据模型问题
 
@@ -40,4 +44,6 @@ SMC2 融合 minimal auxin-inducible degron，并在表达 OsTIR1 的细胞中用
 
 ## 本轮覆盖边界
 
-这里只录入了主要同步时间序列和 SMC2 代表性扰动，用于验证 schema；没有穷举 GSE102740 的 60 个样本、CAP-H/CAP-H2 的全部条件、所有重复或所有非 Hi-C 数据。完整提取需要后续获批轮次。
+当前已完成GSE102740全部60个GSM及公开Run/FASTQ元数据映射，并增加CAP-H、CAP-H2和HeLa比较实验实体。R1/R2重复类型、日期alias的正式批次含义，以及HeLa样本的精确自产/复用分类仍保持未解决。该结果只覆盖P0008，不能代表其余27篇规范论文已完成。
+
+机器可读与人类可读对账分别见`reports/P0008_accession_reconciliation.tsv`和`reports/P0008_accession_reconciliation.md`。

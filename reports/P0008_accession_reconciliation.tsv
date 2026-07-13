@@ -1,0 +1,47 @@
+metric	group	value	status	details
+geo_declared_gsm	all	60	pass	配置来自GEO Series基线
+geo_extracted_unique_gsm	all	60	pass	Q0001
+ncbi_unique_sample	all	60	pass	Q0003
+ncbi_unique_experiment	all	60	pass	Q0003
+ncbi_unique_run	all	1290	pass	Q0003
+ena_unique_run	all	1290	pass	Q0004
+ncbi_ena_run_intersection	all	1290	pass	集合对账
+ncbi_only_run	all	0	pass	差集为空
+ena_only_run	all	0	pass	差集为空
+catalog_unique_run	all	1291	pass	accessions
+wide_unique_run	all	1290	pass	literature_experiment_catalog
+gsm_without_run	all	0	pass	逐GSM统计
+gsm_with_multiple_runs	all	31	info	多Run为合法一对多
+run_without_unique_gsm	all	0	pass	逐Run统计
+fastq_files	all	2580	pass	ENA fastq_ftp拆分
+fastq_url_coverage_pct	all	100.0	pass	ENA API字段
+fastq_size_coverage_pct	all	100.0	pass	ENA API字段
+fastq_md5_coverage_pct	all	100.0	pass	ENA API字段
+geo_by_species	Gallus gallus	58	info	由代码分层
+geo_by_species	Homo sapiens	2	info	由代码分层
+geo_by_platform	GPL11154	2	info	由代码分层
+geo_by_platform	GPL16133	30	info	由代码分层
+geo_by_platform	GPL23499	28	info	由代码分层
+geo_by_phase	G2	15	info	由代码分层
+geo_by_phase	NR	1	info	由代码分层
+geo_by_phase	NS	2	info	由代码分层
+geo_by_phase	Prometaphase	27	info	由代码分层
+geo_by_phase	Prophase	15	info	由代码分层
+geo_by_genotype	CAPH-AID	14	info	由代码分层
+geo_by_genotype	CAPH2-AID	14	info	由代码分层
+geo_by_genotype	SMC2-AID	9	info	由代码分层
+geo_by_genotype	WT	23	info	由代码分层
+geo_by_replicate_label	NR	2	info	由代码分层
+geo_by_replicate_label	R1	38	info	由代码分层
+geo_by_replicate_label	R2	20	info	由代码分层
+geo_by_batch_candidate	2015-06-03	4	info	由代码分层
+geo_by_batch_candidate	2015-06-09	5	info	由代码分层
+geo_by_batch_candidate	2015-06-10	4	info	由代码分层
+geo_by_batch_candidate	2015-08-12	1	info	由代码分层
+geo_by_batch_candidate	2015-08-14	4	info	由代码分层
+geo_by_batch_candidate	2015-10-09	5	info	由代码分层
+geo_by_batch_candidate	2016-07-14	7	info	由代码分层
+geo_by_batch_candidate	2016-07-26	7	info	由代码分层
+geo_by_batch_candidate	2016-08-30	7	info	由代码分层
+geo_by_batch_candidate	2016-09-19	7	info	由代码分层
+geo_by_batch_candidate	NR	9	info	由代码分层

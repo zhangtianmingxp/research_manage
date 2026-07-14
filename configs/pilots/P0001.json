@@ -1,0 +1,11 @@
+{
+  "paper_id": "P0001",
+  "doi": "10.1126/science.1236083",
+  "primary_archive": "E-MTAB-1948",
+  "ena_study": "ERP004055",
+  "source_metadata_dir": "data/interim/pilot/source_metadata",
+  "source_queries_path": "data/interim/pilot/source_queries.tsv",
+  "biostudies_api_url": "https://www.ebi.ac.uk/biostudies/api/v1/studies/E-MTAB-1948",
+  "supplement_download_limit_bytes": 20971520,
+  "round4_status": "partial_project_level_verified"
+}

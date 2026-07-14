@@ -1,0 +1,13 @@
+{
+  "paper_id": "P0009",
+  "doi": "10.1038/s41586-019-1778-y",
+  "geo_series": "GSE129997",
+  "bioproject": "PRJNA533460",
+  "sra_study": "SRP192917",
+  "expected_geo_samples": 75,
+  "source_metadata_dir": "data/interim/pilot/source_metadata",
+  "source_queries_path": "data/interim/pilot/source_queries.tsv",
+  "geo_miniml_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE129997&targ=self&form=xml&view=quick",
+  "supplement_download_limit_bytes": 20971520,
+  "round4_status": "partial_project_level_verified"
+}

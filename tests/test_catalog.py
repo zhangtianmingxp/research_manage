@@ -22,6 +22,8 @@ class AccessionTests(unittest.TestCase):
             "SRR123456": "sra_run",
             "ERR123456": "sra_run",
             "DRR123456": "sra_run",
+            "E-MTAB-1948": "arrayexpress",
+            "ENCFF001LFU": "encode_file",
         }
         for accession, expected in cases.items():
             with self.subTest(accession=accession):
@@ -155,12 +157,15 @@ class RepositoryIntegrationTests(unittest.TestCase):
     def test_query_manifest_records_complete_pagination(self) -> None:
         with (ROOT / "data" / "interim" / "pilot" / "source_queries.tsv").open(encoding="utf-8", newline="") as handle:
             rows = list(csv.DictReader(handle, delimiter="\t"))
-        self.assertEqual(len(rows), 8)
         by_id = {row["query_id"]: row for row in rows}
+        self.assertGreaterEqual(len(rows), 8)
         self.assertEqual({by_id[f"Q000{i}"]["query_outcome"] for i in range(1, 6)}, {"success"})
         self.assertEqual(by_id["Q0006"]["query_outcome"], "query_failed")
         self.assertEqual(by_id["Q0007"]["query_outcome"], "size_limit_not_downloaded")
         self.assertEqual(by_id["Q0008"]["legacy_record_id"], "AC-P0008-004")
+        self.assertIn("Q0009", by_id)
+        self.assertIn("Q0010", by_id)
+        self.assertIn("Q0011", by_id)
         self.assertTrue(all(int(row["retry_count"]) <= 2 for row in rows if row["retry_count"].isdigit()))
 
     def test_layered_provenance_and_semantic_review_coverage(self) -> None:
@@ -174,9 +179,10 @@ class RepositoryIntegrationTests(unittest.TestCase):
         self.assertEqual(len(hela), 2)
         self.assertEqual({row["biological_sample_origin_status"] for row in hela}, {"reused_from_prior_study"})
         self.assertEqual({row["analysis_usage_status"] for row in hela}, {"reanalyzed_prior_data"})
-        self.assertEqual(sum(row["record_type"] == "replicate" for row in reviews), 60)
-        self.assertEqual(sum(row["record_type"] == "batch" for row in reviews), 60)
-        self.assertEqual(sum(row["record_type"] == "sra_run" for row in reviews), 76)
+        p0008_reviews = [row for row in reviews if row["paper_id"] == "P0008"]
+        self.assertEqual(sum(row["record_type"] == "replicate" for row in p0008_reviews), 60)
+        self.assertEqual(sum(row["record_type"] == "batch" for row in p0008_reviews), 60)
+        self.assertEqual(sum(row["record_type"] == "sra_run" for row in p0008_reviews), 76)
         self.assertNotIn("AC-P0008-004", {row["accession_record_id"] for row in accessions})
 
     def test_migration_preserves_v1_ids_and_build_is_deterministic(self) -> None:
@@ -202,6 +208,29 @@ class RepositoryIntegrationTests(unittest.TestCase):
         self.assertEqual(readiness["run_view_rows"], 1290)
         self.assertEqual(readiness["file_view_rows"], 2580)
         self.assertFalse(readiness["legacy_placeholder_active"])
+
+    def test_round4_project_level_records_are_partitioned(self) -> None:
+        def read(path: Path) -> list[dict[str, str]]:
+            with path.open(encoding="utf-8", newline="") as handle:
+                return list(csv.DictReader(handle, delimiter="\t"))
+
+        papers = {row["paper_id"]: row for row in read(ROOT / "data" / "curated" / "papers.tsv")}
+        for paper_id in ("P0001", "P0009", "P0012"):
+            self.assertEqual(papers[paper_id]["bibliographic_status"], "verified")
+            self.assertNotEqual(papers[paper_id]["doi"], "NR")
+
+        accessions = read(ROOT / "data" / "interim" / "pilot" / "accessions.tsv")
+        by_paper = {}
+        for row in accessions:
+            if row["accession_record_id"].startswith("AC-P0001"):
+                by_paper.setdefault("P0001", set()).add(row["accession"])
+            if row["accession_record_id"].startswith("AC-P0009"):
+                by_paper.setdefault("P0009", set()).add(row["accession"])
+            if row["accession_record_id"].startswith("AC-P0012"):
+                by_paper.setdefault("P0012", set()).add(row["accession"])
+        self.assertTrue({"E-MTAB-1948", "ERP004055"}.issubset(by_paper["P0001"]))
+        self.assertTrue({"GSE129997", "PRJNA533460", "SRP192917"}.issubset(by_paper["P0009"]))
+        self.assertTrue({"GSE168251", "GSE168168", "GSE168176", "PRJNA706679"}.issubset(by_paper["P0012"]))
 
 
 if __name__ == "__main__":

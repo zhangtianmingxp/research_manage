@@ -1,0 +1,846 @@
+{
+  "accno" : "E-MTAB-1948",
+  "attributes" : [ {
+    "name" : "Title",
+    "value" : "Metaphase-Chromosome-Organization"
+  }, {
+    "name" : "ReleaseDate",
+    "value" : "2013-11-05"
+  }, {
+    "name" : "RootPath",
+    "value" : "E-MTAB-1948"
+  }, {
+    "name" : "AttachTo",
+    "value" : "ArrayExpress"
+  } ],
+  "section" : {
+    "accno" : "s-E-MTAB-1948",
+    "type" : "Study",
+    "attributes" : [ {
+      "name" : "Title",
+      "value" : "Metaphase-Chromosome-Organization"
+    }, {
+      "name" : "Study type",
+      "value" : "other"
+    }, {
+      "name" : "Organism",
+      "value" : "Homo sapiens"
+    }, {
+      "name" : "Description",
+      "value" : "Mitotic chromosomes are among the most recognizable structures in the cell, yet for over a century their internal organization remains largely unsolved. We applied chromosome conformation capture methods, 5C and Hi-C, across the cell cycle and revealed two alternative three-dimensional folding states of the human genome. We show that the highly compartmentalized and cell-type-specific organization described previously for non-synchronous cells is restricted to interphase. In metaphase, we identify a homogenous folding state, which is locus-independent, common to all chromosomes, and consistent among cell types, suggesting a general principle of metaphase chromosome organization. Using polymer simulations, we find that metaphase Hi-C data is inconsistent with classic hierarchical models, and is instead best described by a linearly-organized longitudinally compressed array of consecutive chromatin loops."
+    } ],
+    "links" : [ [ {
+      "url" : "ERP004055",
+      "attributes" : [ {
+        "name" : "Type",
+        "value" : "ENA"
+      } ]
+    } ] ],
+    "subsections" : [ [ {
+      "accno" : "P-MTAB-35238",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-35238"
+      }, {
+        "name" : "Type",
+        "value" : "growth protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "HeLa cells were grown in standard DMEM media with sodium pyruvate (Gibco #11995073) with 10 % Bovine serum (Gibco #16170078), 1% PenStrep (Gibco #15140) and 1% Antibiotic-Antimycotic agent (Gibco # 15240). HFF cells were grown in standard DMEM media with sodium pyruvate (Gibco #11995073) with 10 % FBS (BenchMark #100-101), 1% PenStrep (Gibco #15140) and 1% Antibiotic-Antimycotic agent (Gibco # 15240). K562 cells were maintained in standard RPMI-1640 media with 2 mM L-glutamine (Gibco #22400-089) with 10% FBS (BenchMark #100-101), 1% PenStrep (Gibco #15140) and 1% Antibiotic-Antimycotic agent (Gibco # 15240)."
+      } ]
+    }, {
+      "accno" : "P-MTAB-35239",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-35239"
+      }, {
+        "name" : "Type",
+        "value" : "Cell synchronization",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "To collect HeLs cells arrested in S-phase, cells were synchronized by double Thymidine block (2mM thymidine in grouth media). HeLa cells in G1 phase were obtained by double thymidine block followed by release into normal growth media for 12h (early G1) or 14h (middle G1). To collect mitotic cells, HeLa, HFF-1 and K562 cells were synchronized by double Thymidine block followed by release into normal growth media for several hous. Then cells were arrested in Metaphase by adding nocodazole at 100ng/mkl final concentration in grouth medai as described in (Naumova et al. 2013)"
+      } ]
+    }, {
+      "accno" : "P-MTAB-35240",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-35240"
+      }, {
+        "name" : "Type",
+        "value" : "nucleic acid library construction protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Hi-C was performed following (Lieberman and van Berkum et al., Science, 2009) with modifications detailed in (Naumova et al., 2013)."
+      } ]
+    }, {
+      "accno" : "P-MTAB-35241",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-35241"
+      }, {
+        "name" : "Type",
+        "value" : "nucleic acid library construction protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "5C was performed following (Dostie, Genome Reserach, 2006), as detailed in (Naumova et al., 2013)."
+      } ]
+    }, {
+      "accno" : "P-MTAB-35242",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-35242"
+      }, {
+        "name" : "Type",
+        "value" : "nucleic acid sequencing protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Libraries were sequenced on the Illumina GAIIx and HiSeq2000 paired end sequencing platform at the University of Massachusetts Medical School deep sequencing core facility (Nemo)."
+      }, {
+        "name" : "Hardware",
+        "value" : "Illumina Genome Analyzer II"
+      } ]
+    }, {
+      "accno" : "P-MTAB-35243",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-35243"
+      }, {
+        "name" : "Type",
+        "value" : "normalization data transformation protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Reads were aligned to hg19 using Bowtie2 as described in (Imakaev and Fudenberg et al., Nature Methods, 2012)"
+      } ]
+    }, {
+      "accno" : "P-MTAB-35244",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-35244"
+      }, {
+        "name" : "Type",
+        "value" : "normalization data transformation protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Reads were aligned to hg19 using novoalign as described in (Sanyal et al., Nature, 2012)"
+      } ]
+    } ], {
+      "type" : "Author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Geoff Fudenberg"
+      }, {
+        "name" : "Email",
+        "value" : "geoff.fudenberg@gmail.com"
+      }, {
+        "name" : "Phone",
+        "value" : "(617) 452-4862"
+      }, {
+        "name" : "Role",
+        "value" : "submitter"
+      }, {
+        "name" : "affiliation",
+        "value" : "o1",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "Author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Natalia Naumova"
+      }, {
+        "name" : "Email",
+        "value" : "nnaumova@gmail.com"
+      }, {
+        "name" : "Phone",
+        "value" : "508-856-4378"
+      }, {
+        "name" : "Role",
+        "value" : "co-author"
+      }, {
+        "name" : "affiliation",
+        "value" : "o2",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "Author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Maxim Imakaev"
+      } ]
+    }, {
+      "type" : "Author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Leonid Mirny"
+      }, {
+        "name" : "Email",
+        "value" : "leonid@mit.edu"
+      } ]
+    }, {
+      "type" : "Author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Job Dekker"
+      } ]
+    }, {
+      "accno" : "o1",
+      "type" : "Organization",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Harvard University"
+      }, {
+        "name" : "Address",
+        "value" : "MIT 400 MAIN ST E19-RECIEVING E25-524 CAMBRIDGE, MA 02142-1017"
+      } ]
+    }, {
+      "accno" : "o2",
+      "type" : "Organization",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "UMASS Medical School"
+      }, {
+        "name" : "Address",
+        "value" : "368 Plantation st., ASC, room AS5-1016, Worcester MA 01605"
+      } ]
+    }, {
+      "type" : "Publication",
+      "attributes" : [ {
+        "name" : "Title",
+        "value" : "Metaphase Chromosome Organization"
+      }, {
+        "name" : "Authors",
+        "value" : "Natalia Naumova, Maxim Imakaev, Geoffrey Fudenberg, Ye Zhan, Bryan R. Lajoie, Leonid A. Mirny, Job Dekker"
+      }, {
+        "name" : "Status",
+        "value" : "Under review"
+      } ]
+    }, {
+      "accno" : "s-samples-factors-E-MTAB-1948",
+      "type" : "Samples",
+      "attributes" : [ {
+        "name" : "Sample count",
+        "value" : "23"
+      }, {
+        "name" : "Experimental Designs",
+        "value" : "cell_type_comparison_design"
+      }, {
+        "name" : "Experimental Factors",
+        "value" : "cell cycle stage",
+        "valqual" : [ {
+          "name" : "TermName",
+          "value" : "cell cycle stage"
+        } ]
+      }, {
+        "name" : "Experimental Factors",
+        "value" : "cell line",
+        "valqual" : [ {
+          "name" : "TermName",
+          "value" : "cell line"
+        } ]
+      }, {
+        "name" : "Quality Controls",
+        "value" : "biological replicate",
+        "valqual" : [ {
+          "name" : "TermId",
+          "value" : "EFO"
+        } ]
+      } ],
+      "subsections" : [ {
+        "accno" : "exp_factor-E-MTAB-1948",
+        "type" : "Experimental Factors",
+        "attributes" : [ {
+          "name" : "Cell line",
+          "value" : "K562"
+        }, {
+          "name" : "Cell line",
+          "value" : "HeLa"
+        }, {
+          "name" : "Cell line",
+          "value" : "HFF1"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "S"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "G1mid"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "NS"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "M"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "G1early"
+        } ],
+        "subsections" : [ [ {
+          "accno" : "factors_0",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "NS"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "2"
+          } ]
+        }, {
+          "accno" : "factors_1",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "G1early"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "2"
+          } ]
+        }, {
+          "accno" : "factors_2",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "G1mid"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "6",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS685900,ERS685902,ERS685904,ERS685907"
+            } ]
+          } ]
+        }, {
+          "accno" : "factors_3",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "S"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "2"
+          } ]
+        }, {
+          "accno" : "factors_4",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "M"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "7",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS685901,ERS685903,ERS685905,ERS685906,ERS685908"
+            } ]
+          } ]
+        }, {
+          "accno" : "factors_5",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HFF1"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "NS"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "1",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS358581"
+            } ]
+          } ]
+        }, {
+          "accno" : "factors_6",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HFF1"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "M"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "1",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS358582"
+            } ]
+          } ]
+        }, {
+          "accno" : "factors_7",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "K562"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "M"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "2",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS358583-ERS358584"
+            } ]
+          } ]
+        } ] ]
+      }, {
+        "accno" : "source_chars-E-MTAB-1948",
+        "type" : "Source Characteristics",
+        "attributes" : [ {
+          "name" : "Organism",
+          "value" : "Homo sapiens"
+        }, {
+          "name" : "Cell line",
+          "value" : "K562"
+        }, {
+          "name" : "Cell line",
+          "value" : "HeLa"
+        }, {
+          "name" : "Cell line",
+          "value" : "HFF1"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "S"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "G1mid"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "NS"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "M"
+        }, {
+          "name" : "Cell cycle stage",
+          "value" : "G1early"
+        } ],
+        "subsections" : [ [ {
+          "accno" : "source_0",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "NS"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "2"
+          } ]
+        }, {
+          "accno" : "source_1",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "G1early"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "2"
+          } ]
+        }, {
+          "accno" : "source_2",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "G1mid"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "6",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS685900,ERS685902,ERS685904,ERS685907"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_3",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "S"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "2"
+          } ]
+        }, {
+          "accno" : "source_4",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HeLa"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "M"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "7",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS685901,ERS685903,ERS685905,ERS685906,ERS685908"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_5",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HFF1"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "NS"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "1",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS358581"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_6",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "HFF1"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "M"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "1",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS358582"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_7",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "cell line",
+            "value" : "K562"
+          }, {
+            "name" : "cell cycle stage",
+            "value" : "M"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "2",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS358583-ERS358584"
+            } ]
+          } ]
+        } ] ]
+      } ]
+    }, {
+      "accno" : "s-assays-data-E-MTAB-1948",
+      "type" : "Assays and Data",
+      "attributes" : [ {
+        "name" : "Assay count",
+        "value" : "23"
+      }, {
+        "name" : "Technology",
+        "value" : "Sequencing assay"
+      } ],
+      "subsections" : [ {
+        "accno" : "processed-data",
+        "type" : "Processed Data",
+        "files" : [ [ {
+          "path" : "Chr21NN-HeLaS3-G1mid-R1.txt",
+          "size" : 1213242,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "Chr21NN-HeLaS3-S-R2.txt",
+          "size" : 1202359,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HeLaS3CCL2p2-M-98percent.txt",
+          "size" : 3172994007,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "Chr21NN-HeLaS3-M-R1.txt",
+          "size" : 1299555,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HeLaS3-M-R1.txt",
+          "size" : 741681360,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "Chr21NN-HeLaS3-NS-R2.txt",
+          "size" : 1146032,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HeLaS3-M-R2.txt",
+          "size" : 663532054,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HeLaS3CCL2p2-M-1FA.txt",
+          "size" : 554560605,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-K562-M-R1.txt",
+          "size" : 392434469,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HeLaS3CCL2p2-G1-0.25FA.txt",
+          "size" : 1689734414,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "Chr21NN-HeLaS3-NS-R1.txt",
+          "size" : 1272259,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HeLaS3CCL2p2-G1-1FA.txt",
+          "size" : 1816159556,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HeLaS3-G1mid-R2.txt",
+          "size" : 301033182,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HeLaS3-G1mid-R1.txt",
+          "size" : 536821301,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "Chr21NN-HeLaS3-M-R2.txt",
+          "size" : 1266790,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HFF1-NS-R1.txt",
+          "size" : 3702487215,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HeLaS3CCL2p2-M-0.25FA.txt",
+          "size" : 344092042,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-HFF1-M-R1.txt",
+          "size" : 2745871867,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "Chr21NN-HeLaS3-G1mid-R2.txt",
+          "size" : 1342824,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "Chr21NN-HeLaS3-S-R1.txt",
+          "size" : 1221647,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "CCHiC-K562-M-R2.txt",
+          "size" : 843757097,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "Chr21NN-HeLaS3-G1E-R2.txt",
+          "size" : 1446350,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "Chr21NN-HeLaS3-G1E-R1.txt",
+          "size" : 1352214,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        } ] ]
+      }, {
+        "accno" : "mt-E-MTAB-1948",
+        "type" : "MAGE-TAB Files",
+        "files" : [ [ {
+          "path" : "E-MTAB-1948.idf.txt",
+          "size" : 5635,
+          "attributes" : [ {
+            "name" : "Type",
+            "value" : "IDF File"
+          }, {
+            "name" : "Format",
+            "value" : "tab-delimited text"
+          }, {
+            "name" : "Description",
+            "value" : "Investigation Design Format (IDF)"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "E-MTAB-1948.sdrf.txt",
+          "size" : 19293,
+          "attributes" : [ {
+            "name" : "Type",
+            "value" : "SDRF File"
+          }, {
+            "name" : "Format",
+            "value" : "tab-delimited text"
+          }, {
+            "name" : "Description",
+            "value" : "Sample and Data Relationship Format (SDRF)"
+          } ],
+          "type" : "file"
+        } ] ]
+      } ]
+    }, {
+      "accno" : "score-E-MTAB-1948",
+      "type" : "MINSEQE Score",
+      "attributes" : [ {
+        "name" : "Exp. Design",
+        "value" : "*"
+      }, {
+        "name" : "Protocols",
+        "value" : "*"
+      }, {
+        "name" : "Raw",
+        "value" : "-"
+      }, {
+        "name" : "Variables",
+        "value" : "*"
+      }, {
+        "name" : "Processed",
+        "value" : "*"
+      } ]
+    } ]
+  },
+  "type" : "submission"
+}

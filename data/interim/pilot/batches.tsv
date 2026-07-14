@@ -69,3 +69,6 @@ B-P0008-GEO-057	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	c
 B-P0008-GEO-058	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
 B-P0008-GEO-059	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008|E-P0008-011	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
 B-P0008-GEO-060	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008|E-P0008-011	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
+B-P0001-001	P0001	round4_minimal	NR	NR	UNRESOLVED	E-P0001-001|E-P0001-002	unresolved	本轮未下载补充表，建库/测序批次未裁决
+B-P0009-001	P0009	GSE129997	NR	NR	Illumina NextSeq 500	E-P0009-002	candidate	GEO平台GPL19057支持仪器平台；具体建库批次未裁决
+B-P0012-001	P0012	GSE168251	NR	NR	Illumina NextSeq 500	E-P0012-002	candidate	GEO平台GPL19057支持仪器平台；具体建库批次未裁决

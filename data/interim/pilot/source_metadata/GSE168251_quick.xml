@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Yemin</First><Last>Lan</Last></Person>
+    <Organization>University of Pennsylvania</Organization>
+    <Address>
+      <Line>3400 Civic Center Blvd</Line>
+      <City>Philadelphia</City>
+      <State>PA</State>
+      <Zip-Code>19104</Zip-Code>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Sample iid="GSM5133011">
+    <Accession database="GEO">GSM5133011</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133012">
+    <Accession database="GEO">GSM5133012</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133013">
+    <Accession database="GEO">GSM5133013</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133014">
+    <Accession database="GEO">GSM5133014</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133016">
+    <Accession database="GEO">GSM5133016</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133017">
+    <Accession database="GEO">GSM5133017</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133018">
+    <Accession database="GEO">GSM5133018</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133019">
+    <Accession database="GEO">GSM5133019</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133020">
+    <Accession database="GEO">GSM5133020</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133022">
+    <Accession database="GEO">GSM5133022</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133023">
+    <Accession database="GEO">GSM5133023</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133024">
+    <Accession database="GEO">GSM5133024</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133025">
+    <Accession database="GEO">GSM5133025</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133027">
+    <Accession database="GEO">GSM5133027</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133028">
+    <Accession database="GEO">GSM5133028</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133030">
+    <Accession database="GEO">GSM5133030</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133031">
+    <Accession database="GEO">GSM5133031</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133033">
+    <Accession database="GEO">GSM5133033</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133034">
+    <Accession database="GEO">GSM5133034</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133035">
+    <Accession database="GEO">GSM5133035</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133036">
+    <Accession database="GEO">GSM5133036</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133038">
+    <Accession database="GEO">GSM5133038</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133376">
+    <Accession database="GEO">GSM5133376</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133377">
+    <Accession database="GEO">GSM5133377</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133378">
+    <Accession database="GEO">GSM5133378</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133379">
+    <Accession database="GEO">GSM5133379</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133380">
+    <Accession database="GEO">GSM5133380</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133381">
+    <Accession database="GEO">GSM5133381</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133382">
+    <Accession database="GEO">GSM5133382</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133383">
+    <Accession database="GEO">GSM5133383</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133384">
+    <Accession database="GEO">GSM5133384</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133385">
+    <Accession database="GEO">GSM5133385</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133386">
+    <Accession database="GEO">GSM5133386</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133387">
+    <Accession database="GEO">GSM5133387</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133388">
+    <Accession database="GEO">GSM5133388</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133389">
+    <Accession database="GEO">GSM5133389</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133390">
+    <Accession database="GEO">GSM5133390</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133391">
+    <Accession database="GEO">GSM5133391</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133392">
+    <Accession database="GEO">GSM5133392</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133393">
+    <Accession database="GEO">GSM5133393</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133394">
+    <Accession database="GEO">GSM5133394</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133395">
+    <Accession database="GEO">GSM5133395</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133396">
+    <Accession database="GEO">GSM5133396</Accession>
+  </Sample>
+
+  <Sample iid="GSM5133397">
+    <Accession database="GEO">GSM5133397</Accession>
+  </Sample>
+
+  <Series iid="GSE168251">
+    <Status database="GEO">
+      <Submission-Date>2021-03-04</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-09-16</Last-Update-Date>
+    </Status>
+    <Title>CTCF and transcription orchestrate chromatin structure re-configuration after mitosis</Title>
+    <Accession database="GEO">GSE168251</Accession>
+    <Pubmed-ID>34453048</Pubmed-ID>
+    <Summary>
+This SuperSeries is composed of the SubSeries listed below.
+    </Summary>
+    <Overall-Design>
+Refer to individual Series
+    </Overall-Design>
+    <Type>Other</Type>
+    <Type>Genome binding/occupancy profiling by high throughput sequencing</Type>
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM5133011" />
+    <Sample-Ref ref="GSM5133012" />
+    <Sample-Ref ref="GSM5133013" />
+    <Sample-Ref ref="GSM5133014" />
+    <Sample-Ref ref="GSM5133016" />
+    <Sample-Ref ref="GSM5133017" />
+    <Sample-Ref ref="GSM5133018" />
+    <Sample-Ref ref="GSM5133019" />
+    <Sample-Ref ref="GSM5133020" />
+    <Sample-Ref ref="GSM5133022" />
+    <Sample-Ref ref="GSM5133023" />
+    <Sample-Ref ref="GSM5133024" />
+    <Sample-Ref ref="GSM5133025" />
+    <Sample-Ref ref="GSM5133027" />
+    <Sample-Ref ref="GSM5133028" />
+    <Sample-Ref ref="GSM5133030" />
+    <Sample-Ref ref="GSM5133031" />
+    <Sample-Ref ref="GSM5133033" />
+    <Sample-Ref ref="GSM5133034" />
+    <Sample-Ref ref="GSM5133035" />
+    <Sample-Ref ref="GSM5133036" />
+    <Sample-Ref ref="GSM5133038" />
+    <Sample-Ref ref="GSM5133376" />
+    <Sample-Ref ref="GSM5133377" />
+    <Sample-Ref ref="GSM5133378" />
+    <Sample-Ref ref="GSM5133379" />
+    <Sample-Ref ref="GSM5133380" />
+    <Sample-Ref ref="GSM5133381" />
+    <Sample-Ref ref="GSM5133382" />
+    <Sample-Ref ref="GSM5133383" />
+    <Sample-Ref ref="GSM5133384" />
+    <Sample-Ref ref="GSM5133385" />
+    <Sample-Ref ref="GSM5133386" />
+    <Sample-Ref ref="GSM5133387" />
+    <Sample-Ref ref="GSM5133388" />
+    <Sample-Ref ref="GSM5133389" />
+    <Sample-Ref ref="GSM5133390" />
+    <Sample-Ref ref="GSM5133391" />
+    <Sample-Ref ref="GSM5133392" />
+    <Sample-Ref ref="GSM5133393" />
+    <Sample-Ref ref="GSM5133394" />
+    <Sample-Ref ref="GSM5133395" />
+    <Sample-Ref ref="GSM5133396" />
+    <Sample-Ref ref="GSM5133397" />
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE168nnn/GSE168251/suppl/GSE168251_RAW.tar
+    </Supplementary-Data>
+    <Relation type="SuperSeries of" target="GSE168168" />
+    <Relation type="SuperSeries of" target="GSE168176" />
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA706679" />
+  </Series>
+
+</MINiML>

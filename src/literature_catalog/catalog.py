@@ -24,6 +24,8 @@ ACCESSION_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("geo_sample", re.compile(r"GSM\d+", re.IGNORECASE)),
     ("geo_platform", re.compile(r"GPL\d+", re.IGNORECASE)),
     ("biosample", re.compile(r"SAM[NED][A-Z]?\d+", re.IGNORECASE)),
+    ("arrayexpress", re.compile(r"E-MTAB-\d+", re.IGNORECASE)),
+    ("encode_file", re.compile(r"ENCFF[0-9A-Z]+", re.IGNORECASE)),
 )
 
 

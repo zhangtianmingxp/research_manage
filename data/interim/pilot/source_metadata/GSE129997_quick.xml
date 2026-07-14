@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Gerd</First><Middle>A</Middle><Last>Blobel</Last></Person>
+    <Email>blobel@email.chop.edu</Email>
+    <Department>Pediatrics/Hematology</Department>
+    <Organization>University of Pennsylvania	Children's Hospital of Philadelphia</Organization>
+    <Address>
+      <Line>3615 Civic Center Blvd, ARC 315</Line>
+      <City>Philadelphia</City>
+      <State>PA</State>
+      <Zip-Code>19104</Zip-Code>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Person><First>Haoyue</First><Last>Zhang</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib3">
+    <Person><First>Daniel</First><Middle>J</Middle><Last>Emerson</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib4">
+    <Person><First>Thomas</First><Middle>G</Middle><Last>Gilgenast</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib5">
+    <Person><First>Katelyn</First><Middle>R</Middle><Last>Titus</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib6">
+    <Person><First>Yemin</First><Last>Lan</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib7">
+    <Person><First>Jennifer</First><Middle>E</Middle><Last>Philips-Cremins</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Sample iid="GSM3729077">
+    <Accession database="GEO">GSM3729077</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729078">
+    <Accession database="GEO">GSM3729078</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729079">
+    <Accession database="GEO">GSM3729079</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729080">
+    <Accession database="GEO">GSM3729080</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729081">
+    <Accession database="GEO">GSM3729081</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729082">
+    <Accession database="GEO">GSM3729082</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729083">
+    <Accession database="GEO">GSM3729083</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729084">
+    <Accession database="GEO">GSM3729084</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729085">
+    <Accession database="GEO">GSM3729085</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729086">
+    <Accession database="GEO">GSM3729086</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729087">
+    <Accession database="GEO">GSM3729087</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729088">
+    <Accession database="GEO">GSM3729088</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729089">
+    <Accession database="GEO">GSM3729089</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729090">
+    <Accession database="GEO">GSM3729090</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729091">
+    <Accession database="GEO">GSM3729091</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729092">
+    <Accession database="GEO">GSM3729092</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729093">
+    <Accession database="GEO">GSM3729093</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729094">
+    <Accession database="GEO">GSM3729094</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729095">
+    <Accession database="GEO">GSM3729095</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729096">
+    <Accession database="GEO">GSM3729096</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729097">
+    <Accession database="GEO">GSM3729097</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729098">
+    <Accession database="GEO">GSM3729098</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729099">
+    <Accession database="GEO">GSM3729099</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729100">
+    <Accession database="GEO">GSM3729100</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729101">
+    <Accession database="GEO">GSM3729101</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729102">
+    <Accession database="GEO">GSM3729102</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729103">
+    <Accession database="GEO">GSM3729103</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729104">
+    <Accession database="GEO">GSM3729104</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729105">
+    <Accession database="GEO">GSM3729105</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729106">
+    <Accession database="GEO">GSM3729106</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729107">
+    <Accession database="GEO">GSM3729107</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729108">
+    <Accession database="GEO">GSM3729108</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729109">
+    <Accession database="GEO">GSM3729109</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729110">
+    <Accession database="GEO">GSM3729110</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729111">
+    <Accession database="GEO">GSM3729111</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729112">
+    <Accession database="GEO">GSM3729112</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729113">
+    <Accession database="GEO">GSM3729113</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729114">
+    <Accession database="GEO">GSM3729114</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729115">
+    <Accession database="GEO">GSM3729115</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729116">
+    <Accession database="GEO">GSM3729116</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729117">
+    <Accession database="GEO">GSM3729117</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729118">
+    <Accession database="GEO">GSM3729118</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729119">
+    <Accession database="GEO">GSM3729119</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729120">
+    <Accession database="GEO">GSM3729120</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729121">
+    <Accession database="GEO">GSM3729121</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729122">
+    <Accession database="GEO">GSM3729122</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729123">
+    <Accession database="GEO">GSM3729123</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729124">
+    <Accession database="GEO">GSM3729124</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729125">
+    <Accession database="GEO">GSM3729125</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729126">
+    <Accession database="GEO">GSM3729126</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729127">
+    <Accession database="GEO">GSM3729127</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729128">
+    <Accession database="GEO">GSM3729128</Accession>
+  </Sample>
+
+  <Sample iid="GSM3729129">
+    <Accession database="GEO">GSM3729129</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038942">
+    <Accession database="GEO">GSM4038942</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038943">
+    <Accession database="GEO">GSM4038943</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038944">
+    <Accession database="GEO">GSM4038944</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038945">
+    <Accession database="GEO">GSM4038945</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038946">
+    <Accession database="GEO">GSM4038946</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038947">
+    <Accession database="GEO">GSM4038947</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038948">
+    <Accession database="GEO">GSM4038948</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038949">
+    <Accession database="GEO">GSM4038949</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038950">
+    <Accession database="GEO">GSM4038950</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038951">
+    <Accession database="GEO">GSM4038951</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038952">
+    <Accession database="GEO">GSM4038952</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038953">
+    <Accession database="GEO">GSM4038953</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038954">
+    <Accession database="GEO">GSM4038954</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038955">
+    <Accession database="GEO">GSM4038955</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038956">
+    <Accession database="GEO">GSM4038956</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038957">
+    <Accession database="GEO">GSM4038957</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038958">
+    <Accession database="GEO">GSM4038958</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038959">
+    <Accession database="GEO">GSM4038959</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038960">
+    <Accession database="GEO">GSM4038960</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038961">
+    <Accession database="GEO">GSM4038961</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038962">
+    <Accession database="GEO">GSM4038962</Accession>
+  </Sample>
+
+  <Sample iid="GSM4038963">
+    <Accession database="GEO">GSM4038963</Accession>
+  </Sample>
+
+  <Series iid="GSE129997">
+    <Status database="GEO">
+      <Submission-Date>2019-04-17</Submission-Date>
+      <Release-Date>2019-11-27</Release-Date>
+      <Last-Update-Date>2019-12-09</Last-Update-Date>
+    </Status>
+    <Title>Re-configuration of Chromatin Structure During the Mitosis-G1 Phase Progression</Title>
+    <Accession database="GEO">GSE129997</Accession>
+    <Pubmed-ID>31776509</Pubmed-ID>
+    <Summary>
+Chromatin architecture is temporarily disrupted during mitosis. Yet, how chromatin architecture is reconfigured during M-G1 phase transition is unknown. To examine this, we performed Hi-C experiments on cell populations at defined cell cycle stages between mitosis and G1 phase.
+    </Summary>
+    <Overall-Design>
+Uninduced G1E-ER4 (-GATA1) cells were synchronized to pro-metaphase with nocodazole treatment and was released from nocodazole for a variety of durations. Cells at different cell cycle stages were purified with FACS. Hi-C experiments were performed on purified populations to examine chromatin structure at designated cell cycle stage.
+    </Overall-Design>
+    <Type>Genome binding/occupancy profiling by high throughput sequencing</Type>
+    <Type>Other</Type>
+    <Contributor-Ref ref="contrib2" position="1" />
+    <Contributor-Ref ref="contrib3" position="2" />
+    <Contributor-Ref ref="contrib4" position="3" />
+    <Contributor-Ref ref="contrib5" position="4" />
+    <Contributor-Ref ref="contrib6" position="5" />
+    <Contributor-Ref ref="contrib1" position="6" />
+    <Contributor-Ref ref="contrib7" position="7" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM3729077" />
+    <Sample-Ref ref="GSM3729078" />
+    <Sample-Ref ref="GSM3729079" />
+    <Sample-Ref ref="GSM3729080" />
+    <Sample-Ref ref="GSM3729081" />
+    <Sample-Ref ref="GSM3729082" />
+    <Sample-Ref ref="GSM3729083" />
+    <Sample-Ref ref="GSM3729084" />
+    <Sample-Ref ref="GSM3729085" />
+    <Sample-Ref ref="GSM3729086" />
+    <Sample-Ref ref="GSM3729087" />
+    <Sample-Ref ref="GSM3729088" />
+    <Sample-Ref ref="GSM3729089" />
+    <Sample-Ref ref="GSM3729090" />
+    <Sample-Ref ref="GSM3729091" />
+    <Sample-Ref ref="GSM3729092" />
+    <Sample-Ref ref="GSM3729093" />
+    <Sample-Ref ref="GSM3729094" />
+    <Sample-Ref ref="GSM3729095" />
+    <Sample-Ref ref="GSM3729096" />
+    <Sample-Ref ref="GSM3729097" />
+    <Sample-Ref ref="GSM3729098" />
+    <Sample-Ref ref="GSM3729099" />
+    <Sample-Ref ref="GSM3729100" />
+    <Sample-Ref ref="GSM3729101" />
+    <Sample-Ref ref="GSM3729102" />
+    <Sample-Ref ref="GSM3729103" />
+    <Sample-Ref ref="GSM3729104" />
+    <Sample-Ref ref="GSM3729105" />
+    <Sample-Ref ref="GSM3729106" />
+    <Sample-Ref ref="GSM3729107" />
+    <Sample-Ref ref="GSM3729108" />
+    <Sample-Ref ref="GSM3729109" />
+    <Sample-Ref ref="GSM3729110" />
+    <Sample-Ref ref="GSM3729111" />
+    <Sample-Ref ref="GSM3729112" />
+    <Sample-Ref ref="GSM3729113" />
+    <Sample-Ref ref="GSM3729114" />
+    <Sample-Ref ref="GSM3729115" />
+    <Sample-Ref ref="GSM3729116" />
+    <Sample-Ref ref="GSM3729117" />
+    <Sample-Ref ref="GSM3729118" />
+    <Sample-Ref ref="GSM3729119" />
+    <Sample-Ref ref="GSM3729120" />
+    <Sample-Ref ref="GSM3729121" />
+    <Sample-Ref ref="GSM3729122" />
+    <Sample-Ref ref="GSM3729123" />
+    <Sample-Ref ref="GSM3729124" />
+    <Sample-Ref ref="GSM3729125" />
+    <Sample-Ref ref="GSM3729126" />
+    <Sample-Ref ref="GSM3729127" />
+    <Sample-Ref ref="GSM3729128" />
+    <Sample-Ref ref="GSM3729129" />
+    <Sample-Ref ref="GSM4038942" />
+    <Sample-Ref ref="GSM4038943" />
+    <Sample-Ref ref="GSM4038944" />
+    <Sample-Ref ref="GSM4038945" />
+    <Sample-Ref ref="GSM4038946" />
+    <Sample-Ref ref="GSM4038947" />
+    <Sample-Ref ref="GSM4038948" />
+    <Sample-Ref ref="GSM4038949" />
+    <Sample-Ref ref="GSM4038950" />
+    <Sample-Ref ref="GSM4038951" />
+    <Sample-Ref ref="GSM4038952" />
+    <Sample-Ref ref="GSM4038953" />
+    <Sample-Ref ref="GSM4038954" />
+    <Sample-Ref ref="GSM4038955" />
+    <Sample-Ref ref="GSM4038956" />
+    <Sample-Ref ref="GSM4038957" />
+    <Sample-Ref ref="GSM4038958" />
+    <Sample-Ref ref="GSM4038959" />
+    <Sample-Ref ref="GSM4038960" />
+    <Sample-Ref ref="GSM4038961" />
+    <Sample-Ref ref="GSM4038962" />
+    <Sample-Ref ref="GSM4038963" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_anatelo.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_anatelo.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_asyn.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_asyn.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_earlyG1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_earlyG1.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_lateG1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_lateG1.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_midG1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_midG1.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_prometa.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_CTCF_prometa.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_anatelo.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_anatelo.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_asyn.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_asyn.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_earlyG1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_earlyG1.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_lateG1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_lateG1.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_midG1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_midG1.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_prometa.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_Rad21_prometa.narrowPeak.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_WT_Pol2_Noc0h.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_WT_Pol2_Noc1h.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_WT_Pol2_Noc25min.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_WT_Pol2_Noc2h.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_WT_Pol2_Noc4h.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="BED">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_anatelo_domains.bed.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_anatelo_horizontal_stripes.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_anatelo_kr_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_anatelo_loops.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_anatelo_qnorm_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_anatelo_raw_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_anatelo_vertical_stripes.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_commd3_locus_commd3_mutant_anateo_merged.bedGraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_commd3_locus_commd3_mutant_early_g1_merged.bedGraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_commd3_locus_commd3_mutant_mid_g1_merged.bedGraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_commd3_locus_commd3_mutant_prometa_merged.bedGraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_commd3_locus_wt_ana.telo_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_commd3_locus_wt_early_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_commd3_locus_wt_mid_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_commd3_locus_wt_pro_meta_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_fast_structural_loop_wt_ana.telo_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_fast_structural_loop_wt_early_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_fast_structural_loop_wt_mid_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_fast_structural_loop_wt_pro_meta_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_morc3_locus_wt_ana.telo_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_morc3_locus_wt_early_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_morc3_locus_wt_mid_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_morc3_locus_wt_pro_meta_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_pde12_locus_wt_ana.telo_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_pde12_locus_wt_early_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_pde12_locus_wt_mid_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_pde12_locus_wt_pro_meta_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_slow_structural_loop_wt_ana.telo_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_slow_structural_loop_wt_early_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_slow_structural_loop_wt_mid_G1_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BEDGRAPH">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_capture_c_slow_structural_loop_wt_pro_meta_merged.bedgraph.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BED">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_earlyG1_domains.bed.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_earlyG1_horizontal_stripes.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_earlyG1_kr_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_earlyG1_loops.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_earlyG1_qnorm_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_earlyG1_raw_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_earlyG1_vertical_stripes.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BED">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_lateG1_domains.bed.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_lateG1_horizontal_stripes.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_lateG1_kr_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_lateG1_loops.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_lateG1_qnorm_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_lateG1_raw_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_lateG1_vertical_stripes.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BED">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_midG1_domains.bed.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_midG1_horizontal_stripes.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_midG1_kr_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_midG1_loops.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_midG1_qnorm_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_midG1_raw_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_midG1_vertical_stripes.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BED">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_prometa_domains.bed.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_prometa_horizontal_stripes.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_prometa_kr_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_prometa_loops.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_prometa_qnorm_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_prometa_raw_intrachromosomal_contact_matrices.tar.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/suppl/GSE129997_prometa_vertical_stripes.tsv.gz
+    </Supplementary-Data>
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA533460" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRP192917" />
+  </Series>
+
+</MINiML>

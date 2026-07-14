@@ -397,10 +397,11 @@ def assess_batch_readiness(
     semantic_rows: list[dict[str, str]], accessions: list[dict[str, str]],
     run_rows: list[dict[str, str]], file_rows: list[dict[str, str]],
 ) -> dict[str, Any]:
+    p0008_semantic_rows = [row for row in semantic_rows if row.get("paper_id") == "P0008"]
     checks = {
-        "replicate_reviews": sum(row["record_type"] == "replicate" for row in semantic_rows),
-        "batch_reviews": sum(row["record_type"] == "batch" for row in semantic_rows),
-        "hela_run_reviews": sum(row["record_type"] == "sra_run" for row in semantic_rows),
+        "replicate_reviews": sum(row["record_type"] == "replicate" for row in p0008_semantic_rows),
+        "batch_reviews": sum(row["record_type"] == "batch" for row in p0008_semantic_rows),
+        "hela_run_reviews": sum(row["record_type"] == "sra_run" for row in p0008_semantic_rows),
         "run_view_rows": len(run_rows), "file_view_rows": len(file_rows),
         "legacy_placeholder_active": any(row["accession_record_id"] == "AC-P0008-004" for row in accessions),
     }
@@ -446,6 +447,13 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
     for row in ncbi_runs:
         ncbi_runs_by_exp[row["experiment"]].append(row)
 
+    _, existing_conditions = _read_tsv(root / schema["tables"]["conditions"]["path"])
+    _, existing_replicates = _read_tsv(root / schema["tables"]["replicates"]["path"])
+    _, existing_batches = _read_tsv(root / schema["tables"]["batches"]["path"])
+    preserved_conditions = [row for row in existing_conditions if row.get("paper_id") != "P0008"]
+    preserved_condition_ids = {row["condition_id"] for row in preserved_conditions}
+    preserved_replicates = [row for row in existing_replicates if row.get("condition_id") in preserved_condition_ids]
+    preserved_batches = [row for row in existing_batches if row.get("paper_id") != "P0008"]
     conditions: list[dict[str, str]] = []
     replicates: list[dict[str, str]] = []
     batches: list[dict[str, str]] = []
@@ -545,12 +553,21 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
         })
         gsm_to_stp[sample["gsm"]] = timepoint_id
 
+    preserved_timepoints = [
+        row for row in all_existing_timepoints
+        if not row.get("experiment_id", "").startswith("EX-P0008")
+    ]
+    conditions.extend(preserved_conditions)
+    replicates.extend(preserved_replicates)
+    batches.extend(preserved_batches)
+    sample_timepoints.extend(preserved_timepoints)
     for name, rows in (("conditions", conditions), ("replicates", replicates), ("batches", batches), ("archive_samples", archive_samples), ("samples_timepoints", sample_timepoints)):
         spec = schema["tables"][name]
         _write_tsv(root / spec["path"], spec["fields"], rows)
 
     access_spec = schema["tables"]["accessions"]
     _, old_accessions = _read_tsv(root / access_spec["path"])
+    preserved_accessions = [dict(row) for row in old_accessions if not row["accession_record_id"].startswith("AC-P0008")]
     accessions = [dict(row) for row in old_accessions if row["accession_record_id"] in {"AC-P0008-001", "AC-P0008-002", "AC-P0008-003"}]
     for row in accessions:
         for field in access_spec["fields"]:
@@ -697,6 +714,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
         })
 
     relations_spec = schema["tables"]["accession_relations"]
+    accessions.extend(preserved_accessions)
     _write_tsv(root / access_spec["path"], access_spec["fields"], accessions)
     _write_tsv(root / relations_spec["path"], relations_spec["fields"], relations)
     files_spec = schema["tables"]["files"]
@@ -708,7 +726,10 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
     runs_view_spec = schema["tables"]["literature_experiment_catalog_runs"]
     _write_tsv(root / runs_view_spec["path"], runs_view_spec["fields"], run_rows)
     semantic_spec = schema["tables"]["semantic_review"]
+    _, existing_semantic_rows = _read_tsv(root / semantic_spec["path"])
+    preserved_semantic_rows = [row for row in existing_semantic_rows if row.get("paper_id") != "P0008"]
     semantic_rows = _semantic_review_rows(geo, archive_samples, ncbi_runs)
+    semantic_rows.extend(preserved_semantic_rows)
     _write_tsv(root / semantic_spec["path"], semantic_spec["fields"], semantic_rows)
     readiness = assess_batch_readiness(semantic_rows, accessions, run_rows, wide_rows)
     readiness_path = root / "reports" / "schema_v2_batch_readiness.json"

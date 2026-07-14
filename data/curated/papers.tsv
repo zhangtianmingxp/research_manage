@@ -1,5 +1,5 @@
 paper_id	canonical_file_id	canonical_title	authors	journal	publication_year	doi	pmid	document_type	duplicate_group_id	bibliographic_status	data_availability_locator	notes
-P0001	F0001	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
+P0001	F0001	Organization of the Mitotic Chromosome	Natalia Naumova; Maxim Imakaev; Geoffrey Fudenberg; Ye Zhan; Bryan R. Lajoie; Leonid A. Mirny; Job Dekker	Science	2013	10.1126/science.1236083	NR	research_article	NA	verified	PDF p.5 Acknowledgments and Supplementary Materials; ArrayExpress E-MTAB-1948	第4轮核验；PMID未从当前可访问官方快照裁决，保留NR
 P0002	F0002	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
 P0003	F0003	NR	NR	NR	NR	NR	NR	research_article	DUP001	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
 P0004	F0005	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
@@ -7,10 +7,10 @@ P0005	F0006	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成
 P0006	F0007	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
 P0007	F0008	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
 P0008	F0009	A pathway for mitotic chromosome formation	Johan H. Gibcus et al.	Science	2018	10.1126/science.aao6135	29348367	research_article	NA	pilot_verified	PDF p.13（article p.12）Data and materials availability	本轮试点论文；正文与NCBI GEO记录交叉核验
-P0009	F0010	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
+P0009	F0010	Chromatin structure dynamics during the mitosis-to-G1 phase transition	Haoyue Zhang et al.	Nature	2019	10.1038/s41586-019-1778-y	31776509	research_article	NA	verified	PDF Data availability; GEO GSE129997	第4轮核验；GEO页面citation给出PMID 31776509
 P0010	F0011	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
 P0011	F0012	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
-P0012	F0013	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
+P0012	F0013	CTCF and transcription influence chromatin structure re-configuration after mitosis	Haoyue Zhang; Jessica Lam; Di Zhang; Yemin Lan; Marit W. Vermunt; Cheryl A. Keller; Belinda Giardine; Ross C. Hardison; Gerd A. Blobel	Nature Communications	2021	10.1038/s41467-021-25418-5	34453048	research_article	NA	verified	PDF Data availability; GEO GSE168251	第4轮核验；GEO页面citation给出PMID 34453048
 P0013	F0014	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
 P0014	F0015	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验
 P0015	F0016	NR	NR	NR	NR	NR	NR	research_article	NA	unverified	NOT_FOUND	仅完成文件级盘点，待逐篇核验

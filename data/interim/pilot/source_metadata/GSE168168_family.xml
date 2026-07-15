@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Yemin</First><Last>Lan</Last></Person>
+    <Organization>University of Pennsylvania</Organization>
+    <Address>
+      <Line>3400 Civic Center Blvd</Line>
+      <City>Philadelphia</City>
+      <State>PA</State>
+      <Zip-Code>19104</Zip-Code>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Organization>GEO</Organization>
+    <Address>
+      <City></City>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib3">
+    <Person><First>Haoyue</First><Last>Zhang</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib4">
+    <Person><First>Gerd</First><Last>Blobel</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Platform iid="GPL19057">
+    <Status database="GEO">
+      <Submission-Date>2014-08-07</Submission-Date>
+      <Release-Date>2014-08-07</Release-Date>
+      <Last-Update-Date>2019-03-25</Last-Update-Date>
+    </Status>
+    <Title>Illumina NextSeq 500 (Mus musculus)</Title>
+    <Accession database="GEO">GPL19057</Accession>
+    <Technology>high-throughput sequencing</Technology>
+    <Distribution>virtual</Distribution>
+    <Organism taxid="10090">Mus musculus</Organism>
+    <Manufacturer></Manufacturer>
+    <Manufacture-Protocol>
+    </Manufacture-Protocol>
+    <Contact-Ref ref="contrib2" />
+  </Platform>
+
+  <Sample iid="GSM5133011">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_0h_no_A.rep1</Title>
+    <Accession database="GEO">GSM5133011</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+0h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133011/suppl/GSM5133011_PolII-0h-A.rep1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133011/suppl/GSM5133011_PolII-0h-A.rep1.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128743" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229669" />
+  </Sample>
+
+  <Sample iid="GSM5133012">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_0h_no_A.rep2</Title>
+    <Accession database="GEO">GSM5133012</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+0h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133012/suppl/GSM5133012_PolII-0h-A.rep2.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133012/suppl/GSM5133012_PolII-0h-A.rep2.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128742" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229670" />
+  </Sample>
+
+  <Sample iid="GSM5133013">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_0h_with_A.rep1</Title>
+    <Accession database="GEO">GSM5133013</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+0h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133013/suppl/GSM5133013_PolII-0h+A.rep1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133013/suppl/GSM5133013_PolII-0h+A.rep1.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128741" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229671" />
+  </Sample>
+
+  <Sample iid="GSM5133014">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_0h_with_A.rep2</Title>
+    <Accession database="GEO">GSM5133014</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+0h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133014/suppl/GSM5133014_PolII-0h+A.rep2.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133014/suppl/GSM5133014_PolII-0h+A.rep2.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128740" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229672" />
+  </Sample>
+
+  <Sample iid="GSM5133016">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_1h_no_A.rep1</Title>
+    <Accession database="GEO">GSM5133016</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+1h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133016/suppl/GSM5133016_PolII-1h-A.rep1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133016/suppl/GSM5133016_PolII-1h-A.rep1.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128739" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229673" />
+  </Sample>
+
+  <Sample iid="GSM5133017">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_1h_no_A.rep2</Title>
+    <Accession database="GEO">GSM5133017</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+1h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133017/suppl/GSM5133017_PolII-1h-A.rep2.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133017/suppl/GSM5133017_PolII-1h-A.rep2.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128738" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229674" />
+  </Sample>
+
+  <Sample iid="GSM5133018">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_1h_with_A.rep1</Title>
+    <Accession database="GEO">GSM5133018</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+1h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133018/suppl/GSM5133018_PolII-1h+A.rep1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133018/suppl/GSM5133018_PolII-1h+A.rep1.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128737" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229675" />
+  </Sample>
+
+  <Sample iid="GSM5133019">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_1h_with_A.rep2</Title>
+    <Accession database="GEO">GSM5133019</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+1h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133019/suppl/GSM5133019_PolII-1h+A.rep2.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133019/suppl/GSM5133019_PolII-1h+A.rep2.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128736" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229676" />
+  </Sample>
+
+  <Sample iid="GSM5133020">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_2h_no_A.rep1</Title>
+    <Accession database="GEO">GSM5133020</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+2h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133020/suppl/GSM5133020_PolII-2h-A.rep1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133020/suppl/GSM5133020_PolII-2h-A.rep1.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128735" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229677" />
+  </Sample>
+
+  <Sample iid="GSM5133022">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_2h_no_A.rep2</Title>
+    <Accession database="GEO">GSM5133022</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+2h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133022/suppl/GSM5133022_PolII-2h-A.rep2.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133022/suppl/GSM5133022_PolII-2h-A.rep2.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128734" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229678" />
+  </Sample>
+
+  <Sample iid="GSM5133023">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_2h_no_A.rep3</Title>
+    <Accession database="GEO">GSM5133023</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+2h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133023/suppl/GSM5133023_PolII-2h-A.rep3.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133023/suppl/GSM5133023_PolII-2h-A.rep3.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128729" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229679" />
+  </Sample>
+
+  <Sample iid="GSM5133024">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_2h_with_A.rep1</Title>
+    <Accession database="GEO">GSM5133024</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+2h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133024/suppl/GSM5133024_PolII-2h+A.rep1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133024/suppl/GSM5133024_PolII-2h+A.rep1.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128733" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229680" />
+  </Sample>
+
+  <Sample iid="GSM5133025">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_2h_with_A.rep2</Title>
+    <Accession database="GEO">GSM5133025</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+2h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133025/suppl/GSM5133025_PolII-2h+A.rep2.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133025/suppl/GSM5133025_PolII-2h+A.rep2.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128732" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229681" />
+  </Sample>
+
+  <Sample iid="GSM5133027">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_2h_with_A.rep3</Title>
+    <Accession database="GEO">GSM5133027</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+2h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133027/suppl/GSM5133027_PolII-2h+A.rep3.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133027/suppl/GSM5133027_PolII-2h+A.rep3.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128731" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229682" />
+  </Sample>
+
+  <Sample iid="GSM5133028">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_4h_no_A.rep2</Title>
+    <Accession database="GEO">GSM5133028</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+4h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133028/suppl/GSM5133028_PolII-4h-A.rep2.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133028/suppl/GSM5133028_PolII-4h-A.rep2.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128730" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229683" />
+  </Sample>
+
+  <Sample iid="GSM5133030">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_4h_no_A.rep3</Title>
+    <Accession database="GEO">GSM5133030</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+4h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133030/suppl/GSM5133030_PolII-4h-A.rep3.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133030/suppl/GSM5133030_PolII-4h-A.rep3.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128728" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229684" />
+  </Sample>
+
+  <Sample iid="GSM5133031">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_4h_with_A.rep1</Title>
+    <Accession database="GEO">GSM5133031</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+4h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133031/suppl/GSM5133031_PolII-4h+A.rep1.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133031/suppl/GSM5133031_PolII-4h+A.rep1.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128727" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229685" />
+  </Sample>
+
+  <Sample iid="GSM5133033">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>polii_4h_with_A.rep2</Title>
+    <Accession database="GEO">GSM5133033</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+4h
+      </Characteristics>
+      <Characteristics tag="antibody">
+anti-RNA Polymerase II antibody (Cell Signaling, 14958)
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133033/suppl/GSM5133033_PolII-4h+A.rep2.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="NARROWPEAK">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133033/suppl/GSM5133033_PolII-4h+A.rep2.narrowPeak.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128726" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229686" />
+  </Sample>
+
+  <Sample iid="GSM5133034">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>Input-Noc0h</Title>
+    <Accession database="GEO">GSM5133034</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+0h
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128725" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229687" />
+  </Sample>
+
+  <Sample iid="GSM5133035">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>Input-Noc1h</Title>
+    <Accession database="GEO">GSM5133035</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+1h
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128724" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229688" />
+  </Sample>
+
+  <Sample iid="GSM5133036">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>Input-Noc2h</Title>
+    <Accession database="GEO">GSM5133036</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+2h
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128723" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229689" />
+  </Sample>
+
+  <Sample iid="GSM5133038">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>Input-Noc4h</Title>
+    <Accession database="GEO">GSM5133038</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="time point">
+4h
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0,  60min, 120min and 240min for pro-meta, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+Chromatin immunoprecipitation (ChIP) was performed using anti-RNA Polymerase II antibody (Cell Signaling, 14958) as described previously 1. Briefly, following sorting, cells were re-suspended in 1ml pre-cooled Cell Lysis Buffer supplemented with protease inhibitors (PI) and PMSF for 20min on ice. Nuclei were pelleted and re-suspended in 1ml Nuclear Lysis Buffer (50mM Tris pH 8, 10mM EDTA, 1% SDS, fresh supplemented with PI and PMSF) for 10min on ice. 0.6ml IP dilution buffer (20mM Tris pH 8, 2mM EDTA, 150mM NaCl, 1% Triton X-100, 0.01% SDS, fresh supplemented with PI and PMSF) was added followed by sonication (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF) for 45min. Samples were pelleted at 15000rpm for 10min at 4℃ to remove cell debris. Supernatant was supplemented with 3.4ml IP dilution buffer fresh supplemented with PI and PMSF, 50g isotope-matched IgG and 50l protein A/G agarose beads (A:G = 1:1, ThermoFisher 15918014 and ThermoFisher 15920010) and rotated at 4℃ for 8h to preclear the chromatin. 200μl, chromatin was set aside as input chromatin. Precleared chromatin was then incubated with 35μl A/G agarose beads (A:G = 1:1) pre-bound with anti-RNA PolII antibody (5μg/IP) at 4℃ for overnight. Beads were washed once with IP wash buffer I (20mM Tris pH 8, 2mM EDTA, 50mMNaCl, 1% Triton X-100, 0.1% SDS), twice with high salt buffer (20mMTris pH 8, 2mM EDTA, 500mMNaCl, 1% Triton X-100, 0.01% SDS), once with IP wash buffer II (10mMTris pH 8, 1mM EDTA, 0.25 M LiCl, 1% NP-40/Igepal, 1% sodium deoxycholate) and twice with TE buffer (10mM Tris pH 8, 1mM EDTA pH 8). All washing steps were performed on ice. Beads were moved to RT and eluted in 200μl fresh made Elution Buffer (100mM NaHCO3, 1%SDS). 12μl of 5M NaCl, 2μl RNaseA (10mg/ml) was added to IP and input samples and incubated at 65℃ for 2h, followed by addition of 3μl protease K (20mg/ml) and incubated at 65℃ overnight to reverse crosslinking. Finally, IP and input samples were supplemented with 10ul of 3M sodium acetate (pH 5.2), and DNA was purified with QIAquick PCR purification kit (QIAGEN 28106).
+ChIP-seq libraries were constructed using the Illumina’s TruSeq ChIP sample preparation kit (Illumina, catalog no. IP-202-1012). Libraries were size selected using the SPRIselect beads (Beckman Coulter, catalog no. B23318) before PCR amplification. Libraries were then quantified through real-time PCR with the KAPA Library Quant Kit for Illumina (KAPA Biosystems catalog no. KK4835). Finally, libraries were pooled and sequenced on a Illumina NextSeq 500 platform using Illumina sequencing reagents.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Sequencing reads were mapped to mm9 using Bowtie2 (v2.2.9) with default parameters. Aligments with MAPQ score smaller than 10 were discarded. Duplicates were removed using Samtools (v0.1.19), and in addition, reads on mitochondria, contigs and blacklist regions were removed. BAM files were converted to BED files using Bedtools (v2.27.1). Peaks were called using MACS2 (v2.1.0) over corresponding input controls, with default parameters and 0.01 q-value cutoff.
+Genome_build: mm9
+Supplementary_files_format_and_content: bigwig files and peak files for each biologica replicate is provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18128722" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10229690" />
+  </Sample>
+
+  <Series iid="GSE168168">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-09-16</Last-Update-Date>
+    </Status>
+    <Title>CTCF and transcription orchestrate chromatin structure re-configuration after mitosis [ChIP-seq]</Title>
+    <Accession database="GEO">GSE168168</Accession>
+    <Pubmed-ID>34453048</Pubmed-ID>
+    <Summary>
+During mitosis, transcription is globally attenuated and chromatin architecture is dramatically reconfigured. Here we exploited the M-phase to G1-phase progression to interrogate the contributions of the architectural factor CTCF and the process of transcription to re-sculpting the genome in newborn nuclei. While CTCF appears to be dispensable for large scale post-mitotic compartmentalization, depletion of CTCF specifically during the M-phase to G1-phase transition alters the re-establishment of local short-range compartmentalization after mitosis. Without CTCF, structural loops fail to reform, leading to illegitimate contacts between cis-regulatory elements (CREs) and altered gene expression in G1-phase. Transient CRE contacts that are normally resolved after telophase persist deeply into G1-phase in CTCF depleted cells. Boundary reformation is largely disrupted upon CTCF loss. Yet, a subset (~27%) of boundaries emerges normally in the absence of CTCF and is characterized by transitions in chromatin states. Reformation of gene domains can occur prior to the full onset of transcription and can be linked to tri-methylation at lysine 36 of histone 3 (H3K36me3), a mark stable throughout mitosis. The focus on the de novo formation of nuclear architecture during G1 entry yielded novel insights into how CTCF and the process of transcription contribute to the dynamic re-configuration of chromatin architecture during the mitosis to G1 phase progression.
+    </Summary>
+    <Overall-Design>
+Uninduced G1E-ER4 (-GATA1) cells were synchronized to pro-metaphase with nocodazole treatment and treated with or without auxin to remove CTCF. Cells from both CTCF depleted and replated groups were released from nocodazole for a variety of durations. For PolII ChIP-seq: Cells were harvested at 0min (prometa), 60min (early-G1), 120min (mid-G1) or 240min (late-G1) after nocodazole release to assess post-mitotic PolII binding with or without CTCF. 2-3 biological replicates per time point were collected
+    </Overall-Design>
+    <Type>Genome binding/occupancy profiling by high throughput sequencing</Type>
+    <Contributor-Ref ref="contrib3" position="1" />
+    <Contributor-Ref ref="contrib1" position="2" />
+    <Contributor-Ref ref="contrib4" position="3" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM5133011" />
+    <Sample-Ref ref="GSM5133012" />
+    <Sample-Ref ref="GSM5133013" />
+    <Sample-Ref ref="GSM5133014" />
+    <Sample-Ref ref="GSM5133016" />
+    <Sample-Ref ref="GSM5133017" />
+    <Sample-Ref ref="GSM5133018" />
+    <Sample-Ref ref="GSM5133019" />
+    <Sample-Ref ref="GSM5133020" />
+    <Sample-Ref ref="GSM5133022" />
+    <Sample-Ref ref="GSM5133023" />
+    <Sample-Ref ref="GSM5133024" />
+    <Sample-Ref ref="GSM5133025" />
+    <Sample-Ref ref="GSM5133027" />
+    <Sample-Ref ref="GSM5133028" />
+    <Sample-Ref ref="GSM5133030" />
+    <Sample-Ref ref="GSM5133031" />
+    <Sample-Ref ref="GSM5133033" />
+    <Sample-Ref ref="GSM5133034" />
+    <Sample-Ref ref="GSM5133035" />
+    <Sample-Ref ref="GSM5133036" />
+    <Sample-Ref ref="GSM5133038" />
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE168nnn/GSE168168/suppl/GSE168168_RAW.tar
+    </Supplementary-Data>
+    <Relation type="SubSeries of" target="GSE168251" />
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA706396" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRP309136" />
+  </Series>
+
+</MINiML>

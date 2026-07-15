@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Yemin</First><Last>Lan</Last></Person>
+    <Organization>University of Pennsylvania</Organization>
+    <Address>
+      <Line>3400 Civic Center Blvd</Line>
+      <City>Philadelphia</City>
+      <State>PA</State>
+      <Zip-Code>19104</Zip-Code>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Organization>GEO</Organization>
+    <Address>
+      <City></City>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib3">
+    <Person><First>Haoyue</First><Last>Zhang</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib4">
+    <Person><First>Gerd</First><Last>Blobel</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Platform iid="GPL19057">
+    <Status database="GEO">
+      <Submission-Date>2014-08-07</Submission-Date>
+      <Release-Date>2014-08-07</Release-Date>
+      <Last-Update-Date>2019-03-25</Last-Update-Date>
+    </Status>
+    <Title>Illumina NextSeq 500 (Mus musculus)</Title>
+    <Accession database="GEO">GPL19057</Accession>
+    <Technology>high-throughput sequencing</Technology>
+    <Distribution>virtual</Distribution>
+    <Organism taxid="10090">Mus musculus</Organism>
+    <Manufacturer></Manufacturer>
+    <Manufacture-Protocol>
+    </Manufacture-Protocol>
+    <Contact-Ref ref="contrib2" />
+  </Platform>
+
+  <Sample iid="GSM5133376">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>0h_no_auxin_rep1</Title>
+    <Accession database="GEO">GSM5133376</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+0h
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140095" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239381" />
+  </Sample>
+
+  <Sample iid="GSM5133377">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>0h_no_auxin_rep2</Title>
+    <Accession database="GEO">GSM5133377</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+0h
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140094" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239382" />
+  </Sample>
+
+  <Sample iid="GSM5133378">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>0h_with_auxin_rep1</Title>
+    <Accession database="GEO">GSM5133378</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+0h
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133378/suppl/GSM5133378_0h_with_a_rep1.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140093" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239383" />
+  </Sample>
+
+  <Sample iid="GSM5133379">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>0h_with_auxin_rep2</Title>
+    <Accession database="GEO">GSM5133379</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+0h
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133379/suppl/GSM5133379_0h_with_a_rep2.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140092" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239384" />
+  </Sample>
+
+  <Sample iid="GSM5133380">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>30min_no_auxin_rep1</Title>
+    <Accession database="GEO">GSM5133380</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+30min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133380/suppl/GSM5133380_30min_no_a_rep1.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140091" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239385" />
+  </Sample>
+
+  <Sample iid="GSM5133381">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>30min_no_auxin_rep2</Title>
+    <Accession database="GEO">GSM5133381</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+30min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133381/suppl/GSM5133381_30min_no_a_rep2.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140090" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239386" />
+  </Sample>
+
+  <Sample iid="GSM5133382">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>30min_with_auxin_rep1</Title>
+    <Accession database="GEO">GSM5133382</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+30min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133382/suppl/GSM5133382_30min_with_a_rep1.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140089" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239387" />
+  </Sample>
+
+  <Sample iid="GSM5133383">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>30min_with_auxin_rep2</Title>
+    <Accession database="GEO">GSM5133383</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+30min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133383/suppl/GSM5133383_30min_with_a_rep2.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140110" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239388" />
+  </Sample>
+
+  <Sample iid="GSM5133384">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>60min_no_auxin_rep1</Title>
+    <Accession database="GEO">GSM5133384</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+60min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133384/suppl/GSM5133384_60min_no_a_rep1.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140109" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239389" />
+  </Sample>
+
+  <Sample iid="GSM5133385">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>60min_no_auxin_rep2</Title>
+    <Accession database="GEO">GSM5133385</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+60min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133385/suppl/GSM5133385_60min_no_a_rep2.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140108" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239390" />
+  </Sample>
+
+  <Sample iid="GSM5133386">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>60min_with_auxin_rep1</Title>
+    <Accession database="GEO">GSM5133386</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+60min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133386/suppl/GSM5133386_60min_with_a_rep1.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140107" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239391" />
+  </Sample>
+
+  <Sample iid="GSM5133387">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>60min_with_auxin_rep2</Title>
+    <Accession database="GEO">GSM5133387</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+60min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133387/suppl/GSM5133387_60min_with_a_rep2.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140106" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239392" />
+  </Sample>
+
+  <Sample iid="GSM5133388">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_no_auxin_rep1</Title>
+    <Accession database="GEO">GSM5133388</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133388/suppl/GSM5133388_120min_no_a_rep1.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140105" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239393" />
+  </Sample>
+
+  <Sample iid="GSM5133389">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_no_auxin_rep2</Title>
+    <Accession database="GEO">GSM5133389</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133389/suppl/GSM5133389_120min_no_a_rep2.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140104" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239394" />
+  </Sample>
+
+  <Sample iid="GSM5133390">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_no_auxin_rep3</Title>
+    <Accession database="GEO">GSM5133390</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133390/suppl/GSM5133390_120min_no_a_rep3.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140103" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239395" />
+  </Sample>
+
+  <Sample iid="GSM5133391">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_with_auxin_rep1</Title>
+    <Accession database="GEO">GSM5133391</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133391/suppl/GSM5133391_120min_with_a_rep1.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140102" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239396" />
+  </Sample>
+
+  <Sample iid="GSM5133392">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_with_auxin_rep2</Title>
+    <Accession database="GEO">GSM5133392</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133392/suppl/GSM5133392_120min_with_a_rep2.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140101" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239397" />
+  </Sample>
+
+  <Sample iid="GSM5133393">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_with_auxin_rep3</Title>
+    <Accession database="GEO">GSM5133393</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133393/suppl/GSM5133393_120min_with_a_rep3.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140100" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239398" />
+  </Sample>
+
+  <Sample iid="GSM5133394">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_no_auxin_with_triptolide rep1</Title>
+    <Accession database="GEO">GSM5133394</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133394/suppl/GSM5133394_120min_no_a_with_trip_rep1.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140099" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239399" />
+  </Sample>
+
+  <Sample iid="GSM5133395">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_no_auxin_with_triptolide rep2</Title>
+    <Accession database="GEO">GSM5133395</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+no auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133395/suppl/GSM5133395_120min_no_a_with_trip_rep2.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140098" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239400" />
+  </Sample>
+
+  <Sample iid="GSM5133396">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_with_auxin_with_triptolide rep1</Title>
+    <Accession database="GEO">GSM5133396</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133396/suppl/GSM5133396_120min_with_a_with_trip_rep1.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140097" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239401" />
+  </Sample>
+
+  <Sample iid="GSM5133397">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-06-17</Last-Update-Date>
+    </Status>
+    <Title>120min_with_auxin_with_triptolide rep2</Title>
+    <Accession database="GEO">GSM5133397</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>G1E-ER4 cells</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="cell type">
+erythroid
+      </Characteristics>
+      <Characteristics tag="treatment">
+auxin
+      </Characteristics>
+      <Characteristics tag="time point">
+120min
+      </Characteristics>
+      <Treatment-Protocol>
+Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. For post-mitotic enrichment, cells were released from nocodazole for 0, 25min, 60min, 120min and 240min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.
+      </Treatment-Protocol>
+      <Growth-Protocol>
+G1E-ER4 is a subline of the GATA1-null proerythroblast cell line G1E (Weiss et al, Mol. Cell. Biol. 17, 1642–51 (1997).). Cells were cultered in IMDM medium, supplemented with 15% FBS, penicillin/streptomycin, kit ligand, monothioglycerol and Epoetin alpha at 37 degrees with 5% CO2 (as described in Weiss et al., 1997).
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+In-situ Hi-C experiments were performed as previously described 1. Briefly, sorted cells (5 million for prometaphase and ana/telophase and 10million for early- and mid-G1 phase) were lysed in 1ml cold Cell Lysis Buffer (10mM Tris pH 8, 10mM NaCl, 0.2% NP-40/Igepal) for 10min on ice. Cells were pelleted at 4℃ and washed with 1.2 x DpnII buffer. Nuclei were permeabilized with 0.3% SDS for 1h at 37℃ and quenched with 1.8% Triton X-100 for 1h at 37℃. Chromatin was digested with 300U DpnII restriction enzyme (NEB, R0543M) in-situ at 37℃ over night with shaking. 300U DpnII restriction enzyme was added for an additional 4h at 37℃ with shaking. Nuclei were incubated at 65℃ for 20min to inactivate DpnII. After cool down, digested chromatin fragments were blunted with pCTP, pGTP, pTTP and Biotin-14-dATP (Thermal Fisher Scientific, 19524016) using 40U DNA Polymerase I, Large (Klenow) fragment (NEB, M0210). DNA was ligated in-situ with 4000U T4 DNA ligase (NEB, M0202M) for 4h at 16℃ followed by further incubation for 2h at RT. Nuclei were then incubated in 10% SDS containing proteinase K (3115879 BMB) at 65℃ overnight to reverse crosslinking. RNA was then digested with DNase-free RNase at 37℃ for 30min. DNA was then extracted by phenol-chloroform extraction, precipitated, and dissolved in nuclease free water. DNA was sonicated to 200-300bp fragments (Epishear, Active Motif, 100% amplitude, 30s ON and 30s OFF, 25-30min) and purified with AMPure XP beads (Beckman Coulter).
+For hic library construction, biotin-labeled DNA after extraction was purified by incubation with 100μl Dynabeads MyOne Streptavidin C1 beads (Thermal Fisher Scientific, 65002) at RT for 15min. DNA libraries were constructed using the NEBNext DNA Library Prep Master Mix Set for Illumina (NEB E6040, M0543L, E7335S). To elute DNA, streptavidin bead- bound DNA was incubated in 0.1% SDS at 98℃ for 10min. DNA was purified with AMPure XP beads and index labeled with NEBNext multiplex oligos for 6 cycles on a thermal cycler, using the NEBNext Q5 Hot Start HIFI PCR master mix. Index labeled PCR products were then purified with AMPure XP beads and sequenced on an Illumina NextSeq 500 sequencer.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+For each biological replicate, paired end reads were aligned to the mouse reference genome mm9 using bowtie2 (global parameters: --very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end –reorder; local parameters: --very-sensitive -L 20 --score-min L,-0.6,-0.2 --end-to-end --reorder) through the Hi-C Pro software 41. PCR duplicates were removed and uniquely mapped reads were paired to generate a validPair file. The output validPair file was converted into “.hic” file using the hicpro2juicebox utility. For merged samples, similar steps were taken on reads merged from each biological replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: .hic formated files of each individual biological replicate of hic data are provided
+    </Data-Processing>
+    <Platform-Ref ref="GPL19057" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NextSeq 500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="COOL">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5133nnn/GSM5133397/suppl/GSM5133397_120min_with_a_with_trip_rep2.cool.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN18140096" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX10239402" />
+  </Sample>
+
+  <Series iid="GSE168176">
+    <Status database="GEO">
+      <Submission-Date>2021-03-03</Submission-Date>
+      <Release-Date>2021-06-17</Release-Date>
+      <Last-Update-Date>2021-09-16</Last-Update-Date>
+    </Status>
+    <Title>CTCF and transcription orchestrate chromatin structure re-configuration after mitosis [Hi-C]</Title>
+    <Accession database="GEO">GSE168176</Accession>
+    <Pubmed-ID>34453048</Pubmed-ID>
+    <Summary>
+During mitosis, transcription is globally attenuated and chromatin architecture is dramatically reconfigured. Here we exploited the M-phase to G1-phase progression to interrogate the contributions of the architectural factor CTCF and the process of transcription to re-sculpting the genome in newborn nuclei. While CTCF appears to be dispensable for large scale post-mitotic compartmentalization, depletion of CTCF specifically during the M-phase to G1-phase transition alters the re-establishment of local short-range compartmentalization after mitosis. Without CTCF, structural loops fail to reform, leading to illegitimate contacts between cis-regulatory elements (CREs) and altered gene expression in G1-phase. Transient CRE contacts that are normally resolved after telophase persist deeply into G1-phase in CTCF depleted cells. Boundary reformation is largely disrupted upon CTCF loss. Yet, a subset (~27%) of boundaries emerges normally in the absence of CTCF and is characterized by transitions in chromatin states. Reformation of gene domains can occur prior to the full onset of transcription and can be linked to tri-methylation at lysine 36 of histone 3 (H3K36me3), a mark stable throughout mitosis. The focus on the de novo formation of nuclear architecture during G1 entry yielded novel insights into how CTCF and the process of transcription contribute to the dynamic re-configuration of chromatin architecture during the mitosis to G1 phase progression.
+    </Summary>
+    <Overall-Design>
+Uninduced G1E-ER4 (-GATA1) cells were synchronized to pro-metaphase with nocodazole treatment and treated with or without auxin to remove CTCF. Cells from both CTCF depleted and replated groups were released from nocodazole for a variety of durations. Cells at different cell cycle stages were purified with FACS. Hi-C experiments were performed on purified populations to examine chromatin structure with or without CTCF at designated cell cycle stage. 2-3 biological replicates were performed for each time point
+    </Overall-Design>
+    <Type>Other</Type>
+    <Contributor-Ref ref="contrib3" position="1" />
+    <Contributor-Ref ref="contrib1" position="2" />
+    <Contributor-Ref ref="contrib4" position="3" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM5133376" />
+    <Sample-Ref ref="GSM5133377" />
+    <Sample-Ref ref="GSM5133378" />
+    <Sample-Ref ref="GSM5133379" />
+    <Sample-Ref ref="GSM5133380" />
+    <Sample-Ref ref="GSM5133381" />
+    <Sample-Ref ref="GSM5133382" />
+    <Sample-Ref ref="GSM5133383" />
+    <Sample-Ref ref="GSM5133384" />
+    <Sample-Ref ref="GSM5133385" />
+    <Sample-Ref ref="GSM5133386" />
+    <Sample-Ref ref="GSM5133387" />
+    <Sample-Ref ref="GSM5133388" />
+    <Sample-Ref ref="GSM5133389" />
+    <Sample-Ref ref="GSM5133390" />
+    <Sample-Ref ref="GSM5133391" />
+    <Sample-Ref ref="GSM5133392" />
+    <Sample-Ref ref="GSM5133393" />
+    <Sample-Ref ref="GSM5133394" />
+    <Sample-Ref ref="GSM5133395" />
+    <Sample-Ref ref="GSM5133396" />
+    <Sample-Ref ref="GSM5133397" />
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE168nnn/GSE168176/suppl/GSE168176_RAW.tar
+    </Supplementary-Data>
+    <Supplementary-Data type="CSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE168nnn/GSE168176/suppl/GSE168176_boundary_calls.csv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="CSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE168nnn/GSE168176/suppl/GSE168176_loop_calls.csv.gz
+    </Supplementary-Data>
+    <Relation type="SubSeries of" target="GSE168251" />
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA706676" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRP309311" />
+  </Series>
+
+</MINiML>

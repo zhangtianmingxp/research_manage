@@ -69,6 +69,135 @@ B-P0008-GEO-057	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	c
 B-P0008-GEO-058	P0008	2016-08-30	2016-08-30	NR	Illumina HiSeq 4000	E-P0008-008	candidate	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
 B-P0008-GEO-059	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008|E-P0008-011	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
 B-P0008-GEO-060	P0008	NR	NR	NR	Illumina HiSeq 2000	E-P0008-008|E-P0008-011	unresolved	日期来自原始alias，仅作为候选批次，不等同于已验证实验批次
-B-P0001-001	P0001	round4_minimal	NR	NR	UNRESOLVED	E-P0001-001|E-P0001-002	unresolved	本轮未下载补充表，建库/测序批次未裁决
-B-P0009-001	P0009	GSE129997	NR	NR	Illumina NextSeq 500	E-P0009-002	candidate	GEO平台GPL19057支持仪器平台；具体建库批次未裁决
-B-P0012-001	P0012	GSE168251	NR	NR	Illumina NextSeq 500	E-P0012-002	candidate	GEO平台GPL19057支持仪器平台；具体建库批次未裁决
+B-P0009-001	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-002	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-003	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-004	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-005	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-006	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-007	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-008	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-009	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-010	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-011	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-012	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-013	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-014	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-015	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-016	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-017	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-018	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-019	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-020	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-021	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-022	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-023	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-024	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-025	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-026	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-027	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-028	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-029	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-030	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-031	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-032	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-033	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-034	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-035	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-036	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-037	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-038	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-039	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-040	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-041	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-042	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-043	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-044	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-045	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-046	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-047	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-048	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-049	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-050	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-051	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-052	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-053	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-054	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-055	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-056	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-057	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-058	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-059	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-060	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-061	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-062	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-063	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-064	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-065	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-066	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-067	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-068	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-069	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-070	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-071	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-072	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-073	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-074	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0009-075	P0009	NR	NR	NR	NextSeq 500	E-P0009-004|E-P0009-005	unresolved	Official records identify instrument model but not a per-GSM library batch label.
+B-P0012-001	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-002	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-003	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-004	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-005	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-006	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-007	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-008	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-009	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-010	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-011	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-012	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-013	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-014	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-015	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-016	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-017	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-018	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-019	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-020	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-021	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-022	P0012	GSE168168	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-023	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-024	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-025	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-026	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-027	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-028	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-029	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-030	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-031	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-032	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-033	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-034	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-035	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-036	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-037	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-038	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-039	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-040	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-041	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-042	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-043	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0012-044	P0012	GSE168176	NR	NR	NextSeq 500	E-P0012-004	verified_metadata_record	subseries used as a coarse source partition, not a laboratory batch claim.
+B-P0001-001	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-002	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-003	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-004	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-005	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-006	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-007	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-008	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-009	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-010	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-011	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-012	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.
+B-P0001-013	P0001	E-MTAB-1948	NR	NR	Illumina Genome Analyzer II	E-P0001-003	verified_metadata_record	No separate library batch in ENA filereport.

@@ -7,7 +7,14 @@ import hashlib
 from pathlib import Path
 
 from src.literature_catalog.catalog import classify_accession, load_schema, validate_catalog
-from src.literature_catalog.pilot import build_pilot_catalog, parse_ena_runs, parse_geo_miniml, parse_ncbi_sra, parse_pmc_evidence
+from src.literature_catalog.pilot import (
+    build_pilot_catalog,
+    parse_ena_runs,
+    parse_geo_miniml,
+    parse_ncbi_runinfo,
+    parse_ncbi_sra,
+    parse_pmc_evidence,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -89,6 +96,12 @@ class OfflineParserTests(unittest.TestCase):
         self.assertEqual(rows[0]["run_accession"], "SRR1")
         self.assertEqual(len(rows[0]["fastq_ftp"].split(";")), 2)
 
+    def test_runinfo_parser_is_offline(self) -> None:
+        rows = parse_ncbi_runinfo(ROOT / "data" / "interim" / "pilot" / "source_metadata" / "SRP192917_runinfo.csv")
+        self.assertEqual(len(rows), 120)
+        self.assertEqual(rows[0]["study"], "SRP192917")
+        self.assertEqual(rows[0]["sample_alias"][:3], "GSM")
+
     def test_pmc_parser_reports_only_explicit_statements(self) -> None:
         facts = parse_pmc_evidence(ROOT / "tests" / "fixtures" / "pmc_evidence_small.xml")
         self.assertTrue(facts["time_courses_in_duplicate"])
@@ -120,11 +133,15 @@ class RepositoryIntegrationTests(unittest.TestCase):
     def test_all_geo_samples_are_disposed_and_species_are_separate(self) -> None:
         with (ROOT / "data" / "interim" / "pilot" / "archive_samples.tsv").open(encoding="utf-8", newline="") as handle:
             rows = list(csv.DictReader(handle, delimiter="\t"))
-        self.assertEqual(len(rows), 60)
-        self.assertEqual(len({row["gsm_accession"] for row in rows}), 60)
+        p0008 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0008-")]
+        p0009 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0009-")]
+        self.assertEqual(len(p0008), 60)
+        self.assertEqual(len(p0009), 75)
+        self.assertEqual(len({row["gsm_accession"] for row in rows}), len(rows))
         self.assertEqual({row["disposition_status"] for row in rows}, {"mapped"})
-        self.assertEqual(sum(row["species_scientific"] == "Gallus gallus" for row in rows), 58)
-        self.assertEqual(sum(row["species_scientific"] == "Homo sapiens" for row in rows), 2)
+        self.assertEqual(sum(row["species_scientific"] == "Gallus gallus" for row in p0008), 58)
+        self.assertEqual(sum(row["species_scientific"] == "Homo sapiens" for row in p0008), 2)
+        self.assertEqual({row["species_scientific"] for row in p0009}, {"Mus musculus"})
         self.assertTrue(all(row["sample_title_original"] not in {"", "NR"} for row in rows))
 
     def test_run_relations_and_wide_table_have_no_cartesian_growth(self) -> None:
@@ -142,23 +159,31 @@ class RepositoryIntegrationTests(unittest.TestCase):
             if row["entity_type"] == "sra_run" and row["run_accession"] not in {"NR", "NA", "NOT_FOUND", "UNRESOLVED", "RESTRICTED"}
         }
         mapped = [row for row in relations if row["relation_type"] == "experiment_has_run"]
-        self.assertEqual(len(runs), 1290)
+        p0008_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0008") and row["entity_type"] == "sra_run"}
+        p0009_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0009") and row["entity_type"] == "sra_run"}
+        self.assertEqual(len(p0008_runs), 1290)
+        self.assertEqual(len(p0009_runs), 120)
+        self.assertEqual(runs, p0008_runs | p0009_runs)
         self.assertEqual({row["child_accession"] for row in mapped}, runs)
-        self.assertEqual(len(files), 2580)
+        self.assertEqual(len(files), 2580 + 195)
         self.assertEqual(len(wide), len(files))
         self.assertEqual(len({row["catalog_row_id"] for row in wide}), len(wide))
         self.assertEqual(len({row["file_id"] for row in wide}), len(files))
         self.assertEqual(file_view, wide)
-        self.assertEqual(len(run_view), 1290)
+        self.assertEqual(len(run_view), 1290 + 120)
         self.assertEqual({row["run_accession"] for row in run_view}, runs)
-        self.assertTrue(all(row["file_count"] == "2" for row in run_view))
-        self.assertTrue(all(row["read1_url"] not in {"", "NA"} and row["read2_url"] not in {"", "NA"} for row in run_view))
+        p0008_run_view = [row for row in run_view if row["paper_id"] == "P0008"]
+        p0009_run_view = [row for row in run_view if row["paper_id"] == "P0009"]
+        self.assertTrue(all(row["file_count"] == "2" for row in p0008_run_view))
+        self.assertTrue(all(row["read1_url"] not in {"", "NA"} and row["read2_url"] not in {"", "NA"} for row in p0008_run_view))
+        self.assertEqual({row["file_count"] for row in p0009_run_view}, {"1", "2"})
+        self.assertTrue(all(row["read1_url"] not in {"", "NA"} for row in p0009_run_view))
 
     def test_query_manifest_records_complete_pagination(self) -> None:
         with (ROOT / "data" / "interim" / "pilot" / "source_queries.tsv").open(encoding="utf-8", newline="") as handle:
             rows = list(csv.DictReader(handle, delimiter="\t"))
         by_id = {row["query_id"]: row for row in rows}
-        self.assertGreaterEqual(len(rows), 8)
+        self.assertGreaterEqual(len(rows), 14)
         self.assertEqual({by_id[f"Q000{i}"]["query_outcome"] for i in range(1, 6)}, {"success"})
         self.assertEqual(by_id["Q0006"]["query_outcome"], "query_failed")
         self.assertEqual(by_id["Q0007"]["query_outcome"], "size_limit_not_downloaded")
@@ -166,6 +191,9 @@ class RepositoryIntegrationTests(unittest.TestCase):
         self.assertIn("Q0009", by_id)
         self.assertIn("Q0010", by_id)
         self.assertIn("Q0011", by_id)
+        self.assertEqual(by_id["Q0012"]["returned_rows"], "75")
+        self.assertEqual(by_id["Q0013"]["returned_rows"], "120")
+        self.assertEqual(by_id["Q0014"]["returned_rows"], "120")
         self.assertTrue(all(int(row["retry_count"]) <= 2 for row in rows if row["retry_count"].isdigit()))
 
     def test_layered_provenance_and_semantic_review_coverage(self) -> None:
@@ -175,7 +203,7 @@ class RepositoryIntegrationTests(unittest.TestCase):
         samples = read("archive_samples.tsv")
         reviews = read("semantic_review.tsv")
         accessions = read("accessions.tsv")
-        hela = [row for row in samples if row["species_scientific"] == "Homo sapiens"]
+        hela = [row for row in samples if row["archive_sample_id"].startswith("AS-P0008-") and row["species_scientific"] == "Homo sapiens"]
         self.assertEqual(len(hela), 2)
         self.assertEqual({row["biological_sample_origin_status"] for row in hela}, {"reused_from_prior_study"})
         self.assertEqual({row["analysis_usage_status"] for row in hela}, {"reanalyzed_prior_data"})
@@ -184,6 +212,8 @@ class RepositoryIntegrationTests(unittest.TestCase):
         self.assertEqual(sum(row["record_type"] == "batch" for row in p0008_reviews), 60)
         self.assertEqual(sum(row["record_type"] == "sra_run" for row in p0008_reviews), 76)
         self.assertNotIn("AC-P0008-004", {row["accession_record_id"] for row in accessions})
+        p0009_reviews = [row for row in reviews if row["paper_id"] == "P0009"]
+        self.assertEqual(len(p0009_reviews), 5)
 
     def test_migration_preserves_v1_ids_and_build_is_deterministic(self) -> None:
         expected = {f"ST-P0008-{index:03d}" for index in range(1, 11)}
@@ -208,6 +238,18 @@ class RepositoryIntegrationTests(unittest.TestCase):
         self.assertEqual(readiness["run_view_rows"], 1290)
         self.assertEqual(readiness["file_view_rows"], 2580)
         self.assertFalse(readiness["legacy_placeholder_active"])
+
+    def test_p0009_run_level_catalog_exists(self) -> None:
+        def read(path: Path) -> list[dict[str, str]]:
+            with path.open(encoding="utf-8", newline="") as handle:
+                return list(csv.DictReader(handle, delimiter="\t"))
+
+        catalog = read(ROOT / "data" / "interim" / "pilot" / "P0009_run_file_catalog.tsv")
+        self.assertEqual(len(catalog), 195)
+        self.assertEqual({row["paper_id"] for row in catalog}, {"P0009"})
+        self.assertEqual(len({row["geo_sample"] for row in catalog}), 75)
+        self.assertEqual(len({row["run_accession"] for row in catalog}), 120)
+        self.assertIn("SRP192917", {row["study_accession"] for row in catalog})
 
     def test_round4_project_level_records_are_partitioned(self) -> None:
         def read(path: Path) -> list[dict[str, str]]:

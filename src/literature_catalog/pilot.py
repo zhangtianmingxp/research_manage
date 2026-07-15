@@ -119,6 +119,33 @@ def parse_ncbi_sra(path: Path) -> tuple[list[dict[str, str]], list[dict[str, str
     return experiments, runs
 
 
+def parse_ncbi_runinfo(path: Path) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            rows.append(
+                {
+                    "study": row.get("SRAStudy", "NR") or "NR",
+                    "experiment": row.get("Experiment", "NR") or "NR",
+                    "sra_sample": row.get("Sample", "NR") or "NR",
+                    "sample_alias": row.get("SampleName", "NR") or "NR",
+                    "biosample": row.get("BioSample", "NR") or "NR",
+                    "library_strategy": row.get("LibraryStrategy", "NR") or "NR",
+                    "library_source": row.get("LibrarySource", "NR") or "NR",
+                    "library_selection": row.get("LibrarySelection", "NR") or "NR",
+                    "library_layout": row.get("LibraryLayout", "NR") or "NR",
+                    "instrument_platform": row.get("Platform", "NR") or "NR",
+                    "instrument_model": row.get("Model", "NR") or "NR",
+                    "run": row.get("Run", "NR") or "NR",
+                    "public_status": "public" if row.get("ReleaseDate") else "UNRESOLVED",
+                    "total_spots": row.get("spots", "NR") or "NR",
+                    "total_bases": row.get("bases", "NR") or "NR",
+                    "archive_size_bytes": row.get("size_MB", "NR") or "NR",
+                }
+            )
+    return rows
+
+
 def parse_ena_runs(path: Path) -> list[dict[str, str]]:
     return _read_rows(path)
 
@@ -417,7 +444,7 @@ def assess_batch_readiness(
     }
 
 
-def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str, Any]:
+def _build_p0008_catalog(root: Path, config_path: Path | None = None) -> dict[str, Any]:
     """Build schema-v2 pilot tables solely from saved official snapshots."""
     config_file = config_path or root / "configs" / "pilots" / "P0008.json"
     config = json.loads(config_file.read_text(encoding="utf-8"))
@@ -450,10 +477,22 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
     _, existing_conditions = _read_tsv(root / schema["tables"]["conditions"]["path"])
     _, existing_replicates = _read_tsv(root / schema["tables"]["replicates"]["path"])
     _, existing_batches = _read_tsv(root / schema["tables"]["batches"]["path"])
+    _, existing_archive_samples = _read_tsv(root / schema["tables"]["archive_samples"]["path"])
+    _, existing_relations = _read_tsv(root / schema["tables"]["accession_relations"]["path"])
+    _, existing_files = _read_tsv(root / schema["tables"]["files"]["path"])
+    _, existing_wide_rows = _read_tsv(root / schema["tables"]["literature_experiment_catalog"]["path"])
+    _, existing_files_view = _read_tsv(root / schema["tables"]["literature_experiment_catalog_files"]["path"])
+    _, existing_run_rows = _read_tsv(root / schema["tables"]["literature_experiment_catalog_runs"]["path"])
     preserved_conditions = [row for row in existing_conditions if row.get("paper_id") != "P0008"]
     preserved_condition_ids = {row["condition_id"] for row in preserved_conditions}
     preserved_replicates = [row for row in existing_replicates if row.get("condition_id") in preserved_condition_ids]
     preserved_batches = [row for row in existing_batches if row.get("paper_id") != "P0008"]
+    preserved_archive_samples = [row for row in existing_archive_samples if not row.get("archive_sample_id", "").startswith("AS-P0008-")]
+    preserved_relations = [row for row in existing_relations if not row.get("relation_id", "").startswith("REL-P0008-")]
+    preserved_files = [row for row in existing_files if not row.get("file_id", "").startswith("RF-P0008-")]
+    preserved_wide_rows = [row for row in existing_wide_rows if row.get("paper_id") != "P0008"]
+    preserved_files_view = [row for row in existing_files_view if row.get("paper_id") != "P0008"]
+    preserved_run_rows = [row for row in existing_run_rows if row.get("paper_id") != "P0008"]
     conditions: list[dict[str, str]] = []
     replicates: list[dict[str, str]] = []
     batches: list[dict[str, str]] = []
@@ -553,6 +592,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
         })
         gsm_to_stp[sample["gsm"]] = timepoint_id
 
+    p0008_archive_samples = [dict(row) for row in archive_samples]
     preserved_timepoints = [
         row for row in all_existing_timepoints
         if not row.get("experiment_id", "").startswith("EX-P0008")
@@ -561,6 +601,7 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
     replicates.extend(preserved_replicates)
     batches.extend(preserved_batches)
     sample_timepoints.extend(preserved_timepoints)
+    archive_samples.extend(preserved_archive_samples)
     for name, rows in (("conditions", conditions), ("replicates", replicates), ("batches", batches), ("archive_samples", archive_samples), ("samples_timepoints", sample_timepoints)):
         spec = schema["tables"][name]
         _write_tsv(root / spec["path"], spec["fields"], rows)
@@ -713,25 +754,35 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
             "evidence_ids": sample["evidence_ids"], "notes": "Run粒度视图；配对文件列由同一Run的ENA记录确定性展开。",
         })
 
+    p0008_relations = [dict(row) for row in relations]
     relations_spec = schema["tables"]["accession_relations"]
+    relations.extend(preserved_relations)
     accessions.extend(preserved_accessions)
     _write_tsv(root / access_spec["path"], access_spec["fields"], accessions)
     _write_tsv(root / relations_spec["path"], relations_spec["fields"], relations)
     files_spec = schema["tables"]["files"]
+    p0008_files = [dict(row) for row in files]
+    files.extend(preserved_files)
     _write_tsv(root / files_spec["path"], files_spec["fields"], files)
     wide_spec = schema["tables"]["literature_experiment_catalog"]
+    p0008_wide_rows = [dict(row) for row in wide_rows]
+    wide_rows.extend(preserved_wide_rows)
     _write_tsv(root / wide_spec["path"], wide_spec["fields"], wide_rows)
     files_view_spec = schema["tables"]["literature_experiment_catalog_files"]
-    _write_tsv(root / files_view_spec["path"], files_view_spec["fields"], wide_rows)
+    wide_rows_for_files_view = [row for row in wide_rows if row.get("paper_id") == "P0008"]
+    wide_rows_for_files_view.extend(preserved_files_view)
+    _write_tsv(root / files_view_spec["path"], files_view_spec["fields"], wide_rows_for_files_view)
     runs_view_spec = schema["tables"]["literature_experiment_catalog_runs"]
+    p0008_run_rows = [dict(row) for row in run_rows]
+    run_rows.extend(preserved_run_rows)
     _write_tsv(root / runs_view_spec["path"], runs_view_spec["fields"], run_rows)
     semantic_spec = schema["tables"]["semantic_review"]
     _, existing_semantic_rows = _read_tsv(root / semantic_spec["path"])
     preserved_semantic_rows = [row for row in existing_semantic_rows if row.get("paper_id") != "P0008"]
-    semantic_rows = _semantic_review_rows(geo, archive_samples, ncbi_runs)
+    semantic_rows = _semantic_review_rows(geo, p0008_archive_samples, ncbi_runs)
     semantic_rows.extend(preserved_semantic_rows)
     _write_tsv(root / semantic_spec["path"], semantic_spec["fields"], semantic_rows)
-    readiness = assess_batch_readiness(semantic_rows, accessions, run_rows, wide_rows)
+    readiness = assess_batch_readiness(semantic_rows, [row for row in accessions if row["accession_record_id"].startswith("AC-P0008")], p0008_run_rows, p0008_wide_rows)
     readiness_path = root / "reports" / "schema_v2_batch_readiness.json"
     readiness_path.parent.mkdir(parents=True, exist_ok=True)
     readiness_path.write_text(json.dumps(readiness, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -755,8 +806,1176 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
             })
     _write_tsv(root / issues_spec["path"], issues_spec["fields"], issues)
 
-    reconciliation = _write_reconciliation(root, config, geo, ncbi_experiments, ncbi_runs, ena_runs, archive_samples, accessions, files, wide_rows, run_rows)
+    reconciliation = _write_reconciliation(root, config, geo, ncbi_experiments, ncbi_runs, ena_runs, p0008_archive_samples, [row for row in accessions if row["accession_record_id"].startswith("AC-P0008")], p0008_files, p0008_wide_rows, p0008_run_rows)
     return reconciliation
+
+
+def _p0009_title_metadata(title: str) -> dict[str, str]:
+    replicate_match = re.search(r"-rep(\d+)$", title)
+    replicate = f"rep{replicate_match.group(1)}" if replicate_match else "NR"
+    title_core = re.sub(r"-rep\d+$", "", title)
+
+    stage_map = {
+        "prometa": ("prometaphase", "0"),
+        "ana.telo": ("ana/telophase", "25"),
+        "anatelo": ("ana/telophase", "25"),
+        "early-G1": ("early G1", "60"),
+        "early-g1": ("early G1", "60"),
+        "mid-G1": ("mid G1", "120"),
+        "mid-g1": ("mid G1", "120"),
+        "late-G1": ("late G1", "240"),
+        "late-g1": ("late G1", "240"),
+        "asyn": ("asynchronous", "NR"),
+    }
+
+    if title.startswith("Capture-C-"):
+        payload = title[len("Capture-C-") :]
+        genotype = "commd3_mutant" if payload.startswith("commd3_mutant_") else "WT"
+        if genotype == "commd3_mutant":
+            payload = payload[len("commd3_mutant_") :]
+        phase_raw = payload.rsplit("-rep", 1)[0] if "-rep" in payload else payload
+        cell_cycle_phase, sampling_time = stage_map.get(phase_raw, ("UNRESOLVED", "NR"))
+        return {
+            "assay_type": "Capture-C",
+            "assay_detail": "Capture-C",
+            "measurement_object": "captured chromatin contacts",
+            "detection_target": "NR",
+            "measurement_target": "NR",
+            "genotype_or_construct": genotype,
+            "phase_token": phase_raw,
+            "cell_cycle_phase": cell_cycle_phase,
+            "sampling_time": sampling_time,
+            "sampling_time_unit": "min" if sampling_time != "NR" else "NA",
+            "replicate_label": replicate,
+            "perturbation_type": "mutation" if genotype == "commd3_mutant" else "not_applicable",
+            "perturbation_technology": "NR" if genotype == "commd3_mutant" else "not_applicable",
+            "perturbation_target": "Commd3" if genotype == "commd3_mutant" else "NA",
+        }
+
+    if title.startswith("Hi-C-"):
+        phase_raw = title_core[len("Hi-C-") :]
+        cell_cycle_phase, sampling_time = stage_map.get(phase_raw, ("UNRESOLVED", "NR"))
+        return {
+            "assay_type": "Hi-C",
+            "assay_detail": "in situ Hi-C",
+            "measurement_object": "genome-wide chromatin contacts",
+            "detection_target": "NA",
+            "measurement_target": "NA",
+            "genotype_or_construct": "WT",
+            "phase_token": phase_raw,
+            "cell_cycle_phase": cell_cycle_phase,
+            "sampling_time": sampling_time,
+            "sampling_time_unit": "min" if sampling_time != "NR" else "NA",
+            "replicate_label": replicate,
+            "perturbation_type": "not_applicable",
+            "perturbation_technology": "not_applicable",
+            "perturbation_target": "NA",
+        }
+
+    if title.startswith("ChIP-seq-"):
+        payload = title[len("ChIP-seq-") :]
+        target_token, phase_raw = payload.split("-", 1)
+        phase_raw = phase_raw.rsplit("-rep", 1)[0] if "-rep" in phase_raw else phase_raw
+        cell_cycle_phase, sampling_time = stage_map.get(phase_raw, ("UNRESOLVED", "NR"))
+        target_map = {
+            "CTCF": "CTCF",
+            "Rad21": "Rad21",
+            "PolII": "Pol II",
+            "input": "input control",
+        }
+        return {
+            "assay_type": "ChIP-seq",
+            "assay_detail": "ChIP-seq",
+            "measurement_object": "chromatin occupancy",
+            "detection_target": target_map.get(target_token, target_token),
+            "measurement_target": target_map.get(target_token, target_token),
+            "genotype_or_construct": "WT",
+            "phase_token": phase_raw,
+            "cell_cycle_phase": cell_cycle_phase,
+            "sampling_time": sampling_time,
+            "sampling_time_unit": "min" if sampling_time != "NR" else "NA",
+            "replicate_label": replicate,
+            "perturbation_type": "not_applicable",
+            "perturbation_technology": "not_applicable",
+            "perturbation_target": "NA",
+        }
+
+    raise CatalogError(f"P0009 title format not recognized: {title}")
+
+
+def _p0009_origin() -> dict[str, str]:
+    return {
+        "biological_sample_origin_status": "study_generated",
+        "library_origin_status": "study_generated",
+        "sequencing_generation_status": "study_generated",
+        "analysis_usage_status": "primary_analysis",
+        "origin_evidence_ids": "E-P0009-003|E-P0009-004|E-P0009-005",
+    }
+
+
+def _build_p0009_catalog(root: Path, config_path: Path | None = None) -> dict[str, Any]:
+    config_file = config_path or root / "configs" / "pilots" / "P0009.json"
+    config = json.loads(config_file.read_text(encoding="utf-8"))
+    schema = load_schema(root)
+    source_dir = root / str(config["source_metadata_dir"])
+    geo = parse_geo_miniml(source_dir / "GSE129997_family.xml")
+    ncbi_runs = parse_ncbi_runinfo(source_dir / "SRP192917_runinfo.csv")
+    ena_runs = parse_ena_runs(source_dir / "SRP192917_ena_filereport.tsv")
+    verification_date = _verification_date(root, config)
+    query_timestamp = f"{verification_date}T00:00:00+08:00"
+
+    expected = int(config["expected_geo_samples"])
+    if len(geo) != expected or len({row["gsm"] for row in geo}) != expected:
+        raise CatalogError(f"P0009 GEO GSM集合不完整: rows={len(geo)} unique={len({row['gsm'] for row in geo})}")
+    runinfo_set = {row["run"] for row in ncbi_runs}
+    ena_set = {row["run_accession"] for row in ena_runs}
+    if runinfo_set != ena_set:
+        raise CatalogError(f"P0009 NCBI/ENA Run集合不一致: only_ncbi={len(runinfo_set-ena_set)} only_ena={len(ena_set-runinfo_set)}")
+
+    geo_by_gsm = {row["gsm"]: row for row in geo}
+    runinfo_by_gsm: dict[str, list[dict[str, str]]] = defaultdict(list)
+    runinfo_by_run = {row["run"]: row for row in ncbi_runs}
+    for row in ncbi_runs:
+        runinfo_by_gsm[row["sample_alias"]].append(row)
+    ena_by_run = {row["run_accession"]: row for row in ena_runs}
+    if set(runinfo_by_gsm) != set(geo_by_gsm):
+        raise CatalogError("P0009 GEO SampleName 与 NCBI RunInfo 样本集合不一致")
+
+    exp_spec = schema["tables"]["experiments"]
+    _, experiments = _read_tsv(root / exp_spec["path"])
+    experiments = [row for row in experiments if row.get("paper_id") != "P0009"]
+    experiments.append(
+        {
+            "experiment_id": "EX-P0009-001",
+            "paper_id": "P0009",
+            "experiment_label_original": "Mitosis-to-G1 chromatin reconfiguration time course",
+            "biological_question": "解析G1E-ER4细胞有丝分裂退出到G1期间染色质结构重建",
+            "own_data_status": "yes",
+            "own_data_evidence": "E-P0009-001|E-P0009-003|E-P0009-004|E-P0009-005",
+            "assay_type": "Hi-C|Capture-C|ChIP-seq",
+            "assay_detail": "in situ Hi-C, Capture-C and ChIP-seq",
+            "measurement_object": "染色质接触、捕获接触和CTCF/Rad21/Pol II占据",
+            "detection_target": "CTCF|Rad21|Pol II|NR",
+            "experimental_group": "G1E-ER4 post-mitotic stages and asynchronous comparator",
+            "control_group": "asynchronous or stage-matched comparator depending on assay",
+            "biological_replicates": "2 for Hi-C; 2-3 for Capture-C/ChIP-seq according to paper and GEO sample set",
+            "technical_replicates": "NR",
+            "reference_genome": "mm10",
+            "evidence_ids": "E-P0009-001|E-P0009-003|E-P0009-004|E-P0009-005",
+            "notes": "Round5 expanded to GSM/SRX/SRR/file level from saved official metadata snapshots.",
+        }
+    )
+    _write_tsv(root / exp_spec["path"], exp_spec["fields"], experiments)
+
+    pert_spec = schema["tables"]["perturbations"]
+    _, perturbations = _read_tsv(root / pert_spec["path"])
+    perturbations = [row for row in perturbations if row.get("experiment_id") != "EX-P0009-001"]
+    perturbations.append(
+        {
+            "perturbation_id": "PT-P0009-001",
+            "experiment_id": "EX-P0009-001",
+            "combination_id": "NA",
+            "perturbed_object": "cell-cycle state",
+            "perturbation_type": "not_applicable",
+            "technology": "not_applicable",
+            "direct_target": "NA",
+            "construct_or_reagent": "NA",
+            "dose": "NA",
+            "duration": "NA",
+            "timing_relative_to_synchronization": "NA",
+            "control": "stage-matched post-mitotic populations or asynchronous comparator",
+            "expected_effect": "No study-wide targeted perturbation was confirmed beyond nocodazole synchronization; sample-title commd3_mutant is preserved at condition level only.",
+            "expected_effect_basis": "round5_archive_boundary",
+            "observed_validation": "NA",
+            "evidence_ids": "E-P0009-001|E-P0009-003",
+            "notes": "commd3_mutant titles indicate a mutant background, but engineering technology and expected effect are not explicit in the saved official metadata.",
+        }
+    )
+    _write_tsv(root / pert_spec["path"], pert_spec["fields"], perturbations)
+
+    cond_spec = schema["tables"]["conditions"]
+    rep_spec = schema["tables"]["replicates"]
+    batch_spec = schema["tables"]["batches"]
+    st_spec = schema["tables"]["samples_timepoints"]
+    archive_spec = schema["tables"]["archive_samples"]
+    _, existing_conditions = _read_tsv(root / cond_spec["path"])
+    _, existing_replicates = _read_tsv(root / rep_spec["path"])
+    _, existing_batches = _read_tsv(root / batch_spec["path"])
+    _, existing_timepoints = _read_tsv(root / st_spec["path"])
+    _, existing_archive = _read_tsv(root / archive_spec["path"])
+
+    conditions = [row for row in existing_conditions if row.get("paper_id") != "P0009"]
+    replicates = [row for row in existing_replicates if not row.get("replicate_id", "").startswith("R-P0009-")]
+    batches = [row for row in existing_batches if row.get("paper_id") != "P0009"]
+    sample_timepoints = [row for row in existing_timepoints if not row.get("sample_timepoint_id", "").startswith("ST-P0009-")]
+    archive_samples = [row for row in existing_archive if not row.get("archive_sample_id", "").startswith("AS-P0009-")]
+
+    archive_by_gsm: dict[str, dict[str, str]] = {}
+    stage_evidence_rule = (
+        "GEO family MINiML title token gives stage label; Treatment-Protocol explicitly maps "
+        "prometa/ana.telo/early-G1/mid-G1/late-G1 to 0/25/60/120/240 min after nocodazole release."
+    )
+    for index, sample in enumerate(geo, start=1):
+        meta = _p0009_title_metadata(sample["title"])
+        gsm = sample["gsm"]
+        runs = sorted(runinfo_by_gsm[gsm], key=lambda row: int(row["run"][3:]))
+        first_run = runs[0]
+        ena_first = ena_by_run[first_run["run"]]
+        condition_id = f"C-P0009-{index:03d}"
+        replicate_id = f"R-P0009-{index:03d}"
+        batch_id = f"B-P0009-{index:03d}"
+        sample_timepoint_id = f"ST-P0009-{index:03d}"
+        archive_sample_id = f"AS-P0009-{index:03d}"
+        is_asyn = meta["phase_token"] == "asyn"
+        sync_method = "asynchronous comparator" if is_asyn else "nocodazole arrest-release"
+        sync_reagent = "NA" if is_asyn else "nocodazole"
+        sync_dose = "NA" if is_asyn else "200 ng/ml"
+        sync_duration = "NA" if is_asyn else "7-8.5 h"
+        arrest_point = "NA" if is_asyn else "prometaphase"
+        time_zero = "NA" if is_asyn else "release from nocodazole arrest"
+        phase_rule = "GEO title token 'asyn'" if is_asyn else stage_evidence_rule
+        phase_type = "author_stated" if is_asyn else "author_stated"
+        conditions.append(
+            {
+                "condition_id": condition_id,
+                "paper_id": "P0009",
+                "experiment_id": "EX-P0009-001",
+                "author_condition_label": sample["title"],
+                "genotype_or_construct": meta["genotype_or_construct"],
+                "synchronization_method": sync_method,
+                "synchronization_reagent": sync_reagent,
+                "treatment_or_perturbation": meta["genotype_or_construct"] if meta["genotype_or_construct"] != "WT" else "NA",
+                "cell_cycle_phase": meta["cell_cycle_phase"],
+                "control_role": "asynchronous comparator" if is_asyn else "NR",
+                "evidence_ids": "E-P0009-003",
+                "normalization_status": "official_fields_only",
+                "notes": "One condition per GEO sample to keep assay/stage/run mapping lossless.",
+            }
+        )
+        replicates.append(
+            {
+                "replicate_id": replicate_id,
+                "condition_id": condition_id,
+                "author_replicate_label": meta["replicate_label"],
+                "replicate_type": "UNRESOLVED" if meta["replicate_label"] != "NR" else "NR",
+                "replicate_number": re.sub(r"^rep", "", meta["replicate_label"]) if meta["replicate_label"] != "NR" else "NR",
+                "evidence_ids": "E-P0009-003|E-P0009-001",
+                "notes": "rep labels are preserved from GEO titles; biological versus technical replicate type is not explicitly declared per GSM.",
+            }
+        )
+        batches.append(
+            {
+                "batch_id": batch_id,
+                "paper_id": "P0009",
+                "author_batch_label": "NR",
+                "batch_date": "NR",
+                "library_batch": "NR",
+                "sequencing_platform": ena_first["instrument_model"] or first_run["instrument_model"],
+                "evidence_ids": "E-P0009-004|E-P0009-005",
+                "verification_status": "unresolved",
+                "notes": "Official records identify instrument model but not a per-GSM library batch label.",
+            }
+        )
+        sample_timepoints.append(
+            {
+                "sample_timepoint_id": sample_timepoint_id,
+                "experiment_id": "EX-P0009-001",
+                "species_scientific": sample["organism"],
+                "species_common": "mouse",
+                "taxonomy_id": "10090",
+                "cell_line_or_tissue": sample["source"],
+                "sample_name_original": sample["title"],
+                "sample_name_standardized": gsm,
+                "genotype_or_construct": meta["genotype_or_construct"],
+                "synchronization_method": sync_method,
+                "synchronization_reagent": sync_reagent,
+                "synchronization_dose": sync_dose,
+                "synchronization_duration": sync_duration,
+                "arrest_point": arrest_point,
+                "time_zero_definition": time_zero,
+                "sampling_time": meta["sampling_time"],
+                "sampling_time_unit": meta["sampling_time_unit"],
+                "cell_cycle_phase": meta["cell_cycle_phase"],
+                "phase_evidence_type": phase_type,
+                "phase_evidence_rule": phase_rule,
+                "pooled_status": "NR",
+                "evidence_ids": "E-P0009-003",
+                "notes": "Asynchronous samples keep NR sampling_time; stage-labelled samples use GEO Treatment-Protocol explicit release mapping.",
+                "condition_id": condition_id,
+                "replicate_id": replicate_id,
+                "batch_id": batch_id,
+                "gsm_accession": gsm,
+                "archive_sample_id": archive_sample_id,
+            }
+        )
+        archive_row = {
+            "archive_sample_id": archive_sample_id,
+            "experiment_id": "EX-P0009-001",
+            "sample_timepoint_id": sample_timepoint_id,
+            "condition_id": condition_id,
+            "replicate_id": replicate_id,
+            "batch_id": batch_id,
+            "gsm_accession": gsm,
+            "biosample_accession": sample["biosample"],
+            "sra_sample_accession": ena_first["secondary_sample_accession"] or "NR",
+            "srx_accession": sample["srx"],
+            "sample_title_original": sample["title"],
+            "sample_alias_original": first_run["sample_alias"],
+            "species_scientific": sample["organism"],
+            "taxonomy_id": "10090",
+            "cell_line_or_tissue": sample["source"],
+            "platform_accession": sample["platform"],
+            "genotype_original": meta["genotype_or_construct"],
+            "phase_original": meta["cell_cycle_phase"],
+            "type_original": sample["sample_type"],
+            "own_data_status": "yes",
+            "disposition_status": "mapped",
+            "run_count": str(len(runs)),
+            **_p0009_origin(),
+            "evidence_ids": "E-P0009-003|E-P0009-004|E-P0009-005",
+            "notes": "GEO→BioSample/SRX/SRR and ENA FASTQ links are joined only through official snapshot fields.",
+        }
+        archive_samples.append(archive_row)
+        archive_by_gsm[gsm] = archive_row
+
+    for spec, rows in (
+        (cond_spec, conditions),
+        (rep_spec, replicates),
+        (batch_spec, batches),
+        (st_spec, sample_timepoints),
+        (archive_spec, archive_samples),
+    ):
+        _write_tsv(root / spec["path"], spec["fields"], rows)
+
+    query_spec = schema["tables"]["source_queries"]
+    _, source_queries = _read_tsv(root / query_spec["path"])
+    source_queries = [row for row in source_queries if row.get("query_id") not in {"Q0012", "Q0013", "Q0014"}]
+    query_rows = [
+        {
+            "query_id": "Q0012",
+            "database": "NCBI_GEO",
+            "endpoint": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE129nnn/GSE129997/miniml/GSE129997_family.xml.tgz",
+            "query_parameters": "official family MINiML archive for GSE129997",
+            "queried_at": query_timestamp,
+            "http_status": "200",
+            "response_sha256": _stable_hash(source_dir / "GSE129997_family.xml.tgz"),
+            "response_bytes": str((source_dir / "GSE129997_family.xml.tgz").stat().st_size),
+            "returned_rows": str(len(geo)),
+            "snapshot_path": "data/interim/pilot/source_metadata/GSE129997_family.xml",
+            "pagination_complete": "yes",
+            "retry_count": "0",
+            "error_summary": "NA",
+            "query_outcome": "success",
+            "legacy_record_id": "NA",
+        },
+        {
+            "query_id": "Q0013",
+            "database": "NCBI_SRA",
+            "endpoint": "https://trace.ncbi.nlm.nih.gov/Traces/sra-db-be/runinfo",
+            "query_parameters": "acc=SRP192917",
+            "queried_at": query_timestamp,
+            "http_status": "200",
+            "response_sha256": _stable_hash(source_dir / "SRP192917_runinfo.csv"),
+            "response_bytes": str((source_dir / "SRP192917_runinfo.csv").stat().st_size),
+            "returned_rows": str(len(ncbi_runs)),
+            "snapshot_path": "data/interim/pilot/source_metadata/SRP192917_runinfo.csv",
+            "pagination_complete": "yes",
+            "retry_count": "0",
+            "error_summary": "NA",
+            "query_outcome": "success",
+            "legacy_record_id": "NA",
+        },
+        {
+            "query_id": "Q0014",
+            "database": "ENA",
+            "endpoint": "https://www.ebi.ac.uk/ena/portal/api/filereport",
+            "query_parameters": "accession=SRP192917;result=read_run;fields=run_accession,study_accession,secondary_study_accession,experiment_accession,sample_accession,secondary_sample_accession,library_strategy,library_source,library_selection,library_layout,instrument_platform,instrument_model,fastq_ftp,fastq_md5,fastq_bytes,submitted_ftp,submitted_md5,submitted_bytes",
+            "queried_at": query_timestamp,
+            "http_status": "200",
+            "response_sha256": _stable_hash(source_dir / "SRP192917_ena_filereport.tsv"),
+            "response_bytes": str((source_dir / "SRP192917_ena_filereport.tsv").stat().st_size),
+            "returned_rows": str(len(ena_runs)),
+            "snapshot_path": "data/interim/pilot/source_metadata/SRP192917_ena_filereport.tsv",
+            "pagination_complete": "yes",
+            "retry_count": "0",
+            "error_summary": "NA",
+            "query_outcome": "success",
+            "legacy_record_id": "NA",
+        },
+    ]
+    source_queries.extend(query_rows)
+    source_queries.sort(key=lambda row: int(row["query_id"][1:]))
+    _write_tsv(root / query_spec["path"], query_spec["fields"], source_queries)
+
+    evidence_spec = schema["tables"]["evidence"]
+    _, evidence_rows = _read_tsv(root / evidence_spec["path"])
+    evidence_rows = [row for row in evidence_rows if row.get("evidence_id") not in {"E-P0009-003", "E-P0009-004", "E-P0009-005"}]
+    evidence_rows.extend(
+        [
+            {
+                "evidence_id": "E-P0009-003",
+                "supported_table": "samples_timepoints|conditions|archive_samples|semantic_review",
+                "supported_record_id": "P0009_GEO_FAMILY_SET",
+                "supported_fields": "title|treatment_protocol|biosample|srx|sampling_time|cell_cycle_phase",
+                "source_type": "official_database",
+                "citation_or_database": "NCBI GEO family MINiML",
+                "source_locator": "data/interim/pilot/source_metadata/GSE129997_family.xml",
+                "page_or_section": "GSE129997 sample records",
+                "minimal_excerpt": "Cells were synchronized to pro-metaphase with 200ng/ml nocodazole for 7-8.5h. Released for 0, 25, 60, 120 and 240 min for pro-meta, ana/telo, early-G1, mid-G1 and late-G1 respectively.",
+                "query_or_method": "Q0012",
+                "verification_date": verification_date,
+                "extractor": "Codex",
+                "reviewer": "NR",
+                "evidence_level": "archive_record",
+                "notes": "Provides GSM titles plus the explicit release-time mapping used in round5.",
+            },
+            {
+                "evidence_id": "E-P0009-004",
+                "supported_table": "archive_samples|accessions|accession_relations",
+                "supported_record_id": "P0009_RUNINFO_SET",
+                "supported_fields": "Run|Experiment|BioSample|SampleName|LibraryStrategy|LibraryLayout|Platform|Model",
+                "source_type": "official_database",
+                "citation_or_database": "NCBI SRA RunInfo",
+                "source_locator": "data/interim/pilot/source_metadata/SRP192917_runinfo.csv",
+                "page_or_section": "SRP192917 runinfo",
+                "minimal_excerpt": "RunInfo lists 120 runs and links each Run to a unique Experiment, BioSample and SampleName (GSM accession).",
+                "query_or_method": "Q0013",
+                "verification_date": verification_date,
+                "extractor": "Codex",
+                "reviewer": "NR",
+                "evidence_level": "archive_record",
+                "notes": "Used to map GSM to SRX/SRR and to recover library layout/platform fields.",
+            },
+            {
+                "evidence_id": "E-P0009-005",
+                "supported_table": "accessions|files|literature_experiment_catalog|literature_experiment_catalog_runs",
+                "supported_record_id": "P0009_ENA_FILE_SET",
+                "supported_fields": "fastq_ftp|fastq_md5|fastq_bytes|secondary_sample_accession|instrument_model",
+                "source_type": "official_database",
+                "citation_or_database": "ENA Portal filereport",
+                "source_locator": "data/interim/pilot/source_metadata/SRP192917_ena_filereport.tsv",
+                "page_or_section": "SRP192917 read_run filereport",
+                "minimal_excerpt": "ENA filereport provides FASTQ URLs, MD5 and byte counts for each run together with secondary study/sample accessions.",
+                "query_or_method": "Q0014",
+                "verification_date": verification_date,
+                "extractor": "Codex",
+                "reviewer": "NR",
+                "evidence_level": "archive_record",
+                "notes": "URLs are stored exactly as returned; no FASTQ files were downloaded.",
+            },
+        ]
+    )
+    evidence_rows.sort(key=lambda row: row["evidence_id"])
+    _write_tsv(root / evidence_spec["path"], evidence_spec["fields"], evidence_rows)
+
+    access_spec = schema["tables"]["accessions"]
+    rel_spec = schema["tables"]["accession_relations"]
+    files_spec = schema["tables"]["files"]
+    wide_spec = schema["tables"]["literature_experiment_catalog"]
+    files_view_spec = schema["tables"]["literature_experiment_catalog_files"]
+    runs_view_spec = schema["tables"]["literature_experiment_catalog_runs"]
+    _, accessions = _read_tsv(root / access_spec["path"])
+    _, relations = _read_tsv(root / rel_spec["path"])
+    _, files = _read_tsv(root / files_spec["path"])
+    _, wide_rows = _read_tsv(root / wide_spec["path"])
+    _, files_view_rows = _read_tsv(root / files_view_spec["path"])
+    _, run_view_rows = _read_tsv(root / runs_view_spec["path"])
+    accessions = [row for row in accessions if not row.get("accession_record_id", "").startswith("AC-P0009-")]
+    relations = [row for row in relations if not row.get("relation_id", "").startswith("REL-P0009-")]
+    files = [row for row in files if not row.get("file_id", "").startswith("RF-P0009-")]
+    wide_rows = [row for row in wide_rows if row.get("paper_id") != "P0009"]
+    files_view_rows = [row for row in files_view_rows if row.get("paper_id") != "P0009"]
+    run_view_rows = [row for row in run_view_rows if row.get("paper_id") != "P0009"]
+
+    accessions.extend(
+        [
+            {
+                "accession_record_id": "AC-P0009-001",
+                "experiment_id": "EX-P0009-001",
+                "sample_timepoint_id": "NA",
+                "namespace": "NCBI GEO",
+                "entity_type": "geo_series",
+                "accession": "GSE129997",
+                "project_accession": "PRJNA533460",
+                "study_accession": "SRP192917",
+                "sample_accession": "NA",
+                "experiment_accession": "NA",
+                "run_accession": "NA",
+                "official_page_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE129997",
+                "download_url": config["geo_miniml_url"],
+                "file_format": "XML",
+                "file_size_bytes": str((source_dir / "GSE129997_quick.xml").stat().st_size),
+                "md5": _stable_hash(source_dir / "GSE129997_quick.xml"),
+                "format_validation_status": "verified",
+                "online_verification_status": "verified",
+                "verification_date": verification_date,
+                "evidence_ids": "E-P0009-002|E-P0009-003",
+                "notes": "Series-level GEO entry; family MINiML is stored separately for GSM-level parsing.",
+                "condition_id": "NA",
+                "replicate_id": "NA",
+                "batch_id": "NA",
+                "library_strategy": "Hi-C|Capture-C|ChIP-seq",
+                "library_source": "GENOMIC",
+                "library_selection": "UNRESOLVED",
+                "library_layout": "MIXED",
+                "instrument_platform": "ILLUMINA",
+                "instrument_model": "Illumina NextSeq 500",
+                "public_status": "public",
+                "query_id": "Q0009|Q0012",
+                **_p0009_origin(),
+            },
+            {
+                "accession_record_id": "AC-P0009-002",
+                "experiment_id": "EX-P0009-001",
+                "sample_timepoint_id": "NA",
+                "namespace": "NCBI BioProject",
+                "entity_type": "bioproject",
+                "accession": "PRJNA533460",
+                "project_accession": "PRJNA533460",
+                "study_accession": "SRP192917",
+                "sample_accession": "NA",
+                "experiment_accession": "NA",
+                "run_accession": "NA",
+                "official_page_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA533460",
+                "download_url": "NA",
+                "file_format": "NA",
+                "file_size_bytes": "NA",
+                "md5": "NA",
+                "format_validation_status": "verified",
+                "online_verification_status": "verified",
+                "verification_date": verification_date,
+                "evidence_ids": "E-P0009-002|E-P0009-004|E-P0009-005",
+                "notes": "BioProject linked from GEO and ENA study fields.",
+                "condition_id": "NA",
+                "replicate_id": "NA",
+                "batch_id": "NA",
+                "library_strategy": "Hi-C|Capture-C|ChIP-seq",
+                "library_source": "GENOMIC",
+                "library_selection": "UNRESOLVED",
+                "library_layout": "MIXED",
+                "instrument_platform": "ILLUMINA",
+                "instrument_model": "Illumina NextSeq 500",
+                "public_status": "public",
+                "query_id": "Q0009|Q0013|Q0014",
+                **_p0009_origin(),
+            },
+            {
+                "accession_record_id": "AC-P0009-003",
+                "experiment_id": "EX-P0009-001",
+                "sample_timepoint_id": "NA",
+                "namespace": "NCBI SRA",
+                "entity_type": "sra_study",
+                "accession": "SRP192917",
+                "project_accession": "PRJNA533460",
+                "study_accession": "SRP192917",
+                "sample_accession": "NA",
+                "experiment_accession": "NA",
+                "run_accession": "NA",
+                "official_page_url": "https://www.ncbi.nlm.nih.gov/sra?term=SRP192917",
+                "download_url": "NA",
+                "file_format": "CSV|TSV",
+                "file_size_bytes": "NA",
+                "md5": "NA",
+                "format_validation_status": "verified",
+                "online_verification_status": "verified",
+                "verification_date": verification_date,
+                "evidence_ids": "E-P0009-002|E-P0009-004|E-P0009-005",
+                "notes": "Run-level expansion completed from official RunInfo and ENA filereport snapshots.",
+                "condition_id": "NA",
+                "replicate_id": "NA",
+                "batch_id": "NA",
+                "library_strategy": "Hi-C|Capture-C|ChIP-seq",
+                "library_source": "GENOMIC",
+                "library_selection": "UNRESOLVED",
+                "library_layout": "MIXED",
+                "instrument_platform": "ILLUMINA",
+                "instrument_model": "Illumina NextSeq 500",
+                "public_status": "public",
+                "query_id": "Q0013|Q0014",
+                **_p0009_origin(),
+            },
+        ]
+    )
+
+    relation_rows: list[dict[str, str]] = [
+        {
+            "relation_id": "REL-P0009-00001",
+            "parent_accession": "PRJNA533460",
+            "child_accession": "SRP192917",
+            "relation_type": "project_has_study",
+            "source_database": "NCBI|ENA",
+            "query_id": "Q0009|Q0014",
+            "verification_status": "verified",
+            "evidence_ids": "E-P0009-002|E-P0009-005",
+            "notes": "Study/project link confirmed by GEO relation and ENA secondary_study_accession.",
+        }
+    ]
+    accession_id = 4
+    relation_id = 2
+    p0009_file_rows: list[dict[str, str]] = []
+    p0009_wide_rows: list[dict[str, str]] = []
+    p0009_run_rows: list[dict[str, str]] = []
+    user_catalog_rows: list[dict[str, str]] = []
+
+    for index, sample in enumerate(geo, start=1):
+        meta = _p0009_title_metadata(sample["title"])
+        gsm = sample["gsm"]
+        archive_row = archive_by_gsm[gsm]
+        condition_id = archive_row["condition_id"]
+        replicate_id = archive_row["replicate_id"]
+        batch_id = archive_row["batch_id"]
+        sample_timepoint_id = archive_row["sample_timepoint_id"]
+        archive_sample_id = archive_row["archive_sample_id"]
+        experiment_id = archive_row["experiment_id"]
+        runs = sorted(runinfo_by_gsm[gsm], key=lambda row: int(row["run"][3:]))
+
+        for namespace, entity_type, accession, exp_accession, page_url, notes in (
+            ("NCBI GEO", "geo_sample", gsm, sample["srx"], f"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc={gsm}", "GEO sample parsed from family MINiML."),
+            ("NCBI BioSample", "biosample", sample["biosample"], sample["srx"], f"https://www.ncbi.nlm.nih.gov/biosample/{sample['biosample']}", "BioSample accession linked from GEO relation."),
+            ("NCBI SRA", "sra_experiment", sample["srx"], sample["srx"], f"https://www.ncbi.nlm.nih.gov/sra?term={sample['srx']}", "Experiment accession linked from GEO relation and RunInfo."),
+        ):
+            accessions.append(
+                {
+                    "accession_record_id": f"AC-P0009-{accession_id:03d}",
+                    "experiment_id": experiment_id,
+                    "sample_timepoint_id": sample_timepoint_id,
+                    "namespace": namespace,
+                    "entity_type": entity_type,
+                    "accession": accession,
+                    "project_accession": "PRJNA533460",
+                    "study_accession": "SRP192917",
+                    "sample_accession": archive_row["sra_sample_accession"],
+                    "experiment_accession": exp_accession,
+                    "run_accession": "NA",
+                    "official_page_url": page_url,
+                    "download_url": "NA",
+                    "file_format": "NA",
+                    "file_size_bytes": "NA",
+                    "md5": "NA",
+                    "format_validation_status": "verified",
+                    "online_verification_status": "verified",
+                    "verification_date": verification_date,
+                    "evidence_ids": "E-P0009-003|E-P0009-004",
+                    "notes": notes,
+                    "condition_id": condition_id,
+                    "replicate_id": replicate_id,
+                    "batch_id": batch_id,
+                    "library_strategy": meta["assay_type"],
+                    "library_source": "GENOMIC",
+                    "library_selection": "UNRESOLVED",
+                    "library_layout": runs[0]["library_layout"],
+                    "instrument_platform": runs[0]["instrument_platform"],
+                    "instrument_model": runs[0]["instrument_model"],
+                    "public_status": "public",
+                    "query_id": "Q0012|Q0013",
+                    **_p0009_origin(),
+                }
+            )
+            accession_id += 1
+
+        relation_rows.extend(
+            [
+                {
+                    "relation_id": f"REL-P0009-{relation_id:05d}",
+                    "parent_accession": "GSE129997",
+                    "child_accession": gsm,
+                    "relation_type": "series_has_sample",
+                    "source_database": "NCBI",
+                    "query_id": "Q0012",
+                    "verification_status": "verified",
+                    "evidence_ids": "E-P0009-003",
+                    "notes": "GEO family MINiML sample membership.",
+                },
+                {
+                    "relation_id": f"REL-P0009-{relation_id+1:05d}",
+                    "parent_accession": gsm,
+                    "child_accession": sample["biosample"],
+                    "relation_type": "mirrors",
+                    "source_database": "NCBI",
+                    "query_id": "Q0012|Q0013",
+                    "verification_status": "verified",
+                    "evidence_ids": "E-P0009-003|E-P0009-004",
+                    "notes": "GEO sample to BioSample relation.",
+                },
+                {
+                    "relation_id": f"REL-P0009-{relation_id+2:05d}",
+                    "parent_accession": sample["biosample"],
+                    "child_accession": sample["srx"],
+                    "relation_type": "sample_has_experiment",
+                    "source_database": "NCBI",
+                    "query_id": "Q0012|Q0013",
+                    "verification_status": "verified",
+                    "evidence_ids": "E-P0009-003|E-P0009-004",
+                    "notes": "BioSample to SRX relation from official snapshots.",
+                },
+            ]
+        )
+        relation_id += 3
+
+        for run in runs:
+            ena = ena_by_run[run["run"]]
+            accession_record_id = f"AC-P0009-{accession_id:03d}"
+            urls = [item for item in ena["fastq_ftp"].split(";") if item]
+            md5s = [item for item in ena["fastq_md5"].split(";") if item]
+            sizes = [item for item in ena["fastq_bytes"].split(";") if item]
+            if not (len(urls) == len(md5s) == len(sizes)):
+                raise CatalogError(f"P0009 ENA file fields length mismatch for {run['run']}")
+            accessions.append(
+                {
+                    "accession_record_id": accession_record_id,
+                    "experiment_id": experiment_id,
+                    "sample_timepoint_id": sample_timepoint_id,
+                    "namespace": "INSDC SRA/ENA",
+                    "entity_type": "sra_run",
+                    "accession": run["run"],
+                    "project_accession": "PRJNA533460",
+                    "study_accession": "SRP192917",
+                    "sample_accession": ena["secondary_sample_accession"] or "NR",
+                    "experiment_accession": run["experiment"],
+                    "run_accession": run["run"],
+                    "official_page_url": f"https://www.ebi.ac.uk/ena/browser/view/{run['run']}",
+                    "download_url": ena["fastq_ftp"],
+                    "file_format": "FASTQ",
+                    "file_size_bytes": ena["fastq_bytes"],
+                    "md5": ena["fastq_md5"],
+                    "format_validation_status": "verified",
+                    "online_verification_status": "verified",
+                    "verification_date": verification_date,
+                    "evidence_ids": "E-P0009-004|E-P0009-005",
+                    "notes": "Run accession and FASTQ link fields come from official RunInfo plus ENA filereport.",
+                    "condition_id": condition_id,
+                    "replicate_id": replicate_id,
+                    "batch_id": batch_id,
+                    "library_strategy": meta["assay_type"],
+                    "library_source": ena["library_source"],
+                    "library_selection": ena["library_selection"] or "UNRESOLVED",
+                    "library_layout": ena["library_layout"],
+                    "instrument_platform": ena["instrument_platform"],
+                    "instrument_model": ena["instrument_model"],
+                    "public_status": "public",
+                    "query_id": "Q0013|Q0014",
+                    **_p0009_origin(),
+                }
+            )
+            accession_id += 1
+            relation_rows.append(
+                {
+                    "relation_id": f"REL-P0009-{relation_id:05d}",
+                    "parent_accession": run["experiment"],
+                    "child_accession": run["run"],
+                    "relation_type": "experiment_has_run",
+                    "source_database": "NCBI|ENA",
+                    "query_id": "Q0013|Q0014",
+                    "verification_status": "verified",
+                    "evidence_ids": "E-P0009-004|E-P0009-005",
+                    "notes": "Run linkage confirmed by matching NCBI RunInfo and ENA experiment/sample fields.",
+                }
+            )
+            relation_id += 1
+
+            run_file_records: list[dict[str, str]] = []
+            for file_index, (url, size, md5) in enumerate(zip(urls, sizes, md5s), start=1):
+                file_role = "read1" if file_index == 1 else "read2" if file_index == 2 else "archive_file"
+                file_id = f"RF-P0009-{run['run']}-{file_index}"
+                file_row = {
+                    "file_id": file_id,
+                    "run_accession": run["run"],
+                    "file_index": str(file_index),
+                    "file_role": file_role,
+                    "download_url": url,
+                    "file_format": "FASTQ",
+                    "file_size_bytes": size,
+                    "md5": md5,
+                    "link_field_source": "ENA fastq_ftp",
+                    "api_returned_status": "returned",
+                    "reachability_status": "not_checked",
+                    "verification_date": verification_date,
+                    "evidence_ids": "E-P0009-005",
+                    "notes": "Stored exactly as returned by ENA filereport; file content not downloaded.",
+                }
+                run_file_records.append(file_row)
+                p0009_file_rows.append(file_row)
+
+                user_catalog_rows.append(
+                    {
+                        "paper_id": "P0009",
+                        "canonical_title": "Chromatin structure dynamics during the mitosis-to-G1 phase transition",
+                        "doi": "10.1038/s41586-019-1778-y",
+                        "archive_project": "PRJNA533460",
+                        "study_accession": "SRP192917",
+                        "geo_series": "GSE129997",
+                        "geo_sample": gsm,
+                        "biosample": sample["biosample"],
+                        "experiment_accession": run["experiment"],
+                        "run_accession": run["run"],
+                        "file_url": url,
+                        "file_md5": md5,
+                        "file_size": size,
+                        "file_source": "ENA fastq_ftp",
+                        "species": sample["organism"],
+                        "sample_name_original": sample["title"],
+                        "sample_name_standardized": gsm,
+                        "assay": meta["assay_type"],
+                        "library_strategy": meta["assay_type"],
+                        "measurement_target": meta["measurement_target"],
+                        "synchronization_method": sync_method,
+                        "synchronization_start": time_zero,
+                        "sampling_time": meta["sampling_time"],
+                        "sampling_time_unit": meta["sampling_time_unit"],
+                        "cell_cycle_phase": meta["cell_cycle_phase"],
+                        "phase_evidence_type": phase_type,
+                        "perturbation_type": meta["perturbation_type"],
+                        "perturbation_technology": meta["perturbation_technology"],
+                        "perturbation_target": meta["perturbation_target"],
+                        "expected_effect": "NR",
+                        "observed_validation": "NR",
+                        "is_own_data": "yes",
+                        "data_generation_status": "study_generated",
+                        "evidence_ids": "E-P0009-003|E-P0009-004|E-P0009-005",
+                        "verification_status": "verified",
+                        "unresolved_issue_ids": "UI-P0009-003" if meta["assay_type"] == "Capture-C" else "UI-P0009-004" if meta["perturbation_type"] == "mutation" else "NA",
+                    }
+                )
+
+                p0009_wide_rows.append(
+                    {
+                        "catalog_row_id": f"CAT-P0009-{len(p0009_wide_rows)+1:06d}",
+                        "paper_id": "P0009",
+                        "experiment_id": experiment_id,
+                        "condition_id": condition_id,
+                        "replicate_id": replicate_id,
+                        "batch_id": batch_id,
+                        "sample_timepoint_id": sample_timepoint_id,
+                        "archive_sample_id": archive_sample_id,
+                        "perturbation_id": "NA",
+                        "accession_record_id": accession_record_id,
+                        "file_id": file_id,
+                        "paper_title": "Chromatin structure dynamics during the mitosis-to-G1 phase transition",
+                        "doi": "10.1038/s41586-019-1778-y",
+                        "own_data_status": "yes",
+                        **_p0009_origin(),
+                        "species_scientific": sample["organism"],
+                        "cell_line_or_tissue": sample["source"],
+                        "sample_name_original": sample["title"],
+                        "assay_type": meta["assay_type"],
+                        "detection_target": meta["detection_target"],
+                        "synchronization_method": sync_method,
+                        "time_zero_definition": time_zero,
+                        "sampling_time": meta["sampling_time"],
+                        "sampling_time_unit": meta["sampling_time_unit"],
+                        "cell_cycle_phase": meta["cell_cycle_phase"],
+                        "phase_evidence_type": phase_type,
+                        "perturbation_type": meta["perturbation_type"],
+                        "direct_target": meta["perturbation_target"],
+                        "expected_effect": "NR",
+                        "observed_validation": "NR",
+                        "gsm_accession": gsm,
+                        "biosample_accession": sample["biosample"],
+                        "sra_sample_accession": ena["secondary_sample_accession"] or "NR",
+                        "experiment_accession": run["experiment"],
+                        "run_accession": run["run"],
+                        "download_url": url,
+                        "file_size_bytes": size,
+                        "md5": md5,
+                        "online_verification_status": "verified",
+                        "evidence_ids": "E-P0009-003|E-P0009-004|E-P0009-005",
+                        "notes": "Round5 P0009 file-level row generated only from saved official snapshots.",
+                    }
+                )
+
+            read1 = next((item for item in run_file_records if item["file_role"] == "read1"), None)
+            read2 = next((item for item in run_file_records if item["file_role"] == "read2"), None)
+            p0009_run_rows.append(
+                {
+                    "catalog_run_row_id": f"CATRUN-P0009-{len(p0009_run_rows)+1:06d}",
+                    "paper_id": "P0009",
+                    "experiment_id": experiment_id,
+                    "condition_id": condition_id,
+                    "replicate_id": replicate_id,
+                    "batch_id": batch_id,
+                    "sample_timepoint_id": sample_timepoint_id,
+                    "archive_sample_id": archive_sample_id,
+                    "perturbation_id": "NA",
+                    "accession_record_id": accession_record_id,
+                    "paper_title": "Chromatin structure dynamics during the mitosis-to-G1 phase transition",
+                    "doi": "10.1038/s41586-019-1778-y",
+                    "own_data_status": "yes",
+                    **_p0009_origin(),
+                    "species_scientific": sample["organism"],
+                    "cell_line_or_tissue": sample["source"],
+                    "sample_name_original": sample["title"],
+                    "assay_type": meta["assay_type"],
+                    "cell_cycle_phase": meta["cell_cycle_phase"],
+                    "gsm_accession": gsm,
+                    "biosample_accession": sample["biosample"],
+                    "sra_sample_accession": ena["secondary_sample_accession"] or "NR",
+                    "experiment_accession": run["experiment"],
+                    "run_accession": run["run"],
+                    "library_strategy": meta["assay_type"],
+                    "library_source": ena["library_source"],
+                    "library_selection": ena["library_selection"] or "UNRESOLVED",
+                    "library_layout": ena["library_layout"],
+                    "instrument_platform": ena["instrument_platform"],
+                    "instrument_model": ena["instrument_model"],
+                    "read1_url": read1["download_url"] if read1 else "NA",
+                    "read1_size_bytes": read1["file_size_bytes"] if read1 else "NA",
+                    "read1_md5": read1["md5"] if read1 else "NA",
+                    "read2_url": read2["download_url"] if read2 else "NA",
+                    "read2_size_bytes": read2["file_size_bytes"] if read2 else "NA",
+                    "read2_md5": read2["md5"] if read2 else "NA",
+                    "file_count": str(len(run_file_records)),
+                    "online_verification_status": "verified",
+                    "evidence_ids": "E-P0009-003|E-P0009-004|E-P0009-005",
+                    "notes": "Single-end runs keep read2 columns as NA; paired-end runs expose both reads.",
+                }
+            )
+
+    relations.extend(relation_rows)
+    files.extend(p0009_file_rows)
+    wide_rows.extend(p0009_wide_rows)
+    files_view_rows.extend(p0009_wide_rows)
+    run_view_rows.extend(p0009_run_rows)
+    _write_tsv(root / access_spec["path"], access_spec["fields"], accessions)
+    _write_tsv(root / rel_spec["path"], rel_spec["fields"], relations)
+    _write_tsv(root / files_spec["path"], files_spec["fields"], files)
+    _write_tsv(root / wide_spec["path"], wide_spec["fields"], wide_rows)
+    _write_tsv(root / files_view_spec["path"], files_view_spec["fields"], files_view_rows)
+    _write_tsv(root / runs_view_spec["path"], runs_view_spec["fields"], run_view_rows)
+
+    user_catalog_path = root / "data" / "interim" / "pilot" / "P0009_run_file_catalog.tsv"
+    user_catalog_fields = [
+        "paper_id", "canonical_title", "doi", "archive_project", "study_accession", "geo_series", "geo_sample",
+        "biosample", "experiment_accession", "run_accession", "file_url", "file_md5", "file_size", "file_source",
+        "species", "sample_name_original", "sample_name_standardized", "assay", "library_strategy", "measurement_target",
+        "synchronization_method", "synchronization_start", "sampling_time", "sampling_time_unit", "cell_cycle_phase",
+        "phase_evidence_type", "perturbation_type", "perturbation_technology", "perturbation_target", "expected_effect",
+        "observed_validation", "is_own_data", "data_generation_status", "evidence_ids", "verification_status",
+        "unresolved_issue_ids",
+    ]
+    _write_tsv(user_catalog_path, user_catalog_fields, user_catalog_rows)
+
+    sem_spec = schema["tables"]["semantic_review"]
+    _, semantic_rows = _read_tsv(root / sem_spec["path"])
+    semantic_rows = [row for row in semantic_rows if row.get("paper_id") != "P0009"]
+    semantic_rows.extend(
+        [
+            {
+                "review_id": "RV-P0009-0001",
+                "paper_id": "P0009",
+                "record_type": "sample_timepoint",
+                "record_id": "P0009_STAGE_RELEASE_RULE",
+                "field_name": "sampling_time",
+                "original_value": "prometa|ana.telo|early-G1|mid-G1|late-G1",
+                "candidate_interpretation": "0|25|60|120|240 min after nocodazole release",
+                "decision": "verified",
+                "decision_status": "verified",
+                "evidence_ids": "E-P0009-003",
+                "decision_rule": "Use GEO Treatment-Protocol explicit mapping; do not infer any additional stages beyond the listed mapping.",
+                "reviewer_status": "machine_extracted_pending_human_review",
+                "notes": "Applies only to stage-labelled synchronized samples.",
+            },
+            {
+                "review_id": "RV-P0009-0002",
+                "paper_id": "P0009",
+                "record_type": "sample_timepoint",
+                "record_id": "P0009_ASYN_RULE",
+                "field_name": "sampling_time",
+                "original_value": "asyn",
+                "candidate_interpretation": "post-release time point",
+                "decision": "NR",
+                "decision_status": "not_applicable",
+                "evidence_ids": "E-P0009-003",
+                "decision_rule": "Do not place asynchronous samples on the nocodazole-release timeline.",
+                "reviewer_status": "machine_extracted_pending_human_review",
+                "notes": "asyn remains an asynchronous comparator with NR sampling_time and NA time zero.",
+            },
+            {
+                "review_id": "RV-P0009-0003",
+                "paper_id": "P0009",
+                "record_type": "accession",
+                "record_id": "P0009_CAPTUREC_RULE",
+                "field_name": "library_strategy",
+                "original_value": "OTHER",
+                "candidate_interpretation": "Capture-C",
+                "decision": "verified",
+                "decision_status": "verified",
+                "evidence_ids": "E-P0009-003|E-P0009-004",
+                "decision_rule": "When GEO title begins with Capture-C and RunInfo reports OTHER, keep raw LibraryStrategy but expose assay_type as Capture-C in sample/run views.",
+                "reviewer_status": "machine_extracted_pending_human_review",
+                "notes": "Official metadata are sufficient for assay identity but not for bait locus identity.",
+            },
+            {
+                "review_id": "RV-P0009-0004",
+                "paper_id": "P0009",
+                "record_type": "accession",
+                "record_id": "P0009_POLII_RULE",
+                "field_name": "library_strategy",
+                "original_value": "OTHER",
+                "candidate_interpretation": "ChIP-seq Pol II",
+                "decision": "verified",
+                "decision_status": "verified",
+                "evidence_ids": "E-P0009-003|E-P0009-004",
+                "decision_rule": "When GEO title begins with ChIP-seq-PolII and RunInfo reports OTHER, preserve raw strategy but expose assay_type as ChIP-seq.",
+                "reviewer_status": "machine_extracted_pending_human_review",
+                "notes": "Assay label comes from official GEO title, not from guessed file naming.",
+            },
+            {
+                "review_id": "RV-P0009-0005",
+                "paper_id": "P0009",
+                "record_type": "condition",
+                "record_id": "P0009_COMMD3_RULE",
+                "field_name": "perturbation_technology",
+                "original_value": "commd3_mutant",
+                "candidate_interpretation": "locus mutation or engineered mutant background",
+                "decision": "UNRESOLVED",
+                "decision_status": "unresolved",
+                "evidence_ids": "E-P0009-003",
+                "decision_rule": "Keep the mutant label from official GEO title, but do not infer engineering technology or expected effect without explicit evidence.",
+                "reviewer_status": "machine_extracted_pending_human_review",
+                "notes": "condition and user catalog preserve commd3_mutant as raw sample label.",
+            },
+        ]
+    )
+    _write_tsv(root / sem_spec["path"], sem_spec["fields"], semantic_rows)
+
+    issue_spec = schema["tables"]["unresolved_issues"]
+    _, issues = _read_tsv(root / issue_spec["path"])
+    new_issues: list[dict[str, str]] = []
+    issue_by_id = {row["issue_id"]: row for row in issues if row.get("paper_id") == "P0009"}
+    for row in issues:
+        if row.get("issue_id") not in {"UI-P0009-001", "UI-P0009-002", "UI-P0009-003", "UI-P0009-004"}:
+            new_issues.append(row)
+    new_issues.extend(
+        [
+            {
+                "issue_id": "UI-P0009-001",
+                "paper_id": "P0009",
+                "related_record_id": "P0009_STAGE_RELEASE_RULE",
+                "issue_type": "sampling_minutes_unresolved",
+                "description": "Round4未核验的阶段分钟数已由GEO family MINiML Treatment-Protocol裁决。",
+                "checked_sources": "GEO family MINiML",
+                "current_assessment": "resolved",
+                "requires_user_decision": "no",
+                "status": "resolved",
+                "resolution": "Use 0/25/60/120/240 min for prometa/ana.telo/early/mid/late G1; keep asyn as NR.",
+                "notes": "Resolved in round5 from official GEO sample metadata.",
+            },
+            {
+                "issue_id": "UI-P0009-002",
+                "paper_id": "P0009",
+                "related_record_id": "SRP192917",
+                "issue_type": "run_level_not_expanded",
+                "description": "Round4仅登记项目级 accession；round5已展开SRR/FASTQ级记录。",
+                "checked_sources": "NCBI SRA RunInfo|ENA filereport",
+                "current_assessment": "resolved",
+                "requires_user_decision": "no",
+                "status": "resolved",
+                "resolution": "Expanded to 120 runs and 195 FASTQ links from official snapshots.",
+                "notes": "Resolved in round5.",
+            },
+            {
+                "issue_id": "UI-P0009-003",
+                "paper_id": "P0009",
+                "related_record_id": "Capture-C",
+                "issue_type": "capture_target_not_explicit",
+                "description": "官方GEO/SRA/ENA原始样本记录未逐GSM显式给出Capture-C bait/locus，因此measurement_target保留NR。",
+                "checked_sources": "GEO family MINiML|NCBI SRA RunInfo|ENA filereport",
+                "current_assessment": "UNRESOLVED",
+                "requires_user_decision": "no",
+                "status": "open",
+                "resolution": "NA",
+                "notes": "Processed supplementary filenames mention loci, but raw run-to-locus mapping is not explicit enough for deterministic assignment.",
+            },
+            {
+                "issue_id": "UI-P0009-004",
+                "paper_id": "P0009",
+                "related_record_id": "commd3_mutant",
+                "issue_type": "mutant_technology_unresolved",
+                "description": "官方样本标题显示commd3_mutant，但未在已保存官方metadata中明确给出工程技术、直接靶标描述细节或预期效果。",
+                "checked_sources": "GEO family MINiML",
+                "current_assessment": "UNRESOLVED",
+                "requires_user_decision": "no",
+                "status": "open",
+                "resolution": "NA",
+                "notes": "Condition and user catalog preserve the mutant label without inferring the engineering method.",
+            },
+        ]
+    )
+    _write_tsv(root / issue_spec["path"], issue_spec["fields"], new_issues)
+
+    report_path = root / "reports" / "per_paper" / "P0009_run_file_pilot.md"
+    assay_counts = Counter(_p0009_title_metadata(row["title"])["assay_type"] for row in geo)
+    phase_counts = Counter(_p0009_title_metadata(row["title"])["cell_cycle_phase"] for row in geo)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(
+        "\n".join(
+            [
+                "# P0009 Run/File 级核验报告",
+                "",
+                "## 核心结论",
+                "",
+                "- 论文：`Chromatin structure dynamics during the mitosis-to-G1 phase transition`",
+                "- DOI：`10.1038/s41586-019-1778-y`",
+                "- GEO Series：`GSE129997`；BioProject：`PRJNA533460`；SRA Study：`SRP192917`",
+                f"- 官方样本数：{len(geo)} 个 GSM；SRA/ENA Run 数：{len(runinfo_set)}；FASTQ 链接数：{len(p0009_file_rows)}",
+                f"- assay 分布：Hi-C {assay_counts['Hi-C']}；Capture-C {assay_counts['Capture-C']}；ChIP-seq {assay_counts['ChIP-seq']}",
+                f"- 阶段分布：{dict(sorted(phase_counts.items()))}",
+                "",
+                "## 本轮确认",
+                "",
+                "- GEO family MINiML 的 Treatment-Protocol 明确给出 `0 / 25 / 60 / 120 / 240 min` 对应 `prometa / ana.telo / early-G1 / mid-G1 / late-G1`。",
+                "- `asyn` 样本保留为 asynchronous comparator，不被强行放入 release 时间轴。",
+                "- `SRP192917` 已展开到 120 个 Run；ENA filereport 提供 195 个 FASTQ 链接、MD5 和字节数。",
+                "- 单端与双端 run 已区分：paired-end 75 个，single-end 45 个。",
+                "",
+                "## 仍未解决",
+                "",
+                "- Capture-C 的具体 bait/locus 目标未在 raw metadata 中逐GSM显式声明，因此 `measurement_target` 保留 `NR`。",
+                "- `commd3_mutant` 样本标题提示 mutant 背景，但工程技术、预期效果和直接靶标细节未在当前保存的官方 metadata 中显式给出。",
+                "",
+                "## 产物",
+                "",
+                "- `data/interim/pilot/P0009_run_file_catalog.tsv`",
+                "- `data/interim/pilot/source_metadata/GSE129997_family.xml(.tgz)`",
+                "- `data/interim/pilot/source_metadata/SRP192917_runinfo.csv`",
+                "- `data/interim/pilot/source_metadata/SRP192917_ena_filereport.tsv`",
+                "",
+                "## 说明",
+                "",
+                "- 本轮未下载 FASTQ、SRA、矩阵或其他大文件，只保存官方轻量快照并离线构建表格。",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    return {
+        "geo_samples": len(geo),
+        "run_rows": len(p0009_run_rows),
+        "file_rows": len(p0009_file_rows),
+        "catalog_rows": len(user_catalog_rows),
+        "user_catalog_sha256": _stable_hash(user_catalog_path),
+        "report_path": str(report_path.relative_to(root)).replace("\\", "/"),
+    }
+
+
+def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str, Any]:
+    config_file = config_path or root / "configs" / "pilots" / "P0008.json"
+    config = json.loads(config_file.read_text(encoding="utf-8"))
+    paper_id = config.get("paper_id", "P0008")
+    if paper_id == "P0008":
+        return _build_p0008_catalog(root, config_file)
+    if paper_id == "P0009":
+        return _build_p0009_catalog(root, config_file)
+    if paper_id == "P0012":
+        from .round6 import build_p0012_catalog
+
+        return build_p0012_catalog(root, config_file)
+    if paper_id == "P0001":
+        from .round6 import build_p0001_catalog
+
+        return build_p0001_catalog(root, config_file)
+    raise CatalogError(f"Unsupported pilot builder for {paper_id}")
 
 
 def _write_reconciliation(

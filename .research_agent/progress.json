@@ -1,15 +1,15 @@
 {
-  "current_round": 4,
-  "phase": "executed",
-  "last_prompt": "ans_qes/prompt4.md",
-  "last_result": "ans_qes/result4.md",
+  "current_round": 6,
+  "phase": "prompt_drafted",
+  "last_prompt": "ans_qes/prompt6.md",
+  "last_result": "ans_qes/result5.md",
   "last_commit": null,
   "auto_next": false,
   "auto_execute_prompt": false,
   "auto_commit": false,
   "auto_push": false,
   "open_issues": [
-    "result 已生成，等待用户审查。",
-    "commit 前必须等待用户明确确认。"
+    "prompt6 已生成，等待用户审查。",
+    "执行 prompt6 前必须等待用户明确确认。"
   ]
 }

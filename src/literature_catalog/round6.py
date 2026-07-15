@@ -141,6 +141,57 @@ def _p0012_direct_target(perturbation_id: str) -> str:
     return "NA"
 
 
+def _accession_stub(
+    record_id: str,
+    experiment_id: str,
+    namespace: str,
+    entity_type: str,
+    accession: str,
+    official_page_url: str,
+    evidence_ids: str,
+    verification_date: str,
+) -> dict[str, str]:
+    return {
+        "accession_record_id": record_id,
+        "experiment_id": experiment_id,
+        "sample_timepoint_id": "NA",
+        "namespace": namespace,
+        "entity_type": entity_type,
+        "accession": accession,
+        "project_accession": accession if entity_type in {"bioproject", "arrayexpress", "geo_series"} else "NA",
+        "study_accession": accession if entity_type == "sra_study" else "NA",
+        "sample_accession": "NA",
+        "experiment_accession": "NA",
+        "run_accession": "NA",
+        "official_page_url": official_page_url,
+        "download_url": "NA",
+        "file_format": "NA",
+        "file_size_bytes": "NA",
+        "md5": "NA",
+        "format_validation_status": "verified",
+        "online_verification_status": "verified_metadata_record",
+        "verification_date": verification_date,
+        "evidence_ids": evidence_ids,
+        "notes": "Project/study level accession retained alongside run-level expansion.",
+        "condition_id": "NA",
+        "replicate_id": "NA",
+        "batch_id": "NA",
+        "library_strategy": "NA",
+        "library_source": "NA",
+        "library_selection": "NA",
+        "library_layout": "NA",
+        "instrument_platform": "NA",
+        "instrument_model": "NA",
+        "public_status": "public",
+        "query_id": "NA",
+        "biological_sample_origin_status": "NA",
+        "library_origin_status": "NA",
+        "sequencing_generation_status": "NA",
+        "analysis_usage_status": "NA",
+        "origin_evidence_ids": "NA",
+    }
+
+
 def _file_rows_for_run(prefix: str, run: str, fastq_ftp: str, fastq_md5: str, fastq_bytes: str, evidence_id: str, verification_date: str) -> list[dict[str, str]]:
     urls = _split_semicolon(fastq_ftp)
     md5s = _split_semicolon(fastq_md5)
@@ -159,7 +210,7 @@ def _file_rows_for_run(prefix: str, run: str, fastq_ftp: str, fastq_md5: str, fa
                 "md5": md5s[idx - 1] if idx - 1 < len(md5s) else "NR",
                 "link_field_source": "ENA filereport fastq_ftp",
                 "api_returned_status": "present",
-                "reachability_status": "not_checked_lightweight_metadata_only",
+                "reachability_status": "not_checked",
                 "verification_date": verification_date,
                 "evidence_ids": evidence_id,
                 "notes": "Metadata link only; sequencing file was not downloaded.",
@@ -189,7 +240,7 @@ def _append_run_views(
         acc = accession_by_run[run]
         run_files = sorted(files_by_run[run], key=lambda item: int(item["file_index"]))
         for file_row in run_files:
-            file_view.append({**base, "file_id": file_row["file_id"], "download_url": file_row["download_url"], "file_size_bytes": file_row["file_size_bytes"], "md5": file_row["md5"]})
+            file_view.append({**base, "catalog_row_id": f"{base['catalog_row_id']}-F{file_row['file_index']}", "file_id": file_row["file_id"], "download_url": file_row["download_url"], "file_size_bytes": file_row["file_size_bytes"], "md5": file_row["md5"]})
         run_view.append(
             {
                 "catalog_run_row_id": base["catalog_row_id"].replace("CAT-", "CR-"),
@@ -295,7 +346,12 @@ def build_p0012_catalog(root: Path, config_path: Path | None = None) -> dict[str
     _replace_rows(root, schema, "perturbations", perturbations, lambda row: row.get("experiment_id") == "EX-P0012-001")
 
     conditions = []; replicates = []; batches = []; timepoints = []; archive = []
-    acc_rows = []; rel_rows = []; file_rows = []; catalog_base = []
+    acc_rows = [
+        _accession_stub("AC-P0012-GSE168251", "EX-P0012-001", "GEO", "geo_series", "GSE168251", "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE168251", "E-P0012-003", verification_date),
+        _accession_stub("AC-P0012-GSE168168", "EX-P0012-001", "GEO", "geo_series", "GSE168168", "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE168168", "E-P0012-003", verification_date),
+        _accession_stub("AC-P0012-GSE168176", "EX-P0012-001", "GEO", "geo_series", "GSE168176", "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE168176", "E-P0012-003", verification_date),
+        _accession_stub("AC-P0012-PRJNA706679", "EX-P0012-001", "NCBI BioProject", "bioproject", "PRJNA706679", "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA706679", "E-P0012-004", verification_date),
+    ]; rel_rows = []; file_rows = []; catalog_base = []
     for idx, sample in enumerate(main_geo, start=1):
         gsm = sample["gsm"]; ss = subseries.get(gsm, "UNRESOLVED")
         meta = _p0012_meta(sample["title"], ss)
@@ -306,12 +362,12 @@ def build_p0012_catalog(root: Path, config_path: Path | None = None) -> dict[str
         replicates.append({"replicate_id": replicate_id, "condition_id": condition_id, "author_replicate_label": meta["replicate"], "replicate_type": "UNRESOLVED" if meta["replicate"] != "NR" else "NR", "replicate_number": re.sub(r"^rep", "", meta["replicate"]) if meta["replicate"] != "NR" else "NR", "evidence_ids": "E-P0012-003", "notes": "rep label parsed from GEO title; biological/technical type not explicit in saved metadata."})
         batches.append({"batch_id": batch_id, "paper_id": "P0012", "author_batch_label": ss, "batch_date": "NR", "library_batch": "NR", "sequencing_platform": runs[0]["instrument_model"] if runs else "NR", "evidence_ids": "E-P0012-004", "verification_status": "verified_metadata_record", "notes": "subseries used as a coarse source partition, not a laboratory batch claim."})
         timepoints.append({"sample_timepoint_id": st_id, "experiment_id": "EX-P0012-001", "species_scientific": sample["organism"], "species_common": "mouse", "taxonomy_id": "10090", "cell_line_or_tissue": sample["source"], "sample_name_original": sample["title"], "sample_name_standardized": gsm, "genotype_or_construct": "G1E-ER4 CTCF-AID-mCherry", "synchronization_method": "nocodazole arrest-release", "synchronization_reagent": "nocodazole", "synchronization_dose": "200 ng/ml", "synchronization_duration": "7-8.5 h", "arrest_point": "prometaphase", "time_zero_definition": "release from nocodazole arrest", "sampling_time": meta["sampling_time"], "sampling_time_unit": meta["sampling_time_unit"], "cell_cycle_phase": meta["cell_cycle_phase"], "phase_evidence_type": "author_stated", "phase_evidence_rule": "GEO Treatment-Protocol maps 0/25/60/120/240 min to pro-meta/ana-telo/early-G1/mid-G1/late-G1.", "pooled_status": "NR", "evidence_ids": "E-P0012-003", "notes": "Sampling time parsed from official title; phase mapping from GEO Treatment-Protocol.", "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "gsm_accession": gsm, "archive_sample_id": as_id})
-        archive.append({"archive_sample_id": as_id, "experiment_id": "EX-P0012-001", "sample_timepoint_id": st_id, "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "gsm_accession": gsm, "biosample_accession": sample["biosample"], "sra_sample_accession": runs[0]["secondary_sample_accession"] if runs else "NR", "srx_accession": sample["srx"], "sample_title_original": sample["title"], "sample_alias_original": gsm, "species_scientific": sample["organism"], "taxonomy_id": "10090", "cell_line_or_tissue": sample["source"], "platform_accession": sample["platform"], "genotype_original": "G1E-ER4 CTCF-AID-mCherry", "phase_original": meta["cell_cycle_phase"], "type_original": ss, "own_data_status": "yes", "biological_sample_origin_status": "study_generated", "library_origin_status": "study_generated", "sequencing_generation_status": "study_generated", "analysis_usage_status": "primary_analysis", "origin_evidence_ids": "E-P0012-001|E-P0012-003|E-P0012-004", "disposition_status": "expanded_to_run_file_level", "run_count": str(len(runs)), "evidence_ids": "E-P0012-003|E-P0012-004", "notes": "GEO sample matched to ENA runs by sample_alias/GSM."})
+        archive.append({"archive_sample_id": as_id, "experiment_id": "EX-P0012-001", "sample_timepoint_id": st_id, "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "gsm_accession": gsm, "biosample_accession": sample["biosample"], "sra_sample_accession": runs[0]["secondary_sample_accession"] if runs else "NR", "srx_accession": sample["srx"], "sample_title_original": sample["title"], "sample_alias_original": gsm, "species_scientific": sample["organism"], "taxonomy_id": "10090", "cell_line_or_tissue": sample["source"], "platform_accession": sample["platform"], "genotype_original": "G1E-ER4 CTCF-AID-mCherry", "phase_original": meta["cell_cycle_phase"], "type_original": ss, "own_data_status": "yes", "biological_sample_origin_status": "study_generated", "library_origin_status": "study_generated", "sequencing_generation_status": "study_generated", "analysis_usage_status": "primary_analysis", "origin_evidence_ids": "E-P0012-001|E-P0012-003|E-P0012-004", "disposition_status": "mapped", "run_count": str(len(runs)), "evidence_ids": "E-P0012-003|E-P0012-004", "notes": "GEO sample matched to ENA runs by sample_alias/GSM."})
         for run_idx, run in enumerate(runs, start=1):
             run_id = run["run_accession"]
             acc_id = f"AC-P0012-{idx:03d}-{run_idx:03d}"
             acc_rows.append({"accession_record_id": acc_id, "experiment_id": "EX-P0012-001", "sample_timepoint_id": st_id, "namespace": "ENA/SRA", "entity_type": "sra_run", "accession": run_id, "project_accession": run["study_accession"], "study_accession": run["secondary_study_accession"], "sample_accession": run["secondary_sample_accession"], "experiment_accession": run["experiment_accession"], "run_accession": run_id, "official_page_url": f"https://www.ebi.ac.uk/ena/browser/view/{run_id}", "download_url": run["fastq_ftp"], "file_format": "fastq.gz", "file_size_bytes": run["fastq_bytes"], "md5": run["fastq_md5"], "format_validation_status": "valid_accession_format", "online_verification_status": "verified_metadata_record", "verification_date": verification_date, "evidence_ids": "E-P0012-004", "notes": "Project accession is the value returned by ENA filereport; declared PRJNA706679 is tracked as unresolved alias/scope issue.", "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "library_strategy": run["library_strategy"], "library_source": "NR", "library_selection": "NR", "library_layout": run["library_layout"], "instrument_platform": run["instrument_platform"], "instrument_model": run["instrument_model"], "public_status": "public", "query_id": "Q-P0012-004", "biological_sample_origin_status": "study_generated", "library_origin_status": "study_generated", "sequencing_generation_status": "study_generated", "analysis_usage_status": "primary_analysis", "origin_evidence_ids": "E-P0012-001|E-P0012-004"})
-            rel_rows.append({"relation_id": f"AR-P0012-{idx:03d}-{run_idx:03d}", "parent_accession": gsm, "child_accession": run_id, "relation_type": "GEO_sample_to_SRA_run", "source_database": "ENA filereport", "query_id": "Q-P0012-004", "verification_status": "verified_metadata_record", "evidence_ids": "E-P0012-003|E-P0012-004", "notes": "Matched by ENA sample_alias."})
+            rel_rows.append({"relation_id": f"AR-P0012-{idx:03d}-{run_idx:03d}", "parent_accession": run["experiment_accession"], "child_accession": run_id, "relation_type": "experiment_has_run", "source_database": "ENA filereport", "query_id": "Q-P0012-004", "verification_status": "verified_metadata_record", "evidence_ids": "E-P0012-003|E-P0012-004", "notes": f"Run matched to GEO sample {gsm} by ENA sample_alias."})
             run_file_rows = _file_rows_for_run("P0012", run_id, run["fastq_ftp"], run["fastq_md5"], run["fastq_bytes"], "E-P0012-004", verification_date)
             file_rows.extend(run_file_rows)
             catalog_base.append({"catalog_row_id": f"CAT-P0012-{len(catalog_base)+1:06d}", "paper_id": "P0012", "experiment_id": "EX-P0012-001", "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "sample_timepoint_id": st_id, "archive_sample_id": as_id, "perturbation_id": meta["perturbation_id"], "accession_record_id": acc_id, "file_id": "NA", "paper_title": paper["title"], "doi": paper["doi"], "own_data_status": "yes", "biological_sample_origin_status": "study_generated", "library_origin_status": "study_generated", "sequencing_generation_status": "study_generated", "analysis_usage_status": "primary_analysis", "species_scientific": sample["organism"], "cell_line_or_tissue": sample["source"], "sample_name_original": sample["title"], "assay_type": meta["assay_type"], "detection_target": meta["detection_target"], "synchronization_method": "nocodazole arrest-release", "time_zero_definition": "release from nocodazole arrest", "sampling_time": meta["sampling_time"], "sampling_time_unit": meta["sampling_time_unit"], "cell_cycle_phase": meta["cell_cycle_phase"], "phase_evidence_type": "author_stated", "perturbation_type": meta["treatment"], "direct_target": _p0012_direct_target(meta["perturbation_id"]), "expected_effect": "see perturbations table", "observed_validation": "NR", "gsm_accession": gsm, "biosample_accession": sample["biosample"], "sra_sample_accession": run["secondary_sample_accession"], "experiment_accession": run["experiment_accession"], "run_accession": run_id, "download_url": "NA", "file_size_bytes": "NA", "md5": "NA", "online_verification_status": "verified_metadata_record", "evidence_ids": "E-P0012-003|E-P0012-004", "notes": "One row per Run in run view; file view expands FASTQ links."})
@@ -325,15 +381,16 @@ def build_p0012_catalog(root: Path, config_path: Path | None = None) -> dict[str
     _replace_rows(root, schema, "accession_relations", rel_rows, lambda row: row.get("relation_id", "").startswith("AR-P0012-"))
     _replace_rows(root, schema, "files", file_rows, lambda row: row.get("file_id", "").startswith("RF-P0012-"))
     _append_run_views(root, schema, "P0012", paper, catalog_base, acc_rows, file_rows)
-    _write_catalog(root / "data" / "interim" / "pilot" / "P0012_run_file_catalog.tsv", [r for base in catalog_base for r in [{**base, "file_id": f["file_id"], "download_url": f["download_url"], "file_size_bytes": f["file_size_bytes"], "md5": f["md5"]} for f in file_rows if f["run_accession"] == base["run_accession"]]])
+    _write_catalog(root / "data" / "interim" / "pilot" / "P0012_run_file_catalog.tsv", [r for base in catalog_base for r in [{**base, "catalog_row_id": f"{base['catalog_row_id']}-F{f['file_index']}", "file_id": f["file_id"], "download_url": f["download_url"], "file_size_bytes": f["file_size_bytes"], "md5": f["md5"]} for f in file_rows if f["run_accession"] == base["run_accession"]]])
 
+    p0012_run_count = sum(row.get("entity_type") == "sra_run" for row in acc_rows)
     _update_round6_common(root, schema, "P0012", verification_date, {
-        "geo_samples": len(main_geo), "runs": len(acc_rows), "files": len(file_rows),
+        "geo_samples": len(main_geo), "runs": p0012_run_count, "files": len(file_rows),
         "queries": [("Q-P0012-001", "GEO", "family MINiML", "GSE168251/GSE168168/GSE168176", "GSE168251_family.xml;GSE168168_family.xml;GSE168176_family.xml", len(main_geo)),
                     ("Q-P0012-004", "ENA", "filereport read_run", "PRJNA706679", "PRJNA706679_ena_filereport.tsv", len(ena))],
     })
     _write_p0012_report(root, main_geo, ena, file_rows)
-    return {"paper_id": "P0012", "geo_samples": len(main_geo), "runs": len(acc_rows), "files": len(file_rows), "catalog_sha256": _stable_hash(root / "data" / "interim" / "pilot" / "P0012_run_file_catalog.tsv")}
+    return {"paper_id": "P0012", "geo_samples": len(main_geo), "runs": p0012_run_count, "files": len(file_rows), "catalog_sha256": _stable_hash(root / "data" / "interim" / "pilot" / "P0012_run_file_catalog.tsv")}
 
 
 def build_p0001_catalog(root: Path, config_path: Path | None = None) -> dict[str, Any]:
@@ -345,23 +402,28 @@ def build_p0001_catalog(root: Path, config_path: Path | None = None) -> dict[str
         raise CatalogError("P0001 ENA filereport returned no rows")
     experiments = [{"experiment_id": "EX-P0001-001", "paper_id": "P0001", "experiment_label_original": "Mitotic chromosome organization cell-cycle chromatin conformation assays", "biological_question": "比较人源细胞不同细胞周期阶段的染色质组织", "own_data_status": "yes", "own_data_evidence": "E-P0001-001|E-P0001-003", "assay_type": "5C/Hi-C related archive entries", "assay_detail": "ArrayExpress E-MTAB-1948 / ENA ERP004055 read_run metadata", "measurement_object": "chromatin contacts", "detection_target": "NA", "experimental_group": "HeLa S3 cell-cycle staged samples", "control_group": "stage comparators", "biological_replicates": "R labels present in ENA aliases; replicate type unresolved", "technical_replicates": "NR", "reference_genome": "NR", "evidence_ids": "E-P0001-001|E-P0001-003", "notes": "Round6 expands to 13 ERR runs and ENA FASTQ metadata; detailed sample design remains light."}]
     _replace_rows(root, schema, "experiments", experiments, lambda row: row.get("paper_id") == "P0001")
-    conditions=[]; replicates=[]; batches=[]; timepoints=[]; archive=[]; acc_rows=[]; rel_rows=[]; file_rows=[]; catalog_base=[]
+    conditions=[]; replicates=[]; batches=[]; timepoints=[]; archive=[]
+    acc_rows=[
+        _accession_stub("AC-P0001-EMTAB1948", "EX-P0001-001", "ArrayExpress/BioStudies", "arrayexpress", "E-MTAB-1948", "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-1948", "E-P0001-003", verification_date),
+        _accession_stub("AC-P0001-ERP004055", "EX-P0001-001", "ENA", "sra_study", "ERP004055", "https://www.ebi.ac.uk/ena/browser/view/ERP004055", "E-P0001-003", verification_date),
+    ]; rel_rows=[]; file_rows=[]; catalog_base=[]
     for idx, run in enumerate(sorted(ena, key=lambda row: row["run_accession"]), start=1):
         alias = run["sample_alias"]; stage = _p0001_stage(alias)
         cell_source = _p0001_cell_source(alias)
+        archive_sample_label = f"NO_GEO_{run['run_accession']}"
         condition_id=f"C-P0001-{idx:03d}"; replicate_id=f"R-P0001-{idx:03d}"; batch_id=f"B-P0001-{idx:03d}"; st_id=f"ST-P0001-{idx:03d}"; as_id=f"AS-P0001-{idx:03d}"
         rep = re.search(r"R(\d+)", alias)
         rep_label = f"R{rep.group(1)}" if rep else "NR"
         conditions.append({"condition_id": condition_id, "paper_id": "P0001", "experiment_id": "EX-P0001-001", "author_condition_label": alias, "genotype_or_construct": "NR", "synchronization_method": stage["sync"], "synchronization_reagent": "NR", "treatment_or_perturbation": "cell-cycle staging", "cell_cycle_phase": stage["phase"], "control_role": "stage comparator", "evidence_ids": "E-P0001-003", "normalization_status": "official_archive_alias_light_parse", "notes": "Stage parsed conservatively from ENA alias and prior pilot evidence."})
         replicates.append({"replicate_id": replicate_id, "condition_id": condition_id, "author_replicate_label": rep_label, "replicate_type": "UNRESOLVED" if rep_label != "NR" else "NR", "replicate_number": rep.group(1) if rep else "NR", "evidence_ids": "E-P0001-003", "notes": "R label retained from archive alias; type unresolved."})
         batches.append({"batch_id": batch_id, "paper_id": "P0001", "author_batch_label": "E-MTAB-1948", "batch_date": "NR", "library_batch": "NR", "sequencing_platform": run["instrument_model"], "evidence_ids": "E-P0001-003", "verification_status": "verified_metadata_record", "notes": "No separate library batch in ENA filereport."})
-        timepoints.append({"sample_timepoint_id": st_id, "experiment_id": "EX-P0001-001", "species_scientific": run["scientific_name"], "species_common": "human", "taxonomy_id": "9606", "cell_line_or_tissue": cell_source, "sample_name_original": alias, "sample_name_standardized": run["sample_accession"], "genotype_or_construct": "NR", "synchronization_method": stage["sync"], "synchronization_reagent": "NR", "synchronization_dose": "NR", "synchronization_duration": "NR", "arrest_point": stage["phase"] if stage["sync"] != "NR" else "NR", "time_zero_definition": "NR", "sampling_time": stage["time"], "sampling_time_unit": "NA", "cell_cycle_phase": stage["phase"], "phase_evidence_type": "explicitly_inferred", "phase_evidence_rule": "Conservative parse from ENA sample_alias plus prior P0001 pilot stage list; exact sample-level timing remains unresolved.", "pooled_status": "NR", "evidence_ids": "E-P0001-001|E-P0001-003", "notes": "Light expansion only; do not treat alias parse as full synchronization protocol.", "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "gsm_accession": "NA", "archive_sample_id": as_id})
-        archive.append({"archive_sample_id": as_id, "experiment_id": "EX-P0001-001", "sample_timepoint_id": st_id, "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "gsm_accession": "NA", "biosample_accession": run["sample_accession"], "sra_sample_accession": run["secondary_sample_accession"], "srx_accession": run["experiment_accession"], "sample_title_original": alias, "sample_alias_original": alias, "species_scientific": run["scientific_name"], "taxonomy_id": "9606", "cell_line_or_tissue": cell_source, "platform_accession": "NA", "genotype_original": "NR", "phase_original": stage["phase"], "type_original": "ArrayExpress sample", "own_data_status": "yes", "biological_sample_origin_status": "study_generated", "library_origin_status": "study_generated", "sequencing_generation_status": "study_generated", "analysis_usage_status": "primary_analysis", "origin_evidence_ids": "E-P0001-001|E-P0001-003", "disposition_status": "expanded_to_light_run_file_level", "run_count": "1", "evidence_ids": "E-P0001-003", "notes": "One ENA run alias treated as one archive sample for this light pass."})
+        timepoints.append({"sample_timepoint_id": st_id, "experiment_id": "EX-P0001-001", "species_scientific": run["scientific_name"], "species_common": "human", "taxonomy_id": "9606", "cell_line_or_tissue": cell_source, "sample_name_original": alias, "sample_name_standardized": run["sample_accession"], "genotype_or_construct": "NR", "synchronization_method": stage["sync"], "synchronization_reagent": "NR", "synchronization_dose": "NR", "synchronization_duration": "NR", "arrest_point": stage["phase"] if stage["sync"] != "NR" else "NR", "time_zero_definition": "NR", "sampling_time": stage["time"], "sampling_time_unit": "NA", "cell_cycle_phase": stage["phase"], "phase_evidence_type": "explicitly_inferred", "phase_evidence_rule": "Conservative parse from ENA sample_alias plus prior P0001 pilot stage list; exact sample-level timing remains unresolved.", "pooled_status": "NR", "evidence_ids": "E-P0001-001|E-P0001-003", "notes": "Light expansion only; no GEO sample exists, so gsm_accession stores an explicit NO_GEO surrogate label for table uniqueness.", "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "gsm_accession": archive_sample_label, "archive_sample_id": as_id})
+        archive.append({"archive_sample_id": as_id, "experiment_id": "EX-P0001-001", "sample_timepoint_id": st_id, "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "gsm_accession": archive_sample_label, "biosample_accession": run["sample_accession"], "sra_sample_accession": run["secondary_sample_accession"], "srx_accession": run["experiment_accession"], "sample_title_original": alias, "sample_alias_original": alias, "species_scientific": run["scientific_name"], "taxonomy_id": "9606", "cell_line_or_tissue": cell_source, "platform_accession": "NA", "genotype_original": "NR", "phase_original": stage["phase"], "type_original": "ArrayExpress sample", "own_data_status": "yes", "biological_sample_origin_status": "study_generated", "library_origin_status": "study_generated", "sequencing_generation_status": "study_generated", "analysis_usage_status": "primary_analysis", "origin_evidence_ids": "E-P0001-001|E-P0001-003", "disposition_status": "mapped", "run_count": "1", "evidence_ids": "E-P0001-003", "notes": "One ENA run alias treated as one archive sample for this light pass; NO_GEO label is not an accession."})
         acc_id=f"AC-P0001-{idx:03d}"; run_id=run["run_accession"]
         acc_rows.append({"accession_record_id": acc_id, "experiment_id": "EX-P0001-001", "sample_timepoint_id": st_id, "namespace": "ENA/ArrayExpress", "entity_type": "sra_run", "accession": run_id, "project_accession": run["study_accession"], "study_accession": run["secondary_study_accession"], "sample_accession": run["secondary_sample_accession"], "experiment_accession": run["experiment_accession"], "run_accession": run_id, "official_page_url": f"https://www.ebi.ac.uk/ena/browser/view/{run_id}", "download_url": run["fastq_ftp"], "file_format": "fastq.gz", "file_size_bytes": run["fastq_bytes"], "md5": run["fastq_md5"], "format_validation_status": "valid_accession_format", "online_verification_status": "verified_metadata_record", "verification_date": verification_date, "evidence_ids": "E-P0001-003", "notes": "Run/file metadata from ENA filereport for ERP004055.", "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "library_strategy": run["library_strategy"], "library_source": "NR", "library_selection": "NR", "library_layout": run["library_layout"], "instrument_platform": run["instrument_platform"], "instrument_model": run["instrument_model"], "public_status": "public", "query_id": "Q-P0001-003", "biological_sample_origin_status": "study_generated", "library_origin_status": "study_generated", "sequencing_generation_status": "study_generated", "analysis_usage_status": "primary_analysis", "origin_evidence_ids": "E-P0001-001|E-P0001-003"})
-        rel_rows.append({"relation_id": f"AR-P0001-{idx:03d}", "parent_accession": "ERP004055", "child_accession": run_id, "relation_type": "ENA_study_to_run", "source_database": "ENA filereport", "query_id": "Q-P0001-003", "verification_status": "verified_metadata_record", "evidence_ids": "E-P0001-003", "notes": "ERP004055 filereport returned this run."})
+        rel_rows.append({"relation_id": f"AR-P0001-{idx:03d}", "parent_accession": run["experiment_accession"], "child_accession": run_id, "relation_type": "experiment_has_run", "source_database": "ENA filereport", "query_id": "Q-P0001-003", "verification_status": "verified_metadata_record", "evidence_ids": "E-P0001-003", "notes": "ERP004055 filereport returned this run."})
         file_rows.extend(_file_rows_for_run("P0001", run_id, run["fastq_ftp"], run["fastq_md5"], run["fastq_bytes"], "E-P0001-003", verification_date))
-        catalog_base.append({"catalog_row_id": f"CAT-P0001-{idx:06d}", "paper_id": "P0001", "experiment_id": "EX-P0001-001", "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "sample_timepoint_id": st_id, "archive_sample_id": as_id, "perturbation_id": "NA", "accession_record_id": acc_id, "file_id": "NA", "paper_title": paper["title"], "doi": paper["doi"], "own_data_status": "yes", "biological_sample_origin_status": "study_generated", "library_origin_status": "study_generated", "sequencing_generation_status": "study_generated", "analysis_usage_status": "primary_analysis", "species_scientific": run["scientific_name"], "cell_line_or_tissue": cell_source, "sample_name_original": alias, "assay_type": "5C/Hi-C related archive entry", "detection_target": "NA", "synchronization_method": stage["sync"], "time_zero_definition": "NR", "sampling_time": stage["time"], "sampling_time_unit": "NA", "cell_cycle_phase": stage["phase"], "phase_evidence_type": "explicitly_inferred", "perturbation_type": "NA", "direct_target": "NA", "expected_effect": "NA", "observed_validation": "NA", "gsm_accession": "NA", "biosample_accession": run["sample_accession"], "sra_sample_accession": run["secondary_sample_accession"], "experiment_accession": run["experiment_accession"], "run_accession": run_id, "download_url": "NA", "file_size_bytes": "NA", "md5": "NA", "online_verification_status": "verified_metadata_record", "evidence_ids": "E-P0001-001|E-P0001-003", "notes": "Light run-level row; file view expands paired FASTQ links."})
+        catalog_base.append({"catalog_row_id": f"CAT-P0001-{idx:06d}", "paper_id": "P0001", "experiment_id": "EX-P0001-001", "condition_id": condition_id, "replicate_id": replicate_id, "batch_id": batch_id, "sample_timepoint_id": st_id, "archive_sample_id": as_id, "perturbation_id": "NA", "accession_record_id": acc_id, "file_id": "NA", "paper_title": paper["title"], "doi": paper["doi"], "own_data_status": "yes", "biological_sample_origin_status": "study_generated", "library_origin_status": "study_generated", "sequencing_generation_status": "study_generated", "analysis_usage_status": "primary_analysis", "species_scientific": run["scientific_name"], "cell_line_or_tissue": cell_source, "sample_name_original": alias, "assay_type": "5C/Hi-C related archive entry", "detection_target": "NA", "synchronization_method": stage["sync"], "time_zero_definition": "NR", "sampling_time": stage["time"], "sampling_time_unit": "NA", "cell_cycle_phase": stage["phase"], "phase_evidence_type": "explicitly_inferred", "perturbation_type": "NA", "direct_target": "NA", "expected_effect": "NA", "observed_validation": "NA", "gsm_accession": archive_sample_label, "biosample_accession": run["sample_accession"], "sra_sample_accession": run["secondary_sample_accession"], "experiment_accession": run["experiment_accession"], "run_accession": run_id, "download_url": "NA", "file_size_bytes": "NA", "md5": "NA", "online_verification_status": "verified_metadata_record", "evidence_ids": "E-P0001-001|E-P0001-003", "notes": "Light run-level row; file view expands paired FASTQ links; NO_GEO label is a uniqueness surrogate, not an accession."})
 
     for table, rows, pred in [
         ("conditions", conditions, lambda row: row.get("paper_id") == "P0001"),
@@ -375,10 +437,11 @@ def build_p0001_catalog(root: Path, config_path: Path | None = None) -> dict[str
     ]:
         _replace_rows(root, schema, table, rows, pred)
     _append_run_views(root, schema, "P0001", paper, catalog_base, acc_rows, file_rows)
-    _write_catalog(root / "data" / "interim" / "pilot" / "P0001_light_catalog.tsv", [r for base in catalog_base for r in [{**base, "file_id": f["file_id"], "download_url": f["download_url"], "file_size_bytes": f["file_size_bytes"], "md5": f["md5"]} for f in file_rows if f["run_accession"] == base["run_accession"]]])
-    _update_round6_common(root, schema, "P0001", verification_date, {"runs": len(acc_rows), "files": len(file_rows), "queries": [("Q-P0001-003", "ENA", "filereport read_run", "ERP004055", "ERP004055_ena_filereport.tsv", len(ena))]})
+    _write_catalog(root / "data" / "interim" / "pilot" / "P0001_light_catalog.tsv", [r for base in catalog_base for r in [{**base, "catalog_row_id": f"{base['catalog_row_id']}-F{f['file_index']}", "file_id": f["file_id"], "download_url": f["download_url"], "file_size_bytes": f["file_size_bytes"], "md5": f["md5"]} for f in file_rows if f["run_accession"] == base["run_accession"]]])
+    p0001_run_count = sum(row.get("entity_type") == "sra_run" for row in acc_rows)
+    _update_round6_common(root, schema, "P0001", verification_date, {"runs": p0001_run_count, "files": len(file_rows), "queries": [("Q-P0001-003", "ENA", "filereport read_run", "ERP004055", "ERP004055_ena_filereport.tsv", len(ena))]})
     _write_p0001_report(root, ena, file_rows)
-    return {"paper_id": "P0001", "runs": len(acc_rows), "files": len(file_rows), "catalog_sha256": _stable_hash(root / "data" / "interim" / "pilot" / "P0001_light_catalog.tsv")}
+    return {"paper_id": "P0001", "runs": p0001_run_count, "files": len(file_rows), "catalog_sha256": _stable_hash(root / "data" / "interim" / "pilot" / "P0001_light_catalog.tsv")}
 
 
 def _update_round6_common(root: Path, schema: dict[str, Any], paper_id: str, verification_date: str, payload: dict[str, Any]) -> None:
@@ -393,7 +456,14 @@ def _update_round6_common(root: Path, schema: dict[str, Any], paper_id: str, ver
         {"evidence_id": f"E-{paper_id}-004", "supported_table": "accessions|files|literature_experiment_catalog", "supported_record_id": paper_id, "supported_fields": "run_accession|fastq_ftp|fastq_md5|fastq_bytes", "source_type": "archive_record", "citation_or_database": "ENA Portal API filereport", "source_locator": "data/interim/pilot/source_metadata", "page_or_section": "read_run", "minimal_excerpt": "ENA filereport returned run and FASTQ metadata fields.", "query_or_method": f"Round6 builder for {paper_id}", "verification_date": verification_date, "extractor": "src.literature_catalog.round6", "reviewer": "NR", "evidence_level": "archive_record", "notes": "URLs are database-returned metadata values, not locally downloaded files."},
     ]
     if paper_id == "P0001":
-        evidence_rows = evidence_rows[:1] + [{**evidence_rows[1], "evidence_id": "E-P0001-003"}]
+        evidence_rows = [
+            {
+                **evidence_rows[0],
+                "evidence_id": "E-P0001-003",
+                "supported_table": "archive_samples|samples_timepoints|accessions|files|literature_experiment_catalog",
+                "supported_fields": "sample_alias|run_accession|fastq_ftp|fastq_md5|fastq_bytes",
+            }
+        ]
     _replace_rows(root, schema, "evidence", evidence_rows, lambda row: row.get("evidence_id", "").startswith(f"E-{paper_id}-003") or row.get("evidence_id", "").startswith(f"E-{paper_id}-004"))
 
     sem_rows = []
@@ -402,7 +472,7 @@ def _update_round6_common(root: Path, schema: dict[str, Any], paper_id: str, ver
         sem_rows = [
             {"review_id": "RV-P0012-0001", "paper_id": "P0012", "record_type": "condition", "record_id": "auxin", "field_name": "perturbation_target", "original_value": "with_auxin/with_A", "candidate_interpretation": "CTCF depletion via auxin-inducible degron", "decision": "accepted_from_prior_pilot_evidence", "decision_status": "verified", "evidence_ids": "E-P0012-001|E-P0012-003", "decision_rule": "Use prior paper-level pilot evidence for target; sample assignment from GEO title.", "reviewer_status": "machine_extracted_pending_human_review", "notes": "Kept separate from ChIP detection_target."},
             {"review_id": "RV-P0012-0002", "paper_id": "P0012", "record_type": "condition", "record_id": "triptolide", "field_name": "perturbation_target", "original_value": "with_triptolide", "candidate_interpretation": "transcription initiation inhibition", "decision": "accepted_from_prior_pilot_evidence", "decision_status": "verified", "evidence_ids": "E-P0012-001|E-P0012-003", "decision_rule": "Use prior paper-level pilot evidence; do not replace with Pol II detection target.", "reviewer_status": "machine_extracted_pending_human_review", "notes": "Dose and validation remain NR in saved metadata."},
-            {"review_id": "RV-P0012-0003", "paper_id": "P0012", "record_type": "accession", "record_id": "PRJNA706679", "field_name": "project_accession", "original_value": "PRJNA706679", "candidate_interpretation": "declared/queried BioProject may expand to PRJNA706396 and PRJNA706676 in ENA read_run", "decision": "UNRESOLVED", "decision_status": "unresolved", "evidence_ids": "E-P0012-004", "decision_rule": "Preserve ENA-returned study_accession per run and register declared-vs-returned mismatch.", "reviewer_status": "needs_human_review", "notes": "No silent project accession substitution."},
+            {"review_id": "RV-P0012-0003", "paper_id": "P0012", "record_type": "accession", "record_id": "PRJNA706679", "field_name": "project_accession", "original_value": "PRJNA706679", "candidate_interpretation": "declared/queried BioProject may expand to PRJNA706396 and PRJNA706676 in ENA read_run", "decision": "UNRESOLVED", "decision_status": "unresolved", "evidence_ids": "E-P0012-004", "decision_rule": "Preserve ENA-returned study_accession per run and register declared-vs-returned mismatch.", "reviewer_status": "machine_extracted_pending_human_review", "notes": "No silent project accession substitution."},
         ]
         issue_rows = [
             {"issue_id": "UI-P0012-001", "paper_id": "P0012", "related_record_id": "rep labels", "issue_type": "replicate_type_unresolved", "description": "GEO titles contain rep labels but saved metadata does not adjudicate biological versus technical replicate.", "checked_sources": "GEO family MINiML|ENA filereport", "current_assessment": "UNRESOLVED", "requires_user_decision": "no", "status": "open", "resolution": "NA", "notes": "Replicate label retained losslessly."},

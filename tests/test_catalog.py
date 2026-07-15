@@ -135,8 +135,12 @@ class RepositoryIntegrationTests(unittest.TestCase):
             rows = list(csv.DictReader(handle, delimiter="\t"))
         p0008 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0008-")]
         p0009 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0009-")]
+        p0012 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0012-")]
+        p0001 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0001-")]
         self.assertEqual(len(p0008), 60)
         self.assertEqual(len(p0009), 75)
+        self.assertEqual(len(p0012), 44)
+        self.assertEqual(len(p0001), 13)
         self.assertEqual(len({row["gsm_accession"] for row in rows}), len(rows))
         self.assertEqual({row["disposition_status"] for row in rows}, {"mapped"})
         self.assertEqual(sum(row["species_scientific"] == "Gallus gallus" for row in p0008), 58)
@@ -161,23 +165,32 @@ class RepositoryIntegrationTests(unittest.TestCase):
         mapped = [row for row in relations if row["relation_type"] == "experiment_has_run"]
         p0008_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0008") and row["entity_type"] == "sra_run"}
         p0009_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0009") and row["entity_type"] == "sra_run"}
+        p0012_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0012") and row["entity_type"] == "sra_run"}
+        p0001_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0001") and row["entity_type"] == "sra_run"}
         self.assertEqual(len(p0008_runs), 1290)
         self.assertEqual(len(p0009_runs), 120)
-        self.assertEqual(runs, p0008_runs | p0009_runs)
+        self.assertEqual(len(p0012_runs), 102)
+        self.assertEqual(len(p0001_runs), 13)
+        self.assertEqual(runs, p0008_runs | p0009_runs | p0012_runs | p0001_runs)
         self.assertEqual({row["child_accession"] for row in mapped}, runs)
-        self.assertEqual(len(files), 2580 + 195)
+        self.assertEqual(len(files), 2580 + 195 + 182 + 26)
         self.assertEqual(len(wide), len(files))
         self.assertEqual(len({row["catalog_row_id"] for row in wide}), len(wide))
         self.assertEqual(len({row["file_id"] for row in wide}), len(files))
         self.assertEqual(file_view, wide)
-        self.assertEqual(len(run_view), 1290 + 120)
+        self.assertEqual(len(run_view), 1290 + 120 + 102 + 13)
         self.assertEqual({row["run_accession"] for row in run_view}, runs)
         p0008_run_view = [row for row in run_view if row["paper_id"] == "P0008"]
         p0009_run_view = [row for row in run_view if row["paper_id"] == "P0009"]
+        p0012_run_view = [row for row in run_view if row["paper_id"] == "P0012"]
+        p0001_run_view = [row for row in run_view if row["paper_id"] == "P0001"]
         self.assertTrue(all(row["file_count"] == "2" for row in p0008_run_view))
         self.assertTrue(all(row["read1_url"] not in {"", "NA"} and row["read2_url"] not in {"", "NA"} for row in p0008_run_view))
         self.assertEqual({row["file_count"] for row in p0009_run_view}, {"1", "2"})
         self.assertTrue(all(row["read1_url"] not in {"", "NA"} for row in p0009_run_view))
+        self.assertEqual({row["file_count"] for row in p0012_run_view}, {"1", "2"})
+        self.assertTrue(all(row["read1_url"] not in {"", "NA"} for row in p0012_run_view))
+        self.assertEqual({row["file_count"] for row in p0001_run_view}, {"2"})
 
     def test_query_manifest_records_complete_pagination(self) -> None:
         with (ROOT / "data" / "interim" / "pilot" / "source_queries.tsv").open(encoding="utf-8", newline="") as handle:

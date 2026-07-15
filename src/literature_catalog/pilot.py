@@ -193,7 +193,13 @@ def _migrate_legacy_query(root: Path, schema: dict[str, Any]) -> None:
             "error_summary": "Legacy failed-query placeholder; not an accession entity.",
             "query_outcome": "historical_migrated", "legacy_record_id": "AC-P0008-004",
         })
-    _write_tsv(path, spec["fields"], sorted(rows, key=lambda row: int(row["query_id"][1:])))
+    def query_sort_key(row: dict[str, str]) -> tuple[int, int | str]:
+        query_id = row["query_id"]
+        if re.fullmatch(r"Q\d+", query_id):
+            return (0, int(query_id[1:]))
+        return (1, query_id)
+
+    _write_tsv(path, spec["fields"], sorted(rows, key=query_sort_key))
 
 
 def _alias_parts(title: str) -> tuple[str, str, str]:
@@ -489,10 +495,22 @@ def _build_p0008_catalog(root: Path, config_path: Path | None = None) -> dict[st
     preserved_batches = [row for row in existing_batches if row.get("paper_id") != "P0008"]
     preserved_archive_samples = [row for row in existing_archive_samples if not row.get("archive_sample_id", "").startswith("AS-P0008-")]
     preserved_relations = [row for row in existing_relations if not row.get("relation_id", "").startswith("REL-P0008-")]
-    preserved_files = [row for row in existing_files if not row.get("file_id", "").startswith("RF-P0008-")]
-    preserved_wide_rows = [row for row in existing_wide_rows if row.get("paper_id") != "P0008"]
-    preserved_files_view = [row for row in existing_files_view if row.get("paper_id") != "P0008"]
-    preserved_run_rows = [row for row in existing_run_rows if row.get("paper_id") != "P0008"]
+    preserved_files = [
+        row for row in existing_files
+        if row.get("file_id", "").startswith("RF-") and not row.get("file_id", "").startswith("RF-P0008-")
+    ]
+    preserved_wide_rows = [
+        row for row in existing_wide_rows
+        if row.get("paper_id", "").startswith("P") and row.get("paper_id") != "P0008"
+    ]
+    preserved_files_view = [
+        row for row in existing_files_view
+        if row.get("paper_id", "").startswith("P") and row.get("paper_id") != "P0008"
+    ]
+    preserved_run_rows = [
+        row for row in existing_run_rows
+        if row.get("paper_id", "").startswith("P") and row.get("paper_id") != "P0008"
+    ]
     conditions: list[dict[str, str]] = []
     replicates: list[dict[str, str]] = []
     batches: list[dict[str, str]] = []
@@ -620,7 +638,7 @@ def _build_p0008_catalog(root: Path, config_path: Path | None = None) -> dict[st
     relations: list[dict[str, str]] = []
     relation_id = 1
     run_to_accession_id: dict[str, str] = {}
-    for sample in archive_samples:
+    for sample in p0008_archive_samples:
         common = {
             "experiment_id": sample["experiment_id"], "sample_timepoint_id": sample["sample_timepoint_id"],
             "project_accession": str(config["bioproject"]), "study_accession": str(config["sra_study"]),
@@ -664,7 +682,7 @@ def _build_p0008_catalog(root: Path, config_path: Path | None = None) -> dict[st
     files: list[dict[str, str]] = []
     wide_rows: list[dict[str, str]] = []
     run_rows: list[dict[str, str]] = []
-    archive_by_gsm = {row["gsm_accession"]: row for row in archive_samples}
+    archive_by_gsm = {row["gsm_accession"]: row for row in p0008_archive_samples}
     for run in sorted(ncbi_runs, key=lambda row: int(row["run"][3:])):
         ena = ena_by_run[run["run"]]
         gsm = run["sample_alias"]
@@ -1204,7 +1222,7 @@ def _build_p0009_catalog(root: Path, config_path: Path | None = None) -> dict[st
         },
     ]
     source_queries.extend(query_rows)
-    source_queries.sort(key=lambda row: int(row["query_id"][1:]))
+    source_queries.sort(key=lambda row: (0, int(row["query_id"][1:])) if re.fullmatch(r"Q\d+", row["query_id"]) else (1, row["query_id"]))
     _write_tsv(root / query_spec["path"], query_spec["fields"], source_queries)
 
     evidence_spec = schema["tables"]["evidence"]

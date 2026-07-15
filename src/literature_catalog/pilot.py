@@ -1993,6 +1993,10 @@ def build_pilot_catalog(root: Path, config_path: Path | None = None) -> dict[str
         from .round6 import build_p0001_catalog
 
         return build_p0001_catalog(root, config_file)
+    if paper_id in {"P0006", "P0007", "P0011", "P0016"}:
+        from .batch_round7 import build_round7_paper
+
+        return build_round7_paper(root, config_file)
     raise CatalogError(f"Unsupported pilot builder for {paper_id}")
 
 

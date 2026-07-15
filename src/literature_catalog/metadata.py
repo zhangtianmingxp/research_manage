@@ -129,6 +129,11 @@ def _config(root: Path, config_path: Path | None) -> dict[str, object]:
 def fetch_pilot_metadata(root: Path, config_path: Path | None = None) -> list[QueryRecord]:
     """Fetch the configured GEO, NCBI SRA, and ENA metadata snapshots."""
     config = _config(root, config_path)
+    paper_id = str(config.get("paper_id", "P0008"))
+    if paper_id in {"P0006", "P0007", "P0011", "P0016"}:
+        from .batch_round7 import fetch_round7_metadata
+
+        return fetch_round7_metadata(root, Path(config_path) if config_path is not None else root / "configs" / "pilots" / f"{paper_id}.json")
     source_dir = root / str(config["source_metadata_dir"])
     source_dir.mkdir(parents=True, exist_ok=True)
     queried_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()

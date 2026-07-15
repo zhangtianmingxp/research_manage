@@ -1931,3 +1931,938 @@ AR-P0001-010	ERX836639	ERR792492	experiment_has_run	ENA filereport	Q-P0001-003	v
 AR-P0001-011	ERX836637	ERR792493	experiment_has_run	ENA filereport	Q-P0001-003	verified_metadata_record	E-P0001-003	ERP004055 filereport returned this run.
 AR-P0001-012	ERX836642	ERR792494	experiment_has_run	ENA filereport	Q-P0001-003	verified_metadata_record	E-P0001-003	ERP004055 filereport returned this run.
 AR-P0001-013	ERX836643	ERR792495	experiment_has_run	ENA filereport	Q-P0001-003	verified_metadata_record	E-P0001-003	ERP004055 filereport returned this run.
+AR-P0006-GEO-001	GSE93431	GSM2453279	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-001	GSM2453279	SRX2485040	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-001-001	SRX2485040	SRR5168118	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-001-002	SRX2485040	SRR5168119	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-001-003	SRX2485040	SRR5168120	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-001-004	SRX2485040	SRR5168121	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-001-005	SRX2485040	SRR5168122	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-001-006	SRX2485040	SRR5168123	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-001-007	SRX2485040	SRR5168124	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-001-008	SRX2485040	SRR5168125	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-002	GSE93431	GSM2453280	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-002	GSM2453280	SRX2485041	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-002-001	SRX2485041	SRR5168126	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-002-002	SRX2485041	SRR5168127	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-002-003	SRX2485041	SRR5168128	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-002-004	SRX2485041	SRR5168129	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-002-005	SRX2485041	SRR5168130	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-002-006	SRX2485041	SRR5168131	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-002-007	SRX2485041	SRR5168132	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-002-008	SRX2485041	SRR5168133	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-003	GSE93431	GSM2453281	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-003	GSM2453281	SRX2485042	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-003-001	SRX2485042	SRR5168134	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-003-002	SRX2485042	SRR5168135	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-003-003	SRX2485042	SRR5168136	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-003-004	SRX2485042	SRR5168137	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-003-005	SRX2485042	SRR5168138	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-003-006	SRX2485042	SRR5168139	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-003-007	SRX2485042	SRR5168140	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-003-008	SRX2485042	SRR5168141	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-004	GSE93431	GSM2453282	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-004	GSM2453282	SRX2485043	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-004-001	SRX2485043	SRR5168142	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-004-002	SRX2485043	SRR5168143	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-004-003	SRX2485043	SRR5168144	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-004-004	SRX2485043	SRR5168145	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-004-005	SRX2485043	SRR5168146	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-004-006	SRX2485043	SRR5168147	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-004-007	SRX2485043	SRR5168148	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-004-008	SRX2485043	SRR5168149	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-005	GSE93431	GSM2453283	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-005	GSM2453283	SRX2485044	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-005-001	SRX2485044	SRR5168150	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-005-002	SRX2485044	SRR5168151	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-005-003	SRX2485044	SRR5168152	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-005-004	SRX2485044	SRR5168153	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-005-005	SRX2485044	SRR5168154	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-005-006	SRX2485044	SRR5168155	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-005-007	SRX2485044	SRR5168156	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-005-008	SRX2485044	SRR5168157	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-006	GSE93431	GSM2453284	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-006	GSM2453284	SRX2485045	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-006-001	SRX2485045	SRR5168158	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-006-002	SRX2485045	SRR5168159	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-006-003	SRX2485045	SRR5168160	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-006-004	SRX2485045	SRR5168161	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-006-005	SRX2485045	SRR5168162	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-006-006	SRX2485045	SRR5168163	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-006-007	SRX2485045	SRR5168164	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-006-008	SRX2485045	SRR5168165	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-007	GSE93431	GSM2453285	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-007	GSM2453285	SRX2485046	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-007-001	SRX2485046	SRR5168166	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-008	GSE93431	GSM2453286	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-008	GSM2453286	SRX2485047	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-008-001	SRX2485047	SRR5168167	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-009	GSE93431	GSM2453287	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-009	GSM2453287	SRX2485048	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-009-001	SRX2485048	SRR5168168	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-010	GSE93431	GSM2453288	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-010	GSM2453288	SRX2485049	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-010-001	SRX2485049	SRR5168169	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-011	GSE93431	GSM2453289	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-011	GSM2453289	SRX2485050	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-011-001	SRX2485050	SRR5168170	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-012	GSE93431	GSM2453290	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-012	GSM2453290	SRX2485051	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-012-001	SRX2485051	SRR5168171	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-013	GSE93431	GSM2453291	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-013	GSM2453291	SRX2485052	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-013-001	SRX2485052	SRR5168172	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-013-002	SRX2485052	SRR5168173	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-014	GSE93431	GSM2453292	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-014	GSM2453292	SRX2485053	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-014-001	SRX2485053	SRR5168174	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-014-002	SRX2485053	SRR5168175	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-015	GSE93431	GSM2453293	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-015	GSM2453293	SRX2485054	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-015-001	SRX2485054	SRR5168176	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-015-002	SRX2485054	SRR5168177	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-016	GSE93431	GSM2453294	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-016	GSM2453294	SRX2485055	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-016-001	SRX2485055	SRR5168178	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-016-002	SRX2485055	SRR5168179	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-017	GSE93431	GSM2453295	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-017	GSM2453295	SRX2485056	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-017-001	SRX2485056	SRR5168180	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-017-002	SRX2485056	SRR5168181	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-018	GSE93431	GSM2453296	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-018	GSM2453296	SRX2485057	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-018-001	SRX2485057	SRR5168182	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-018-002	SRX2485057	SRR5168183	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-019	GSE93431	GSM2453297	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-019	GSM2453297	SRX2485058	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-019-001	SRX2485058	SRR5168184	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-019-002	SRX2485058	SRR5168185	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-020	GSE93431	GSM2453298	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-020	GSM2453298	SRX2485059	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-020-001	SRX2485059	SRR5168186	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-020-002	SRX2485059	SRR5168187	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-021	GSE93431	GSM2453299	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-021	GSM2453299	SRX2485060	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-021-001	SRX2485060	SRR5168188	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-021-002	SRX2485060	SRR5168189	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-022	GSE93431	GSM2453300	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-022	GSM2453300	SRX2485061	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-022-001	SRX2485061	SRR5168190	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-022-002	SRX2485061	SRR5168191	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-023	GSE93431	GSM2453301	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-023	GSM2453301	SRX2485062	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-023-001	SRX2485062	SRR5168192	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-023-002	SRX2485062	SRR5168193	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-024	GSE93431	GSM2453302	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-024	GSM2453302	SRX2485063	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-024-001	SRX2485063	SRR5168194	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-024-002	SRX2485063	SRR5168195	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-025	GSE93431	GSM2740559	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-025	GSM2740559	SRX3088630	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-025-001	SRX3088630	SRR5928311	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-026	GSE93431	GSM2740560	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-026	GSM2740560	SRX3088631	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-026-001	SRX3088631	SRR5928312	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-027	GSE93431	GSM2740561	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-027	GSM2740561	SRX3088632	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-027-001	SRX3088632	SRR5928313	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-027-002	SRX3088632	SRR5928314	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-028	GSE93431	GSM2740562	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-028	GSM2740562	SRX3088633	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-028-001	SRX3088633	SRR5928315	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-028-002	SRX3088633	SRR5928316	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-029	GSE93431	GSM2740563	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-029	GSM2740563	SRX3088634	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-029-001	SRX3088634	SRR5928317	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-029-002	SRX3088634	SRR5928318	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-030	GSE93431	GSM2740564	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-030	GSM2740564	SRX3088635	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-030-001	SRX3088635	SRR5928319	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-031	GSE93431	GSM2740565	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-031	GSM2740565	SRX3088636	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-031-001	SRX3088636	SRR5928320	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-RUN-031-002	SRX3088636	SRR5928321	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0006-GEO-032	GSE93431	GSM2740566	series_has_sample	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	GEO sample membership.
+AR-P0006-SRX-032	GSM2740566	SRX3088637	sample_has_experiment	GEO family MINiML	Q-P0006-002	verified_metadata_record	E-P0006-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0006-RUN-032-001	SRX3088637	SRR5928322	experiment_has_run	ENA filereport	Q-P0006-004	verified_metadata_record	E-P0006-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-001	GSE102884	GSM2747738	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-001	GSM2747738	SRX3110752	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-001-001	SRX3110752	SRR5952286	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-RUN-001-002	SRX3110752	SRR5952287	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-002	GSE102884	GSM2747739	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-002	GSM2747739	SRX3110753	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-002-001	SRX3110753	SRR5952288	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-RUN-002-002	SRX3110753	SRR5952289	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-003	GSE102884	GSM2747740	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-003	GSM2747740	SRX3110754	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-003-001	SRX3110754	SRR5952290	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-RUN-003-002	SRX3110754	SRR5952291	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-004	GSE102884	GSM2747741	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-004	GSM2747741	SRX3110755	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-004-001	SRX3110755	SRR5952292	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-RUN-004-002	SRX3110755	SRR5952293	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-005	GSE102884	GSM2747742	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-005	GSM2747742	SRX3110756	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-005-001	SRX3110756	SRR5952294	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-RUN-005-002	SRX3110756	SRR5952295	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-006	GSE102884	GSM2747743	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-006	GSM2747743	SRX3110757	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-006-001	SRX3110757	SRR5952296	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-RUN-006-002	SRX3110757	SRR5952297	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-007	GSE102884	GSM2747744	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-007	GSM2747744	SRX3110758	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-007-001	SRX3110758	SRR5952298	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-RUN-007-002	SRX3110758	SRR5952299	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-008	GSE102884	GSM2747745	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-008	GSM2747745	SRX3110759	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-008-001	SRX3110759	SRR5952300	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-009	GSE102884	GSM2747746	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-009	GSM2747746	SRX3110760	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-009-001	SRX3110760	SRR5952301	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-010	GSE102884	GSM2747747	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-010	GSM2747747	SRX3110761	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-010-001	SRX3110761	SRR5952302	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-011	GSE102884	GSM2747748	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-011	GSM2747748	SRX3110762	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-011-001	SRX3110762	SRR5952303	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-012	GSE102884	GSM2747749	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-012	GSM2747749	SRX3110763	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-012-001	SRX3110763	SRR5952304	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-013	GSE102884	GSM2747750	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-013	GSM2747750	SRX3110764	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-013-001	SRX3110764	SRR5952305	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-014	GSE102884	GSM2747751	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-014	GSM2747751	SRX3110765	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-014-001	SRX3110765	SRR5952306	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-015	GSE102884	GSM2747752	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-015	GSM2747752	SRX3110766	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-015-001	SRX3110766	SRR5952307	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-016	GSE102884	GSM2747753	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-016	GSM2747753	SRX3110767	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-016-001	SRX3110767	SRR5952308	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-017	GSE102884	GSM2747754	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-017	GSM2747754	SRX3110768	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-017-001	SRX3110768	SRR5952309	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-018	GSE102884	GSM2747755	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-018	GSM2747755	SRX3110769	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-018-001	SRX3110769	SRR5952310	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-019	GSE102884	GSM2747756	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-019	GSM2747756	SRX3110770	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-019-001	SRX3110770	SRR5952311	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-020	GSE102884	GSM2747757	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-020	GSM2747757	SRX3110771	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-020-001	SRX3110771	SRR5952312	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-021	GSE102884	GSM2747758	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-021	GSM2747758	SRX3110772	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-021-001	SRX3110772	SRR5952313	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-022	GSE102884	GSM2747759	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-022	GSM2747759	SRX3110773	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-022-001	SRX3110773	SRR5952314	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-023	GSE102884	GSM2747760	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-023	GSM2747760	SRX3110774	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-023-001	SRX3110774	SRR5952315	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-024	GSE102884	GSM2747761	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-024	GSM2747761	SRX3110775	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-024-001	SRX3110775	SRR5952316	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-025	GSE102884	GSM2747762	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-025	GSM2747762	SRX3110776	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-025-001	SRX3110776	SRR5952317	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-026	GSE102884	GSM2747763	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-026	GSM2747763	SRX3110777	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-026-001	SRX3110777	SRR5952318	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-027	GSE102884	GSM2747764	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-027	GSM2747764	SRX3110778	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-027-001	SRX3110778	SRR5952319	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-028	GSE102884	GSM2747765	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-028	GSM2747765	SRX3110779	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-028-001	SRX3110779	SRR5952320	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-029	GSE102884	GSM2747766	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-029	GSM2747766	SRX3110780	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-029-001	SRX3110780	SRR5952321	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0007-GEO-030	GSE102884	GSM2747767	series_has_sample	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	GEO sample membership.
+AR-P0007-SRX-030	GSM2747767	SRX3110781	sample_has_experiment	GEO family MINiML	Q-P0007-002	verified_metadata_record	E-P0007-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0007-RUN-030-001	SRX3110781	SRR5952322	experiment_has_run	ENA filereport	Q-P0007-004	verified_metadata_record	E-P0007-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-001	GSE254182	GSM8035585	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-001	GSM8035585	SRX23388981	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-001-001	SRX23388981	SRR27723071	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-002	GSE254182	GSM8035586	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-002	GSM8035586	SRX23388982	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-002-001	SRX23388982	SRR27723070	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-003	GSE254182	GSM8035587	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-003	GSM8035587	SRX23388983	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-003-001	SRX23388983	SRR27723069	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-004	GSE254182	GSM8035588	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-004	GSM8035588	SRX23388984	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-004-001	SRX23388984	SRR27723068	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-005	GSE254182	GSM8035589	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-005	GSM8035589	SRX23388985	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-005-001	SRX23388985	SRR27723067	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-006	GSE254182	GSM8035590	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-006	GSM8035590	SRX23388986	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-006-001	SRX23388986	SRR27723066	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-007	GSE254182	GSM8035591	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-007	GSM8035591	SRX23388987	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-007-001	SRX23388987	SRR27723065	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-008	GSE254182	GSM8035592	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-008	GSM8035592	SRX23388988	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-008-001	SRX23388988	SRR27723064	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-009	GSE254182	GSM8035593	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-009	GSM8035593	SRX23388989	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-009-001	SRX23388989	SRR27723063	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-010	GSE254182	GSM8035594	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-010	GSM8035594	SRX23388990	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-010-001	SRX23388990	SRR27723062	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-011	GSE254182	GSM8035595	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-011	GSM8035595	SRX23388991	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-011-001	SRX23388991	SRR27723061	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-012	GSE254182	GSM8035596	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-012	GSM8035596	SRX23388992	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-012-001	SRX23388992	SRR27723060	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-013	GSE254182	GSM8035597	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-013	GSM8035597	SRX23388993	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-013-001	SRX23388993	SRR27723059	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-014	GSE254182	GSM8035598	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-014	GSM8035598	SRX23388994	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-014-001	SRX23388994	SRR27723058	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-015	GSE254182	GSM8035599	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-015	GSM8035599	SRX23388995	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-015-001	SRX23388995	SRR27723057	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-016	GSE254182	GSM8035600	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-016	GSM8035600	SRX23388996	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-016-001	SRX23388996	SRR27723056	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-017	GSE254182	GSM8035601	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-017	GSM8035601	SRX23388997	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-017-001	SRX23388997	SRR27723055	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-018	GSE254182	GSM8035602	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-018	GSM8035602	SRX23388998	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-018-001	SRX23388998	SRR27723054	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-019	GSE254182	GSM8035603	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-019	GSM8035603	SRX23388999	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-019-001	SRX23388999	SRR27723053	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-020	GSE254182	GSM8035604	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-020	GSM8035604	SRX23389000	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-020-001	SRX23389000	SRR27723052	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-021	GSE254182	GSM8035605	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-021	GSM8035605	SRX23389001	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-021-001	SRX23389001	SRR27723051	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-022	GSE254182	GSM8035606	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-022	GSM8035606	SRX23389002	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-022-001	SRX23389002	SRR27723050	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-023	GSE254182	GSM8035607	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-023	GSM8035607	SRX23389003	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-023-001	SRX23389003	SRR27723049	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-024	GSE254182	GSM8035608	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-024	GSM8035608	SRX23389004	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-024-001	SRX23389004	SRR27723048	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-025	GSE254182	GSM8035609	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-025	GSM8035609	SRX23389005	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-025-001	SRX23389005	SRR27723047	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-026	GSE254182	GSM8035610	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-026	GSM8035610	SRX23389006	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-026-001	SRX23389006	SRR27723046	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-027	GSE254182	GSM8035611	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-027	GSM8035611	SRX23389007	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-027-001	SRX23389007	SRR27723045	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-028	GSE254182	GSM8035612	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-028	GSM8035612	SRX23389008	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-028-001	SRX23389008	SRR27723044	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-029	GSE254182	GSM8035613	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-029	GSM8035613	SRX23389009	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-029-001	SRX23389009	SRR27723043	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-030	GSE254182	GSM8035614	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-030	GSM8035614	SRX23389010	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-030-001	SRX23389010	SRR27723042	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-031	GSE254182	GSM8035615	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-031	GSM8035615	SRX23389011	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-031-001	SRX23389011	SRR27723041	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-032	GSE254182	GSM8035616	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-032	GSM8035616	SRX23389012	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-032-001	SRX23389012	SRR27723040	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-033	GSE254182	GSM8035617	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-033	GSM8035617	SRX23389013	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-033-001	SRX23389013	SRR27723079	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-034	GSE254182	GSM8035618	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-034	GSM8035618	SRX23389014	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-034-001	SRX23389014	SRR27723078	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-035	GSE254182	GSM8035619	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-035	GSM8035619	SRX23389015	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-035-001	SRX23389015	SRR27723077	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-036	GSE254182	GSM8035620	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-036	GSM8035620	SRX23389016	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-036-001	SRX23389016	SRR27723076	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-037	GSE254182	GSM8035621	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-037	GSM8035621	SRX23389017	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-037-001	SRX23389017	SRR27723075	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-038	GSE254182	GSM8035622	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-038	GSM8035622	SRX23389018	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-038-001	SRX23389018	SRR27723074	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-039	GSE254182	GSM8035623	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-039	GSM8035623	SRX23389019	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-039-001	SRX23389019	SRR27723073	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-040	GSE254182	GSM8035624	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-040	GSM8035624	SRX23389020	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-040-001	SRX23389020	SRR27723072	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-041	GSE254182	GSM8047983	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-041	GSM8047983	SRX23456747	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-041-001	SRX23456747	SRR27793191	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-042	GSE254182	GSM8047984	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-042	GSM8047984	SRX23456748	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-042-001	SRX23456748	SRR27793190	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-043	GSE254182	GSM8047985	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-043	GSM8047985	SRX23456749	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-043-001	SRX23456749	SRR27793189	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-044	GSE254182	GSM8047986	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-044	GSM8047986	SRX23456750	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-044-001	SRX23456750	SRR27793188	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-045	GSE254182	GSM8047987	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-045	GSM8047987	SRX23456751	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-045-001	SRX23456751	SRR27793187	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-046	GSE254182	GSM8047988	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-046	GSM8047988	SRX23456752	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-046-001	SRX23456752	SRR27793186	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-047	GSE254182	GSM8047989	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-047	GSM8047989	SRX23456753	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-047-001	SRX23456753	SRR27793185	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-048	GSE254182	GSM8047990	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-048	GSM8047990	SRX23456754	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-048-001	SRX23456754	SRR27793184	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-049	GSE254182	GSM8047991	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-049	GSM8047991	SRX23456755	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-049-001	SRX23456755	SRR27793183	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-050	GSE254182	GSM8047992	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-050	GSM8047992	SRX23456756	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-050-001	SRX23456756	SRR27793182	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-051	GSE254182	GSM8047993	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-051	GSM8047993	SRX23456757	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-051-001	SRX23456757	SRR27793181	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-052	GSE254182	GSM8047994	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-052	GSM8047994	SRX23456758	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-052-001	SRX23456758	SRR27793180	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-053	GSE254182	GSM8047995	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-053	GSM8047995	SRX23456759	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-053-001	SRX23456759	SRR27793179	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-054	GSE254182	GSM8047996	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-054	GSM8047996	SRX23456760	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-054-001	SRX23456760	SRR27793178	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-055	GSE254182	GSM8047997	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-055	GSM8047997	SRX23456761	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-055-001	SRX23456761	SRR27793177	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-056	GSE254182	GSM8047998	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-056	GSM8047998	SRX23456762	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-056-001	SRX23456762	SRR27793176	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-057	GSE254182	GSM8047999	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-057	GSM8047999	SRX23456763	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-057-001	SRX23456763	SRR27793175	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-058	GSE254182	GSM8048000	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-058	GSM8048000	SRX23456764	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-058-001	SRX23456764	SRR27793174	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-059	GSE254182	GSM8048001	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-059	GSM8048001	SRX23456765	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-059-001	SRX23456765	SRR27793173	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-060	GSE254182	GSM8048002	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-060	GSM8048002	SRX23456766	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-060-001	SRX23456766	SRR27793172	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-061	GSE254182	GSM8048003	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-061	GSM8048003	SRX23456767	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-061-001	SRX23456767	SRR27793171	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-062	GSE254182	GSM8048004	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-062	GSM8048004	SRX23456768	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-062-001	SRX23456768	SRR27793170	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-063	GSE254182	GSM8048005	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-063	GSM8048005	SRX23456769	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-063-001	SRX23456769	SRR27793169	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-064	GSE254182	GSM8048006	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-064	GSM8048006	SRX23456770	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-064-001	SRX23456770	SRR27793168	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-065	GSE254182	GSM8048007	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-065	GSM8048007	SRX23456771	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-065-001	SRX23456771	SRR27793167	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-066	GSE254182	GSM8048008	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-066	GSM8048008	SRX23456772	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-066-001	SRX23456772	SRR27793166	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-067	GSE254182	GSM8048009	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-067	GSM8048009	SRX23456773	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-067-001	SRX23456773	SRR27793165	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-068	GSE254182	GSM8048010	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-068	GSM8048010	SRX23456774	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-068-001	SRX23456774	SRR27793164	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-069	GSE254182	GSM8048011	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-069	GSM8048011	SRX23456775	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-069-001	SRX23456775	SRR27793163	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-070	GSE254182	GSM8048012	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-070	GSM8048012	SRX23456776	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-070-001	SRX23456776	SRR27793162	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-071	GSE254182	GSM8048013	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-071	GSM8048013	SRX23456777	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-071-001	SRX23456777	SRR27793161	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-072	GSE254182	GSM8048014	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-072	GSM8048014	SRX23456778	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-072-001	SRX23456778	SRR27793160	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-073	GSE254182	GSM8048015	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-073	GSM8048015	SRX23456779	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-073-001	SRX23456779	SRR27793159	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-074	GSE254182	GSM8048016	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-074	GSM8048016	SRX23456780	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-074-001	SRX23456780	SRR27793158	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-075	GSE254182	GSM8048017	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-075	GSM8048017	SRX23456781	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-075-001	SRX23456781	SRR27793157	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-076	GSE254182	GSM8048018	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-076	GSM8048018	SRX23456782	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-076-001	SRX23456782	SRR27793156	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-077	GSE254182	GSM8048019	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-077	GSM8048019	SRX23456783	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-077-001	SRX23456783	SRR27793155	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-078	GSE254182	GSM8048020	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-078	GSM8048020	SRX23456784	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-078-001	SRX23456784	SRR27793154	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-079	GSE254182	GSM8048021	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-079	GSM8048021	SRX23456785	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-079-001	SRX23456785	SRR27793153	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-080	GSE254182	GSM8048022	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-080	GSM8048022	SRX23456786	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-080-001	SRX23456786	SRR27793152	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-081	GSE254182	GSM8048023	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-081	GSM8048023	SRX23456787	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-081-001	SRX23456787	SRR27793151	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-082	GSE254182	GSM8048024	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-082	GSM8048024	SRX23456788	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-082-001	SRX23456788	SRR27793150	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-083	GSE254182	GSM8048025	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-083	GSM8048025	SRX23456789	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-083-001	SRX23456789	SRR27793149	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-084	GSE254182	GSM8048026	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-084	GSM8048026	SRX23456790	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-084-001	SRX23456790	SRR27793148	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-085	GSE254182	GSM8048027	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-085	GSM8048027	SRX23456791	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-085-001	SRX23456791	SRR27793147	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-086	GSE254182	GSM8048028	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-086	GSM8048028	SRX23456792	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-086-001	SRX23456792	SRR27793146	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-087	GSE254182	GSM8048029	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-087	GSM8048029	SRX23456793	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-087-001	SRX23456793	SRR27793145	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-088	GSE254182	GSM8048030	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-088	GSM8048030	SRX23456794	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-088-001	SRX23456794	SRR27793144	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-089	GSE254182	GSM8048031	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-089	GSM8048031	SRX23456795	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-089-001	SRX23456795	SRR27793143	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-090	GSE254182	GSM8048032	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-090	GSM8048032	SRX23456796	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-090-001	SRX23456796	SRR27793142	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-091	GSE254182	GSM8048033	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-091	GSM8048033	SRX23456797	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-091-001	SRX23456797	SRR27793141	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-092	GSE254182	GSM8048034	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-092	GSM8048034	SRX23456798	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-092-001	SRX23456798	SRR27793140	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-093	GSE254182	GSM8048035	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-093	GSM8048035	SRX23456799	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-093-001	SRX23456799	SRR27793139	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-094	GSE254182	GSM8048036	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-094	GSM8048036	SRX23456800	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-094-001	SRX23456800	SRR27793138	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-095	GSE254182	GSM8048037	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-095	GSM8048037	SRX23456801	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-095-001	SRX23456801	SRR27793137	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-096	GSE254182	GSM8048038	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-096	GSM8048038	SRX23456802	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-096-001	SRX23456802	SRR27793136	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-097	GSE254182	GSM8048039	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-097	GSM8048039	SRX23456803	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-097-001	SRX23456803	SRR27793135	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-098	GSE254182	GSM8048040	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-098	GSM8048040	SRX23456804	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-098-001	SRX23456804	SRR27793134	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-099	GSE254182	GSM8048041	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-099	GSM8048041	SRX23456805	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-099-001	SRX23456805	SRR27793133	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0016-GEO-100	GSE254182	GSM8048042	series_has_sample	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	GEO sample membership.
+AR-P0016-SRX-100	GSM8048042	SRX23456806	sample_has_experiment	GEO family MINiML	Q-P0016-002	verified_metadata_record	E-P0016-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0016-RUN-100-001	SRX23456806	SRR27793132	experiment_has_run	ENA filereport	Q-P0016-003	verified_metadata_record	E-P0016-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-001	GSE135180	GSM3992897	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-001	GSM3992897	SRX6623194	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-001-001	SRX6623194	SRR9870458	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-002	GSE135180	GSM3992898	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-002	GSM3992898	SRX6623195	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-002-001	SRX6623195	SRR9870459	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-003	GSE135180	GSM3992899	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-003	GSM3992899	SRX6623196	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-003-001	SRX6623196	SRR9870460	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-004	GSE135180	GSM3992900	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-004	GSM3992900	SRX6623197	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-004-001	SRX6623197	SRR9870461	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-005	GSE135180	GSM3992901	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-005	GSM3992901	SRX6623198	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-005-001	SRX6623198	SRR9870462	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-006	GSE135180	GSM3992902	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-006	GSM3992902	SRX6623199	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-006-001	SRX6623199	SRR9870463	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-007	GSE135180	GSM3992903	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-007	GSM3992903	SRX6623200	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-007-001	SRX6623200	SRR9870464	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-008	GSE135180	GSM3992904	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-008	GSM3992904	SRX6623201	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-008-001	SRX6623201	SRR9870465	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-009	GSE135180	GSM3992905	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-009	GSM3992905	SRX6623202	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-009-001	SRX6623202	SRR9870466	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-010	GSE135180	GSM3992906	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-010	GSM3992906	SRX6623203	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-010-001	SRX6623203	SRR9870467	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-011	GSE135180	GSM3992907	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-011	GSM3992907	SRX6623204	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-011-001	SRX6623204	SRR9870468	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-012	GSE135180	GSM3992908	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-012	GSM3992908	SRX6623205	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-012-001	SRX6623205	SRR9870469	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-013	GSE135180	GSM3992909	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-013	GSM3992909	SRX6623206	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-013-001	SRX6623206	SRR9870470	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-014	GSE135180	GSM3992910	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-014	GSM3992910	SRX6623207	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-014-001	SRX6623207	SRR9870471	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-015	GSE135180	GSM3992911	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-015	GSM3992911	SRX6623208	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-015-001	SRX6623208	SRR9870472	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-016	GSE135180	GSM3992912	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-016	GSM3992912	SRX6623209	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-016-001	SRX6623209	SRR9870473	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-017	GSE135180	GSM3992913	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-017	GSM3992913	SRX6623210	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-017-001	SRX6623210	SRR9870474	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-018	GSE135180	GSM3992914	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-018	GSM3992914	SRX6623211	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-018-001	SRX6623211	SRR9870475	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-019	GSE135180	GSM3992915	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-019	GSM3992915	SRX6623212	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-019-001	SRX6623212	SRR9870476	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-020	GSE135180	GSM3992916	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-020	GSM3992916	SRX6623213	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-020-001	SRX6623213	SRR9870477	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-021	GSE135180	GSM3992917	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-021	GSM3992917	SRX6623214	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-021-001	SRX6623214	SRR9870478	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-022	GSE135180	GSM3992918	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-022	GSM3992918	SRX6623215	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-022-001	SRX6623215	SRR9870479	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-023	GSE135180	GSM3992919	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-023	GSM3992919	SRX6623216	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-023-001	SRX6623216	SRR9870480	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-024	GSE135180	GSM3992920	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-024	GSM3992920	SRX6623217	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-024-001	SRX6623217	SRR9870481	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-025	GSE135180	GSM3992921	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-025	GSM3992921	SRX6623218	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-025-001	SRX6623218	SRR9870482	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-026	GSE135180	GSM3992922	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-026	GSM3992922	SRX6623219	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-026-001	SRX6623219	SRR9870483	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-027	GSE135180	GSM3992923	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-027	GSM3992923	SRX6623220	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-027-001	SRX6623220	SRR9870484	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-028	GSE135180	GSM3992924	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-028	GSM3992924	SRX6623221	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-028-001	SRX6623221	SRR9870485	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-029	GSE135180	GSM3992925	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-029	GSM3992925	SRX6623222	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-029-001	SRX6623222	SRR9870486	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-030	GSE135180	GSM3992926	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-030	GSM3992926	SRX6623223	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-030-001	SRX6623223	SRR9870487	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-031	GSE135180	GSM3992927	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-031	GSM3992927	SRX6623224	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-031-001	SRX6623224	SRR9870488	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-032	GSE135180	GSM3992928	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-032	GSM3992928	SRX6623225	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-032-001	SRX6623225	SRR9870489	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-033	GSE135180	GSM3992929	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-033	GSM3992929	SRX6623226	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-033-001	SRX6623226	SRR9870490	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-034	GSE135180	GSM3992930	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-034	GSM3992930	SRX6623227	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-034-001	SRX6623227	SRR9870491	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-035	GSE135180	GSM3992931	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-035	GSM3992931	SRX6623228	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-035-001	SRX6623228	SRR9870492	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-036	GSE135180	GSM3992932	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-036	GSM3992932	SRX6623229	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-036-001	SRX6623229	SRR9870493	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-037	GSE135180	GSM3992933	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-037	GSM3992933	SRX6623230	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-037-001	SRX6623230	SRR9870494	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-038	GSE135180	GSM3992934	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-038	GSM3992934	SRX6623231	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-038-001	SRX6623231	SRR9870495	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-039	GSE135180	GSM3992935	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-039	GSM3992935	SRX6623232	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-039-001	SRX6623232	SRR9870496	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-040	GSE135180	GSM3992936	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-040	GSM3992936	SRX6623233	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-040-001	SRX6623233	SRR9870497	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-041	GSE135180	GSM3992937	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-041	GSM3992937	SRX6623234	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-041-001	SRX6623234	SRR9870498	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-042	GSE135180	GSM3992938	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-042	GSM3992938	SRX6623235	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-042-001	SRX6623235	SRR9870499	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-043	GSE135180	GSM3992939	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-043	GSM3992939	SRX6623236	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-043-001	SRX6623236	SRR9870500	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-044	GSE135180	GSM3992940	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-044	GSM3992940	SRX6623237	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-044-001	SRX6623237	SRR9870501	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-045	GSE135180	GSM3992941	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-045	GSM3992941	SRX6623238	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-045-001	SRX6623238	SRR9870502	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-046	GSE135180	GSM3992942	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-046	GSM3992942	SRX6623239	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-046-001	SRX6623239	SRR9870503	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-047	GSE135180	GSM3992943	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-047	GSM3992943	SRX6623240	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-047-001	SRX6623240	SRR9870504	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-048	GSE135180	GSM3992944	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-048	GSM3992944	SRX6623241	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-048-001	SRX6623241	SRR9870505	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-049	GSE135180	GSM3992945	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-049	GSM3992945	SRX6623242	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-049-001	SRX6623242	SRR9870506	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-050	GSE135180	GSM3992946	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-050	GSM3992946	SRX6623243	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-050-001	SRX6623243	SRR9870507	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-051	GSE135180	GSM3992947	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-051	GSM3992947	SRX6623244	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-051-001	SRX6623244	SRR9870508	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-052	GSE135180	GSM3992948	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-052	GSM3992948	SRX6623245	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-052-001	SRX6623245	SRR9870509	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-053	GSE135180	GSM3992949	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-053	GSM3992949	SRX6623246	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-053-001	SRX6623246	SRR9870510	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-054	GSE135180	GSM3992950	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-054	GSM3992950	SRX6623247	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-054-001	SRX6623247	SRR9870511	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-055	GSE135180	GSM3992951	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-055	GSM3992951	SRX6623248	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-055-001	SRX6623248	SRR9870512	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-056	GSE135180	GSM3992952	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-056	GSM3992952	SRX6623249	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-056-001	SRX6623249	SRR9870513	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-057	GSE135180	GSM3992953	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-057	GSM3992953	SRX6623250	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-057-001	SRX6623250	SRR9870514	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-058	GSE135180	GSM3992954	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-058	GSM3992954	SRX6623251	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-058-001	SRX6623251	SRR9870515	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-059	GSE135180	GSM3992955	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-059	GSM3992955	SRX6623252	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-059-001	SRX6623252	SRR9870516	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-060	GSE135180	GSM3992956	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-060	GSM3992956	SRX6623253	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-060-001	SRX6623253	SRR9870517	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-061	GSE135180	GSM3992957	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-061	GSM3992957	SRX6623254	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-061-001	SRX6623254	SRR9870518	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-062	GSE135180	GSM3992958	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-062	GSM3992958	SRX6623255	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-062-001	SRX6623255	SRR9870519	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-063	GSE135180	GSM3992959	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-063	GSM3992959	SRX6623256	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-063-001	SRX6623256	SRR9870520	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-064	GSE135180	GSM3992960	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-064	GSM3992960	SRX6623257	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-064-001	SRX6623257	SRR9870521	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-065	GSE135180	GSM3992961	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-065	GSM3992961	SRX6623258	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-065-001	SRX6623258	SRR9870522	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-066	GSE135180	GSM3992962	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-066	GSM3992962	SRX6623259	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-066-001	SRX6623259	SRR9870523	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-067	GSE135180	GSM3992963	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-067	GSM3992963	SRX6623260	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-067-001	SRX6623260	SRR9870524	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-068	GSE135180	GSM3992964	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-068	GSM3992964	SRX6623261	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-068-001	SRX6623261	SRR9870525	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-069	GSE135180	GSM3992965	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-069	GSM3992965	SRX6623262	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-069-001	SRX6623262	SRR9870526	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-070	GSE135180	GSM3992966	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-070	GSM3992966	SRX6623263	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-070-001	SRX6623263	SRR9870527	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-071	GSE135180	GSM3992967	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-071	GSM3992967	SRX6623264	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-071-001	SRX6623264	SRR9870528	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-072	GSE135180	GSM3992968	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-072	GSM3992968	SRX6623265	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-072-001	SRX6623265	SRR9870529	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-073	GSE135180	GSM3992969	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-073	GSM3992969	SRX6623266	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-073-001	SRX6623266	SRR9870530	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-074	GSE135180	GSM3992970	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-074	GSM3992970	SRX6623267	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-074-001	SRX6623267	SRR9870531	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-075	GSE135180	GSM3992971	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-075	GSM3992971	SRX6623268	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-075-001	SRX6623268	SRR9870532	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-076	GSE135180	GSM3992972	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-076	GSM3992972	SRX6623269	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-076-001	SRX6623269	SRR9870533	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-077	GSE135180	GSM3992973	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-077	GSM3992973	SRX6623270	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-077-001	SRX6623270	SRR9870534	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-078	GSE135180	GSM3992974	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-078	GSM3992974	SRX6623271	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-078-001	SRX6623271	SRR9870535	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-079	GSE135180	GSM3992975	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-079	GSM3992975	SRX6623272	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-079-001	SRX6623272	SRR9870536	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-080	GSE135180	GSM3992976	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-080	GSM3992976	SRX6623273	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-080-001	SRX6623273	SRR9870537	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-081	GSE135180	GSM3992977	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-081	GSM3992977	SRX6623274	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-081-001	SRX6623274	SRR9870538	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-082	GSE135180	GSM3992978	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-082	GSM3992978	SRX6623275	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-082-001	SRX6623275	SRR9870539	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-083	GSE135180	GSM3992979	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-083	GSM3992979	SRX6623276	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-083-001	SRX6623276	SRR9870540	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-084	GSE135180	GSM3992980	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-084	GSM3992980	SRX6623277	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-084-001	SRX6623277	SRR9870541	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-085	GSE135180	GSM3992981	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-085	GSM3992981	SRX6623278	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-085-001	SRX6623278	SRR9870542	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-086	GSE135180	GSM3992982	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-086	GSM3992982	SRX6623279	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-086-001	SRX6623279	SRR9870543	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-087	GSE135180	GSM3992983	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-087	GSM3992983	SRX6623280	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-087-001	SRX6623280	SRR9870544	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-088	GSE135180	GSM3992984	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-088	GSM3992984	SRX6623281	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-088-001	SRX6623281	SRR9870545	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-089	GSE135180	GSM3992985	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-089	GSM3992985	SRX6623282	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-089-001	SRX6623282	SRR9870546	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-090	GSE135180	GSM3992986	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-090	GSM3992986	SRX6623283	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-090-001	SRX6623283	SRR9870547	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-091	GSE135180	GSM4775352	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-091	GSM4775352	SRX9106181	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-091-001	SRX9106181	SRR12623450	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-092	GSE135180	GSM4775353	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-092	GSM4775353	SRX9106182	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-092-001	SRX9106182	SRR12623451	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-093	GSE135180	GSM4775354	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-093	GSM4775354	SRX9106183	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-093-001	SRX9106183	SRR12623452	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-094	GSE135180	GSM4775355	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-094	GSM4775355	SRX9106184	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-094-001	SRX9106184	SRR12623453	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-095	GSE135180	GSM4775356	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-095	GSM4775356	SRX9106185	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-095-001	SRX9106185	SRR12623454	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-096	GSE135180	GSM4775357	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-096	GSM4775357	SRX9106186	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-096-001	SRX9106186	SRR12623455	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-097	GSE135180	GSM4775358	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-097	GSM4775358	SRX9106187	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-097-001	SRX9106187	SRR12623456	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-098	GSE135180	GSM4775359	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-098	GSM4775359	SRX9106188	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-098-001	SRX9106188	SRR12623457	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-099	GSE135180	GSM4775360	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-099	GSM4775360	SRX9106189	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-099-001	SRX9106189	SRR12623458	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-100	GSE135180	GSM4775361	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-100	GSM4775361	SRX9106190	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-100-001	SRX9106190	SRR12623459	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-101	GSE135180	GSM4775362	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-101	GSM4775362	SRX9106191	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-101-001	SRX9106191	SRR12623460	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-102	GSE135180	GSM4775363	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-102	GSM4775363	SRX9106192	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-102-001	SRX9106192	SRR12623461	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-103	GSE135180	GSM4775364	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-103	GSM4775364	SRX9106193	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-103-001	SRX9106193	SRR12623462	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-104	GSE135180	GSM4775365	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-104	GSM4775365	SRX9106194	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-104-001	SRX9106194	SRR12623463	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-105	GSE135180	GSM4775366	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-105	GSM4775366	SRX9106195	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-105-001	SRX9106195	SRR12623464	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-106	GSE135180	GSM4775367	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-106	GSM4775367	SRX9106196	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-106-001	SRX9106196	SRR12623465	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-107	GSE135180	GSM4775368	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-107	GSM4775368	SRX9106197	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-107-001	SRX9106197	SRR12623466	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-108	GSE135180	GSM4775369	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-108	GSM4775369	SRX9106198	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-108-001	SRX9106198	SRR12623467	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-109	GSE135180	GSM4775370	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-109	GSM4775370	SRX9106199	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-109-001	SRX9106199	SRR12623468	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-110	GSE135180	GSM4775371	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-110	GSM4775371	SRX9106200	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-110-001	SRX9106200	SRR12623469	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-111	GSE135180	GSM4775372	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-111	GSM4775372	SRX9106201	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-111-001	SRX9106201	SRR12623470	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-112	GSE135180	GSM4775373	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-112	GSM4775373	SRX9106202	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-112-001	SRX9106202	SRR12623471	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-113	GSE135180	GSM4775374	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-113	GSM4775374	SRX9106203	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-113-001	SRX9106203	SRR12623472	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-114	GSE135180	GSM4775375	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-114	GSM4775375	SRX9106204	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-114-001	SRX9106204	SRR12623473	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-115	GSE135180	GSM4775376	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-115	GSM4775376	SRX9106205	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-115-001	SRX9106205	SRR12623474	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-116	GSE135180	GSM4775377	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-116	GSM4775377	SRX9106206	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-116-001	SRX9106206	SRR12623475	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-117	GSE135180	GSM4775378	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-117	GSM4775378	SRX9106207	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-117-001	SRX9106207	SRR12623476	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-118	GSE135180	GSM4775379	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-118	GSM4775379	SRX9106208	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-118-001	SRX9106208	SRR12623477	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-119	GSE135180	GSM4775380	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-119	GSM4775380	SRX9106209	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-119-001	SRX9106209	SRR12623478	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-120	GSE135180	GSM4775381	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-120	GSM4775381	SRX9106210	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-120-001	SRX9106210	SRR12623479	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-121	GSE135180	GSM4775382	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-121	GSM4775382	SRX9106211	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-121-001	SRX9106211	SRR12623480	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-122	GSE135180	GSM4775383	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-122	GSM4775383	SRX9106212	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-122-001	SRX9106212	SRR12623481	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-123	GSE135180	GSM4775384	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-123	GSM4775384	SRX9106213	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-123-001	SRX9106213	SRR12623482	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-124	GSE135180	GSM4775385	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-124	GSM4775385	SRX9106214	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-124-001	SRX9106214	SRR12623483	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-125	GSE135180	GSM4775386	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-125	GSM4775386	SRX9106215	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-125-001	SRX9106215	SRR12623484	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-126	GSE135180	GSM4775387	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-126	GSM4775387	SRX9106216	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-126-001	SRX9106216	SRR12623485	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-127	GSE135180	GSM4775388	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-127	GSM4775388	SRX9106217	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-127-001	SRX9106217	SRR12623486	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.
+AR-P0011-GEO-128	GSE135180	GSM4775389	series_has_sample	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	GEO sample membership.
+AR-P0011-SRX-128	GSM4775389	SRX9106218	sample_has_experiment	GEO family MINiML	Q-P0011-002	verified_metadata_record	E-P0011-002	SRA experiment relation carried by GEO sample metadata.
+AR-P0011-RUN-128-001	SRX9106218	SRR12623487	experiment_has_run	ENA filereport	Q-P0011-004	verified_metadata_record	E-P0011-003	Run linkage confirmed by ENA filereport experiment_accession field.

@@ -137,10 +137,18 @@ class RepositoryIntegrationTests(unittest.TestCase):
         p0009 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0009-")]
         p0012 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0012-")]
         p0001 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0001-")]
+        p0006 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0006-")]
+        p0007 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0007-")]
+        p0011 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0011-")]
+        p0016 = [row for row in rows if row["archive_sample_id"].startswith("AS-P0016-")]
         self.assertEqual(len(p0008), 60)
         self.assertEqual(len(p0009), 75)
         self.assertEqual(len(p0012), 44)
         self.assertEqual(len(p0001), 13)
+        self.assertEqual(len(p0006), 32)
+        self.assertEqual(len(p0007), 30)
+        self.assertEqual(len(p0011), 128)
+        self.assertEqual(len(p0016), 100)
         self.assertEqual(len({row["gsm_accession"] for row in rows}), len(rows))
         self.assertEqual({row["disposition_status"] for row in rows}, {"mapped"})
         self.assertEqual(sum(row["species_scientific"] == "Gallus gallus" for row in p0008), 58)
@@ -167,23 +175,35 @@ class RepositoryIntegrationTests(unittest.TestCase):
         p0009_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0009") and row["entity_type"] == "sra_run"}
         p0012_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0012") and row["entity_type"] == "sra_run"}
         p0001_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0001") and row["entity_type"] == "sra_run"}
+        p0006_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0006") and row["entity_type"] == "sra_run"}
+        p0007_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0007") and row["entity_type"] == "sra_run"}
+        p0011_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0011") and row["entity_type"] == "sra_run"}
+        p0016_runs = {row["run_accession"] for row in accessions if row["accession_record_id"].startswith("AC-P0016") and row["entity_type"] == "sra_run"}
         self.assertEqual(len(p0008_runs), 1290)
         self.assertEqual(len(p0009_runs), 120)
         self.assertEqual(len(p0012_runs), 102)
         self.assertEqual(len(p0001_runs), 13)
-        self.assertEqual(runs, p0008_runs | p0009_runs | p0012_runs | p0001_runs)
+        self.assertEqual(len(p0006_runs), 90)
+        self.assertEqual(len(p0007_runs), 37)
+        self.assertEqual(len(p0011_runs), 128)
+        self.assertEqual(len(p0016_runs), 100)
+        self.assertEqual(runs, p0008_runs | p0009_runs | p0012_runs | p0001_runs | p0006_runs | p0007_runs | p0011_runs | p0016_runs)
         self.assertEqual({row["child_accession"] for row in mapped}, runs)
-        self.assertEqual(len(files), 2580 + 195 + 182 + 26)
+        self.assertEqual(len(files), 2580 + 195 + 182 + 26 + 186 + 62 + 142 + 194)
         self.assertEqual(len(wide), len(files))
         self.assertEqual(len({row["catalog_row_id"] for row in wide}), len(wide))
         self.assertEqual(len({row["file_id"] for row in wide}), len(files))
         self.assertEqual(file_view, wide)
-        self.assertEqual(len(run_view), 1290 + 120 + 102 + 13)
+        self.assertEqual(len(run_view), 1290 + 120 + 102 + 13 + 90 + 37 + 128 + 100)
         self.assertEqual({row["run_accession"] for row in run_view}, runs)
         p0008_run_view = [row for row in run_view if row["paper_id"] == "P0008"]
         p0009_run_view = [row for row in run_view if row["paper_id"] == "P0009"]
         p0012_run_view = [row for row in run_view if row["paper_id"] == "P0012"]
         p0001_run_view = [row for row in run_view if row["paper_id"] == "P0001"]
+        p0006_run_view = [row for row in run_view if row["paper_id"] == "P0006"]
+        p0007_run_view = [row for row in run_view if row["paper_id"] == "P0007"]
+        p0011_run_view = [row for row in run_view if row["paper_id"] == "P0011"]
+        p0016_run_view = [row for row in run_view if row["paper_id"] == "P0016"]
         self.assertTrue(all(row["file_count"] == "2" for row in p0008_run_view))
         self.assertTrue(all(row["read1_url"] not in {"", "NA"} and row["read2_url"] not in {"", "NA"} for row in p0008_run_view))
         self.assertEqual({row["file_count"] for row in p0009_run_view}, {"1", "2"})
@@ -191,6 +211,10 @@ class RepositoryIntegrationTests(unittest.TestCase):
         self.assertEqual({row["file_count"] for row in p0012_run_view}, {"1", "2"})
         self.assertTrue(all(row["read1_url"] not in {"", "NA"} for row in p0012_run_view))
         self.assertEqual({row["file_count"] for row in p0001_run_view}, {"2"})
+        self.assertEqual({row["file_count"] for row in p0006_run_view}, {"1", "3"})
+        self.assertEqual({row["file_count"] for row in p0007_run_view}, {"1", "2"})
+        self.assertEqual({row["file_count"] for row in p0011_run_view}, {"1", "2"})
+        self.assertEqual({row["file_count"] for row in p0016_run_view}, {"1", "2"})
 
     def test_query_manifest_records_complete_pagination(self) -> None:
         with (ROOT / "data" / "interim" / "pilot" / "source_queries.tsv").open(encoding="utf-8", newline="") as handle:

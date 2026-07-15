@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Nezar</First><Last>Abdennur</Last></Person>
+    <Email>nezar@mit.edu</Email>
+    <Laboratory>Mirny</Laboratory>
+    <Organization>MIT</Organization>
+    <Address>
+      <Line>77 Massachusetts Ave</Line>
+      <City>Cambridge</City>
+      <State>MA</State>
+      <Zip-Code>02139</Zip-Code>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Person><First>Wibke</First><Last>Schwarzer</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib3">
+    <Person><First>Anton</First><Last>Goloborodko</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib4">
+    <Person><First>Aleksandra</First><Last>Pekowska</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib5">
+    <Person><First>Geoffrey</First><Last>Fudenberg</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib6">
+    <Person><First>Yann</First><Last>Loe-Mie</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib7">
+    <Person><First>Nuno</First><Middle>A</Middle><Last>Fonseca</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib8">
+    <Person><First>Wolfgang</First><Last>Huber</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib9">
+    <Person><First>Christian</First><Last>Haering</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib10">
+    <Person><First>Leonid</First><Last>Mirny</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib11">
+    <Person><First>Francois</First><Last>Spitz</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Sample iid="GSM2453279">
+    <Accession database="GEO">GSM2453279</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453280">
+    <Accession database="GEO">GSM2453280</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453281">
+    <Accession database="GEO">GSM2453281</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453282">
+    <Accession database="GEO">GSM2453282</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453283">
+    <Accession database="GEO">GSM2453283</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453284">
+    <Accession database="GEO">GSM2453284</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453285">
+    <Accession database="GEO">GSM2453285</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453286">
+    <Accession database="GEO">GSM2453286</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453287">
+    <Accession database="GEO">GSM2453287</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453288">
+    <Accession database="GEO">GSM2453288</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453289">
+    <Accession database="GEO">GSM2453289</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453290">
+    <Accession database="GEO">GSM2453290</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453291">
+    <Accession database="GEO">GSM2453291</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453292">
+    <Accession database="GEO">GSM2453292</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453293">
+    <Accession database="GEO">GSM2453293</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453294">
+    <Accession database="GEO">GSM2453294</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453295">
+    <Accession database="GEO">GSM2453295</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453296">
+    <Accession database="GEO">GSM2453296</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453297">
+    <Accession database="GEO">GSM2453297</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453298">
+    <Accession database="GEO">GSM2453298</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453299">
+    <Accession database="GEO">GSM2453299</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453300">
+    <Accession database="GEO">GSM2453300</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453301">
+    <Accession database="GEO">GSM2453301</Accession>
+  </Sample>
+
+  <Sample iid="GSM2453302">
+    <Accession database="GEO">GSM2453302</Accession>
+  </Sample>
+
+  <Sample iid="GSM2740559">
+    <Accession database="GEO">GSM2740559</Accession>
+  </Sample>
+
+  <Sample iid="GSM2740560">
+    <Accession database="GEO">GSM2740560</Accession>
+  </Sample>
+
+  <Sample iid="GSM2740561">
+    <Accession database="GEO">GSM2740561</Accession>
+  </Sample>
+
+  <Sample iid="GSM2740562">
+    <Accession database="GEO">GSM2740562</Accession>
+  </Sample>
+
+  <Sample iid="GSM2740563">
+    <Accession database="GEO">GSM2740563</Accession>
+  </Sample>
+
+  <Sample iid="GSM2740564">
+    <Accession database="GEO">GSM2740564</Accession>
+  </Sample>
+
+  <Sample iid="GSM2740565">
+    <Accession database="GEO">GSM2740565</Accession>
+  </Sample>
+
+  <Sample iid="GSM2740566">
+    <Accession database="GEO">GSM2740566</Accession>
+  </Sample>
+
+  <Series iid="GSE93431">
+    <Status database="GEO">
+      <Submission-Date>2017-01-11</Submission-Date>
+      <Release-Date>2017-06-10</Release-Date>
+      <Last-Update-Date>2023-05-24</Last-Update-Date>
+    </Status>
+    <Title>Two independent modes of chromosome organization are revealed by cohesin removal</Title>
+    <Accession database="GEO">GSE93431</Accession>
+    <Pubmed-ID>29094699</Pubmed-ID>
+    <Summary>
+The three-dimensional organization of chromosomes is tightly related to their biological function. Both imaging and chromosome conformation capture studies have revealed several layers of organization, including segregation into active and inactive compartments at the megabase scale, and partitioning into domains (TADs) and associated loops at the sub-megabase scale. Yet, it remains unclear how these layers of genome organization form, interact with one another, and contribute to or result from genome activities. TADs seem to have critical roles in regulating gene expression by promoting or preventing interactions between promoters and distant cis-acting regulatory elements, and different architectural proteins, including cohesin, have been proposed to play central roles in their formation. But so far, experimental depletions of these proteins have resulted in marginal changes in chromosome organization. Here, we show that deletion of the cohesin-loading factor, Nipbl, leads to loss of chromosome-associated cohesin and results in dramatic genome reorganization. TADs and associated loops vanish globally, even in the absence of transcriptional changes. In contrast, segregation into compartments is preserved and even reinforced. Strikingly, the disappearance of TADs unmasks a finer compartment structure that accurately reflects the underlying epigenetic landscape. These observations demonstrate that the 3D organization of the genome results from the independent action of two distinct mechanisms: 1) cohesin-independent segregation of the genome into fine-scale compartment regions, defined by the underlying chromatin state; and 2) cohesin-dependent formation of TADs possibly by the recently proposed loop extrusion mechanism, enabling long-range and target-specific activity of promiscuous enhancers. The interplay between these mechanisms creates an architecture that is more complex than a simple structural hierarchy and can be central to guiding normal development.
+    </Summary>
+    <Overall-Design>
+This submission contains the following experiments on primary hepatocytes isolated from wildtype (WT), control (TAM) and Nipbl-/- (NIPBL) mice: 2 biological replicates of Hi-C (TCC) in WT, TAM and NIPBL cells, 1 replicate of H3K27ac ChIP-seq in WT and NIPBL cells, 1 replicate of H3K4me3 ChIP-seq in WT and NIPBL cells, 1 replicate of Rad21 ChIP-seq in TAM and NIPBL cells, 1 replicate of Smc3 ChIP-seq in TAM and NIPBL cells, 1 replicate of CTCF ChIP-seq in TAM and NIPBL cells, 4 replicates of RNA-seq in each of WT, TAM and NIPBL cells.
+    </Overall-Design>
+    <Type>Genome binding/occupancy profiling by high throughput sequencing</Type>
+    <Type>Expression profiling by high throughput sequencing</Type>
+    <Contributor-Ref ref="contrib2" position="1" />
+    <Contributor-Ref ref="contrib1" position="2" />
+    <Contributor-Ref ref="contrib3" position="3" />
+    <Contributor-Ref ref="contrib4" position="4" />
+    <Contributor-Ref ref="contrib5" position="5" />
+    <Contributor-Ref ref="contrib6" position="6" />
+    <Contributor-Ref ref="contrib7" position="7" />
+    <Contributor-Ref ref="contrib8" position="8" />
+    <Contributor-Ref ref="contrib9" position="9" />
+    <Contributor-Ref ref="contrib10" position="10" />
+    <Contributor-Ref ref="contrib11" position="11" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM2453279" />
+    <Sample-Ref ref="GSM2453280" />
+    <Sample-Ref ref="GSM2453281" />
+    <Sample-Ref ref="GSM2453282" />
+    <Sample-Ref ref="GSM2453283" />
+    <Sample-Ref ref="GSM2453284" />
+    <Sample-Ref ref="GSM2453285" />
+    <Sample-Ref ref="GSM2453286" />
+    <Sample-Ref ref="GSM2453287" />
+    <Sample-Ref ref="GSM2453288" />
+    <Sample-Ref ref="GSM2453289" />
+    <Sample-Ref ref="GSM2453290" />
+    <Sample-Ref ref="GSM2453291" />
+    <Sample-Ref ref="GSM2453292" />
+    <Sample-Ref ref="GSM2453293" />
+    <Sample-Ref ref="GSM2453294" />
+    <Sample-Ref ref="GSM2453295" />
+    <Sample-Ref ref="GSM2453296" />
+    <Sample-Ref ref="GSM2453297" />
+    <Sample-Ref ref="GSM2453298" />
+    <Sample-Ref ref="GSM2453299" />
+    <Sample-Ref ref="GSM2453300" />
+    <Sample-Ref ref="GSM2453301" />
+    <Sample-Ref ref="GSM2453302" />
+    <Sample-Ref ref="GSM2740559" />
+    <Sample-Ref ref="GSM2740560" />
+    <Sample-Ref ref="GSM2740561" />
+    <Sample-Ref ref="GSM2740562" />
+    <Sample-Ref ref="GSM2740563" />
+    <Sample-Ref ref="GSM2740564" />
+    <Sample-Ref ref="GSM2740565" />
+    <Sample-Ref ref="GSM2740566" />
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.1000kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.100kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.10kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.1kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.200kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.20kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.2kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.40kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.500kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.50kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL.5kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL_all_star_genome_minusUniq.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_NIPBL_all_star_genome_plusUniq.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_RAW.tar
+    </Supplementary-Data>
+    <Supplementary-Data type="CSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_SummaryExpr_DEseq.csv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.1000kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.100kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.10kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.1kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.200kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.20kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.2kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.40kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.500kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.50kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM.5kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM_all_star_genome_minusUniq.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_TAM_all_star_genome_plusUniq.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.1000kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.100kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.10kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.1kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.200kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.20kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.2kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.40kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.500kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.50kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="HDF5">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR.5kb.cool.HDF5.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR_all_star_genome_minusUniq.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="BW">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_UNTR_all_star_genome_plusUniq.bw
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_eigs.100kb.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_eigs.20kb.tsv.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_tads.lavaburst.corner.NIPBL.20kb.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_tads.lavaburst.corner.UNTR.20kb.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_tads.lavaburst.modularity.NIPBL.20kb.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_tads.lavaburst.modularity.UNTR.20kb.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE93nnn/GSE93431/suppl/GSE93431_tads.lavaburst.modularity.boundaryProbability.20kb.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA360958" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRP096571" />
+  </Series>
+
+</MINiML>

@@ -1,0 +1,18 @@
+{
+  "paper_id": "P0011",
+  "doi": "10.1038/s41588-020-00744-4",
+  "geo_series": "GSE135180",
+  "sra_study": "UNRESOLVED",
+  "bioproject": "UNRESOLVED",
+  "ena_study": "UNRESOLVED",
+  "arrayexpress": "UNRESOLVED",
+  "source_metadata_dir": "data/interim/pilot/source_metadata",
+  "source_queries_path": "data/interim/pilot/source_queries.tsv",
+  "round7_status": "candidate_selected",
+  "supplement_download_limit_bytes": 20971520,
+  "own_data_status": "unclear",
+  "assay_type": "multi-assay cohesin regulation study",
+  "measurement_object": "WAPL-dependent distal gene regulation and chromatin organization",
+  "biological_question": "梳理 WAPL 研究的多 assay 归档入口与 Run/File 映射",
+  "experimental_group": "paper-level mixed sample groups from GEO series"
+}

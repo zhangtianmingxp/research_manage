@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Roman</First><Middle>R</Middle><Last>Stocsits</Last></Person>
+    <Email>roman.stocsits@imp.ac.at</Email>
+    <Laboratory>Jan-Michael Peters' Lab</Laboratory>
+    <Organization>IMP - Research Institute of Molecular Pathology</Organization>
+    <Address>
+      <Line>Campus-Vienna-Biocenter 1</Line>
+      <City>Vienna</City>
+      <Postal-Code>1030</Postal-Code>
+      <Country>Austria</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Person><First>Gordana</First><Last>Wutz</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Sample iid="GSM2747738">
+    <Accession database="GEO">GSM2747738</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747739">
+    <Accession database="GEO">GSM2747739</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747740">
+    <Accession database="GEO">GSM2747740</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747741">
+    <Accession database="GEO">GSM2747741</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747742">
+    <Accession database="GEO">GSM2747742</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747743">
+    <Accession database="GEO">GSM2747743</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747744">
+    <Accession database="GEO">GSM2747744</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747745">
+    <Accession database="GEO">GSM2747745</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747746">
+    <Accession database="GEO">GSM2747746</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747747">
+    <Accession database="GEO">GSM2747747</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747748">
+    <Accession database="GEO">GSM2747748</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747749">
+    <Accession database="GEO">GSM2747749</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747750">
+    <Accession database="GEO">GSM2747750</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747751">
+    <Accession database="GEO">GSM2747751</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747752">
+    <Accession database="GEO">GSM2747752</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747753">
+    <Accession database="GEO">GSM2747753</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747754">
+    <Accession database="GEO">GSM2747754</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747755">
+    <Accession database="GEO">GSM2747755</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747756">
+    <Accession database="GEO">GSM2747756</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747757">
+    <Accession database="GEO">GSM2747757</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747758">
+    <Accession database="GEO">GSM2747758</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747759">
+    <Accession database="GEO">GSM2747759</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747760">
+    <Accession database="GEO">GSM2747760</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747761">
+    <Accession database="GEO">GSM2747761</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747762">
+    <Accession database="GEO">GSM2747762</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747763">
+    <Accession database="GEO">GSM2747763</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747764">
+    <Accession database="GEO">GSM2747764</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747765">
+    <Accession database="GEO">GSM2747765</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747766">
+    <Accession database="GEO">GSM2747766</Accession>
+  </Sample>
+
+  <Sample iid="GSM2747767">
+    <Accession database="GEO">GSM2747767</Accession>
+  </Sample>
+
+  <Series iid="GSE102884">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2021-07-25</Last-Update-Date>
+    </Status>
+    <Title>Topologically associating domains and chromatin loops depend on cohesin and are regulated by CTCF, WAPL and PDS5 proteins</Title>
+    <Accession database="GEO">GSE102884</Accession>
+    <Pubmed-ID>29217591</Pubmed-ID>
+    <Pubmed-ID>32065581</Pubmed-ID>
+    <Summary>
+Mammalian genomes are organized into compartments, topologically-associating domains (TADs) and loops to facilitate gene regulation and other chromosomal functions. Compartments are formed by nucleosomal interactions, but how TADs and loops are generated is unknown. It has been proposed that cohesin forms these structures by extruding loops until it encounters CTCF, but direct evidence for this hypothesis is missing. Here we show that cohesin suppresses compartments but is essential for TADs and loops, that CTCF defines their boundaries, and that WAPL and its PDS5 binding partners control the length of chromatin loops. In the absence of WAPL and PDS5 proteins, cohesin passes CTCF sites with increased frequency, forms extended chromatin loops, accumulates in axial chromosomal positions (vermicelli) and condenses chromosomes to an extent normally only seen in mitosis. These results show that cohesin has an essential genome-wide function in mediating long-range chromatin interactions and support the hypothesis that cohesin creates these by loop extrusion, until it is delayed by CTCF in a manner dependent on PDS5 proteins, or until it is released from DNA by WAPL.
+    </Summary>
+    <Overall-Design>
+Analysis of chromatin structure by HiC and ChIP-Seq upon RNAi depletion and auxin-inducible degron (AID) systems.
+    </Overall-Design>
+    <Type>Other</Type>
+    <Type>Genome binding/occupancy profiling by high throughput sequencing</Type>
+    <Contributor-Ref ref="contrib1" position="1" />
+    <Contributor-Ref ref="contrib2" position="2" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM2747738" />
+    <Sample-Ref ref="GSM2747739" />
+    <Sample-Ref ref="GSM2747740" />
+    <Sample-Ref ref="GSM2747741" />
+    <Sample-Ref ref="GSM2747742" />
+    <Sample-Ref ref="GSM2747743" />
+    <Sample-Ref ref="GSM2747744" />
+    <Sample-Ref ref="GSM2747745" />
+    <Sample-Ref ref="GSM2747746" />
+    <Sample-Ref ref="GSM2747747" />
+    <Sample-Ref ref="GSM2747748" />
+    <Sample-Ref ref="GSM2747749" />
+    <Sample-Ref ref="GSM2747750" />
+    <Sample-Ref ref="GSM2747751" />
+    <Sample-Ref ref="GSM2747752" />
+    <Sample-Ref ref="GSM2747753" />
+    <Sample-Ref ref="GSM2747754" />
+    <Sample-Ref ref="GSM2747755" />
+    <Sample-Ref ref="GSM2747756" />
+    <Sample-Ref ref="GSM2747757" />
+    <Sample-Ref ref="GSM2747758" />
+    <Sample-Ref ref="GSM2747759" />
+    <Sample-Ref ref="GSM2747760" />
+    <Sample-Ref ref="GSM2747761" />
+    <Sample-Ref ref="GSM2747762" />
+    <Sample-Ref ref="GSM2747763" />
+    <Sample-Ref ref="GSM2747764" />
+    <Sample-Ref ref="GSM2747765" />
+    <Sample-Ref ref="GSM2747766" />
+    <Sample-Ref ref="GSM2747767" />
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE102nnn/GSE102884/suppl/GSE102884_RAW.tar
+    </Supplementary-Data>
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA399157" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRP115913" />
+  </Series>
+
+</MINiML>

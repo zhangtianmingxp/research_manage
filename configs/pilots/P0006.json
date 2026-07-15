@@ -1,0 +1,18 @@
+{
+  "paper_id": "P0006",
+  "doi": "10.1038/nature24281",
+  "geo_series": "GSE93431",
+  "sra_study": "UNRESOLVED",
+  "bioproject": "UNRESOLVED",
+  "ena_study": "UNRESOLVED",
+  "arrayexpress": "UNRESOLVED",
+  "source_metadata_dir": "data/interim/pilot/source_metadata",
+  "source_queries_path": "data/interim/pilot/source_queries.tsv",
+  "round7_status": "candidate_selected",
+  "supplement_download_limit_bytes": 20971520,
+  "own_data_status": "unclear",
+  "assay_type": "Hi-C related study",
+  "measurement_object": "chromatin organization after cohesin removal",
+  "biological_question": "梳理 cohesin removal 研究的样本与 Run/File 公开映射",
+  "experimental_group": "paper-level mixed sample groups from GEO series"
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "P0007",
+  "doi": "10.15252/embj.201798004",
+  "geo_series": "GSE102884",
+  "sra_study": "UNRESOLVED",
+  "bioproject": "UNRESOLVED",
+  "ena_study": "UNRESOLVED",
+  "arrayexpress": "UNRESOLVED",
+  "source_metadata_dir": "data/interim/pilot/source_metadata",
+  "source_queries_path": "data/interim/pilot/source_queries.tsv",
+  "round7_status": "candidate_selected",
+  "supplement_download_limit_bytes": 20971520,
+  "own_data_status": "unclear",
+  "assay_type": "Hi-C / chromatin loop regulation related study",
+  "measurement_object": "cohesin / CTCF / WAPL / PDS5 dependent chromatin architecture",
+  "biological_question": "梳理 cohesin/CTCF/WAPL/PDS5 研究的归档层级与样本映射",
+  "experimental_group": "paper-level mixed sample groups from GEO series"
+}

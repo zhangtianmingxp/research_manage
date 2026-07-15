@@ -1,0 +1,2007 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Roman</First><Middle>R</Middle><Last>Stocsits</Last></Person>
+    <Email>roman.stocsits@imp.ac.at</Email>
+    <Laboratory>Jan-Michael Peters' Lab</Laboratory>
+    <Organization>IMP - Research Institute of Molecular Pathology</Organization>
+    <Address>
+      <Line>Campus-Vienna-Biocenter 1</Line>
+      <City>Vienna</City>
+      <Postal-Code>1030</Postal-Code>
+      <Country>Austria</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Organization>GEO</Organization>
+    <Address>
+      <City></City>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib3">
+    <Person><First>Gordana</First><Last>Wutz</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Platform iid="GPL11154">
+    <Status database="GEO">
+      <Submission-Date>2010-11-02</Submission-Date>
+      <Release-Date>2010-11-02</Release-Date>
+      <Last-Update-Date>2019-03-27</Last-Update-Date>
+    </Status>
+    <Title>Illumina HiSeq 2000 (Homo sapiens)</Title>
+    <Accession database="GEO">GPL11154</Accession>
+    <Technology>high-throughput sequencing</Technology>
+    <Distribution>virtual</Distribution>
+    <Organism taxid="9606">Homo sapiens</Organism>
+    <Manufacturer></Manufacturer>
+    <Manufacture-Protocol>
+    </Manufacture-Protocol>
+    <Contact-Ref ref="contrib2" />
+  </Platform>
+
+  <Sample iid="GSM2747738">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: G1 control sync.</Title>
+    <Accession database="GEO">GSM2747738</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t. G1
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747738/suppl/GSM2747738_HeLa_control_2reps.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524514" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110752" />
+  </Sample>
+
+  <Sample iid="GSM2747739">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Wapl RNAi</Title>
+    <Accession database="GEO">GSM2747739</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl-depleted
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747739/suppl/GSM2747739_HeLa_W_2reps.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524543" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110753" />
+  </Sample>
+
+  <Sample iid="GSM2747740">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Pds5SA/B RNAi</Title>
+    <Accession database="GEO">GSM2747740</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Pds5SA/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Pds5SA/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747740/suppl/GSM2747740_HeLa_AB_2reps.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524542" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110754" />
+  </Sample>
+
+  <Sample iid="GSM2747741">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Wapl/Pds5A/B RNAi</Title>
+    <Accession database="GEO">GSM2747741</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl/Pds5A/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl/Pds5A/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747741/suppl/GSM2747741_HeLa_WAB_2reps.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524541" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110755" />
+  </Sample>
+
+  <Sample iid="GSM2747742">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Pro-M control sync.</Title>
+    <Accession database="GEO">GSM2747742</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t. Pro-M control
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747742/suppl/GSM2747742_HeLa_ProMeta_2reps.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524540" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110756" />
+  </Sample>
+
+  <Sample iid="GSM2747743">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: S control sync.</Title>
+    <Accession database="GEO">GSM2747743</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t. S control
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747743/suppl/GSM2747743_HeLa_S_2reps.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524539" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110757" />
+  </Sample>
+
+  <Sample iid="GSM2747744">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: G2 control sync.</Title>
+    <Accession database="GEO">GSM2747744</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t. G2 control
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747744/suppl/GSM2747744_HeLa_G2_2reps.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524538" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110758" />
+  </Sample>
+
+  <Sample iid="GSM2747745">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Scc1-AID control + auxin, 0 min 1</Title>
+    <Accession database="GEO">GSM2747745</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747745/suppl/GSM2747745_HeLa_wt_Scc1_AID_0_min_G1_50498.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524537" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110759" />
+  </Sample>
+
+  <Sample iid="GSM2747746">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Scc1-AID control + auxin, 15 min</Title>
+    <Accession database="GEO">GSM2747746</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747746/suppl/GSM2747746_HeLa_wt_Scc1_AID_15_min_G1_51561.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524536" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110760" />
+  </Sample>
+
+  <Sample iid="GSM2747747">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Scc1-AID control + auxin, 180 min</Title>
+    <Accession database="GEO">GSM2747747</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747747/suppl/GSM2747747_HeLa_wt_Scc1_AID_3h_min_G1_51562.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524535" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110761" />
+  </Sample>
+
+  <Sample iid="GSM2747748">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Scc1-AID control + auxin, 0 min 2</Title>
+    <Accession database="GEO">GSM2747748</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747748/suppl/GSM2747748_HeLa_wt_Scc1_AID_-AUX_R1_Hela_G1_51563.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524534" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110762" />
+  </Sample>
+
+  <Sample iid="GSM2747749">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Scc1-AID control + auxin, 120 min</Title>
+    <Accession database="GEO">GSM2747749</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747749/suppl/GSM2747749_HeLa_SCC1-AID_r1.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524533" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110763" />
+  </Sample>
+
+  <Sample iid="GSM2747750">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: control</Title>
+    <Accession database="GEO">GSM2747750</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747750/suppl/GSM2747750_Lane_4267_Con_final_HiC.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524532" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110764" />
+  </Sample>
+
+  <Sample iid="GSM2747751">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: CTCF-AID control + auxin, 0 min</Title>
+    <Accession database="GEO">GSM2747751</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747751/suppl/GSM2747751_HeLa_wt_CTCF_AID_-_auxin_R1_Hela_G1_51564.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524531" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110765" />
+  </Sample>
+
+  <Sample iid="GSM2747752">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: CTCF-AID control + auxin, 120 min</Title>
+    <Accession database="GEO">GSM2747752</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747752/suppl/GSM2747752_CTCF_AID_auxin_R1_50736.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524530" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110766" />
+  </Sample>
+
+  <Sample iid="GSM2747753">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Scc1-AID WAB + auxin, 0 min</Title>
+    <Accession database="GEO">GSM2747753</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl/Pds5A/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl/Pds5A/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747753/suppl/GSM2747753_Scc1_AID_WAB_RNAi_0_min_50499.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524529" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110767" />
+  </Sample>
+
+  <Sample iid="GSM2747754">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Scc1-AID WAB + auxin, 15 min</Title>
+    <Accession database="GEO">GSM2747754</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl/Pds5A/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl/Pds5A/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747754/suppl/GSM2747754_Scc1_AID_WAB_RNAi_15_min_50500.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524528" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110768" />
+  </Sample>
+
+  <Sample iid="GSM2747755">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>Hi-C: Scc1-AID WAB + auxin, 180 min</Title>
+    <Accession database="GEO">GSM2747755</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl/Pds5A/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl/Pds5A/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+n.a.
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+HindIII digestion
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>Hi-C</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>other</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="HIC">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747755/suppl/GSM2747755_Scc1_AID_WAB_RNAi_3_h_50501.hic
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524527" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110769" />
+  </Sample>
+
+  <Sample iid="GSM2747756">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: SMC3 control rep1</Title>
+    <Accession database="GEO">GSM2747756</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+SMC3
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+union of 2 replicates, p-val. threshold 1e-10 each
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747756/suppl/GSM2747756_40958_p10_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524526" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110770" />
+  </Sample>
+
+  <Sample iid="GSM2747757">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: SMC3 control rep2</Title>
+    <Accession database="GEO">GSM2747757</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+SMC3
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+union of 2 replicates, p-val. threshold 1e-10 each
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747757/suppl/GSM2747757_SMC3_control_47548_p10_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524525" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110771" />
+  </Sample>
+
+  <Sample iid="GSM2747758">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: SMC3 WAPL-depleted rep1</Title>
+    <Accession database="GEO">GSM2747758</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl-depleted
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+SMC3
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+union of 2 replicates, p-val. threshold 1e-10 each
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747758/suppl/GSM2747758_40959_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524524" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110772" />
+  </Sample>
+
+  <Sample iid="GSM2747759">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: SMC3 WAPL-depleted rep2</Title>
+    <Accession database="GEO">GSM2747759</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl-depleted
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+SMC3
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+union of 2 replicates, p-val. threshold 1e-10 each
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747759/suppl/GSM2747759_SMC3_WAPL-kd_47549_p10_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524523" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110773" />
+  </Sample>
+
+  <Sample iid="GSM2747760">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: SMC3 PDS5-depleted rep1</Title>
+    <Accession database="GEO">GSM2747760</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Pds5SA/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Pds5SA/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+SMC3
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+union of 2 replicates, p-val. threshold 1e-10 each
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747760/suppl/GSM2747760_40960_p10_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524522" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110774" />
+  </Sample>
+
+  <Sample iid="GSM2747761">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: SMC3 PDS5-depleted rep2</Title>
+    <Accession database="GEO">GSM2747761</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Pds5SA/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Pds5SA/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+SMC3
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+union of 2 replicates, p-val. threshold 1e-10 each
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747761/suppl/GSM2747761_SMC3_PDS5-kd_47550_p10_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524521" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110775" />
+  </Sample>
+
+  <Sample iid="GSM2747762">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: SMC3 WAPL+PDS5-depleted rep1</Title>
+    <Accession database="GEO">GSM2747762</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl/Pds5A/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl/Pds5A/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+SMC3
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+union of 2 replicates, p-val. threshold 1e-10 each
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747762/suppl/GSM2747762_40961_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524520" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110776" />
+  </Sample>
+
+  <Sample iid="GSM2747763">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: SMC3 WAPL+PDS5-depleted rep2</Title>
+    <Accession database="GEO">GSM2747763</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl/Pds5A/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl/Pds5A/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+SMC3
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+union of 2 replicates, p-val. threshold 1e-10 each
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747763/suppl/GSM2747763_SMC3_WAPL-PDS5-kd_47551_p10_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524519" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110777" />
+  </Sample>
+
+  <Sample iid="GSM2747764">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: CTCF control</Title>
+    <Accession database="GEO">GSM2747764</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+n.a.
+      </Characteristics>
+      <Characteristics tag="genotype">
+w.t.
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+CTCF
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+p-val. threshold 1e-5
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747764/suppl/GSM2747764_CTCF_HeLa-G1-control_p5_49549_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524518" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110778" />
+  </Sample>
+
+  <Sample iid="GSM2747765">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: CTCF WAPL-depleted</Title>
+    <Accession database="GEO">GSM2747765</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl-depleted
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+CTCF
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+p-val. threshold 1e-5
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747765/suppl/GSM2747765_CTCF_HeLa-WAPL-kd_p5_49550_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524517" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110779" />
+  </Sample>
+
+  <Sample iid="GSM2747766">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: CTCF PDS5-depleted</Title>
+    <Accession database="GEO">GSM2747766</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Pds5SA/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Pds5SA/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+CTCF
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+p-val. threshold 1e-5
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747766/suppl/GSM2747766_CTCF_HeLa-PDS5-kd_p5_49551_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524516" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110780" />
+  </Sample>
+
+  <Sample iid="GSM2747767">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2019-05-15</Last-Update-Date>
+    </Status>
+    <Title>ChIP-Seq: CTCF WAPL-+PDS%-depleted</Title>
+    <Accession database="GEO">GSM2747767</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cervical carcinoma</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="cell type">
+HeLa Kyoto
+      </Characteristics>
+      <Characteristics tag="RNAi">
+Wapl/Pds5A/B RNAi
+      </Characteristics>
+      <Characteristics tag="genotype">
+Wapl/Pds5A/B depletion
+      </Characteristics>
+      <Characteristics tag="chip antibody">
+CTCF
+      </Characteristics>
+      <Growth-Protocol>
+HeLa Kyoto cells were synchronized at G1, S, G2, or in ProMeta-Phase.
+      </Growth-Protocol>
+      <Molecule>genomic DNA</Molecule>
+      <Extract-Protocol>
+ChIP-Seq: Cells were cross-linked and scrapped of the plate. The DNA was fragmented and the protein of interest was immunoprecipitated with indicated antibodies; Adaptors were ligated to the 5' and 3' ends and the library was prepared for Illumina sequencing by a qPCR amplification step.
+ChIP as well as Hi-C libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+p-val. threshold 1e-5
+    </Description>
+    <Data-Processing>
+Basecalling software: Illumina RTA
+Hi-C preprocessing of PE fastq files using hicup_v0.5.8
+bowtie-align version 1.2.1.1
+truncating, mapping, filtering and deduplicating of Hi-C raw data with hicup.
+ChIP-seq: Bowtie 0.12.5 and 1.0.0 for ChIP-Seq readmapping, reads are trimmed and mapped uniquely to genome with 0 to 2 errors
+ChIP-Seq MACS peak calling version 1.4.2
+Genome_build: hg19
+Supplementary_files_format_and_content: juicer tools derived .hic files (Aiden Lab) containing Hi-C matrices for usage with juicebox and juicer tools for Hi-C, and wiggle resp. bed files for ChIP-Seq data
+Supplementary_files_format_and_content: wig files were generated using MACS 1.4.2 with output switches [-w -S] and represent genomic distribution of the factors as described in the paper.
+    </Data-Processing>
+    <Platform-Ref ref="GPL11154" />
+    <Library-Strategy>ChIP-Seq</Library-Strategy>
+    <Library-Source>genomic</Library-Source>
+    <Library-Selection>ChIP</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="WIG">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2747nnn/GSM2747767/suppl/GSM2747767_CTCF_HeLa-WAPL+PDS5-kd_p5_49552_treat_afterfiting_all.wig.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN07524515" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3110781" />
+  </Sample>
+
+  <Series iid="GSE102884">
+    <Status database="GEO">
+      <Submission-Date>2017-08-21</Submission-Date>
+      <Release-Date>2017-12-07</Release-Date>
+      <Last-Update-Date>2021-07-25</Last-Update-Date>
+    </Status>
+    <Title>Topologically associating domains and chromatin loops depend on cohesin and are regulated by CTCF, WAPL and PDS5 proteins</Title>
+    <Accession database="GEO">GSE102884</Accession>
+    <Pubmed-ID>29217591</Pubmed-ID>
+    <Pubmed-ID>32065581</Pubmed-ID>
+    <Summary>
+Mammalian genomes are organized into compartments, topologically-associating domains (TADs) and loops to facilitate gene regulation and other chromosomal functions. Compartments are formed by nucleosomal interactions, but how TADs and loops are generated is unknown. It has been proposed that cohesin forms these structures by extruding loops until it encounters CTCF, but direct evidence for this hypothesis is missing. Here we show that cohesin suppresses compartments but is essential for TADs and loops, that CTCF defines their boundaries, and that WAPL and its PDS5 binding partners control the length of chromatin loops. In the absence of WAPL and PDS5 proteins, cohesin passes CTCF sites with increased frequency, forms extended chromatin loops, accumulates in axial chromosomal positions (vermicelli) and condenses chromosomes to an extent normally only seen in mitosis. These results show that cohesin has an essential genome-wide function in mediating long-range chromatin interactions and support the hypothesis that cohesin creates these by loop extrusion, until it is delayed by CTCF in a manner dependent on PDS5 proteins, or until it is released from DNA by WAPL.
+    </Summary>
+    <Overall-Design>
+Analysis of chromatin structure by HiC and ChIP-Seq upon RNAi depletion and auxin-inducible degron (AID) systems.
+    </Overall-Design>
+    <Type>Other</Type>
+    <Type>Genome binding/occupancy profiling by high throughput sequencing</Type>
+    <Contributor-Ref ref="contrib1" position="1" />
+    <Contributor-Ref ref="contrib3" position="2" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM2747738" />
+    <Sample-Ref ref="GSM2747739" />
+    <Sample-Ref ref="GSM2747740" />
+    <Sample-Ref ref="GSM2747741" />
+    <Sample-Ref ref="GSM2747742" />
+    <Sample-Ref ref="GSM2747743" />
+    <Sample-Ref ref="GSM2747744" />
+    <Sample-Ref ref="GSM2747745" />
+    <Sample-Ref ref="GSM2747746" />
+    <Sample-Ref ref="GSM2747747" />
+    <Sample-Ref ref="GSM2747748" />
+    <Sample-Ref ref="GSM2747749" />
+    <Sample-Ref ref="GSM2747750" />
+    <Sample-Ref ref="GSM2747751" />
+    <Sample-Ref ref="GSM2747752" />
+    <Sample-Ref ref="GSM2747753" />
+    <Sample-Ref ref="GSM2747754" />
+    <Sample-Ref ref="GSM2747755" />
+    <Sample-Ref ref="GSM2747756" />
+    <Sample-Ref ref="GSM2747757" />
+    <Sample-Ref ref="GSM2747758" />
+    <Sample-Ref ref="GSM2747759" />
+    <Sample-Ref ref="GSM2747760" />
+    <Sample-Ref ref="GSM2747761" />
+    <Sample-Ref ref="GSM2747762" />
+    <Sample-Ref ref="GSM2747763" />
+    <Sample-Ref ref="GSM2747764" />
+    <Sample-Ref ref="GSM2747765" />
+    <Sample-Ref ref="GSM2747766" />
+    <Sample-Ref ref="GSM2747767" />
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE102nnn/GSE102884/suppl/GSE102884_RAW.tar
+    </Supplementary-Data>
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA399157" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRP115913" />
+  </Series>
+
+</MINiML>

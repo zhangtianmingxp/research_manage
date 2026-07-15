@@ -1,0 +1,7 @@
+candidate_rank	paper_id	canonical_title	doi	known_accession_candidates	selection_reason	risk_flags	selected_for_round7
+1	P0006	Two independent modes of chromatin organization revealed by cohesin removal	10.1038/nature24281	GSE93431	本地 PDF 已命中 GSE93431，cohesin removal 论文且 accession 线索单一。	可能混有多种实验类型	yes
+2	P0007	Topologically associating domains and chromatin loops depend on cohesin and are regulated by CTCF, WAPL, and PDS5 proteins	10.15252/embj.201798004	GSE102884	本地 PDF 已命中 GSE102884，cohesin/CTCF/WAPL/PDS5 方向且 GEO 入口清晰。	样本设计字段未必在 GEO 充分展开	yes
+3	P0011	WAPL maintains a cohesin loading cycle to preserve cell-type-specific distal gene regulation	10.1038/s41588-020-00744-4	GSE135180	本地 PDF 已命中 GSE135180，可补上 2020 Nature Genetics 代表性论文。	多 assay 提交，library_strategy 需保守解释	yes
+4	P0016	Vertebrate centromeres in mitosis are functionally bipartite structures stabilized by cohesin	10.1016/j.cell.2024.04.014	GSE254182	本地 PDF 仅命中 GSE254182，入口单一，适合这一轮快推。	功能分区与着丝粒实验可能含非测序补充结果	yes
+5	P0002	Topologically associating domains are stable units of replication-timing regulation	10.1038/nature13986	GSE51334	GSE51334 入口过大且混入大量外部样本，超出本轮轻量批次风险阈值。	超大 series / 复用样本风险高	no
+6	P0013	NR	NR	GSE130275;GSE178982	多 accession 入口且 assay 更混合，适合后续单篇聚焦轮处理。	多入口映射复杂度较高	no

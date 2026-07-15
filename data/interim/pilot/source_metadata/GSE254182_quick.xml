@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Shaun</First><Middle>Michael</Middle><Last>Webb</Last></Person>
+    <Email>shaun.webb@ed.ac.uk</Email>
+    <Laboratory>Bioinformatics Core Facility</Laboratory>
+    <Department>Wellcome Trust Centre for Cell Biology</Department>
+    <Organization>University of Edinburgh</Organization>
+    <Address>
+      <Line>2.21 Swann Building, Kings Buildings</Line>
+      <City>Edinburgh</City>
+      <Postal-Code>EH9 3JR</Postal-Code>
+      <Country>United Kingdom</Country>
+    </Address>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Sample iid="GSM8035585">
+    <Accession database="GEO">GSM8035585</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035586">
+    <Accession database="GEO">GSM8035586</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035587">
+    <Accession database="GEO">GSM8035587</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035588">
+    <Accession database="GEO">GSM8035588</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035589">
+    <Accession database="GEO">GSM8035589</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035590">
+    <Accession database="GEO">GSM8035590</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035591">
+    <Accession database="GEO">GSM8035591</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035592">
+    <Accession database="GEO">GSM8035592</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035593">
+    <Accession database="GEO">GSM8035593</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035594">
+    <Accession database="GEO">GSM8035594</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035595">
+    <Accession database="GEO">GSM8035595</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035596">
+    <Accession database="GEO">GSM8035596</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035597">
+    <Accession database="GEO">GSM8035597</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035598">
+    <Accession database="GEO">GSM8035598</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035599">
+    <Accession database="GEO">GSM8035599</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035600">
+    <Accession database="GEO">GSM8035600</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035601">
+    <Accession database="GEO">GSM8035601</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035602">
+    <Accession database="GEO">GSM8035602</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035603">
+    <Accession database="GEO">GSM8035603</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035604">
+    <Accession database="GEO">GSM8035604</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035605">
+    <Accession database="GEO">GSM8035605</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035606">
+    <Accession database="GEO">GSM8035606</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035607">
+    <Accession database="GEO">GSM8035607</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035608">
+    <Accession database="GEO">GSM8035608</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035609">
+    <Accession database="GEO">GSM8035609</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035610">
+    <Accession database="GEO">GSM8035610</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035611">
+    <Accession database="GEO">GSM8035611</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035612">
+    <Accession database="GEO">GSM8035612</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035613">
+    <Accession database="GEO">GSM8035613</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035614">
+    <Accession database="GEO">GSM8035614</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035615">
+    <Accession database="GEO">GSM8035615</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035616">
+    <Accession database="GEO">GSM8035616</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035617">
+    <Accession database="GEO">GSM8035617</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035618">
+    <Accession database="GEO">GSM8035618</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035619">
+    <Accession database="GEO">GSM8035619</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035620">
+    <Accession database="GEO">GSM8035620</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035621">
+    <Accession database="GEO">GSM8035621</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035622">
+    <Accession database="GEO">GSM8035622</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035623">
+    <Accession database="GEO">GSM8035623</Accession>
+  </Sample>
+
+  <Sample iid="GSM8035624">
+    <Accession database="GEO">GSM8035624</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047983">
+    <Accession database="GEO">GSM8047983</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047984">
+    <Accession database="GEO">GSM8047984</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047985">
+    <Accession database="GEO">GSM8047985</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047986">
+    <Accession database="GEO">GSM8047986</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047987">
+    <Accession database="GEO">GSM8047987</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047988">
+    <Accession database="GEO">GSM8047988</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047989">
+    <Accession database="GEO">GSM8047989</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047990">
+    <Accession database="GEO">GSM8047990</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047991">
+    <Accession database="GEO">GSM8047991</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047992">
+    <Accession database="GEO">GSM8047992</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047993">
+    <Accession database="GEO">GSM8047993</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047994">
+    <Accession database="GEO">GSM8047994</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047995">
+    <Accession database="GEO">GSM8047995</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047996">
+    <Accession database="GEO">GSM8047996</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047997">
+    <Accession database="GEO">GSM8047997</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047998">
+    <Accession database="GEO">GSM8047998</Accession>
+  </Sample>
+
+  <Sample iid="GSM8047999">
+    <Accession database="GEO">GSM8047999</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048000">
+    <Accession database="GEO">GSM8048000</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048001">
+    <Accession database="GEO">GSM8048001</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048002">
+    <Accession database="GEO">GSM8048002</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048003">
+    <Accession database="GEO">GSM8048003</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048004">
+    <Accession database="GEO">GSM8048004</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048005">
+    <Accession database="GEO">GSM8048005</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048006">
+    <Accession database="GEO">GSM8048006</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048007">
+    <Accession database="GEO">GSM8048007</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048008">
+    <Accession database="GEO">GSM8048008</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048009">
+    <Accession database="GEO">GSM8048009</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048010">
+    <Accession database="GEO">GSM8048010</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048011">
+    <Accession database="GEO">GSM8048011</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048012">
+    <Accession database="GEO">GSM8048012</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048013">
+    <Accession database="GEO">GSM8048013</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048014">
+    <Accession database="GEO">GSM8048014</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048015">
+    <Accession database="GEO">GSM8048015</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048016">
+    <Accession database="GEO">GSM8048016</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048017">
+    <Accession database="GEO">GSM8048017</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048018">
+    <Accession database="GEO">GSM8048018</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048019">
+    <Accession database="GEO">GSM8048019</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048020">
+    <Accession database="GEO">GSM8048020</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048021">
+    <Accession database="GEO">GSM8048021</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048022">
+    <Accession database="GEO">GSM8048022</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048023">
+    <Accession database="GEO">GSM8048023</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048024">
+    <Accession database="GEO">GSM8048024</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048025">
+    <Accession database="GEO">GSM8048025</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048026">
+    <Accession database="GEO">GSM8048026</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048027">
+    <Accession database="GEO">GSM8048027</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048028">
+    <Accession database="GEO">GSM8048028</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048029">
+    <Accession database="GEO">GSM8048029</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048030">
+    <Accession database="GEO">GSM8048030</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048031">
+    <Accession database="GEO">GSM8048031</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048032">
+    <Accession database="GEO">GSM8048032</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048033">
+    <Accession database="GEO">GSM8048033</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048034">
+    <Accession database="GEO">GSM8048034</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048035">
+    <Accession database="GEO">GSM8048035</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048036">
+    <Accession database="GEO">GSM8048036</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048037">
+    <Accession database="GEO">GSM8048037</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048038">
+    <Accession database="GEO">GSM8048038</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048039">
+    <Accession database="GEO">GSM8048039</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048040">
+    <Accession database="GEO">GSM8048040</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048041">
+    <Accession database="GEO">GSM8048041</Accession>
+  </Sample>
+
+  <Sample iid="GSM8048042">
+    <Accession database="GEO">GSM8048042</Accession>
+  </Sample>
+
+  <Series iid="GSE254182">
+    <Status database="GEO">
+      <Submission-Date>2024-01-25</Submission-Date>
+      <Release-Date>2024-04-01</Release-Date>
+      <Last-Update-Date>2024-04-01</Last-Update-Date>
+    </Status>
+    <Title>Centromeric chromatin in mitosis reorganizes into a functional structure stabilized by cohesin</Title>
+    <Accession database="GEO">GSE254182</Accession>
+    <Summary>
+This SuperSeries is composed of the SubSeries listed below.
+    </Summary>
+    <Overall-Design>
+Refer to individual Series
+    </Overall-Design>
+    <Type>Genome binding/occupancy profiling by high throughput sequencing</Type>
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM8035585" />
+    <Sample-Ref ref="GSM8035586" />
+    <Sample-Ref ref="GSM8035587" />
+    <Sample-Ref ref="GSM8035588" />
+    <Sample-Ref ref="GSM8035589" />
+    <Sample-Ref ref="GSM8035590" />
+    <Sample-Ref ref="GSM8035591" />
+    <Sample-Ref ref="GSM8035592" />
+    <Sample-Ref ref="GSM8035593" />
+    <Sample-Ref ref="GSM8035594" />
+    <Sample-Ref ref="GSM8035595" />
+    <Sample-Ref ref="GSM8035596" />
+    <Sample-Ref ref="GSM8035597" />
+    <Sample-Ref ref="GSM8035598" />
+    <Sample-Ref ref="GSM8035599" />
+    <Sample-Ref ref="GSM8035600" />
+    <Sample-Ref ref="GSM8035601" />
+    <Sample-Ref ref="GSM8035602" />
+    <Sample-Ref ref="GSM8035603" />
+    <Sample-Ref ref="GSM8035604" />
+    <Sample-Ref ref="GSM8035605" />
+    <Sample-Ref ref="GSM8035606" />
+    <Sample-Ref ref="GSM8035607" />
+    <Sample-Ref ref="GSM8035608" />
+    <Sample-Ref ref="GSM8035609" />
+    <Sample-Ref ref="GSM8035610" />
+    <Sample-Ref ref="GSM8035611" />
+    <Sample-Ref ref="GSM8035612" />
+    <Sample-Ref ref="GSM8035613" />
+    <Sample-Ref ref="GSM8035614" />
+    <Sample-Ref ref="GSM8035615" />
+    <Sample-Ref ref="GSM8035616" />
+    <Sample-Ref ref="GSM8035617" />
+    <Sample-Ref ref="GSM8035618" />
+    <Sample-Ref ref="GSM8035619" />
+    <Sample-Ref ref="GSM8035620" />
+    <Sample-Ref ref="GSM8035621" />
+    <Sample-Ref ref="GSM8035622" />
+    <Sample-Ref ref="GSM8035623" />
+    <Sample-Ref ref="GSM8035624" />
+    <Sample-Ref ref="GSM8047983" />
+    <Sample-Ref ref="GSM8047984" />
+    <Sample-Ref ref="GSM8047985" />
+    <Sample-Ref ref="GSM8047986" />
+    <Sample-Ref ref="GSM8047987" />
+    <Sample-Ref ref="GSM8047988" />
+    <Sample-Ref ref="GSM8047989" />
+    <Sample-Ref ref="GSM8047990" />
+    <Sample-Ref ref="GSM8047991" />
+    <Sample-Ref ref="GSM8047992" />
+    <Sample-Ref ref="GSM8047993" />
+    <Sample-Ref ref="GSM8047994" />
+    <Sample-Ref ref="GSM8047995" />
+    <Sample-Ref ref="GSM8047996" />
+    <Sample-Ref ref="GSM8047997" />
+    <Sample-Ref ref="GSM8047998" />
+    <Sample-Ref ref="GSM8047999" />
+    <Sample-Ref ref="GSM8048000" />
+    <Sample-Ref ref="GSM8048001" />
+    <Sample-Ref ref="GSM8048002" />
+    <Sample-Ref ref="GSM8048003" />
+    <Sample-Ref ref="GSM8048004" />
+    <Sample-Ref ref="GSM8048005" />
+    <Sample-Ref ref="GSM8048006" />
+    <Sample-Ref ref="GSM8048007" />
+    <Sample-Ref ref="GSM8048008" />
+    <Sample-Ref ref="GSM8048009" />
+    <Sample-Ref ref="GSM8048010" />
+    <Sample-Ref ref="GSM8048011" />
+    <Sample-Ref ref="GSM8048012" />
+    <Sample-Ref ref="GSM8048013" />
+    <Sample-Ref ref="GSM8048014" />
+    <Sample-Ref ref="GSM8048015" />
+    <Sample-Ref ref="GSM8048016" />
+    <Sample-Ref ref="GSM8048017" />
+    <Sample-Ref ref="GSM8048018" />
+    <Sample-Ref ref="GSM8048019" />
+    <Sample-Ref ref="GSM8048020" />
+    <Sample-Ref ref="GSM8048021" />
+    <Sample-Ref ref="GSM8048022" />
+    <Sample-Ref ref="GSM8048023" />
+    <Sample-Ref ref="GSM8048024" />
+    <Sample-Ref ref="GSM8048025" />
+    <Sample-Ref ref="GSM8048026" />
+    <Sample-Ref ref="GSM8048027" />
+    <Sample-Ref ref="GSM8048028" />
+    <Sample-Ref ref="GSM8048029" />
+    <Sample-Ref ref="GSM8048030" />
+    <Sample-Ref ref="GSM8048031" />
+    <Sample-Ref ref="GSM8048032" />
+    <Sample-Ref ref="GSM8048033" />
+    <Sample-Ref ref="GSM8048034" />
+    <Sample-Ref ref="GSM8048035" />
+    <Sample-Ref ref="GSM8048036" />
+    <Sample-Ref ref="GSM8048037" />
+    <Sample-Ref ref="GSM8048038" />
+    <Sample-Ref ref="GSM8048039" />
+    <Sample-Ref ref="GSM8048040" />
+    <Sample-Ref ref="GSM8048041" />
+    <Sample-Ref ref="GSM8048042" />
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE254nnn/GSE254182/suppl/GSE254182_RAW.tar
+    </Supplementary-Data>
+    <Relation type="SuperSeries of" target="GSE254180" />
+    <Relation type="SuperSeries of" target="GSE254181" />
+    <Relation type="SuperSeries of" target="GSE254659" />
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1068944" />
+  </Series>
+
+</MINiML>

@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Ning Qing</First><Last>Liu</Last></Person>
+    <Email>n.liu@erasmusmc.nl</Email>
+    <Department>Hematology</Department>
+    <Organization>Erasmus University Medical Center Rotterdam</Organization>
+    <Address>
+      <Line>Wytemaweg 80</Line>
+      <City>Rotterdam</City>
+      <Postal-Code>3015 CN</Postal-Code>
+      <Country>Netherlands</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Person><First>Elzo</First><Last>de Wit</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Sample iid="GSM3992897">
+    <Accession database="GEO">GSM3992897</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992898">
+    <Accession database="GEO">GSM3992898</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992899">
+    <Accession database="GEO">GSM3992899</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992900">
+    <Accession database="GEO">GSM3992900</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992901">
+    <Accession database="GEO">GSM3992901</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992902">
+    <Accession database="GEO">GSM3992902</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992903">
+    <Accession database="GEO">GSM3992903</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992904">
+    <Accession database="GEO">GSM3992904</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992905">
+    <Accession database="GEO">GSM3992905</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992906">
+    <Accession database="GEO">GSM3992906</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992907">
+    <Accession database="GEO">GSM3992907</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992908">
+    <Accession database="GEO">GSM3992908</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992909">
+    <Accession database="GEO">GSM3992909</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992910">
+    <Accession database="GEO">GSM3992910</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992911">
+    <Accession database="GEO">GSM3992911</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992912">
+    <Accession database="GEO">GSM3992912</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992913">
+    <Accession database="GEO">GSM3992913</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992914">
+    <Accession database="GEO">GSM3992914</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992915">
+    <Accession database="GEO">GSM3992915</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992916">
+    <Accession database="GEO">GSM3992916</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992917">
+    <Accession database="GEO">GSM3992917</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992918">
+    <Accession database="GEO">GSM3992918</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992919">
+    <Accession database="GEO">GSM3992919</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992920">
+    <Accession database="GEO">GSM3992920</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992921">
+    <Accession database="GEO">GSM3992921</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992922">
+    <Accession database="GEO">GSM3992922</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992923">
+    <Accession database="GEO">GSM3992923</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992924">
+    <Accession database="GEO">GSM3992924</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992925">
+    <Accession database="GEO">GSM3992925</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992926">
+    <Accession database="GEO">GSM3992926</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992927">
+    <Accession database="GEO">GSM3992927</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992928">
+    <Accession database="GEO">GSM3992928</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992929">
+    <Accession database="GEO">GSM3992929</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992930">
+    <Accession database="GEO">GSM3992930</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992931">
+    <Accession database="GEO">GSM3992931</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992932">
+    <Accession database="GEO">GSM3992932</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992933">
+    <Accession database="GEO">GSM3992933</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992934">
+    <Accession database="GEO">GSM3992934</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992935">
+    <Accession database="GEO">GSM3992935</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992936">
+    <Accession database="GEO">GSM3992936</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992937">
+    <Accession database="GEO">GSM3992937</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992938">
+    <Accession database="GEO">GSM3992938</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992939">
+    <Accession database="GEO">GSM3992939</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992940">
+    <Accession database="GEO">GSM3992940</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992941">
+    <Accession database="GEO">GSM3992941</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992942">
+    <Accession database="GEO">GSM3992942</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992943">
+    <Accession database="GEO">GSM3992943</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992944">
+    <Accession database="GEO">GSM3992944</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992945">
+    <Accession database="GEO">GSM3992945</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992946">
+    <Accession database="GEO">GSM3992946</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992947">
+    <Accession database="GEO">GSM3992947</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992948">
+    <Accession database="GEO">GSM3992948</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992949">
+    <Accession database="GEO">GSM3992949</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992950">
+    <Accession database="GEO">GSM3992950</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992951">
+    <Accession database="GEO">GSM3992951</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992952">
+    <Accession database="GEO">GSM3992952</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992953">
+    <Accession database="GEO">GSM3992953</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992954">
+    <Accession database="GEO">GSM3992954</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992955">
+    <Accession database="GEO">GSM3992955</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992956">
+    <Accession database="GEO">GSM3992956</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992957">
+    <Accession database="GEO">GSM3992957</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992958">
+    <Accession database="GEO">GSM3992958</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992959">
+    <Accession database="GEO">GSM3992959</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992960">
+    <Accession database="GEO">GSM3992960</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992961">
+    <Accession database="GEO">GSM3992961</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992962">
+    <Accession database="GEO">GSM3992962</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992963">
+    <Accession database="GEO">GSM3992963</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992964">
+    <Accession database="GEO">GSM3992964</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992965">
+    <Accession database="GEO">GSM3992965</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992966">
+    <Accession database="GEO">GSM3992966</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992967">
+    <Accession database="GEO">GSM3992967</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992968">
+    <Accession database="GEO">GSM3992968</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992969">
+    <Accession database="GEO">GSM3992969</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992970">
+    <Accession database="GEO">GSM3992970</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992971">
+    <Accession database="GEO">GSM3992971</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992972">
+    <Accession database="GEO">GSM3992972</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992973">
+    <Accession database="GEO">GSM3992973</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992974">
+    <Accession database="GEO">GSM3992974</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992975">
+    <Accession database="GEO">GSM3992975</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992976">
+    <Accession database="GEO">GSM3992976</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992977">
+    <Accession database="GEO">GSM3992977</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992978">
+    <Accession database="GEO">GSM3992978</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992979">
+    <Accession database="GEO">GSM3992979</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992980">
+    <Accession database="GEO">GSM3992980</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992981">
+    <Accession database="GEO">GSM3992981</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992982">
+    <Accession database="GEO">GSM3992982</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992983">
+    <Accession database="GEO">GSM3992983</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992984">
+    <Accession database="GEO">GSM3992984</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992985">
+    <Accession database="GEO">GSM3992985</Accession>
+  </Sample>
+
+  <Sample iid="GSM3992986">
+    <Accession database="GEO">GSM3992986</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775352">
+    <Accession database="GEO">GSM4775352</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775353">
+    <Accession database="GEO">GSM4775353</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775354">
+    <Accession database="GEO">GSM4775354</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775355">
+    <Accession database="GEO">GSM4775355</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775356">
+    <Accession database="GEO">GSM4775356</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775357">
+    <Accession database="GEO">GSM4775357</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775358">
+    <Accession database="GEO">GSM4775358</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775359">
+    <Accession database="GEO">GSM4775359</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775360">
+    <Accession database="GEO">GSM4775360</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775361">
+    <Accession database="GEO">GSM4775361</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775362">
+    <Accession database="GEO">GSM4775362</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775363">
+    <Accession database="GEO">GSM4775363</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775364">
+    <Accession database="GEO">GSM4775364</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775365">
+    <Accession database="GEO">GSM4775365</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775366">
+    <Accession database="GEO">GSM4775366</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775367">
+    <Accession database="GEO">GSM4775367</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775368">
+    <Accession database="GEO">GSM4775368</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775369">
+    <Accession database="GEO">GSM4775369</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775370">
+    <Accession database="GEO">GSM4775370</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775371">
+    <Accession database="GEO">GSM4775371</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775372">
+    <Accession database="GEO">GSM4775372</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775373">
+    <Accession database="GEO">GSM4775373</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775374">
+    <Accession database="GEO">GSM4775374</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775375">
+    <Accession database="GEO">GSM4775375</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775376">
+    <Accession database="GEO">GSM4775376</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775377">
+    <Accession database="GEO">GSM4775377</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775378">
+    <Accession database="GEO">GSM4775378</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775379">
+    <Accession database="GEO">GSM4775379</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775380">
+    <Accession database="GEO">GSM4775380</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775381">
+    <Accession database="GEO">GSM4775381</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775382">
+    <Accession database="GEO">GSM4775382</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775383">
+    <Accession database="GEO">GSM4775383</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775384">
+    <Accession database="GEO">GSM4775384</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775385">
+    <Accession database="GEO">GSM4775385</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775386">
+    <Accession database="GEO">GSM4775386</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775387">
+    <Accession database="GEO">GSM4775387</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775388">
+    <Accession database="GEO">GSM4775388</Accession>
+  </Sample>
+
+  <Sample iid="GSM4775389">
+    <Accession database="GEO">GSM4775389</Accession>
+  </Sample>
+
+  <Series iid="GSE135180">
+    <Status database="GEO">
+      <Submission-Date>2019-07-31</Submission-Date>
+      <Release-Date>2020-10-15</Release-Date>
+      <Last-Update-Date>2024-08-05</Last-Update-Date>
+    </Status>
+    <Title>Dynamic cohesin is required for lineage specific distal gene regulation</Title>
+    <Accession database="GEO">GSE135180</Accession>
+    <Pubmed-ID>33318687</Pubmed-ID>
+    <Summary>
+The cohesin complex plays essential roles in sister chromatin cohesin, chromosome organization and gene expression. The role it plays in the regulation of genes is incompletely understood. Here, we report that the cohesin release factor WAPL in mouse embryonic stem cells is crucial for maintaining a pool of dynamically bound cohesin to regions in the genome that are associated with lineage specific genes. These regions are enriched for active enhancer marks and transcription factor binding sites. Stabilization of cohesin, which leads to a loss of dynamic cohesin from these regions does not affect transcription factor binding or active enhancer marks, but does result in changes in promoter-enhancer interactions and downregulation of genes. Acute cohesin depletion can phenocopy the effect of WAPL depletion, showing that cohesin plays a crucial role in maintaining expression of lineage specific genes. The binding of dynamic cohesin to chromatin is dependent on the pluripotency transcription factor OCT4, but not NANOG. Finally, sites of dynamic cohesin binding sites are also found in differentiated cells, suggesting that they represent a general regulatory principle. We propose that the binding of dynamic cohesin to regulatory sites creates a favorable spatial environment in which promoters and enhancers can communicate to ensure proper gene expression.
+    </Summary>
+    <Overall-Design>
+Acute depletion of WAPL, RAD21, SOX2, OCT4 and NANOG using degron techniques, followed by multiple molecular readouts using different sequencing techniques
+    </Overall-Design>
+    <Type>Expression profiling by high throughput sequencing</Type>
+    <Type>Genome binding/occupancy profiling by high throughput sequencing</Type>
+    <Type>Other</Type>
+    <Contributor-Ref ref="contrib1" position="1" />
+    <Contributor-Ref ref="contrib2" position="2" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM3992897" />
+    <Sample-Ref ref="GSM3992898" />
+    <Sample-Ref ref="GSM3992899" />
+    <Sample-Ref ref="GSM3992900" />
+    <Sample-Ref ref="GSM3992901" />
+    <Sample-Ref ref="GSM3992902" />
+    <Sample-Ref ref="GSM3992903" />
+    <Sample-Ref ref="GSM3992904" />
+    <Sample-Ref ref="GSM3992905" />
+    <Sample-Ref ref="GSM3992906" />
+    <Sample-Ref ref="GSM3992907" />
+    <Sample-Ref ref="GSM3992908" />
+    <Sample-Ref ref="GSM3992909" />
+    <Sample-Ref ref="GSM3992910" />
+    <Sample-Ref ref="GSM3992911" />
+    <Sample-Ref ref="GSM3992912" />
+    <Sample-Ref ref="GSM3992913" />
+    <Sample-Ref ref="GSM3992914" />
+    <Sample-Ref ref="GSM3992915" />
+    <Sample-Ref ref="GSM3992916" />
+    <Sample-Ref ref="GSM3992917" />
+    <Sample-Ref ref="GSM3992918" />
+    <Sample-Ref ref="GSM3992919" />
+    <Sample-Ref ref="GSM3992920" />
+    <Sample-Ref ref="GSM3992921" />
+    <Sample-Ref ref="GSM3992922" />
+    <Sample-Ref ref="GSM3992923" />
+    <Sample-Ref ref="GSM3992924" />
+    <Sample-Ref ref="GSM3992925" />
+    <Sample-Ref ref="GSM3992926" />
+    <Sample-Ref ref="GSM3992927" />
+    <Sample-Ref ref="GSM3992928" />
+    <Sample-Ref ref="GSM3992929" />
+    <Sample-Ref ref="GSM3992930" />
+    <Sample-Ref ref="GSM3992931" />
+    <Sample-Ref ref="GSM3992932" />
+    <Sample-Ref ref="GSM3992933" />
+    <Sample-Ref ref="GSM3992934" />
+    <Sample-Ref ref="GSM3992935" />
+    <Sample-Ref ref="GSM3992936" />
+    <Sample-Ref ref="GSM3992937" />
+    <Sample-Ref ref="GSM3992938" />
+    <Sample-Ref ref="GSM3992939" />
+    <Sample-Ref ref="GSM3992940" />
+    <Sample-Ref ref="GSM3992941" />
+    <Sample-Ref ref="GSM3992942" />
+    <Sample-Ref ref="GSM3992943" />
+    <Sample-Ref ref="GSM3992944" />
+    <Sample-Ref ref="GSM3992945" />
+    <Sample-Ref ref="GSM3992946" />
+    <Sample-Ref ref="GSM3992947" />
+    <Sample-Ref ref="GSM3992948" />
+    <Sample-Ref ref="GSM3992949" />
+    <Sample-Ref ref="GSM3992950" />
+    <Sample-Ref ref="GSM3992951" />
+    <Sample-Ref ref="GSM3992952" />
+    <Sample-Ref ref="GSM3992953" />
+    <Sample-Ref ref="GSM3992954" />
+    <Sample-Ref ref="GSM3992955" />
+    <Sample-Ref ref="GSM3992956" />
+    <Sample-Ref ref="GSM3992957" />
+    <Sample-Ref ref="GSM3992958" />
+    <Sample-Ref ref="GSM3992959" />
+    <Sample-Ref ref="GSM3992960" />
+    <Sample-Ref ref="GSM3992961" />
+    <Sample-Ref ref="GSM3992962" />
+    <Sample-Ref ref="GSM3992963" />
+    <Sample-Ref ref="GSM3992964" />
+    <Sample-Ref ref="GSM3992965" />
+    <Sample-Ref ref="GSM3992966" />
+    <Sample-Ref ref="GSM3992967" />
+    <Sample-Ref ref="GSM3992968" />
+    <Sample-Ref ref="GSM3992969" />
+    <Sample-Ref ref="GSM3992970" />
+    <Sample-Ref ref="GSM3992971" />
+    <Sample-Ref ref="GSM3992972" />
+    <Sample-Ref ref="GSM3992973" />
+    <Sample-Ref ref="GSM3992974" />
+    <Sample-Ref ref="GSM3992975" />
+    <Sample-Ref ref="GSM3992976" />
+    <Sample-Ref ref="GSM3992977" />
+    <Sample-Ref ref="GSM3992978" />
+    <Sample-Ref ref="GSM3992979" />
+    <Sample-Ref ref="GSM3992980" />
+    <Sample-Ref ref="GSM3992981" />
+    <Sample-Ref ref="GSM3992982" />
+    <Sample-Ref ref="GSM3992983" />
+    <Sample-Ref ref="GSM3992984" />
+    <Sample-Ref ref="GSM3992985" />
+    <Sample-Ref ref="GSM3992986" />
+    <Sample-Ref ref="GSM4775352" />
+    <Sample-Ref ref="GSM4775353" />
+    <Sample-Ref ref="GSM4775354" />
+    <Sample-Ref ref="GSM4775355" />
+    <Sample-Ref ref="GSM4775356" />
+    <Sample-Ref ref="GSM4775357" />
+    <Sample-Ref ref="GSM4775358" />
+    <Sample-Ref ref="GSM4775359" />
+    <Sample-Ref ref="GSM4775360" />
+    <Sample-Ref ref="GSM4775361" />
+    <Sample-Ref ref="GSM4775362" />
+    <Sample-Ref ref="GSM4775363" />
+    <Sample-Ref ref="GSM4775364" />
+    <Sample-Ref ref="GSM4775365" />
+    <Sample-Ref ref="GSM4775366" />
+    <Sample-Ref ref="GSM4775367" />
+    <Sample-Ref ref="GSM4775368" />
+    <Sample-Ref ref="GSM4775369" />
+    <Sample-Ref ref="GSM4775370" />
+    <Sample-Ref ref="GSM4775371" />
+    <Sample-Ref ref="GSM4775372" />
+    <Sample-Ref ref="GSM4775373" />
+    <Sample-Ref ref="GSM4775374" />
+    <Sample-Ref ref="GSM4775375" />
+    <Sample-Ref ref="GSM4775376" />
+    <Sample-Ref ref="GSM4775377" />
+    <Sample-Ref ref="GSM4775378" />
+    <Sample-Ref ref="GSM4775379" />
+    <Sample-Ref ref="GSM4775380" />
+    <Sample-Ref ref="GSM4775381" />
+    <Sample-Ref ref="GSM4775382" />
+    <Sample-Ref ref="GSM4775383" />
+    <Sample-Ref ref="GSM4775384" />
+    <Sample-Ref ref="GSM4775385" />
+    <Sample-Ref ref="GSM4775386" />
+    <Sample-Ref ref="GSM4775387" />
+    <Sample-Ref ref="GSM4775388" />
+    <Sample-Ref ref="GSM4775389" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_107-112_WaplC6_TTseq_htseqcounts_normalized_2019-08.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_107-112_WaplC6_TTseq_htseqcounts_unnormalized_2019-08.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_119-130_Viewpoint_4C_samples_2020-08.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_45-46-103-104_WaplC6_ESC_NPC_RNA_htseqcounts_normalized_2019-08.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_45-46-103-104_WaplC6_ESC_NPC_RNA_htseqcounts_unnormalized_2019-08.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_45-58_WaplC6_Parental_RNA_htseqcounts_unnormalized_2019-07-26.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_45-58_WaplC6_Parental_RNA_normalized_ratio_2019-07-26.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_59-64_Rad21AID_RNA_htseqcounts_unnormalized_2019-07-26.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_59-64_Rad21AID_RNA_normalized_ratio_2019-07-26.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BED">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_65-66_WaplC6_hiC_10000_abs.bed.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BED">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_65-66_WaplC6_hiC_20000_abs.bed.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="BED">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_65-66_WaplC6_hiC_40000_abs.bed.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_67-90_Viewpoint_4C_samples_2019-07-26.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_93-102_WaplC20_RNA_htseqcounts_normalized_2019-08.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_93-102_WaplC20_RNA_htseqcounts_unnormalized_2019-08.txt.gz
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135180/suppl/GSE135180_RAW.tar
+    </Supplementary-Data>
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA557678" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRP216929" />
+  </Series>
+
+</MINiML>
